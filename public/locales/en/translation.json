@@ -1,0 +1,14 @@
+{
+  "nav": {
+    "dev": "dev",
+    "ui": "ui",
+    "redux": "Redux",
+
+    "projects": "Projects",
+    "todo": "Todo",
+    "blog": "Blog"
+  },
+  "common": {
+    "language": "Language"
+  }
+}
