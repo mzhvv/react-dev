@@ -7,7 +7,7 @@ import type { CardId } from './cards.slice'
 import { cardsSlice } from './cards.slice'
 
 export const CardsList = () => {
-  // console.log('render CardsList')
+  // console.log('render CardsList[cards-no-req]')
 
   const [sortType, setSortType] = useState<'asc' | 'desc'>('asc')
 
@@ -38,7 +38,7 @@ export const CardsList = () => {
 }
 
 const CardListItem = memo(function CardListItem({ cardId }: { cardId: CardId }) {
-  // console.log('render CardListItem', cardId)
+  // console.log('render CardListItem[cards-no-req]:', cardId)
 
   const card = useAppSelector(state => state['cards-no-req'].entities[cardId])
   const dispatch = useAppDispatch()

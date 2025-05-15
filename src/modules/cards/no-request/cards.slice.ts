@@ -7,13 +7,6 @@ type Card = {
   title: string
   description: string
 }
-
-export const initialCardsList: Card[] = Array.from({ length: 1000 }, (_, index) => ({
-  id: `Card id ${index + 1}`,
-  title: `Card ${index + 1}`,
-  description: `Description for card ${index + 1}`,
-}))
-
 type CardsState = {
   entities: Record<CardId, Card | undefined>
   ids: CardId[]
@@ -97,3 +90,11 @@ export const cardsSlice = createSlice({
     },
   },
 })
+
+//  initialCards
+
+export const initialCardsList: Card[] = Array.from({ length: 1000 }, (_, index) => ({
+  id: `Card id ${index + 1}`,
+  title: `Card ${index + 1}`,
+  description: `Description for card ${index + 1}`,
+}))

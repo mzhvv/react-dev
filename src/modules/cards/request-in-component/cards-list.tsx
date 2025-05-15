@@ -9,7 +9,7 @@ import { cardsSlice } from './cards.slice'
 import { cardsApi } from '../cards.api'
 
 export const CardsList = () => {
-  // console.log('render CardsList')
+  // console.log('render CardsList[cards-req-comp]')
 
   const isPending = useAppSelector(cardsSlice.selectors.selectIsFetchCardsPending)
 
@@ -37,7 +37,6 @@ export const CardsList = () => {
     cardsSlice.selectors.selectSortedCards(state, sortType)
   )
   const selectedCardId = useAppSelector(cardsSlice.selectors.selectSelectedCaedId)
-  // console.log('selectedCardId :', selectedCardId)
 
   return (
     <div className='mx-auto w-fit space-y-2'>
@@ -65,7 +64,7 @@ export const CardsList = () => {
 }
 
 const CardListItem = memo(function CardListItem({ cardId }: { cardId: CardId }) {
-  // console.log('render CardListItem', cardId)
+  // console.log('render CardListItem[cards-req-comp]:', cardId)
 
   const card = useAppSelector(state => state['cards-req-comp'].entities[cardId])
   const dispatch = useAppDispatch()

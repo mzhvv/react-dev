@@ -9,7 +9,7 @@ import { cardsSlice } from './cards.slice'
 import { cardsApi } from '@/modules/cards/cards.api'
 
 export const CardsList = () => {
-  // console.log('render CardsList')
+  // console.log('render CardsList[cards-req-func]')
 
   const isPending = useAppSelector(cardsSlice.selectors.selectIsFetchCardsPending)
 
@@ -65,7 +65,7 @@ export const CardsList = () => {
 }
 
 const CardListItem = memo(function CardListItem({ cardId }: { cardId: CardId }) {
-  // console.log('render CardListItem', cardId)
+  // console.log('render CardListItem [cards-req-func]:', cardId)
 
   const card = useAppSelector(state => state['cards-req-func'].entities[cardId])
   const dispatch = useAppDispatch()
