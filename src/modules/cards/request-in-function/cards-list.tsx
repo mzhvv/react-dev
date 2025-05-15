@@ -37,7 +37,6 @@ export const CardsList = () => {
     cardsSlice.selectors.selectSortedCards(state, sortType)
   )
   const selectedCardId = useAppSelector(cardsSlice.selectors.selectSelectedCaedId)
-  console.log('selectedCardId :', selectedCardId)
 
   return (
     <div className='mx-auto w-fit space-y-2'>
