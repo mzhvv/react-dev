@@ -1,4 +1,4 @@
-import { CardsListNoRequest } from '@/modules/cards'
+import { CardsListNoRequest } from '@/modules/redux-cards'
 
 export const CardsNoReqPage = () => {
   return (

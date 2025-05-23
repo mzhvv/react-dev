@@ -98,9 +98,9 @@ const SelectedCard = ({ cardId }: { cardId: CardId }) => {
     <div className='space-y-2 text-center'>
       <Button onClick={handleBackButtonCLick}>back</Button>
       <div>
-        <h2>{card.title ?? 'a'}</h2>
-        <p>{card.id ?? 'b'}</p>
-        <p>{card.description ?? 'c'}</p>
+        <h2>{card.title}</h2>
+        <p>{card.id}</p>
+        <p>{card.description}</p>
       </div>
     </div>
   )

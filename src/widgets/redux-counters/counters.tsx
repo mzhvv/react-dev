@@ -1,4 +1,4 @@
-import { Counter } from '@/modules/counters'
+import { Counter } from '@/modules/redux-counters'
 
 export const CountersWidget = () => {
   return (

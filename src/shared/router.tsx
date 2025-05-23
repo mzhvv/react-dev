@@ -4,13 +4,15 @@ import { AppLayout } from '@/widgets/layouts/app-layout'
 import { MainPage } from '@/pages/main'
 
 import { DraftsLayout } from '@/widgets/layouts/drafts-layout'
-import { CardsLayout } from '@/widgets/layouts/cards-layout'
+import { ReduxCardsLayout } from '@/widgets/layouts/redux-cards-layout'
 
 import { CountersPage } from '@/pages/counters'
-import { CardsNoReqPage, CardsReqCompPage, CardsReqFuncPage } from '@/pages/cards'
+import { CardsNoReqPage, CardsReqCompPage } from '@/pages/redux-cards'
 
 import { ProductsLayout } from '@/widgets/layouts/products-layout'
-import { CMSProductsPage } from '@/pages/products'
+import { CMSProductsPage } from '@/pages/redux-products'
+import { CardItemReduxThunk } from '@/modules/redux-cards/thunk/card-item'
+import { CardsListReduxThunk } from '@/modules/redux-cards/thunk/cards-list'
 
 export const Router = () => {
   return (
@@ -21,10 +23,12 @@ export const Router = () => {
 
           <Route element={<DraftsLayout />}>
             <Route path='/drafts/counters' element={<CountersPage />} />
-            <Route element={<CardsLayout />}>
+            <Route element={<ReduxCardsLayout />}>
               <Route path='/drafts/cards/no-req' element={<CardsNoReqPage />} />
               <Route path='/drafts/cards/req-comp' element={<CardsReqCompPage />} />
-              <Route path='/drafts/cards/req-func' element={<CardsReqFuncPage />} />
+
+              <Route path='/drafts/cards/thunk' element={<CardsListReduxThunk />} />
+              <Route path='/drafts/cards/thunk/:id' element={<CardItemReduxThunk />} />
             </Route>
           </Route>
 

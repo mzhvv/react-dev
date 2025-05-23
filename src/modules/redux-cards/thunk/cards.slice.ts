@@ -11,23 +11,23 @@ type Card = {
 type CardsState = {
   entities: Record<CardId, Card | undefined>
   ids: CardId[]
-  selectedCardId: CardId | undefined
   fetchCardsStatus: 'idle' | 'pending' | 'success' | 'rejected'
+  fetchCardStatus: 'idle' | 'pending' | 'success' | 'rejected'
 }
 
 const initialCardsState: CardsState = {
   entities: {},
   ids: [],
-  selectedCardId: undefined,
   fetchCardsStatus: 'idle',
+  fetchCardStatus: 'idle',
 }
 
 export const cardsSlice = createSlice({
-  name: 'cards-req-func',
+  name: 'cards-thunk',
   initialState: initialCardsState,
 
   selectors: {
-    selectSelectedCaedId: state => state.selectedCardId,
+    selectCardById: (state, cardId: CardId) => state.entities[cardId],
 
     selectSortedCards: createSelector(
       (state: CardsState) => state.ids,
@@ -37,7 +37,7 @@ export const cardsSlice = createSlice({
       (ids, entities, sort) =>
         ids
           .map(id => entities[id])
-          .filter((card: Card | undefined): card is Card => card !== undefined)
+          .filter((card: Card | undefined): card is Card => !!card) // card !== undefined
           .sort((a, b) => {
             if (sort === 'asc') {
               return a.title.localeCompare(b.title)
@@ -49,6 +49,8 @@ export const cardsSlice = createSlice({
 
     selectIsFetchCardsPending: state => state.fetchCardsStatus === 'pending',
     selectIsFetchCardsIdle: state => state.fetchCardsStatus === 'idle',
+
+    selectIsFetchCardPending: state => state.fetchCardStatus === 'pending',
   },
 
   reducers: {
@@ -74,12 +76,18 @@ export const cardsSlice = createSlice({
       state.fetchCardsStatus = 'rejected'
     },
 
-    addSelected: (state, action: PayloadAction<{ cardId: CardId }>) => {
-      state.selectedCardId = action.payload.cardId
-    },
+    //
 
-    removeSelected: state => {
-      state.selectedCardId = undefined
+    fetchCardPending: state => {
+      state.fetchCardsStatus = 'pending'
+    },
+    fetchCardSuccess: (state, action: PayloadAction<{ card: Card }>) => {
+      const { card } = action.payload
+      state.fetchCardStatus = 'success'
+      state.entities[card.id] = card
+    },
+    fetchCardRejected: state => {
+      state.fetchCardsStatus = 'rejected'
     },
   },
 })

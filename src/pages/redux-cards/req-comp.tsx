@@ -1,4 +1,4 @@
-import { CardsListRequestInComponent } from '@/modules/cards'
+import { CardsListRequestInComponent } from '@/modules/redux-cards'
 
 export const CardsReqCompPage = () => {
   return (
