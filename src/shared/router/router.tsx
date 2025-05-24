@@ -1,5 +1,6 @@
 // src/shared/router/router.tsx
 
+import type { RouteObject } from 'react-router'
 import { createBrowserRouter, RouterProvider } from 'react-router'
 
 import { AppLayout } from '@/widgets/layouts/app-layout'
@@ -12,7 +13,7 @@ import { CardsListThunk, CardItemThunk } from '@/modules/redux-cards'
 import { ProductsLayout } from '@/widgets/layouts/products-layout'
 import { CMSProductsPage } from '@/pages/redux-products'
 
-import type { ReduxCardsRoutes } from './constants'
+import type { ReduxCardsPaths, ReduxCardsPrefix } from './constants'
 import { REDUX_CARDS_PREFIX, REDUX_CARDS_PATHS, PREFIX_GROUPS } from './constants'
 
 export const router = createBrowserRouter([
@@ -35,7 +36,10 @@ export const router = createBrowserRouter([
               { path: REDUX_CARDS_PATHS.THUNK, element: <CardsListThunk /> },
               { path: REDUX_CARDS_PATHS.THUNK_ID, element: <CardItemThunk /> },
             ],
-          } satisfies ReduxCardsRoutes,
+          } satisfies RouteObject & {
+            path: ReduxCardsPrefix
+            children: (RouteObject & { path: ReduxCardsPaths })[]
+          },
         ],
       },
 

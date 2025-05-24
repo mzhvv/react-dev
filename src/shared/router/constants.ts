@@ -1,8 +1,6 @@
 // src/shared/router/constants.ts
 
-import type { RouteObject } from 'react-router'
-
-// ...
+//
 
 export const PREFIX_GROUPS = {
   DRAFTS: 'drafts',
@@ -11,7 +9,7 @@ export const PREFIX_GROUPS = {
 // REDUX CARDS
 
 export const REDUX_CARDS_PREFIX = 'redux-cards' as const
-type ReduxCardsPrefix = typeof REDUX_CARDS_PREFIX
+export type ReduxCardsPrefix = typeof REDUX_CARDS_PREFIX
 
 export const REDUX_CARDS_PATHS = {
   NO_REQ: 'no-req',
@@ -20,12 +18,7 @@ export const REDUX_CARDS_PATHS = {
   THUNK_ID: 'thunk/:id',
 } as const
 type ReduxCardsPathsKey = keyof typeof REDUX_CARDS_PATHS
-type ReduxCardsPaths = (typeof REDUX_CARDS_PATHS)[ReduxCardsPathsKey]
-
-export type ReduxCardsRoutes = RouteObject & {
-  path: ReduxCardsPrefix
-  children: (RouteObject & { path: ReduxCardsPaths })[]
-}
+export type ReduxCardsPaths = (typeof REDUX_CARDS_PATHS)[ReduxCardsPathsKey]
 
 const reduxCardsAbsolutePath = `${PREFIX_GROUPS.DRAFTS}/${REDUX_CARDS_PREFIX}`
 export const REDUX_CARDS_PATHS_OBJECTS = {
