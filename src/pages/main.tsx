@@ -1,12 +1,13 @@
 import { Link } from 'react-router'
 
 import { Button } from '@/shared/ui/button'
+import { REDUX_CARDS_PATHS_OBJECTS } from '@/shared/router'
 
 // prettier-ignore
 const MAIN_NAVIGATION = [
   { title: 'drafts', links: [
     { to: '/drafts/counters', label: 'counters' },
-    { to: '/drafts/cards/req-comp', label: 'cards' }
+    { to: REDUX_CARDS_PATHS_OBJECTS['thunk'].absolutePath, label: 'redux-card'}
   ]},
   { title: 'products', links: [
     { to: '/products/cms-products', label: 'cms-products' }

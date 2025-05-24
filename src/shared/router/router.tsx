@@ -13,17 +13,7 @@ import { ProductsLayout } from '@/widgets/layouts/products-layout'
 import { CMSProductsPage } from '@/pages/redux-products'
 
 import type { ReduxCardsRoutes } from './constants'
-
-export const reduxCardsRoutes = {
-  element: <ReduxCardsLayout />,
-  path: 'redux-cards',
-  children: [
-    { path: 'no-req', element: <CardsNoReqPage /> },
-    { path: 'req-comp', element: <CardsReqCompPage /> },
-    { path: 'thunk', element: <CardsListThunk /> },
-    { path: 'thunk/:id', element: <CardItemThunk /> },
-  ],
-} satisfies ReduxCardsRoutes
+import { REDUX_CARDS_PREFIX, REDUX_CARDS_PATHS, PREFIX_GROUPS } from './constants'
 
 export const router = createBrowserRouter([
   {
@@ -33,20 +23,19 @@ export const router = createBrowserRouter([
 
       {
         element: <DraftsLayout />,
-        path: 'drafts',
+        path: PREFIX_GROUPS.DRAFTS,
         children: [
           { path: 'counters', element: <CountersPage /> },
-          reduxCardsRoutes,
-          // {
-          //   element: <ReduxCardsLayout />,
-          //   path: 'redux-cards',
-          //   children: [
-          //     { path: 'no-req', element: <CardsNoReqPage /> },
-          //     { path: 'req-comp', element: <CardsReqCompPage /> },
-          //     { path: 'thunk', element: <CardsListThunk /> },
-          //     { path: 'thunk/:id', element: <CardItemThunk /> },
-          //   ],
-          // } satisfies ReduxCardsRoutes,
+          {
+            element: <ReduxCardsLayout />,
+            path: REDUX_CARDS_PREFIX,
+            children: [
+              { path: REDUX_CARDS_PATHS.NO_REQ, element: <CardsNoReqPage /> },
+              { path: REDUX_CARDS_PATHS.REQ_COMP, element: <CardsReqCompPage /> },
+              { path: REDUX_CARDS_PATHS.THUNK, element: <CardsListThunk /> },
+              { path: REDUX_CARDS_PATHS.THUNK_ID, element: <CardItemThunk /> },
+            ],
+          } satisfies ReduxCardsRoutes,
         ],
       },
 

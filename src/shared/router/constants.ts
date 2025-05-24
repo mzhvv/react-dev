@@ -1,40 +1,45 @@
 // src/shared/router/constants.ts
 
 import type { RouteObject } from 'react-router'
-import {
-  // router,
-  reduxCardsRoutes,
-} from './router'
 
-const REDUX_CARDS_PREFIX = 'redux-cards' as const
+// ...
+
+export const PREFIX_GROUPS = {
+  DRAFTS: 'drafts',
+} as const
+
+// REDUX CARDS
+
+export const REDUX_CARDS_PREFIX = 'redux-cards' as const
 type ReduxCardsPrefix = typeof REDUX_CARDS_PREFIX
 
-const absolutePath = `/drafts/${REDUX_CARDS_PREFIX}`
-
-export const REDUX_CARDS_ROUTES_MAP = {
-  'no-req': { label: 'no-req', absolutePath: `${absolutePath}/no-req`, relativePath: null },
-  'req-comp': { label: 'req-comp', absolutePath: `${absolutePath}/req-comp`, relativePath: null },
-  thunk: { label: 'thunk', absolutePath: `${absolutePath}/thunk`, relativePath: null },
-
-  'thunk/:id': { absolutePath: `${absolutePath}/thunk/:id`, relativePath: null },
+export const REDUX_CARDS_PATHS = {
+  NO_REQ: 'no-req',
+  REQ_COMP: 'req-comp',
+  THUNK: 'thunk',
+  THUNK_ID: 'thunk/:id',
 } as const
-type ReduxCardsRoutesMap = keyof typeof REDUX_CARDS_ROUTES_MAP
+type ReduxCardsPathsKey = keyof typeof REDUX_CARDS_PATHS
+type ReduxCardsPaths = (typeof REDUX_CARDS_PATHS)[ReduxCardsPathsKey]
 
 export type ReduxCardsRoutes = RouteObject & {
   path: ReduxCardsPrefix
-  children: (RouteObject & { path: ReduxCardsRoutesMap })[]
+  children: (RouteObject & { path: ReduxCardsPaths })[]
 }
 
-type ReduxCardPaths = {
-  [K in keyof typeof REDUX_CARDS_ROUTES_MAP]: K extends `${string}/:id` ? never : K
-}[keyof typeof REDUX_CARDS_ROUTES_MAP]
-export const REDUX_CARDS_PATHS = reduxCardsRoutes.children
-  .map(route => route.path)
-  .filter((path): path is ReduxCardPaths => !path.includes('/:id')) satisfies ReduxCardPaths[]
-
-// export const reduxCardPaths2 = (router.routes[0].children
-//   ?.find(route => route.path === 'drafts')
-//   ?.children?.find(route => route.path === 'redux-cards')
-//   ?.children?.map(route => route.path)
-//   ?.filter((path): path is ReduxCardPaths => !path?.includes('/:id')) ??
-//   []) satisfies ReduxCardPaths[]
+const reduxCardsAbsolutePath = `${PREFIX_GROUPS.DRAFTS}/${REDUX_CARDS_PREFIX}`
+export const REDUX_CARDS_PATHS_OBJECTS = {
+  [REDUX_CARDS_PATHS.NO_REQ]: {
+    label: 'no-req',
+    absolutePath: `/${reduxCardsAbsolutePath}/${REDUX_CARDS_PATHS.NO_REQ}`,
+  },
+  [REDUX_CARDS_PATHS.REQ_COMP]: {
+    label: 'req-comp',
+    absolutePath: `/${reduxCardsAbsolutePath}/${REDUX_CARDS_PATHS.REQ_COMP}`,
+  },
+  [REDUX_CARDS_PATHS.THUNK]: {
+    label: 'thunk',
+    absolutePath: `/${reduxCardsAbsolutePath}/${REDUX_CARDS_PATHS.THUNK}`,
+  },
+} as const
+export const REDUX_CARDS_PATHS_MAP = Object.entries(REDUX_CARDS_PATHS_OBJECTS)
