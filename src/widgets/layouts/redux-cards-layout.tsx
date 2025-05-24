@@ -1,3 +1,6 @@
+// src/widgets/layouts/redux-cards-layout.tsx
+
+import { REDUX_CARDS_PATHS } from '@/shared/router'
 import { Button } from '@/shared/ui/button'
 import { Link, Outlet } from 'react-router'
 
@@ -14,10 +17,11 @@ export const ReduxCardsLayout = () => {
       <div>
         <h1>redux-cards</h1>
         <ul className='flex justify-center gap-3'>
-          {LINKS.map(link => (
-            <li key={link.to}>
+          {REDUX_CARDS_PATHS.map(link => (
+            <li key={link}>
               <Button asChild variant='link2' size='default2'>
-                <Link to={link.to}>{link.label}</Link>
+                {/* <Link to={link.to}>{link.label}</Link> */}
+                {link}
               </Button>
             </li>
           ))}

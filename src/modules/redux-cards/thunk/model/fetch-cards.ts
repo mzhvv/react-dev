@@ -3,10 +3,10 @@ import type { AppThunk } from '@/app/store'
 import { cardsSlice } from '../cards.slice'
 
 export const fetchCards =
-  (): AppThunk =>
+  ({ refetch }: { refetch?: boolean } = {}): AppThunk =>
   (dispatch, getState, { cardsApi }) => {
     const isIdle = cardsSlice.selectors.selectIsFetchCardsIdle(getState())
-    if (!isIdle) return
+    if (!isIdle && !refetch) return
 
     dispatch(cardsSlice.actions.fetchCardsPending())
     cardsApi

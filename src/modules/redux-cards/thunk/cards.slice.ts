@@ -13,6 +13,7 @@ type CardsState = {
   ids: CardId[]
   fetchCardsStatus: 'idle' | 'pending' | 'success' | 'rejected'
   fetchCardStatus: 'idle' | 'pending' | 'success' | 'rejected'
+  deleteCardStatus: 'idle' | 'pending' | 'success' | 'rejected'
 }
 
 const initialCardsState: CardsState = {
@@ -20,6 +21,7 @@ const initialCardsState: CardsState = {
   ids: [],
   fetchCardsStatus: 'idle',
   fetchCardStatus: 'idle',
+  deleteCardStatus: 'idle',
 }
 
 export const cardsSlice = createSlice({
@@ -28,7 +30,6 @@ export const cardsSlice = createSlice({
 
   selectors: {
     selectCardById: (state, cardId: CardId) => state.entities[cardId],
-
     selectSortedCards: createSelector(
       (state: CardsState) => state.ids,
       (state: CardsState) => state.entities,
@@ -47,17 +48,16 @@ export const cardsSlice = createSlice({
           })
     ),
 
-    selectIsFetchCardsPending: state => state.fetchCardsStatus === 'pending',
     selectIsFetchCardsIdle: state => state.fetchCardsStatus === 'idle',
-
+    selectIsFetchCardsPending: state => state.fetchCardsStatus === 'pending',
     selectIsFetchCardPending: state => state.fetchCardStatus === 'pending',
+    selectIsDeleteCardPending: state => state.deleteCardStatus === 'pending',
   },
 
   reducers: {
     fetchCardsPending: state => {
       state.fetchCardsStatus = 'pending'
     },
-
     fetchCardsSuccess: (state, action: PayloadAction<{ cards: Card[] }>) => {
       const { cards } = action.payload
 
@@ -71,7 +71,6 @@ export const cardsSlice = createSlice({
       )
       state.ids = cards.map(card => card.id)
     },
-
     fetchCardsRejected: state => {
       state.fetchCardsStatus = 'rejected'
     },
@@ -82,11 +81,27 @@ export const cardsSlice = createSlice({
       state.fetchCardsStatus = 'pending'
     },
     fetchCardSuccess: (state, action: PayloadAction<{ card: Card }>) => {
-      const { card } = action.payload
       state.fetchCardStatus = 'success'
+
+      const { card } = action.payload
       state.entities[card.id] = card
     },
     fetchCardRejected: state => {
+      state.fetchCardsStatus = 'rejected'
+    },
+
+    //
+
+    deleteCardPending: state => {
+      state.fetchCardsStatus = 'pending'
+    },
+    deleteCardSuccess: (state, action: PayloadAction<{ cardId: CardId }>) => {
+      state.fetchCardStatus = 'success'
+
+      delete state.entities[action.payload.cardId]
+      state.ids = state.ids.filter(cardId => cardId !== action.payload.cardId)
+    },
+    deleteCardRejected: state => {
       state.fetchCardsStatus = 'rejected'
     },
   },

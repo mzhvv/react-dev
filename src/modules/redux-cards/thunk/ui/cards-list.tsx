@@ -1,19 +1,19 @@
 import { memo, useEffect, useState } from 'react'
-
-import { Button } from '@/shared/ui/button'
-import { useAppSelector, useAppStore } from '@/app/store'
-
-import type { CardId } from './cards.slice'
-import { cardsSlice } from './cards.slice'
-import { fetchCards } from './model/fetch-cards'
 import { useNavigate } from 'react-router'
 
-export const CardsListReduxThunk = () => {
-  // console.log('render CardsList[cards-req-func]')
+import { useAppSelector, useAppStore } from '@/app/store'
+import { Button } from '@/shared/ui/button'
 
-  const isPending = useAppSelector(cardsSlice.selectors.selectIsFetchCardsPending)
+import type { CardId } from '../cards.slice'
+import { cardsSlice } from '../cards.slice'
+import { fetchCards } from '../model/fetch-cards'
+
+export const CardsList = () => {
+  // console.log('render ThunkCardsList (cards-thunk)')
 
   const appStore = useAppStore()
+
+  const isPending = useAppSelector(cardsSlice.selectors.selectIsFetchCardsPending)
 
   useEffect(() => {
     fetchCards()
@@ -45,18 +45,17 @@ export const CardsListReduxThunk = () => {
 }
 
 const CardListItem = memo(function CardListItem({ cardId }: { cardId: CardId }) {
-  // console.log('render CardListItem [cards-req-func]:', cardId)
+  // console.log('render ThunkCardListItem (cards-thunk):', cardId)
 
   const navigate = useNavigate()
 
   const card = useAppSelector(state => state['cards-thunk'].entities[cardId])
 
-  if (!card) return <div>error</div>
-
   const handleCardClick = () => {
     navigate(cardId, { relative: 'path' })
   }
 
+  if (!card) return <div>error</div>
   return (
     <li>
       <Button onClick={handleCardClick} variant='link2' size='default2'>

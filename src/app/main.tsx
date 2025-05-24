@@ -4,7 +4,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 
 import { Providers } from './providers'
-import { Router } from '../shared/router'
+import { Router } from '../shared/router/router'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
