@@ -1,0 +1,14 @@
+{
+  "nav": {
+    "dev": "dev",
+    "ui": "ui",
+    "redux": "Редакс",
+
+    "projects": "Проекты",
+    "todo": "Задачи",
+    "blog": "Блог"
+  },
+  "common": {
+    "language": "Язык"
+  }
+}

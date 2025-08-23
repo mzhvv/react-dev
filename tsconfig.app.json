@@ -1,3 +1,5 @@
+// tsconfig.app.json
+
 {
   "compilerOptions": {
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
@@ -29,5 +31,27 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": [
+    "src/**/*.test-d.ts",
+    "src/**/*.test.ts",
+    // "src/**/*.spec.ts",
+    "src/**/*.stories.tsx",
+    // "src/**/*.stories.jsx",
+
+    ".storybook",
+    ".vscode",
+    ".github",
+
+    "coverage",
+    ".nyc_output",
+    ".eslintcache",
+
+    "dist",
+    "build",
+    "node_modules",
+
+    "*.log",
+    "*.tmp"
+  ]
 }
