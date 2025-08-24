@@ -9,25 +9,7 @@ import jsxA11y from 'eslint-plugin-jsx-a11y'
 
 export default [
   {
-    ignores: [
-      'dist/',
-      'build/',
-      'coverage/',
-      '.storybook',
-      '.vscode',
-      '.github',
-      '.nyc_output',
-      '.eslintcache',
-      'node_modules/',
-      '*.log',
-      '*.tmp',
-
-      'src/**/*.test-d.ts',
-      'src/**/*.test.ts',
-      // 'src/**/*.spec.ts',
-      'src/**/*.stories.tsx',
-      // 'src/**/*.stories.jsx',
-    ],
+    ignores: ['src/**/*.test-d.ts'],
   },
 
   js.configs.recommended,

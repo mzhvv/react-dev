@@ -14,12 +14,12 @@ import {
   ApplicationMapPage,
   HomePage,
 } from '@/pages'
-import { AppLayout } from '@/widgets'
 
 import type { configRoutesAPI } from '@/shared/config/routes'
 
 import type { RouterRoutes } from './types'
 import { conversionToRouteObject } from './utils/conversion-to-RouteObject'
+import { AppLayout } from '@/widgets'
 
 // prettier-ignore
 const  routerRoutes = {

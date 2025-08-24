@@ -9,7 +9,7 @@ export const MainPage: React.FC = () => {
       <ul className='list-inside list-disc'>
         {LINKS.map(link => (
           <li key={link.to}>
-            <Button asChild variant='link2' size='default2'>
+            <Button asChild variant='link2' size='default'>
               <Link to={link.to}>{link.label}</Link>
             </Button>
           </li>

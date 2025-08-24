@@ -23,7 +23,7 @@ export default defineConfig({
       reporter: ['text', 'json', 'html'],
     },
     include: ['src/**/*.test.{ts,tsx}'],
-    exclude: ['**/*.test.d.ts', '**/*.test.disabled.ts'],
+    exclude: ['src/**/*.test.disabled.{ts,tsx}'],
 
     // You are using a frozen webkit browser which does not receive updates anymore on mac11. Please update to the latest version of your operating system to test up-to-date browsers.
     // projects: [

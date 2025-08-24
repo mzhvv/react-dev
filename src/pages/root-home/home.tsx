@@ -11,11 +11,15 @@ export const HomePage: React.FC = () => {
 
       <HomeSection
         dataId='intro'
-        className='' // h-[calc(100svh-180px-40px-20px)]
+        // className='h-[calc(100svh-180px-40px-20px)]'
       >
-        <Section.Slot>
+        <Section.Slot
+        // className='h-full'
+        >
           <Section.Content className='flex flex-col items-center justify-start gap-5'>
+            <p>Привет, я Максим</p>
             <p>Software Engineer — JavaScript, TypeScript & Node.js Developer</p>
+            <p>...</p>
           </Section.Content>
         </Section.Slot>
       </HomeSection>

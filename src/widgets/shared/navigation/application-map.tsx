@@ -15,9 +15,5 @@ const routerLink: SafeRouterLink = { to: '/application-map', label: 'application
 // model/ui
 
 export const ApplicationMap: React.FC = () => {
-  return (
-    <RouterLink // <SafeRouterLink>
-      link={routerLink}
-    />
-  )
+  return <RouterLink link={routerLink} />
 }

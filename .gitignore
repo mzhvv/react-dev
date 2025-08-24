@@ -83,3 +83,6 @@ pids
 *.pid
 *.seed
 *.pid.lock
+
+# Chromatic config
+chromatic.config.json

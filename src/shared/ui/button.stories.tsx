@@ -1,8 +1,10 @@
 // src/shared/ui/button.stories.jsx
 
+import type { Meta, StoryObj } from '@storybook/react'
 import { Button } from './button'
+import { userEvent, within } from '@storybook/test'
 
-export default {
+const meta: Meta<typeof Button> = {
   title: 'Components/Button',
   component: Button,
   tags: ['autodocs'],
@@ -19,10 +21,28 @@ export default {
   },
 }
 
-export const Default = {
+export default meta
+
+type Story = StoryObj<typeof Button>
+
+export const Default: Story = {
   args: {
     children: 'Default Button',
     variant: 'default',
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const button = canvas.getByRole('button')
+
+    // 1️⃣ Клик (логируется через action)
+    await userEvent.click(button)
+
+    // 2️⃣ Ховер
+    await userEvent.hover(button)
+    // Можно проверять стили через canvasElement / кнопки
+    const style = getComputedStyle(button)
+    console.log('Cursor on hover:', style.cursor) // для отладки
+    await userEvent.unhover(button)
   },
 }
 

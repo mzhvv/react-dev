@@ -1,0 +1,13 @@
+// tsconfig.tsc-test.json
+
+{
+  "extends": "./tsconfig.app.json",
+  "compilerOptions": {
+    /* Linting */
+    "noEmit": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false
+  },
+  "include": ["src/**/*.test-d.ts"],
+  "exclude": []
+}
