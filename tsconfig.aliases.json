@@ -1,0 +1,21 @@
+// tsconfig.alias.json
+
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@react-dev/*": ["./src/apps/react-dev/*"],
+      "@react-dev": ["./src/apps/react-dev/index.ts"],
+
+      "@apps/*": ["./src/apps/*"],
+      "@apps": ["./src/apps/index.ts"],
+
+      "@navigation": ["./src/apps/navigation-accumulate.ts"],
+      "@router": ["./src/libs/router/index.ts"],
+
+      "@ui/*": ["./src/ui/*"],
+
+      "@/*": ["./src/*"]
+    }
+  }
+}

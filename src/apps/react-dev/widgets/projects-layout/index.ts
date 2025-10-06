@@ -1,0 +1,1 @@
+export { ProjectsLayout } from './layout'

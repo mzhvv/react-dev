@@ -1,0 +1,9 @@
+**/*.md
+
+package-lock.json
+dist/
+build/
+node_modules/
+coverage/
+*.log
+.DS_Store
