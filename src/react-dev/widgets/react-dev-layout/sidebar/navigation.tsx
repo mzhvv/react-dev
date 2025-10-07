@@ -1,7 +1,7 @@
 // import { GripIcon } from 'lucide-react'
 // import { Button } from '@ui/components'
 
-import { NAVIGATION_ARRAY } from '@navigation'
+import { NAVIGATION_SECTIONS } from '@navigation'
 
 import { SidebarReactDevNavigationLists } from './navigation-lists'
 
@@ -25,7 +25,7 @@ export const Navigation: React.FC<{ className?: string }> = ({ className }) => {
           </div>
         </div> */}
 
-        <SidebarReactDevNavigationLists navigationArray={NAVIGATION_ARRAY} />
+        <SidebarReactDevNavigationLists navigationArray={NAVIGATION_SECTIONS} />
       </div>
       <div className='bg-border/50 my-2 w-px rounded-full' />
     </nav>

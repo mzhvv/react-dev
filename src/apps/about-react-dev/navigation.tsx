@@ -1,7 +1,7 @@
-import type { NavigationObject } from '@navigation'
+import type { NavigationLinkObject } from '@navigation'
 
 import type { Path } from './types'
 
 export const navigationAboutReactDev = [
   { path: '/about-react-dev', title: 'About react-dev' },
-] as const satisfies NavigationObject<Path>[]
+] as const satisfies NavigationLinkObject<Path>[]

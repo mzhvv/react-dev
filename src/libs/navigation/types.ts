@@ -1,17 +1,28 @@
 import type { LucideIcon } from 'lucide-react'
 
-export type NavigationSection = 'application' | 'author' | 'projects' | 'development' | 'secondary'
+export type NavigationSectionKey =
+  | 'application'
+  | 'author'
+  | 'projects'
+  | 'development'
+  | 'secondary'
 
-export type NavigationObject<T extends string = string> = {
+export type NavigationLinkObject<T extends string = string> = {
   path: `/${T}`
   title: string
   icon?: LucideIcon
 }
 
-export type NavigationAccumulate = Record<NavigationSection, NavigationObject[]>
+export type NavigationAccumulate = Record<NavigationSectionKey, NavigationLinkObject[]>
 
-export type NavigationArray = {
-  key: NavigationSection
-  title: string
-  links: NavigationObject[]
-}
+export type NavigationSection = { title: string; links: NavigationLinkObject[] }
+
+export type NavigationSections = (NavigationSection & {
+  key: NavigationSectionKey
+})[]
+
+// export type NavigationSections = {
+//   key: NavigationSectionKey
+//   title: string
+//   links: NavigationLinkObject[]
+// }[]

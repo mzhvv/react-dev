@@ -1,4 +1,4 @@
-import { NAVIGATION_ARRAY } from '@navigation'
+import { NAVIGATION_SECTIONS } from '@navigation'
 import { SidebarReactDevNavigationLists } from '@/react-dev/widgets/react-dev-layout/sidebar/navigation-lists'
 
 export const ReactDevPage = () => {
@@ -33,7 +33,7 @@ export const ReactDevPage = () => {
           <p className='text-sm leading-none font-medium'>Workspace for React development</p>
         </header>
         <div className='flex justify-center'>
-          <SidebarReactDevNavigationLists navigationArray={NAVIGATION_ARRAY} />
+          <SidebarReactDevNavigationLists navigationArray={NAVIGATION_SECTIONS} />
         </div>
       </section>
     </main>

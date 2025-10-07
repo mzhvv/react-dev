@@ -1,3 +1,13 @@
+
+src/main.tsx <- react-dev <- lib <- apps
+src/main.tsx <────────────── lib <- apps
+ui - ДОСТУПЕН ВЕЗДЕ! ВКЛЮЧАЯ ui/hooks, ui/lib и т.д.
+КРОСС-ИМПОРТ lib И apps ЗАПРЕЩЕН!
+
+
+
+
+
 # react-dev
 
 ## Струкрута

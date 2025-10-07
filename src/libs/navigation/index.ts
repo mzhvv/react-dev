@@ -1,2 +1,9 @@
-export type * from './types'
-export * from './navigation'
+export type { NavigationAccumulate, NavigationLinkObject } from './types'
+export {
+  NAVIGATION_SECTIONS,
+  NAVIGATION_APPLICATION_SECTION,
+  NAVIGATION_AUTHOR_SECTION,
+  NAVIGATION_PROJECTS_SECTION,
+  NAVIGATION_DEVELOPMENT_SECTION,
+  NAVIGATION_SECONDARY_SECTION,
+} from './navigation'
