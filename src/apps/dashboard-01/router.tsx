@@ -1,5 +1,8 @@
-import type { RouteObject } from 'react-router'
 import { lazy, Suspense } from 'react'
+
+import type { RouteObject } from '@router'
+
+import type { Path } from './types'
 
 const LazyDashboard01Page = lazy(() =>
   import('./page').then(module => ({
@@ -20,4 +23,4 @@ export const routesDashboard01 = [
     path: 'dashboard-01',
     element: <Dashboard01Page />,
   },
-] as const satisfies RouteObject[]
+] as const satisfies RouteObject<Path>[]

@@ -9,5 +9,3 @@ export const routesAboutReactDev = [
     element: <AboutReactDevPage />,
   },
 ] as const satisfies RouteObject<Path>[]
-
-//

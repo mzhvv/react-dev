@@ -1,31 +1,17 @@
-import type { LucideIcon } from 'lucide-react'
+import { navigationAccumulate } from '@apps'
 
-import { navigationAccumulate as accumulateNavigationProjects } from '@apps'
-
-export type NavigationSection = 'reactDev' | 'author' | 'projects' | 'development' | 'secondary'
-
-export type NavigationObject<T extends string = string> = {
-  path: T
-  title: string
-  icon?: LucideIcon
-}
-
-export type NavigationArray = {
-  key: keyof typeof accumulateNavigationProjects
-  title: string
-  links: NavigationObject[]
-}
+import type { NavigationArray } from './types'
 
 export const NAVIGATION_ARRAY = [
   {
-    key: 'reactDev',
-    title: 'react-dev',
-    links: accumulateNavigationProjects.reactDev,
+    key: 'application',
+    title: 'application',
+    links: navigationAccumulate.application,
   },
   {
     key: 'author',
     title: 'Author',
-    links: accumulateNavigationProjects.author,
+    links: navigationAccumulate.author,
   },
   {
     key: 'projects',
@@ -35,11 +21,11 @@ export const NAVIGATION_ARRAY = [
   {
     key: 'development',
     title: 'Development',
-    links: accumulateNavigationProjects.development,
+    links: navigationAccumulate.development,
   },
   {
     key: 'secondary',
     title: 'Secondary',
-    links: accumulateNavigationProjects.secondary,
+    links: navigationAccumulate.secondary,
   },
 ] as const satisfies NavigationArray[]
