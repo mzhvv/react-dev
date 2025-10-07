@@ -6,27 +6,24 @@ import type { NavigationSections, NavigationSectionKey } from './types'
 
 export const NAVIGATION_SECTIONS = [
   {
-    key: 'application',
     title: 'Application',
     links: navigationAccumulate.application,
+    // Циклическая зависимость! Uncaught ReferenceError: Cannot access 'navigationReactDev' before initialization at navigation.tsx:11:16 - если [...navigationReactDev, ...]
+    // Модификация NAVIGATION_SECTIONS[0] через spread - src/react-dev/widgets/react-dev-layout/sidebar/navigation.tsx
   },
   {
-    key: 'author',
     title: 'Author',
     links: navigationAccumulate.author,
   },
   {
-    key: 'projects',
     title: 'Projects',
     links: [],
   },
   {
-    key: 'development',
     title: 'Development',
     links: navigationAccumulate.development,
   },
   {
-    key: 'secondary',
     title: 'Secondary',
     links: navigationAccumulate.secondary,
   },

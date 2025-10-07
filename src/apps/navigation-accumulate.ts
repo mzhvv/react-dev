@@ -2,7 +2,7 @@
 
 import type { NavigationAccumulate } from '@navigation'
 
-import { navigationAboutReactDev } from './about-react-dev'
+import { navigationAboutReactDev } from './react-dev-about'
 import { navigationCollaboration } from './collaboration'
 import { navigationPproject01 } from './project-01'
 import { navigationDashboard01 } from './dashboard-01'
