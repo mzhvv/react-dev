@@ -1,12 +1,12 @@
 import { Outlet } from 'react-router'
 
-import { ReactDevSidebar } from './sidebar'
+import { SidebarReactDev } from './sidebar'
 
 export const ReactDevLayout = () => {
   return (
     <>
       <div className='flex [&>*:last-child]:flex-1'>
-        <ReactDevSidebar />
+        <SidebarReactDev />
         <Outlet />
       </div>
     </>

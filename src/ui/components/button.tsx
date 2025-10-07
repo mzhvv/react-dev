@@ -20,6 +20,8 @@ const buttonVariants = cva(
 
         'gradient-primary-sky':
           'bg-gradient-to-br from-primary hover:from-primary/90 to-sky-400 hover:to-sky-400/90 text-primary-foreground',
+        'gradient-secondary-white':
+          'bg-gradient-to-br from-secondary hover:from-secondary/90 to-white hover:to-white text-secondary-foreground',
       },
       size: {
         sm: 'h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5',
@@ -29,6 +31,8 @@ const buttonVariants = cva(
         'icon-sm': 'size-8',
         icon: 'size-9',
         'icon-lg': 'size-10',
+
+        sidebar: 'h-8 rounded-md gap-1.5 px-0 has-[>svg]:px-2 justify-start px-2 w-full',
       },
     },
     defaultVariants: {

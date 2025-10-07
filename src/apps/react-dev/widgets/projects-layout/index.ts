@@ -1,1 +1,0 @@
-export { ProjectsLayout } from './layout'

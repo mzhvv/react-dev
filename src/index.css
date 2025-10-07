@@ -54,7 +54,9 @@
   --background: oklch(1 0 0);
   --foreground: oklch(0.141 0.005 285.823);
 
-  --primary: oklch(0.623 0.214 259.815); /* #2b7fff */
+  /* --primary: oklch(0.623 0.214 259.815); #2b7fff */
+  --primary: oklch(0.55 0.22 263); /* #2b7fff */
+
   --primary-foreground: oklch(0.97 0.014 254.604); /* #eff6ff */
   --secondary: oklch(0.967 0.001 286.375);
   --secondary-foreground: oklch(0.21 0.006 285.885);
@@ -133,5 +135,18 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  h1 {
+    @apply scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance;
+  }
+  h2 {
+    @apply scroll-m-20 pb-2 text-3xl font-semibold tracking-tight first:mt-0;
+  }
+  h3 {
+    @apply scroll-m-20 text-2xl font-semibold tracking-tight;
+  }
+  h4 {
+    @apply scroll-m-20 text-xl font-semibold tracking-tight;
   }
 }

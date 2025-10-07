@@ -4,13 +4,13 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@react-dev/*": ["./src/apps/react-dev/*"],
-      "@react-dev": ["./src/apps/react-dev/index.ts"],
+      "@react-dev/*": ["./src/react-dev/*"],
+      "@react-dev": ["./src/react-dev/index.ts"],
 
       "@apps/*": ["./src/apps/*"],
       "@apps": ["./src/apps/index.ts"],
 
-      "@navigation": ["./src/apps/navigation-accumulate.ts"],
+      "@navigation": ["./src/libs/navigation/index.ts"],
       "@router": ["./src/libs/router/index.ts"],
 
       "@ui/*": ["./src/ui/*"],

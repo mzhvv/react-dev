@@ -1,1 +1,0 @@
-export { ReactDevSidebar } from './sidebar'

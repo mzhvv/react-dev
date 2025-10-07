@@ -10,11 +10,11 @@ export default defineConfig({
 
   resolve: {
     alias: {
-      '@react-dev': resolve(__dirname, './src/apps/react-dev'),
+      '@react-dev': resolve(__dirname, './src/react-dev'),
 
       '@apps': resolve(__dirname, './src/apps'),
 
-      '@navigation': resolve(__dirname, './src/apps/navigation-accumulate.ts'),
+      '@navigation': resolve(__dirname, './src/libs/navigation'),
       '@router': resolve(__dirname, './src/libs/router'),
 
       '@ui': path.resolve(__dirname, './src/ui'),
