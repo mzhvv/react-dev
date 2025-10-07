@@ -15,14 +15,13 @@ export type NavigationLinkObject<T extends string = string> = {
 
 export type NavigationAccumulate = Record<NavigationSectionKey, NavigationLinkObject[]>
 
-export type NavigationSection = { title: string; links: NavigationLinkObject[] }
-
-export type NavigationSections = (NavigationSection & {
-  key: NavigationSectionKey
-})[]
-
-// export type NavigationSections = {
+// export type NavigationSection = { title: string; links: NavigationLinkObject[] }
+// export type NavigationSections = (NavigationSection & {
 //   key: NavigationSectionKey
-//   title: string
-//   links: NavigationLinkObject[]
-// }[]
+// })[]
+
+export type NavigationSections = {
+  key: NavigationSectionKey
+  title: string
+  links: NavigationLinkObject[]
+}[]

@@ -1,12 +1,12 @@
 import { Link } from 'react-router'
 
 import { Button } from '@ui/components'
-import { type NavigationArray } from '@navigation'
+import { type NavigationSections } from '@navigation'
 
 export const SidebarReactDevNavigationLists: React.FC<{
-  navigationArray: NavigationArray[]
-}> = ({ navigationArray }) => {
-  return navigationArray.map(object => (
+  navigationSections: NavigationSections
+}> = ({ navigationSections }) => {
+  return navigationSections.map(object => (
     <div key={object.key} className='p-2'>
       <div
         className='text-sidebar-foreground/70 flex h-7 items-center px-2 text-xs'

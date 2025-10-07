@@ -1,4 +1,4 @@
-export type { NavigationAccumulate, NavigationLinkObject } from './types'
+export type { NavigationAccumulate, NavigationLinkObject, NavigationSections } from './types'
 export {
   NAVIGATION_SECTIONS,
   NAVIGATION_APPLICATION_SECTION,
