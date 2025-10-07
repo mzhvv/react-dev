@@ -1,6 +1,8 @@
+import { Navigation } from '@react-dev/widgets/home'
+
 export const HomePage = () => {
   return (
-    <main className='mx-auto max-w-screen-sm space-y-4 pt-4 text-center'>
+    <main className='mx-auto max-w-screen-sm space-y-8 pt-4 text-center'>
       <header className='space-y-4'>
         <div>
           <h1>Welcome in react-dev</h1>
@@ -23,8 +25,13 @@ export const HomePage = () => {
             </a>
           </p>
         </div>
-        <p>Workspace for React development</p>
       </header>
+
+      <section>
+        <p>Workspace for React development</p>
+      </section>
+
+      <Navigation />
     </main>
   )
 }

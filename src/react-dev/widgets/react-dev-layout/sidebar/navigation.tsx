@@ -1,22 +1,47 @@
 // src/react-dev/widgets/react-dev-layout/sidebar/navigation.tsx
 
-import { NAVIGATION_SECTIONS } from '@navigation'
+import { Link } from 'react-router'
+import type { NavigationLink, NavigationSections } from '@navigation'
+import { Button } from '@ui/components'
 
-import { navigationReactDev } from '@react-dev/app/navigation'
-
-import { NavigationList } from './navigation-list'
-
-const [application, author, ...rest] = NAVIGATION_SECTIONS
-const MODIFIED_NAVIGATION_SECTIONS = [
-  { ...application, links: [...navigationReactDev.slice(0, 2), ...application.links] },
-  { ...author, links: [navigationReactDev[2], ...author.links] },
-  ...rest,
-] // Импорт @react-dev/app/navigation в @apps/navigation-accumulate и @navigation/navigation - Циклическая зависимость! ✅ - пока оставлю так
+import { NAVIGATION_SECTIONS_FOR_SIDEBAR } from '@react-dev/shared/navigation'
 
 export const Navigation = () => {
   return (
-    <nav aria-label='navigation' className='h-svh flex-1'>
-      <NavigationList navigationSections={MODIFIED_NAVIGATION_SECTIONS} />
+    <nav aria-label='navigation' className='flex-1'>
+      <NavigationList navigationSections={NAVIGATION_SECTIONS_FOR_SIDEBAR} />
     </nav>
+  )
+}
+
+export const NavigationList: React.FC<{ navigationSections: NavigationSections }> = ({
+  navigationSections,
+}) => {
+  return (
+    <ul className='p-2'>
+      {navigationSections.map(sections => (
+        <li key={sections.title} className='space-y-2 p-2'>
+          <h3 className='text-sidebar-foreground/70 px-2 text-xs font-medium'>{sections.title}</h3>
+          <ul>
+            {sections.links.map(link => (
+              <NavigationItem key={link.path} link={link} />
+            ))}
+          </ul>
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+const NavigationItem: React.FC<{ link: NavigationLink }> = ({ link }) => {
+  return (
+    <li>
+      <Button asChild variant='ghost' size='sm' className='w-full justify-start px-2'>
+        <Link to={link.path}>
+          {'icon' in link && link.icon && <link.icon />}
+          {link.title}
+        </Link>
+      </Button>
+    </li>
   )
 }

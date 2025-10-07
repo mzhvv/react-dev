@@ -1,2 +1,2 @@
 export { routesReactDev } from './app/routes'
-export { navigationReactDev } from './app/navigation'
+export { navigationReactDev } from './shared/navigation/navigation'

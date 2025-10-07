@@ -4,7 +4,7 @@ import { Settings2Icon, User2Icon } from 'lucide-react'
 
 export const Header = () => {
   return (
-    <header className='flex h-svh w-fit flex-none flex-col justify-between'>
+    <header className='flex w-fit flex-none flex-col justify-between'>
       <div className='p-4'>
         <Button asChild variant='gradient-primary-sky' size='icon' className='shadow'>
           <Link to='/' className='text-base font-bold tracking-tighter'>

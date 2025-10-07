@@ -1,3 +1,5 @@
+// src/react-dev/shared/navigation/navigation.tsx
+
 import { HandshakeIcon, HomeIcon } from 'lucide-react'
 
 import type { NavigationLink } from '@navigation'
