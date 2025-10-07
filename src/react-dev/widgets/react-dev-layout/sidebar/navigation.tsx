@@ -3,7 +3,7 @@
 
 import { NAVIGATION_SECTIONS } from '@navigation'
 
-import { SidebarReactDevNavigationLists } from './navigation-lists'
+import { NavigationSections } from '@react-dev/shared/ui'
 
 export const Navigation: React.FC<{ className?: string }> = ({ className }) => {
   return (
@@ -25,7 +25,7 @@ export const Navigation: React.FC<{ className?: string }> = ({ className }) => {
           </div>
         </div> */}
 
-        <SidebarReactDevNavigationLists navigationSections={NAVIGATION_SECTIONS} />
+        <NavigationSections navigationSections={NAVIGATION_SECTIONS} variant='sidebar' />
       </div>
       <div className='bg-border/50 my-2 w-px rounded-full' />
     </nav>

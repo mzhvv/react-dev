@@ -5,12 +5,13 @@ import {
   NAVIGATION_PROJECTS_SECTION,
   NAVIGATION_SECONDARY_SECTION,
 } from '@navigation'
-import { SidebarReactDevNavigationLists } from '@/react-dev/widgets/react-dev-layout/sidebar/navigation-lists'
+
+import { NavigationSections } from '@react-dev/shared/ui'
 
 export const ReactDevPage = () => {
   return (
-    <main className='mx-auto max-w-screen-sm space-y-8 pt-8 text-center'>
-      <header className='space-y-8'>
+    <main className='mx-auto max-w-screen-sm space-y-12 pt-12 text-center'>
+      <header className='space-y-12'>
         <div>
           <h1>Welcome in react-dev</h1>
           <p>
@@ -36,21 +37,23 @@ export const ReactDevPage = () => {
       </header>
 
       <section>
-        <div className='flex justify-center'>
-          <SidebarReactDevNavigationLists
+        <div className='flex justify-center gap-2'>
+          <NavigationSections
             navigationSections={[NAVIGATION_APPLICATION_SECTION, NAVIGATION_AUTHOR_SECTION]}
+            variant='page'
           />
         </div>
       </section>
 
       <section>
-        <div className='flex justify-center'>
-          <SidebarReactDevNavigationLists
+        <div className='flex justify-center gap-2'>
+          <NavigationSections
             navigationSections={[
               NAVIGATION_PROJECTS_SECTION,
               NAVIGATION_DEVELOPMENT_SECTION,
               NAVIGATION_SECONDARY_SECTION,
             ]}
+            variant='page'
           />
         </div>
       </section>
