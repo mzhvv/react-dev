@@ -2,4 +2,4 @@ export {
   NAVIGATION_SECTIONS_FOR_SIDEBAR,
   NAVIGATION_SECTIONS_FOR_PAGE_1,
   NAVIGATION_SECTIONS_FOR_PAGE_2,
-} from './navigation-sections'
+} from './navigation-data'

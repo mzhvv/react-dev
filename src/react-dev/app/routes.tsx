@@ -1,4 +1,5 @@
 // src/react-dev/app/router.tsx
+
 import type { RouteObject } from '@router'
 
 import type { Path } from '@react-dev/shared/types'
@@ -8,7 +9,7 @@ import { AboutPage } from '@react-dev/pages/about'
 import { CollaborationPage } from '@react-dev/pages/collaboration'
 
 export const routesReactDev = {
-  path: undefined,
+  path: undefined, //  path: '/'
   element: <ReactDevLayout />,
   children: [
     {
