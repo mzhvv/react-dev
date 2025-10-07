@@ -2,14 +2,13 @@
 
 import type { NavigationAccumulate } from '@navigation'
 
-import { navigationAboutReactDev } from './react-dev-about'
-import { navigationCollaboration } from './collaboration'
 import { navigationPproject01 } from './project-01'
 import { navigationDashboard01 } from './dashboard-01'
 
 export const navigationAccumulate = {
-  application: [...navigationAboutReactDev],
-  author: [...navigationCollaboration],
+  application: [],
+  // application: [...navigationReactDev], - Циклическая зависимость! ✅
+  author: [],
   projects: [],
   development: [...navigationPproject01],
   secondary: [...navigationDashboard01],

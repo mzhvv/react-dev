@@ -1,4 +1,4 @@
-export const ReactDevPage = () => {
+export const HomePage = () => {
   return (
     <main className='mx-auto max-w-screen-sm space-y-4 pt-4 text-center'>
       <header className='space-y-4'>

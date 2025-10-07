@@ -6,11 +6,12 @@ import { navigationReactDev } from '@react-dev/app/navigation'
 
 import { NavigationList } from './navigation-list'
 
-const [application, ...rest] = NAVIGATION_SECTIONS
+const [application, author, ...rest] = NAVIGATION_SECTIONS
 const MODIFIED_NAVIGATION_SECTIONS = [
-  { ...application, links: [...navigationReactDev, ...application.links] },
+  { ...application, links: [...navigationReactDev.slice(0, 2), ...application.links] },
+  { ...author, links: [navigationReactDev[2], ...author.links] },
   ...rest,
-]
+] // Импорт @react-dev/app/navigation в @apps/navigation-accumulate и @navigation/navigation - Циклическая зависимость! ✅ - пока оставлю так
 
 export const Navigation = () => {
   return (

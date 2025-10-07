@@ -1,5 +1,3 @@
-// src/react-dev/widgets/react-dev-layout/sidebar/navigation-list.tsx
-
 import { Link } from 'react-router'
 
 import type { NavigationLink, NavigationSections } from '@navigation'

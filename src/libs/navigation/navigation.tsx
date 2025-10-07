@@ -8,8 +8,7 @@ export const NAVIGATION_SECTIONS = [
   {
     title: 'Application',
     links: navigationAccumulate.application,
-    // Циклическая зависимость! Uncaught ReferenceError: Cannot access 'navigationReactDev' before initialization at navigation.tsx:11:16 - если [...navigationReactDev, ...]
-    // Модификация NAVIGATION_SECTIONS[0] через spread - src/react-dev/widgets/react-dev-layout/sidebar/navigation.tsx
+    // links: [...navigationAccumulate.application, ...navigationReactDev] - Циклическая зависимость! ✅
   },
   {
     title: 'Author',
@@ -17,7 +16,7 @@ export const NAVIGATION_SECTIONS = [
   },
   {
     title: 'Projects',
-    links: [],
+    links: navigationAccumulate.projects,
   },
   {
     title: 'Development',
