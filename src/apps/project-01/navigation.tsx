@@ -1,4 +1,4 @@
-import type { NavigationLink } from '@navigation'
+import type { NavigationLink } from '@global/navigation'
 
 import type { Path } from './types'
 

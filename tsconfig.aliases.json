@@ -4,17 +4,11 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "@global/*": ["./src/react-dev/shared/global/*"],
       "@react-dev/*": ["./src/react-dev/*"],
-      "@react-dev": ["./src/react-dev/index.ts"],
-
       "@apps/*": ["./src/apps/*"],
       "@apps": ["./src/apps/index.ts"],
-
-      "@navigation": ["./src/libs/navigation/index.ts"],
-      "@router": ["./src/libs/router/index.ts"],
-
       "@ui/*": ["./src/ui/*"],
-
       "@/*": ["./src/*"]
     }
   }

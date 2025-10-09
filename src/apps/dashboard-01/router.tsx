@@ -1,6 +1,6 @@
 import { lazy, Suspense } from 'react'
 
-import type { RouteObject } from '@router'
+import type { RouteObject } from '@global/router'
 
 import type { Path } from './types'
 

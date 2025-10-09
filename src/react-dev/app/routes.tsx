@@ -1,8 +1,8 @@
-// src/react-dev/app/router.tsx
+// src/react-dev/app/routes.tsx
 
-import type { RouteObject } from '@router'
-
+import type { RouteObject } from '@global/router'
 import type { Path } from '@react-dev/shared/types'
+
 import { ReactDevLayout } from '@react-dev/widgets/react-dev-layout'
 import { HomePage } from '@react-dev/pages/home'
 import { AboutPage } from '@react-dev/pages/about'

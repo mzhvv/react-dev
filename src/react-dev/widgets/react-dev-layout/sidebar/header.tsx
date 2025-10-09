@@ -1,6 +1,9 @@
 import { Link } from 'react-router'
-import { Button } from '@ui/components'
-import { Settings2Icon, User2Icon } from 'lucide-react'
+import { User2Icon } from 'lucide-react'
+
+import { Button } from '@ui/components/button'
+
+import { Settings } from './settings'
 
 export const Header = () => {
   return (
@@ -14,9 +17,7 @@ export const Header = () => {
       </div>
 
       <div className='flex flex-col gap-2 p-4'>
-        <Button variant='ghost' size='icon'>
-          <Settings2Icon />
-        </Button>
+        <Settings />
         <Button variant='gradient-secondary-white' size='icon' className='shadow'>
           <User2Icon />
         </Button>

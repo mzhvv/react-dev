@@ -3,8 +3,8 @@
 import type { RouteObject } from 'react-router'
 import { createBrowserRouter, RouterProvider } from 'react-router'
 
+import { routesReactDev } from '@react-dev/app/routes'
 import { routesAccumulate as accumulateRoutesProjects } from '@apps'
-import { routesReactDev } from '@react-dev'
 
 const { children: childrenRoutesReactDev, ...restRoutesReactDev } = routesReactDev
 
