@@ -38,10 +38,7 @@ export const Settings = () => {
           </DialogHeader>
           <div>
             <div>
-              <div>theme</div>
-              <div>
-                <ModeRadioGroup />
-              </div>
+              <ModeRadioGroup />
             </div>
             <div></div>
           </div>
