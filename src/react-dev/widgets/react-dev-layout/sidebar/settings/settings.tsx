@@ -1,12 +1,12 @@
-import { Settings2Icon } from 'lucide-react'
+import { Settings2Icon, XIcon } from 'lucide-react'
+
+import { ModeRadioGroup } from '@react-dev/shared/libs/theme'
 
 import { Button } from '@ui/components/button'
 import {
   Dialog,
   DialogClose,
   DialogContent,
-  DialogDescription,
-  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -21,20 +21,30 @@ export const Settings = () => {
             <Settings2Icon />
           </Button>
         </DialogTrigger>
-        <DialogContent className='sm:max-w-[425px]'>
+        <DialogContent
+          showCloseButton={false}
+          aria-describedby={undefined}
+          className='sm:max-w-[425px]'
+        >
           <DialogHeader>
-            <DialogTitle>Edit profile</DialogTitle>
-            <DialogDescription>
-              Make changes to your profile here. Click save when you&apos;re done.
-            </DialogDescription>
+            <DialogTitle className='flex items-center justify-between'>
+              <div>Settings</div>
+              <DialogClose asChild>
+                <Button variant='ghost' size='icon-sm'>
+                  <XIcon />
+                </Button>
+              </DialogClose>
+            </DialogTitle>
           </DialogHeader>
-          <div className='grid gap-4'>...</div>
-          <DialogFooter>
-            <DialogClose asChild>
-              <Button variant='outline'>Cancel</Button>
-            </DialogClose>
-            <Button type='submit'>Save changes</Button>
-          </DialogFooter>
+          <div>
+            <div>
+              <div>theme</div>
+              <div>
+                <ModeRadioGroup />
+              </div>
+            </div>
+            <div></div>
+          </div>
         </DialogContent>
       </form>
     </Dialog>
