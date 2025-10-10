@@ -1,5 +1,5 @@
 export type Theme = 'dark' | 'light' | 'system'
-export type Color = 'default' | 'blue'
+export type Color = 'neutral' | 'blue'
 
 type StorageKey = 'vite-ui-theme'
 type ColorStorageKey = 'vite-ui-color'

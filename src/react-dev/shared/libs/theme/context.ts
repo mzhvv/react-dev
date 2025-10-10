@@ -14,6 +14,6 @@ export type ThemeProviderState = {
 export const ThemeProviderContext = createContext<ThemeProviderState>({
   theme: 'system',
   setTheme: () => null,
-  color: 'default',
+  color: 'blue',
   setColor: () => null,
 })

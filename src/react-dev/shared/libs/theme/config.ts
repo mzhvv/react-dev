@@ -6,5 +6,5 @@ export const themeConfig = {
   storageKey: 'vite-ui-theme',
   defaultTheme: 'system' as const,
   colorStorageKey: 'vite-ui-color',
-  defaultColor: 'default' as const,
+  defaultColor: 'blue' as const,
 } satisfies ThemeConfig
