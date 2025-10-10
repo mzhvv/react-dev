@@ -1,6 +1,6 @@
 import { Settings2Icon, XIcon } from 'lucide-react'
 
-import { ModeRadioGroup } from '@react-dev/shared/libs/theme'
+import { ChooseTheme } from '@react-dev/shared/libs/theme'
 
 import { Button } from '@ui/components/button'
 import {
@@ -37,10 +37,7 @@ export const Settings = () => {
             </DialogTitle>
           </DialogHeader>
           <div>
-            <div>
-              <ModeRadioGroup />
-            </div>
-            <div></div>
+            <ChooseTheme />
           </div>
         </DialogContent>
       </form>

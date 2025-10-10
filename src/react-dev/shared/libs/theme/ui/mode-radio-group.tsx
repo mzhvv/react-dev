@@ -2,11 +2,19 @@
 
 import { useId } from 'react'
 
-import { RadioGroup, RadioGroupItem } from '@ui/components/radio-group'
-import { useTheme } from '../hooks'
-import { Label } from '@ui/components/label'
 import { cn } from '@ui/lib'
-import type { Theme } from '../context'
+
+import { RadioGroup, RadioGroupItem } from '@ui/components/radio-group'
+import { Label } from '@ui/components/label'
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@ui/components/accordion'
+
+import { useTheme } from '../hooks'
+import type { Theme } from '../types'
 
 const items = [
   { value: 'system', label: 'System', image: '/ui-system.png' },
@@ -20,9 +28,75 @@ export function ModeRadioGroup() {
   const onValueChange = (value: string) => setTheme(value as Theme)
 
   return (
-    <div className='space-y-4'>
-      <div>Choose a mode</div>
+    <div className='space-y-3'>
+      <fieldset className='space-y-3'>
+        <legend className='text-foreground text-sm leading-none font-medium'>Choose a mode</legend>
+        <RadioGroup value={theme} onValueChange={onValueChange} className='grid grid-cols-3 gap-3'>
+          {items.map(item => (
+            <label key={`${id}-${item.value}`} className='relative'>
+              <RadioGroupItem
+                id={`${id}-${item.value}`}
+                value={item.value}
+                className='peer bg-background/50 dark:bg-background/50 absolute top-2 right-2 size-4'
+              />
+              <img
+                src={item.image}
+                alt={item.label}
+                className={cn(
+                  'outline-input shadowl cursor-pointer overflow-hidden rounded-xs outline',
 
+                  'peer-focus-visible:ring-ring/50 peer-data-[state=checked]:outline-primary/50 peer-focus-visible:ring-[3px]',
+
+                  'aspect-[44/35] size-full object-cover'
+                )}
+              />
+
+              <Decorative />
+            </label>
+          ))}
+        </RadioGroup>
+      </fieldset>
+
+      <Hide>
+        <Experience {...{ id, theme, onValueChange }} />
+      </Hide>
+    </div>
+  )
+}
+
+const Decorative = () => {
+  return (
+    <div>
+      <div className='absolute top-[23%] left-[22.9%] flex items-center gap-0.5'>
+        <div className='bg-primary size-1.5 rounded-full' />
+        <div className='bg-primary size-1.5 rounded-full' />
+        <div className='bg-primary size-1.5 rounded-full' />
+      </div>
+      <div className='bg-primary absolute bottom-[5%] left-[5%] flex h-[10%] w-[90%] items-center gap-0.5 rounded-lg' />
+    </div>
+  )
+}
+
+const Hide: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  return (
+    <Accordion type='single' collapsible>
+      <AccordionItem value='item-1'>
+        <AccordionTrigger className='flex-none gap-2 p-0'>Variants</AccordionTrigger>
+        <AccordionContent className='mt-2 p-0'>
+          <div className='m-px space-y-3'>{children}</div>
+        </AccordionContent>
+      </AccordionItem>
+    </Accordion>
+  )
+}
+
+const Experience: React.FC<{
+  id: string
+  theme: Theme
+  onValueChange: (value: string) => void
+}> = ({ id, theme, onValueChange }) => {
+  return (
+    <>
       <RadioGroup value={theme} onValueChange={onValueChange} className='flex items-center gap-3'>
         {items.map(item => (
           <div key={`${id}-${item.value}`} className='relative flex items-center gap-2 p-1'>
@@ -86,51 +160,6 @@ export function ModeRadioGroup() {
         ))}
       </RadioGroup>
 
-      <RadioGroup value={theme} onValueChange={onValueChange} className='grid grid-cols-3 gap-3'>
-        {items.map(item => {
-          const styles = {
-            bg: {
-              system: 'bg-gradient-to-r from-[#e4e4e7] from-50% to-[#27272a] to-50%',
-              light: 'bg-[#e4e4e7] ',
-              dark: 'bg-[#27272a]',
-            },
-            text: {
-              system:
-                'bg-gradient-to-r from-[#27272a] from-50% to-[#e4e4e7] to-50% bg-clip-text text-transparent',
-              light: 'text-[#27272a]',
-              dark: 'text-[#e4e4e7]',
-            },
-          } as const satisfies {
-            bg: Record<Theme, string>
-            text: Record<Theme, string>
-          }
-          return (
-            <div key={`${id}-${item.value}`} className='relative'>
-              <RadioGroupItem
-                id={`${id}-${item.value}`}
-                value={item.value}
-                className='peer bg-background/50 dark:bg-background/50 absolute top-2 left-2 size-4' // sr-only - при необходимости
-              />
-              <label
-                htmlFor={`${id}-${item.value}`}
-                className={cn(
-                  'outline-input h-15 rounded-md shadow-xs outline',
-                  'peer-data-[state=checked]:outline-primary/50 peer-focus-visible:ring-ring/50 peer-focus-visible:ring-[3px]',
-
-                  'flex cursor-pointer items-center justify-center',
-
-                  styles.bg[item.value]
-                )}
-              >
-                <span className={cn('text-sm font-medium', styles.text[item.value])}>
-                  {item.label}
-                </span>
-              </label>
-            </div>
-          )
-        })}
-      </RadioGroup>
-
       {/* <RadioGroup value={theme} onValueChange={onValueChange} className='grid grid-cols-3 gap-3'>
         {items.map(item => (
           <div
@@ -159,29 +188,6 @@ export function ModeRadioGroup() {
           </div>
         ))}
       </RadioGroup> */}
-
-      <RadioGroup value={theme} onValueChange={onValueChange} className='grid grid-cols-3 gap-3'>
-        {items.map(item => (
-          <label key={`${id}-${item.value}`} className='relative'>
-            <RadioGroupItem
-              id={`${id}-${item.value}`}
-              value={item.value}
-              className='peer bg-background/50 dark:bg-background/50 absolute top-2 left-2 size-4'
-            />
-            <img
-              src={item.image}
-              alt={item.label}
-              className={cn(
-                'outline-input cursor-pointer overflow-hidden rounded-md shadow-xs outline',
-
-                'peer-focus-visible:ring-ring/50 peer-data-[state=checked]:outline-primary/50 peer-focus-visible:ring-[3px]',
-
-                'aspect-[44/35] size-full object-cover'
-              )}
-            />
-          </label>
-        ))}
-      </RadioGroup>
-    </div>
+    </>
   )
 }
