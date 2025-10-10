@@ -9,7 +9,7 @@ import { cn } from '@ui/lib'
 import { colorMap } from '../constants'
 
 const colors = [
-  { value: 'default', label: 'Default' },
+  { value: 'neutral', label: 'Neutral' },
   { value: 'blue', label: 'Blue' },
 ] as const satisfies {
   value: Color

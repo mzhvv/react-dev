@@ -3,10 +3,10 @@
 import type { Color } from './types'
 
 export const style = {
-  '--primary-light-default': 'oklch(0.205 0 0)',
-  '--ring-light-default': 'oklch(0.708 0 0)',
-  '--primary-dark-default': 'oklch(0.922 0 0)',
-  '--ring-dark-default': 'oklch(0.556 0 0)',
+  '--primary-light-neutral': 'oklch(0.205 0 0)',
+  '--ring-light-neutral': 'oklch(0.708 0 0)',
+  '--primary-dark-neutral': 'oklch(0.922 0 0)',
+  '--ring-dark-neutral': 'oklch(0.556 0 0)',
 
   '--primary-light-blue': 'oklch(0.623 0.214 259.815)',
   '--ring-light-blue': 'oklch(0.623 0.214 259.815)',
@@ -15,13 +15,13 @@ export const style = {
 } as React.CSSProperties
 
 export const colorMap = {
-  default:
-    'bg-[var(--primary-light-default)] dark:bg-[var(--primary-dark-default)] data-[state=checked]:bg-[var(--primary-light-default)] dark:data-[state=checked]:bg-[var(--primary-dark-default)]',
+  neutral:
+    'bg-[var(--primary-light-neutral)] dark:bg-[var(--primary-dark-neutral)] data-[state=checked]:bg-[var(--primary-light-neutral)] dark:data-[state=checked]:bg-[var(--primary-dark-neutral)]',
   blue: 'bg-[var(--primary-light-blue)] dark:bg-[var(--primary-dark-blue)] data-[state=checked]:bg-[var(--primary-light-blue)] dark:data-[state=checked]:bg-[var(--primary-dark-blue)]',
 } as const satisfies Record<Color, string>
 
 // const colorMap = {
-//   default:
+//   neutral:
 //     'bg-[#171717] dark:bg-[#e5e5e5] data-[state=checked]:bg-[#171717] dark:data-[state=checked]:bg-[#e5e5e5] ', // focus-visible:ring-[#a1a1a1]/50 dark:focus-visible:ring-[#737373]/50
 //   blue: 'bg-[#2b7fff] dark:bg-[#155dfb] data-[state=checked]:bg-[#2b7fff] dark:data-[state=checked]:bg-[#155dfb] ', //focus-visible:ring-[#2b7fff]/50 dark:focus-visible:ring-[#1447e6]/50
 // } as const satisfies Record<Color, string>
