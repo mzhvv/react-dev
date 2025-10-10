@@ -1,7 +1,6 @@
 // src/react-dev/shared/libs/theme/hooks.ts
 
 import { useContext } from 'react'
-
 import { ThemeProviderContext } from './context'
 
 export const useTheme = () => {
