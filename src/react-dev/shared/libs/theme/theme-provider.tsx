@@ -1,5 +1,5 @@
 // src/react-dev/shared/libs/theme/theme-provider.tsx
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useCallback } from 'react'
 import type { Theme, Color } from './types'
 import { themeConfig } from './config'
 import { ThemeProviderContext } from './context'
@@ -24,8 +24,20 @@ export function ThemeProvider({
     () => (localStorage.getItem(storageKey) as Theme) || defaultTheme
   )
 
-  const [color, setColor] = useState<Color>(
+  // Убираем color из state - он не должен вызывать перерисовку
+  const [color, setColorState] = useState<Color>(
     () => (localStorage.getItem(colorStorageKey) as Color) || defaultColor
+  )
+
+  // Функция для смены цвета без перерисовки
+  const setColor = useCallback(
+    (newColor: Color) => {
+      const root = window.document.documentElement
+      root.setAttribute('color', newColor)
+      localStorage.setItem(colorStorageKey, newColor)
+      setColorState(newColor) // только для контекста, но это вызовет перерисовку
+    },
+    [colorStorageKey]
   )
 
   useEffect(() => {
@@ -42,9 +54,9 @@ export function ThemeProvider({
       root.classList.add(theme)
     }
 
-    // Устанавливаем цвет
+    // Устанавливаем начальный цвет (только при монтировании)
     root.setAttribute('color', color)
-  }, [theme, color])
+  }, [theme]) // Убираем color из зависимостей!
 
   const value = {
     theme,
@@ -53,10 +65,7 @@ export function ThemeProvider({
       setTheme(theme)
     },
     color,
-    setColor: (color: Color) => {
-      localStorage.setItem(colorStorageKey, color)
-      setColor(color)
-    },
+    setColor, // используем нашу новую функцию
   }
 
   return (
