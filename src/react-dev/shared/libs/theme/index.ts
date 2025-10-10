@@ -1,3 +1,3 @@
 export { ThemeProvider } from './theme-provider'
 
-export * from './ui'
+export { ThemeControls } from './ui'

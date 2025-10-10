@@ -1,7 +1,6 @@
 // src/react-dev/shared/libs/theme/context.ts
 
 import { createContext } from 'react'
-
 import type { Color, Theme } from './types'
 
 export type ThemeProviderState = {

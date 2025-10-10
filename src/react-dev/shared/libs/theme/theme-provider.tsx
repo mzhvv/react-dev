@@ -1,27 +1,25 @@
 // src/react-dev/shared/libs/theme/theme-provider.tsx
+
 import { useEffect, useState, useCallback } from 'react'
-import type { Theme, Color } from './types'
+
+import type { ThemeConfig, Theme, Color } from './types'
 import { themeConfig } from './config'
 import { ThemeProviderContext } from './context'
 
-type ThemeProviderProps = {
+type ThemeProviderProps = Partial<ThemeConfig> & {
   children: React.ReactNode
-  defaultTheme?: Theme
-  defaultColor?: Color
-  storageKey?: string
-  colorStorageKey?: string
 }
 
 export function ThemeProvider({
-  children,
   defaultTheme = themeConfig.defaultTheme,
+  themeStorageKey = themeConfig.themeStorageKey,
   defaultColor = themeConfig.defaultColor,
-  storageKey = themeConfig.storageKey,
   colorStorageKey = themeConfig.colorStorageKey,
+  children,
   ...props
 }: ThemeProviderProps) {
   const [theme, setTheme] = useState<Theme>(
-    () => (localStorage.getItem(storageKey) as Theme) || defaultTheme
+    () => (localStorage.getItem(themeStorageKey) as Theme) || defaultTheme
   )
 
   // Убираем color из state - он не должен вызывать перерисовку
@@ -61,7 +59,7 @@ export function ThemeProvider({
   const value = {
     theme,
     setTheme: (theme: Theme) => {
-      localStorage.setItem(storageKey, theme)
+      localStorage.setItem(themeStorageKey, theme)
       setTheme(theme)
     },
     color,

@@ -3,7 +3,7 @@
 import type { ThemeConfig } from './types'
 
 export const themeConfig = {
-  storageKey: 'vite-ui-theme',
+  themeStorageKey: 'vite-ui-theme',
   defaultTheme: 'system' as const,
   colorStorageKey: 'vite-ui-color',
   defaultColor: 'blue' as const,

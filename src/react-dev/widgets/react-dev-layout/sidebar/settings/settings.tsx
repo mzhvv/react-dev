@@ -1,6 +1,8 @@
+// src/react-dev/widgets/react-dev-layout/sidebar/settings/settings.tsx
+
 import { Settings2Icon, XIcon } from 'lucide-react'
 
-import { ChooseTheme } from '@react-dev/shared/libs/theme'
+import { ThemeControls } from '@react-dev/shared/libs/theme'
 
 import { Button } from '@ui/components/button'
 import {
@@ -15,32 +17,38 @@ import {
 export const Settings = () => {
   return (
     <Dialog>
-      <form>
-        <DialogTrigger asChild>
-          <Button variant='ghost' size='icon'>
-            <Settings2Icon />
-          </Button>
-        </DialogTrigger>
-        <DialogContent
-          showCloseButton={false}
-          aria-describedby={undefined}
-          className='sm:max-w-[425px]'
-        >
-          <DialogHeader>
-            <DialogTitle className='flex items-center justify-between'>
-              <div>Settings</div>
-              <DialogClose asChild>
-                <Button variant='ghost' size='icon-sm'>
-                  <XIcon />
-                </Button>
-              </DialogClose>
-            </DialogTitle>
-          </DialogHeader>
-          <div>
-            <ChooseTheme />
-          </div>
-        </DialogContent>
-      </form>
+      <DialogTrigger asChild>
+        <Button variant='ghost' size='icon' title='Open settings' aria-label='Open settings'>
+          <Settings2Icon />
+        </Button>
+      </DialogTrigger>
+      <DialogContent
+        showCloseButton={false}
+        aria-describedby={undefined}
+        className='gap-0 space-y-3 p-3 !transition-none sm:max-w-[425px]' // !duration-0 !ease-[0]
+      >
+        <DialogHeader className='p-3'>
+          <DialogTitle className='flex items-center justify-between'>
+            Settings
+            <DialogClose asChild>
+              <Button
+                variant='ghost'
+                size='icon-sm'
+                title='Close settings'
+                aria-label='Close settings'
+              >
+                <XIcon />
+              </Button>
+            </DialogClose>
+          </DialogTitle>
+        </DialogHeader>
+
+        <div className='max-h-[calc(100vh-10rem)] overflow-y-auto px-3 py-0'>
+          <ThemeControls />
+        </div>
+
+        {/* <DialogFooter className='p-3'>...</DialogFooter> */}
+      </DialogContent>
     </Dialog>
   )
 }
