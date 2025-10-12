@@ -1,9 +1,4 @@
-export type {
-  NavigationLinkWithSections,
-  NavigationLink,
-  NavigationSections,
-  NavigationAccumulate,
-} from './types'
+export type { NavigationLink, NavigationSection, NavigationAccumulate } from './types'
 
 export {
   NAVIGATION_SECTIONS_FOR_SIDEBAR,

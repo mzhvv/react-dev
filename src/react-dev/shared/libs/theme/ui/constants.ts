@@ -1,6 +1,6 @@
 // src/react-dev/shared/libs/theme/constants.ts
 
-import type { Color } from './types'
+import type { Color } from '../model'
 
 export const style = {
   '--primary-light-neutral': 'oklch(0.205 0 0)',

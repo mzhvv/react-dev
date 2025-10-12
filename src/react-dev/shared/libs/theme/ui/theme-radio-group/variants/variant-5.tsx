@@ -5,7 +5,8 @@ import { useState } from 'react'
 import { cn } from '@ui/lib'
 import { RadioGroup, RadioGroupItem } from '@ui/components/radio-group'
 
-import type { ThemeOption, ThemeRadioGroupProps } from '../types'
+import type { ThemeOption, ThemeRadioGroupProps } from '../../types'
+import { Image } from '../../Image'
 
 export const ThemeRadioGroup: React.FC<ThemeRadioGroupProps> = ({
   options,
@@ -55,21 +56,18 @@ const ThemeRadioGroupItem: React.FC<{ option: ThemeOption } & Pick<ThemeRadioGro
           'aspect-[44/35] size-full object-cover'
         )}
       />
+      <Image />
 
-      {!imageError && <Decorative />}
+      {!imageError && (
+        <div aria-hidden='true'>
+          <div className='absolute top-[23%] left-[22.9%] flex items-center gap-0.5'>
+            <div className='bg-primary size-1.5 rounded-full' />
+            <div className='bg-primary size-1.5 rounded-full' />
+            <div className='bg-primary size-1.5 rounded-full' />
+          </div>
+          <div className='bg-primary absolute bottom-[5%] left-[5%] flex h-[10%] w-[90%] items-center gap-0.5 rounded-lg' />
+        </div>
+      )}
     </label>
-  )
-}
-
-const Decorative = () => {
-  return (
-    <div aria-hidden='true'>
-      <div className='absolute top-[23%] left-[22.9%] flex items-center gap-0.5'>
-        <div className='bg-primary size-1.5 rounded-full' />
-        <div className='bg-primary size-1.5 rounded-full' />
-        <div className='bg-primary size-1.5 rounded-full' />
-      </div>
-      <div className='bg-primary absolute bottom-[5%] left-[5%] flex h-[10%] w-[90%] items-center gap-0.5 rounded-lg' />
-    </div>
   )
 }

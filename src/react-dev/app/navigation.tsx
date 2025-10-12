@@ -2,7 +2,7 @@
 
 import { HandshakeIcon } from 'lucide-react'
 
-import type { NavigationLinkWithSections } from '@global/navigation'
+import type { NavigationLink, NavigationSectionKey } from '@global/navigation/types'
 import type { Path } from '@react-dev/shared/types'
 
 export const navigationReactDev = {
@@ -11,4 +11,7 @@ export const navigationReactDev = {
     { path: '/about', title: 'About' },
   ],
   author: [{ path: '/collaboration', title: 'Collaboration', icon: HandshakeIcon }],
-} as const satisfies NavigationLinkWithSections<Path | ''>
+  projects: [],
+  development: [{ path: '/ui', title: 'ui' }],
+  secondary: [],
+} as const satisfies Record<NavigationSectionKey, NavigationLink<Path | ''>[]>

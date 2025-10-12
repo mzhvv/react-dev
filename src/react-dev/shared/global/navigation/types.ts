@@ -12,12 +12,7 @@ export type NavigationLink<T extends string = string> = {
   title: string
   icon?: LucideIcon
 }
-export type NavigationLinkWithSections<T extends string = string> = Partial<
-  Record<NavigationSectionKey, NavigationLink<T>[]>
-  // { [K in NavigationSectionKey]?: NavigationLinkObject<T>[] }
->
 
 export type NavigationAccumulate = Record<NavigationSectionKey, NavigationLink[]>
 
 export type NavigationSection = { title: string; links: NavigationLink[] }
-export type NavigationSections = NavigationSection[]
