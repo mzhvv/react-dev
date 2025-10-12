@@ -1,4 +1,4 @@
-// src/react-dev/shared/libs/theme/ui/theme-radio-group/variants/config.ts
+// src/react-dev/shared/libs/theme/ui/theme-radio-group/config.ts
 
 import type { ThemeRadioGroupProps } from '../types'
 import { createVariantsFactory } from '../variants-factory'

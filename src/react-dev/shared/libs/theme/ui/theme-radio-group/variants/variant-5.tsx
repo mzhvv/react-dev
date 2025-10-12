@@ -1,4 +1,4 @@
-// src/react-dev/shared/libs/theme/ui/mode-radio-group.tsx
+// src/react-dev/shared/libs/theme/ui/theme-radio-group/variants/variant-5.tsx
 
 import { useState } from 'react'
 

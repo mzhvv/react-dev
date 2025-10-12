@@ -1,4 +1,4 @@
-// src/react-dev/shared/libs/theme/config.ts
+// src/react-dev/shared/libs/theme/model/config.ts
 
 import type { ThemeConfig } from './types'
 

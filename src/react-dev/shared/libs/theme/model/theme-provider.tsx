@@ -1,4 +1,4 @@
-// src/react-dev/shared/libs/theme/theme-provider.tsx
+// src/react-dev/shared/libs/theme/model/theme-provider.tsx
 
 import { useEffect, useState, useCallback } from 'react'
 

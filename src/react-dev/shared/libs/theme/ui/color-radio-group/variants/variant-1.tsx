@@ -1,4 +1,4 @@
-// src/react-dev/shared/libs/theme/ui/color-radio-group.tsx
+// src/react-dev/shared/libs/theme/ui/color-radio-group/variants/variant-1.tsx
 
 import { cn } from '@ui/lib'
 import { RadioGroup, RadioGroupItem } from '@ui/components/radio-group'
