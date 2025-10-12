@@ -1,4 +1,4 @@
-// src/react-dev/shared/libs/theme/hooks.ts
+// src/react-dev/shared/libs/theme/model/hooks.ts
 
 import { useContext } from 'react'
 import { ThemeProviderContext } from './context'

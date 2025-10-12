@@ -1,4 +1,4 @@
-// src/react-dev/shared/libs/theme/types.ts
+// src/react-dev/shared/libs/theme/model/types.ts
 
 export type Theme = 'dark' | 'light' | 'system'
 export type Color = 'neutral' | 'blue'

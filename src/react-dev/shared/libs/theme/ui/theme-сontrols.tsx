@@ -1,4 +1,4 @@
-// src/react-dev/shared/libs/theme/ui/choose-theme.tsx
+// src/react-dev/shared/libs/theme/ui/theme-сontrols.tsx
 
 import { lazy, useId } from 'react'
 

@@ -1,4 +1,4 @@
-// src/react-dev/shared/libs/theme/constants.ts
+// src/react-dev/shared/libs/theme/ui/constants.ts
 
 import type { Color } from '../model'
 
