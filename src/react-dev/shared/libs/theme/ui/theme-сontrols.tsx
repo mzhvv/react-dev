@@ -2,16 +2,18 @@
 
 import { lazy, useId } from 'react'
 
-import type { Color, ColorOption, Theme, ThemeOption } from '../types'
-import { style } from '../constants'
-import { useTheme } from '../hooks'
+import { useTheme } from '../model'
 
-import { ColorRadioGroup } from './color-radio-group'
-import { ThemeRadioGroup } from './theme-radio-group'
+import type { ColorOption, ThemeOption } from './types'
+import { style } from './constants'
 import { HideVariantsAccordion } from './hide-variants-accordion'
+import { ColorRadioGroup } from './color-radio-group'
 
+import { ThemeRadioGroup } from './theme-radio-group'
 const LazyThemeRadioGroupVariants = lazy(() =>
-  import('./theme-radio-group-variants').then(module => ({
+  import(
+    './theme-radio-group/theme-radio-group-variants' // (lazy) Импортируем из файла!
+  ).then(module => ({
     default: module.ThemeRadioGroupVariants,
   }))
 )
@@ -31,8 +33,8 @@ export const ThemeControls = () => {
   const id = useId()
 
   const { color, setColor, theme, setTheme } = useTheme()
-  const onColorChange = (value: string) => setColor(value as Color)
-  const onThemeChange = (value: string) => setTheme(value as Theme)
+  const onColorChange = (value: string) => setColor(value as ColorOption['value'])
+  const onThemeChange = (value: string) => setTheme(value as ThemeOption['value'])
 
   return (
     <div style={style} className='space-y-3'>

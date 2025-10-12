@@ -3,7 +3,7 @@
 import { navigationAccumulate } from '@apps/navigation-accumulate'
 import { navigationReactDev } from '@react-dev/app/navigation'
 
-import type { NavigationSections } from './'
+import type { NavigationSection } from './types'
 
 const NAVIGATION_SECTIONS = [
   {
@@ -16,17 +16,17 @@ const NAVIGATION_SECTIONS = [
   },
   {
     title: 'Projects',
-    links: navigationAccumulate.projects,
+    links: [...navigationReactDev.projects, ...navigationAccumulate.projects],
   },
   {
     title: 'Development',
-    links: navigationAccumulate.development,
+    links: [...navigationReactDev.development, ...navigationAccumulate.development],
   },
   {
     title: 'Secondary',
-    links: navigationAccumulate.secondary,
+    links: [...navigationReactDev.secondary, ...navigationAccumulate.secondary],
   },
-] as const satisfies NavigationSections
+] as const satisfies NavigationSection[]
 
 const [application, author, projects, development, secondary] = NAVIGATION_SECTIONS
 

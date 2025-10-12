@@ -2,7 +2,7 @@
 
 import { Link } from 'react-router'
 
-import type { NavigationLink, NavigationSections } from '@global/navigation'
+import type { NavigationLink, NavigationSection } from '@global/navigation'
 import { Button } from '@ui/components/button'
 
 import {
@@ -23,7 +23,7 @@ export const Navigation = () => {
   )
 }
 
-export const NavigationList: React.FC<{ navigationSections: NavigationSections }> = ({
+export const NavigationList: React.FC<{ navigationSections: NavigationSection[] }> = ({
   navigationSections,
 }) => {
   return (

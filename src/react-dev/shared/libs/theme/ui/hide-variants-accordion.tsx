@@ -1,4 +1,4 @@
-// src/react-dev/shared/libs/theme/ui/hide-variants.tsx
+// !TODO -перенести в ui
 
 import { Suspense, useState } from 'react'
 

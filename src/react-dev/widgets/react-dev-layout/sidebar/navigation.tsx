@@ -1,7 +1,7 @@
 // src/react-dev/widgets/react-dev-layout/sidebar/navigation.tsx
 
 import { Link } from 'react-router'
-import type { NavigationLink, NavigationSections } from '@global/navigation'
+import type { NavigationLink, NavigationSection } from '@global/navigation'
 import { Button } from '@ui/components/button'
 
 import { NAVIGATION_SECTIONS_FOR_SIDEBAR } from '@react-dev/shared/global/navigation'
@@ -14,7 +14,7 @@ export const Navigation = () => {
   )
 }
 
-export const NavigationList: React.FC<{ navigationSections: NavigationSections }> = ({
+export const NavigationList: React.FC<{ navigationSections: NavigationSection[] }> = ({
   navigationSections,
 }) => {
   return (
