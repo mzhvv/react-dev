@@ -2,8 +2,8 @@
 
 import { useEffect, useState, useCallback } from 'react'
 
-import type { ThemeConfig, Theme, Color } from './types'
-import { themeConfig } from './config'
+import type { ThemeConfig, Color, Mode } from './types'
+import { colors, modes, themeConfig } from './config'
 import { ThemeProviderContext } from './context'
 
 type ThemeProviderProps = Partial<ThemeConfig> & {
@@ -11,15 +11,15 @@ type ThemeProviderProps = Partial<ThemeConfig> & {
 }
 
 export function ThemeProvider({
-  defaultTheme = themeConfig.defaultTheme,
-  themeStorageKey = themeConfig.themeStorageKey,
+  defaultMode = themeConfig.defaultMode,
+  modeStorageKey = themeConfig.modeStorageKey,
   defaultColor = themeConfig.defaultColor,
   colorStorageKey = themeConfig.colorStorageKey,
   children,
   ...props
 }: ThemeProviderProps) {
-  const [theme, setTheme] = useState<Theme>(
-    () => (localStorage.getItem(themeStorageKey) as Theme) || defaultTheme
+  const [mode, setMode] = useState<Mode>(
+    () => (localStorage.getItem(modeStorageKey) as Mode) || defaultMode
   )
 
   // Убираем color из state - он не должен вызывать перерисовку
@@ -43,25 +43,28 @@ export function ThemeProvider({
 
     // Устанавливаем тему
     root.classList.remove('light', 'dark')
-    if (theme === 'system') {
+    if (mode === 'system') {
       const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
         ? 'dark'
         : 'light'
       root.classList.add(systemTheme)
     } else {
-      root.classList.add(theme)
+      root.classList.add(mode)
     }
 
     // Устанавливаем начальный цвет (только при монтировании)
     root.setAttribute('color', color)
-  }, [theme]) // Убираем color из зависимостей!
+  }, [mode]) // Убираем color из зависимостей!
 
   const value = {
-    theme,
-    setTheme: (theme: Theme) => {
-      localStorage.setItem(themeStorageKey, theme)
-      setTheme(theme)
+    modes: modes,
+    mode,
+    setMode: (mode: Mode) => {
+      localStorage.setItem(modeStorageKey, mode)
+      setMode(mode)
     },
+
+    colors: colors,
     color,
     setColor, // используем нашу новую функцию
   }

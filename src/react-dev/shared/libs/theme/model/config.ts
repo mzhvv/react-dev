@@ -1,10 +1,14 @@
 // src/react-dev/shared/libs/theme/model/config.ts
 
-import type { ThemeConfig } from './types'
+import type { Color, Mode, ThemeConfig } from './types'
 
 export const themeConfig = {
-  themeStorageKey: 'vite-ui-theme',
-  defaultTheme: 'system' as const,
-  colorStorageKey: 'vite-ui-color',
-  defaultColor: 'blue' as const,
-} satisfies ThemeConfig
+  defaultMode: 'system',
+  modeStorageKey: 'theme-mode',
+
+  defaultColor: 'blue',
+  colorStorageKey: 'theme-color',
+} as const satisfies ThemeConfig
+
+export const modes = ['system', 'light', 'dark'] as const satisfies Mode[]
+export const colors = ['neutral', 'blue'] as const satisfies Color[]

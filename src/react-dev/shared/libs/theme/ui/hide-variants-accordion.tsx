@@ -20,7 +20,12 @@ export const HideVariantsAccordion: React.FC<{
   const onIsVariantsOpenChange = (value: string) => setIsVariantsOpen(!!value)
 
   return (
-    <Accordion type='single' collapsible onValueChange={onIsVariantsOpenChange}>
+    <Accordion
+      defaultChecked={false}
+      type='single'
+      collapsible
+      onValueChange={onIsVariantsOpenChange}
+    >
       <AccordionItem
         value={`${accordionTitle.toLowerCase().replace(/\s+/g, '-')}-variants`}
         className='pb-[3px] data-[state=open]:border-b!'

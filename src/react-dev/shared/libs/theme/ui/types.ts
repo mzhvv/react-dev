@@ -1,19 +1,18 @@
 // src/react-dev/shared/libs/theme/ui/types.ts
 
-import type { Color, Theme } from '../model'
+import type { Theme } from '../model'
 
-export type ColorOption = { value: Color; label: string }
-export type ThemeOption = { value: Theme; label: string; image: string }
+export type ModeRadioGroupProps = {
+  options: Theme['modes']
+  value: Theme['mode']
+  onValueChange: Theme['setMode']
+}
 
 export type ColorRadioGroupProps = {
-  options: ColorOption[]
-  color: Color
-  onColorChange: (value: string) => void
+  options: Theme['colors']
+  value: Theme['color']
+  onValueChange: Theme['setColor']
 }
 
-export type ThemeRadioGroupProps = {
-  options: ThemeOption[]
-  theme: Theme
-  onThemeChange: (value: string) => void
-  id: string
-}
+export type ModeOption = { value: Theme['mode']; label: string; image: string }
+export type ColorOption = { value: Theme['color']; label: string }

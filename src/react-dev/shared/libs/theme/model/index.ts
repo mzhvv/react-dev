@@ -1,4 +1,4 @@
-export { ThemeProvider } from './theme-provider'
+export type { Theme } from './types'
 
-export type { Color, Theme } from './types'
-export { useTheme } from './hooks'
+export { ThemeProvider } from './theme-provider'
+export { useTheme } from './use-theme'
