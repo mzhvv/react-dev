@@ -4,7 +4,7 @@ import type { RouteObject } from '@global/router'
 import type { Path } from '@react-dev/shared/types'
 
 import { ReactDevLayout } from '@react-dev/widgets/react-dev-layout'
-import { UIPage } from '@react-dev/pages/ui'
+import { UiPreviewPage } from '@react-dev/pages/ui-example'
 import { HomePage } from '@react-dev/pages/home'
 import { AboutPage } from '@react-dev/pages/about'
 import { CollaborationPage } from '@react-dev/pages/collaboration'
@@ -18,8 +18,8 @@ export const routesReactDev = {
       element: <HomePage />,
     },
     {
-      path: 'ui',
-      element: <UIPage />,
+      path: 'ui-example',
+      element: <UiPreviewPage />,
     },
     {
       path: 'about',

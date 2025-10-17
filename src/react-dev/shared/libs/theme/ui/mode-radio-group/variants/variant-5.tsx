@@ -42,7 +42,23 @@ const ThemeRadioGroupItem: React.FC<{ option: ThemeOption } & Pick<ThemeRadioGro
         value={option.value}
         className='peer bg-background/50 dark:bg-background/50 absolute top-2 right-2 size-4'
       />
-      <img
+
+      {/* <img
+        src={option.image}
+        title={`Switch to "${option.label}" theme`}
+        // aria-label={`Switch to "${option.label}" theme`}
+        alt={`Preview of ${option.label} theme`}
+        onError={onImageErrorChange}
+        className={cn(
+          'outline-input cursor-pointer overflow-hidden rounded-md shadow-xs outline',
+
+          'peer-focus-visible:ring-ring/50 peer-data-[state=checked]:outline-primary/50 peer-focus-visible:ring-[3px]',
+
+          'aspect-[44/35] size-full object-cover'
+        )}
+      /> */}
+
+      <Image
         src={option.image}
         title={`Switch to "${option.label}" theme`}
         // aria-label={`Switch to "${option.label}" theme`}
@@ -56,7 +72,6 @@ const ThemeRadioGroupItem: React.FC<{ option: ThemeOption } & Pick<ThemeRadioGro
           'aspect-[44/35] size-full object-cover'
         )}
       />
-      <Image />
 
       {!imageError && (
         <div aria-hidden='true'>

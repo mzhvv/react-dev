@@ -1,1 +1,1 @@
-export type Path = '/' | 'ui' | 'about' | 'collaboration'
+export type Path = '/' | 'ui-example' | 'about' | 'collaboration'

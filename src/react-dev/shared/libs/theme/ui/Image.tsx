@@ -17,11 +17,8 @@ export const Image: React.FC<React.ComponentProps<'img'> & { decorative?: React.
   return (
     <>
       {!imageLoaded && !imageError && <Skeleton className={className} />}
-
       {/* {imageError && <div className='text-muted-foreground px-2 text-center text-xs'></div>} */}
-
       {!imageError && <img onError={onError} onLoad={onLoad} className={className} {...props} />}
-
       {decorative && !imageError && imageLoaded && decorative}
     </>
   )
