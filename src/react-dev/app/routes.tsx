@@ -1,6 +1,6 @@
 // src/react-dev/app/routes.tsx
 
-import type { RouteObject } from '@global/router'
+import type { RouteObject } from '@global/libs/router'
 import type { Path } from '@react-dev/shared/types'
 
 import { ReactDevLayout } from '@react-dev/widgets/react-dev-layout'

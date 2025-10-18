@@ -1,4 +1,4 @@
-// src/react-dev/shared/global/navigation/navigation-data.ts
+// src/react-dev/shared/global/libs/navigation/navigation-data.ts
 
 import { navigationAccumulate } from '@apps/navigation-accumulate'
 import { navigationReactDev } from '@react-dev/shared/navigation'

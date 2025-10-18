@@ -2,13 +2,13 @@
 
 import { Link } from 'react-router'
 
-import type { NavigationLink, NavigationSection } from '@global/navigation'
+import type { NavigationLink, NavigationSection } from '@global/libs/navigation'
 import { Button } from '@ui/components/button'
 
 import {
   NAVIGATION_SECTIONS_FOR_PAGE_1,
   NAVIGATION_SECTIONS_FOR_PAGE_2,
-} from '@react-dev/shared/global/navigation'
+} from '@global/libs/navigation'
 
 export const Navigation = () => {
   return (

@@ -1,10 +1,10 @@
 // src/react-dev/widgets/react-dev-layout/sidebar/navigation.tsx
 
 import { Link } from 'react-router'
-import type { NavigationLink, NavigationSection } from '@global/navigation'
+import type { NavigationLink, NavigationSection } from '@global/libs/navigation'
 import { Button } from '@ui/components/button'
 
-import { NAVIGATION_SECTIONS_FOR_SIDEBAR } from '@react-dev/shared/global/navigation'
+import { NAVIGATION_SECTIONS_FOR_SIDEBAR } from '@global/libs/navigation'
 
 export const Navigation = () => {
   return (
