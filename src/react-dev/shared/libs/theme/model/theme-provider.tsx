@@ -2,7 +2,8 @@
 
 import { useEffect, useState, useCallback } from 'react'
 
-import type { ThemeConfig, Color, Mode } from './types'
+import type { ThemeConfig, Color, Mode } from '../types'
+
 import { colors, modes, themeConfig } from './config'
 import { ThemeProviderContext } from './context'
 

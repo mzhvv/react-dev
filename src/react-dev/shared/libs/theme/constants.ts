@@ -1,15 +1,16 @@
 // src/react-dev/shared/libs/theme/ui/constants.ts
 
-import type { Theme } from '../model'
-import type { ColorOption, ModeOption } from './types'
+import type { ModeOptionMap, ColorOptionMap } from './types'
 
+type ModeOption = { label: string; image: string }
 export const modeOptionMap = {
   system: { value: 'system', label: 'System', image: '/ui-system.png' },
   light: { value: 'light', label: 'Light', image: '/ui-light.png' },
   dark: { value: 'dark', label: 'Dark', image: '/ui-dark.png' },
-} as const satisfies Record<Theme['mode'], ModeOption>
+} as const satisfies ModeOptionMap<ModeOption>
 
+type ColorOption = { label: string }
 export const colorOptionMap = {
   neutral: { value: 'neutral', label: 'Neutral' },
   blue: { value: 'blue', label: 'Blue' },
-} as const satisfies Record<Theme['color'], ColorOption>
+} as const satisfies ColorOptionMap<ColorOption>

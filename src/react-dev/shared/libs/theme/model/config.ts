@@ -1,6 +1,6 @@
 // src/react-dev/shared/libs/theme/model/config.ts
 
-import type { Color, Mode, ThemeConfig } from './types'
+import type { Color, Mode, ThemeConfig } from '../types'
 
 export const themeConfig = {
   defaultMode: 'system',

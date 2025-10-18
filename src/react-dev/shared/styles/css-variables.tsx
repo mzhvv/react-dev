@@ -1,4 +1,4 @@
-import type { Color } from '../model'
+import type { Color } from '../libs/theme'
 
 export const cssVariables = {
   '--primary-light-neutral': 'oklch(0.205 0 0)',
