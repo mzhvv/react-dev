@@ -1,6 +1,6 @@
 // src/apps/routes-accumulate.ts
 
-import type { RouteObject } from '@global/router'
+import type { RouteObject } from '@global/libs/router'
 
 import { routesDashboard01 } from './dashboard-01'
 import { routesPproject01 } from './project-01'
