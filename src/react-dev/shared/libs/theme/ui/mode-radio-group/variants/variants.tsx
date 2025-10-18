@@ -1,21 +1,23 @@
-// src/react-dev/shared/libs/theme/ui/theme-radio-group/variants/variants.tsx
-
 import { cn } from '@ui/lib'
 import { RadioGroup, RadioGroupItem } from '@ui/components/radio-group'
 import { Label } from '@ui/components/label'
 
-import type { ModeRadioGroupProps } from '../../types'
+import type { ModeRadioGroupProps } from '../../../types'
+import { modeOptionMap } from '../../../constants'
 
+/* ThemeRadioGroup */
 export const Variant0: React.FC<ModeRadioGroupProps> = ({ options, ...props }) => {
   return (
     <RadioGroup aria-label='Choose theme' className='flex items-center gap-4' {...props}>
       {options.map(option => {
-        const id = `variant0-${option}`
-        const aria = `Switch to "${option}" theme`
+        const { value, label } = modeOptionMap[option]
+
+        const id = `variant0-${label}`
+        const aria = `Switch to "${label}" theme`
 
         return (
           <div key={id} className='flex items-center *:cursor-pointer'>
-            <RadioGroupItem value={option} id={id} />
+            <RadioGroupItem value={value} id={id} />
             <Label htmlFor={id} title={aria} aria-label={aria} className='pl-2'>
               {option}
             </Label>
@@ -38,12 +40,15 @@ export const Variant0: React.FC<ModeRadioGroupProps> = ({ options, ...props }) =
   )
 }
 
+/* ThemeRadioGroup */
 export const Variant1: React.FC<ModeRadioGroupProps> = ({ options, ...props }) => {
   return (
     <RadioGroup aria-label='Choose theme' className='grid grid-cols-3 gap-3' {...props}>
       {options.map(option => {
-        const id = `variant1-${option}`
-        const aria = `Switch to "${option}" theme`
+        const { value, label } = modeOptionMap[option]
+
+        const id = `variant1-${label}`
+        const aria = `Switch to "${label}" theme`
 
         return (
           <div
@@ -55,7 +60,7 @@ export const Variant1: React.FC<ModeRadioGroupProps> = ({ options, ...props }) =
           >
             <RadioGroupItem
               id={id}
-              value={option}
+              value={value}
               className='absolute top-2 left-2 size-4' // sr-only - при необходимости
             />
             <label

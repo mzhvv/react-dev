@@ -1,5 +1,3 @@
-// src/react-dev/app/navigation.tsx
-
 import { HandshakeIcon } from 'lucide-react'
 
 import type { NavigationLink, NavigationSectionKey } from '@global/navigation/types'
@@ -12,6 +10,6 @@ export const navigationReactDev = {
   ],
   author: [{ path: '/collaboration', title: 'Collaboration', icon: HandshakeIcon }],
   projects: [],
-  development: [{ path: '/ui-example', title: 'ui-example' }],
+  development: [{ path: '/ui-variant', title: 'ui-variant' }],
   secondary: [],
 } as const satisfies Record<NavigationSectionKey, NavigationLink<Path | ''>[]>

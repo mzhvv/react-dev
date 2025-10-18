@@ -11,8 +11,12 @@ export default defineConfig({
   resolve: {
     alias: {
       '@global': resolve(__dirname, './src/react-dev/shared/global'),
+      '@factories': resolve(__dirname, './src/react-dev/shared/libs/factories'),
+      '@styles': resolve(__dirname, './src/react-dev/shared/styles/index.ts'),
+
       '@react-dev': resolve(__dirname, './src/react-dev'),
       '@apps': resolve(__dirname, './src/apps'),
+
       '@ui': path.resolve(__dirname, './src/ui'),
       '@': path.resolve(__dirname, './src'),
     },

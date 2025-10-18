@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "automation:aliases": "node --loader ts-node/esm automation/aliases/generate-tsconfig-aliases.ts",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -35,7 +34,6 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.544.0",
-    "next-themes": "^0.4.6",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router": "^7.9.3",

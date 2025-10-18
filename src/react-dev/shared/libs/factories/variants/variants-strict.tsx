@@ -1,6 +1,6 @@
-// src/react-dev/shared/libs/theme/ui/variants-factory/variants-factory-strict.tsx
+// src/react-dev/shared/libs/factories/variants/variants-strict.tsx
 
-import type { FactoryVariantConfig, FactoryVariantConfig as FactoryVariantObject } from './types'
+import type { FactoryVariantConfig } from './types'
 
 /** Cтрогая типизация */
 export function createVariantsFactoryStrict<
@@ -25,13 +25,14 @@ export function createVariantsFactoryStrict<
     values,
 
     components,
-    defaultVariant,
+    // defaultVariant,
 
     // Методы
     getDefaultVariant: () => config[defaultVariant].component,
-    getOtherVarints: () => {
+    getAdditionalVariants: () => {
       return values.filter(item => item !== config[defaultVariant]).map(item => item.component)
     },
+    /** [defaultVariant, additionalVariants] */
     getSplitVariants: () => {
       const visibleComponent = config[defaultVariant].component
       const hiddenComponents = values
@@ -44,32 +45,34 @@ export function createVariantsFactoryStrict<
 
 // #region @example
 
-const Component0 = () => <></>
-const VARIANTS0 = createVariantsFactoryStrict(
-  {
-    'component-01': { component: Component0 },
-    'component-02': { component: Component0 },
-    'component-03': { component: Component0 },
-  } as const,
-  'component-01' as const
-)
+// import type { FactoryVariantConfig as FactoryVariantObject } from './types'
 
-type Component2Props = { title: string }
-const Component2: React.FC<Component2Props> = ({ title }) => <>{title}</>
-type VariantsKey = 'component-11' | 'component-12' | 'component-13'
-const VARIANTS = createVariantsFactoryStrict<VariantsKey, Component2Props>(
-  {
-    'component-11': { component: Component2 },
-    'component-12': { component: Component2 },
-    'component-13': { component: Component2 },
-  } as const satisfies FactoryVariantObject<VariantsKey, Component2Props>,
-  'component-11' as const
-)
+// const Component0 = () => <></>
+// const VARIANTS0 = createVariantsFactoryStrict(
+//   {
+//     'component-01': { component: Component0 },
+//     'component-02': { component: Component0 },
+//     'component-03': { component: Component0 },
+//   } as const,
+//   'component-01' as const
+// )
 
-const otherVarints = VARIANTS.getOtherVarints()
-export const ThemeRadioGroupVariants: React.FC<Component2Props> = props => {
-  return otherVarints.map((Component, i) => <Component key={i} {...props} />)
-}
+// type Component2Props = { title: string }
+// const Component2: React.FC<Component2Props> = ({ title }) => <>{title}</>
+// type VariantsKey = 'component-11' | 'component-12' | 'component-13'
+// const VARIANTS = createVariantsFactoryStrict<VariantsKey, Component2Props>(
+//   {
+//     'component-11': { component: Component2 },
+//     'component-12': { component: Component2 },
+//     'component-13': { component: Component2 },
+//   } as const satisfies FactoryVariantObject<VariantsKey, Component2Props>,
+//   'component-11' as const
+// )
+
+// const otherVarints = VARIANTS.getAdditionalVariants()
+// export const ThemeRadioGroupVariants: React.FC<Component2Props> = props => {
+//   return otherVarints.map((Component, i) => <Component key={i} {...props} />)
+// }
 
 // #endregion
 

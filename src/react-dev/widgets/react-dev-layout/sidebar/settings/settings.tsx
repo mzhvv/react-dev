@@ -2,7 +2,7 @@
 
 import { Settings2Icon, XIcon } from 'lucide-react'
 
-import { ThemeControls } from '@react-dev/shared/libs/theme'
+import { ThemeControls } from './theme'
 
 import { Button } from '@ui/components/button'
 import {
@@ -43,11 +43,12 @@ export const Settings = () => {
           </DialogTitle>
         </DialogHeader>
 
-        <div className='max-h-[calc(100vh-10rem)] overflow-y-auto px-3 py-0'>
+        <div
+          className='overflow-y-auto p-3'
+          // max-h-[calc(100vh-10rem)]
+        >
           <ThemeControls />
         </div>
-
-        {/* <DialogFooter className='p-3'>...</DialogFooter> */}
       </DialogContent>
     </Dialog>
   )

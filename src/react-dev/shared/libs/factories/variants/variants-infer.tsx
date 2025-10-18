@@ -1,4 +1,4 @@
-// src/react-dev/shared/libs/theme/ui/variants-factory/variants-factory-infer.tsx
+// src/react-dev/shared/libs/factories/variants/variants-infer.tsx
 
 // ⚠️ - any: чтобы фабика принимала любые React компоненты с любыми пропсами, но при этом автоматически выводила их типы.
 
@@ -21,7 +21,7 @@ export function createVariantsFactoryInfer<
     values,
 
     components,
-    defaultVariant,
+    // defaultVariant,
 
     // Методы
     splitVisibilityComponent: <K extends keyof T>(key: K) => {
@@ -43,8 +43,8 @@ export function createVariantsFactoryInfer<
 
 // #region @example
 
-type Component13Props = { title: string }
-const Component1: React.FC<Component13Props> = ({ title }) => <div>{title}</div>
+// type Component13Props = { title: string }
+// const Component1: React.FC<Component13Props> = ({ title }) => <div>{title}</div>
 // const Component2: React.FC<Component13Props> = ({ title }) => <div>{title}</div>
 // const Component3: React.FC<Component13Props> = ({ title }) => <div>{title}</div>
 
@@ -66,21 +66,21 @@ const Component1: React.FC<Component13Props> = ({ title }) => <div>{title}</div>
 // /* ✅ */ const [visibleComponent, hiddenComponents] =
 //   VARIANTS.splitVisibilityComponent('component-1')
 
-// 🔮 - МАГИЯ?!
+// // 🔮 - МАГИЯ?!
 
-type Component4Props = { label: string }
-const ComponentWithoutProps = () => <span>'component-without-props'</span>
-const Component4: React.FC<Component4Props> = ({ label }) => <div>{label}</div>
+// type Component4Props = { label: string }
+// const ComponentWithoutProps = () => <span>'component-without-props'</span>
+// const Component4: React.FC<Component4Props> = ({ label }) => <div>{label}</div>
 
-// ⚠️ - Генерик не передаем! any автоматически выводит тип!
-const VARIANTS2 = createVariantsFactoryInfer(
-  {
-    'component-1': { component: Component1 }, // Component13Props ✅
-    'component-without-props': { component: ComponentWithoutProps }, // () => JSX.Element ✅
-    'component-4': { component: Component4 }, // Component4Props ✅
-  } as const,
-  'component-1'
-)
+// // ⚠️ - Генерик не передаем! any автоматически выводит тип!
+// const VARIANTS2 = createVariantsFactoryInfer(
+//   {
+//     'component-1': { component: Component1 }, // Component13Props ✅
+//     'component-without-props': { component: ComponentWithoutProps }, // () => JSX.Element ✅
+//     'component-4': { component: Component4 }, // Component4Props ✅
+//   } as const,
+//   'component-1'
+// )
 
 /* ❌
   При использовании infer P в контексте T[keyof T]['component'] TypeScript объединяет все возможные типы пропсов через пересечение (&), а не через объединение (|).

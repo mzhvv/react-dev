@@ -1,3 +1,2 @@
-export { colorRadioGroupVariants } from './color-radio-group/config'
-
-export { ThemeControls } from './theme-сontrols'
+export { colorRadioGroupVariants } from './color-radio-group'
+export { modeRadioGroupVariants } from './mode-radio-group'

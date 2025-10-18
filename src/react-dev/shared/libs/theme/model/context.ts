@@ -2,7 +2,7 @@
 
 import { createContext } from 'react'
 
-import type { Theme } from './types'
+import type { Theme } from '../types'
 import { colors, modes, themeConfig } from './config'
 
 export const ThemeProviderContext = createContext<Theme>({
