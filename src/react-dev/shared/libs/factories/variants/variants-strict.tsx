@@ -32,6 +32,7 @@ export function createVariantsFactoryStrict<
     getAdditionalVariants: () => {
       return values.filter(item => item !== config[defaultVariant]).map(item => item.component)
     },
+
     /** [defaultVariant, additionalVariants] */
     getSplitVariants: () => {
       const visibleComponent = config[defaultVariant].component

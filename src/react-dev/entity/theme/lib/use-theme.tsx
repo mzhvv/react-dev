@@ -1,7 +1,7 @@
-// src/react-dev/shared/libs/theme/model/use-theme-state.tsx
+// src/react-dev/entity/theme/lib/use-theme.tsx
 
 import { useContext } from 'react'
-import { ThemeProviderContext } from './context'
+import { ThemeProviderContext } from '../model/context'
 
 export function useTheme() {
   const context = useContext(ThemeProviderContext)

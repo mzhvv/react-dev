@@ -1,4 +1,4 @@
-// src/react-dev/widgets/react-dev-layout/sidebar/settings/theme/theme.tsx
+// src/react-dev/widgets/react-dev-layout/sidebar-desktop/settings/theme/theme.tsx
 
 // import { lazy, Suspense } from 'react'
 
@@ -6,11 +6,8 @@ import { cssVariables } from '@styles'
 
 // import { Skeleton } from '@ui/components/skeleton'
 
-import {
-  useTheme,
-  colorRadioGroupVariants,
-  modeRadioGroupVariants,
-} from '@react-dev/shared/libs/theme'
+import { useTheme } from '@react-dev/entity/theme'
+import { colorRadioGroupVariants, modeRadioGroupVariants } from '@react-dev/features/theme'
 
 // const LazyModeadioGroupVariants = lazy(() =>
 //   import('./lazy-import').then(module => ({
