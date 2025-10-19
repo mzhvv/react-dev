@@ -22,22 +22,22 @@ export function ThemeProvider({
     () => (localStorage.getItem(modeStorageKey) as Mode) || defaultMode
   )
 
-  // Убираем color из state - он не должен вызывать перерисовку
   const [color, setColorState] = useState<Color>(
     () => (localStorage.getItem(colorStorageKey) as Color) || defaultColor
   )
 
-  // Функция для смены цвета без перерисовки
+  // Функция для смены цвета
   const setColor = useCallback(
     (newColor: Color) => {
       const root = window.document.documentElement
       root.setAttribute('color', newColor)
       localStorage.setItem(colorStorageKey, newColor)
-      setColorState(newColor) // только для контекста, но это вызовет перерисовку
+      setColorState(newColor)
     },
     [colorStorageKey]
   )
 
+  // Эффект для установки темы (режим)
   useEffect(() => {
     const root = window.document.documentElement
 
@@ -51,10 +51,13 @@ export function ThemeProvider({
     } else {
       root.classList.add(mode)
     }
+  }, [mode])
 
-    // Устанавливаем начальный цвет (только при монтировании)
+  // Эффект для установки цвета (только при монтировании)
+  useEffect(() => {
+    const root = window.document.documentElement
     root.setAttribute('color', color)
-  }, [mode]) // Убираем color из зависимостей!
+  }, [color]) // Зависит от color для корректной работы
 
   const value = {
     modes: modes,
