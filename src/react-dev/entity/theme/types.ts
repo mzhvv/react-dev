@@ -1,4 +1,4 @@
-// src/react-dev/shared/libs/theme/types.ts
+// src/react-dev/entity/theme/types.ts
 
 // model
 
@@ -21,20 +21,6 @@ export type Theme = {
   colors: Color[]
   color: Color
   setColor: (color: Color) => void
-}
-
-// ui
-
-export type ModeRadioGroupProps = {
-  options: Theme['modes']
-  value: Theme['mode']
-  onValueChange: Theme['setMode']
-}
-
-export type ColorRadioGroupProps = {
-  options: Theme['colors']
-  value: Theme['color']
-  onValueChange: Theme['setColor']
 }
 
 // constants

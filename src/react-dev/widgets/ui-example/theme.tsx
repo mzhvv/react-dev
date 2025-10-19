@@ -2,11 +2,8 @@
 
 import { cssVariables } from '@styles'
 
-import {
-  useTheme,
-  colorRadioGroupVariants,
-  modeRadioGroupVariants,
-} from '@react-dev/shared/libs/theme'
+import { useTheme } from '@react-dev/entity/theme'
+import { colorRadioGroupVariants, modeRadioGroupVariants } from '@react-dev/features/theme'
 
 export const ThemeSection = () => {
   const { modes, mode, setMode, colors, color, setColor } = useTheme()

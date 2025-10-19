@@ -1,11 +1,10 @@
-// src/react-dev/shared/libs/theme/model/theme-provider.tsx
+// src/react-dev/entity/theme/lib/theme-provider.tsx
 
 import { useEffect, useState, useCallback } from 'react'
 
 import type { ThemeConfig, Color, Mode } from '../types'
-
-import { colors, modes, themeConfig } from './config'
-import { ThemeProviderContext } from './context'
+import { colors, modes, themeConfig } from '../model/config'
+import { ThemeProviderContext } from '../model/context'
 
 type ThemeProviderProps = Partial<ThemeConfig> & {
   children: React.ReactNode

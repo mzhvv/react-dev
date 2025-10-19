@@ -1,8 +1,11 @@
+// src/react-dev/features/theme/ui/mode-radio-group/variants/variant-4.tsx
+
+import { modeOptionMap } from '@react-dev/entity/theme/ui/constants'
+
 import { cn } from '@ui/lib'
 import { RadioGroup, RadioGroupItem } from '@ui/components/radio-group'
 
 import type { ModeRadioGroupProps } from '../../../types'
-import { modeOptionMap } from '../../../constants'
 
 /* Variant4 */
 const ThemeRadioGroup: React.FC<ModeRadioGroupProps> = ({ options, ...props }) => {

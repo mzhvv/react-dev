@@ -1,4 +1,4 @@
-// src/react-dev/shared/libs/theme/model/context.ts
+// src/react-dev/entity/theme/model/context.ts
 
 import { createContext } from 'react'
 

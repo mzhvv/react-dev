@@ -1,13 +1,15 @@
+// src/react-dev/features/theme/ui/color-radio-group/variants/variant-0.tsx
+
 import { colorMap } from '@styles'
+
+import { colorOptionMap } from '@react-dev/entity/theme/ui/constants'
 
 import { cn } from '@ui/lib'
 import { RadioGroup, RadioGroupItem } from '@ui/components/radio-group'
 
 import type { ColorRadioGroupProps } from '../../../types'
-import { colorOptionMap } from '../../../constants'
 
-/* Variant0 */
-const ColorRadioGroup: React.FC<ColorRadioGroupProps> = ({ options, ...props }) => {
+export const ColorRadioGroup: React.FC<ColorRadioGroupProps> = ({ options, ...props }) => {
   return (
     <RadioGroup aria-label='Choose color scheme' className='flex gap-1.5' {...props}>
       {options.map(option => {
@@ -40,5 +42,3 @@ const ColorRadioGroup: React.FC<ColorRadioGroupProps> = ({ options, ...props }) 
     </RadioGroup>
   )
 }
-
-export { ColorRadioGroup as Variant0 }

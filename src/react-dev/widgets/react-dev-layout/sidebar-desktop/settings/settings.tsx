@@ -1,4 +1,4 @@
-// src/react-dev/widgets/react-dev-layout/sidebar/settings/settings.tsx
+// src/react-dev/widgets/react-dev-layout/sidebar-desktop/settings/settings.tsx
 
 import { Settings2Icon, XIcon } from 'lucide-react'
 

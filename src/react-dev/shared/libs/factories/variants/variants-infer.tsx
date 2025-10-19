@@ -24,19 +24,37 @@ export function createVariantsFactoryInfer<
     // defaultVariant,
 
     // Методы
-    splitVisibilityComponent: <K extends keyof T>(key: K) => {
-      const visibleComponent: T[K]['component'] = config[key].component
-      const hiddenComponents = values
-        .filter(item => item !== config[key])
+
+    // getDefaultVariant: <K extends keyof T>(key: K): T[K]['component'] => config[key].component,
+    getDefaultVariant: (): T[typeof defaultVariant]['component'] =>
+      config[defaultVariant].component,
+
+    // getAdditionalVariants: (key: keyof T) => {
+    //   return values.filter(item => item !== config[key]).map(item => item.component) as Array<
+    //     React.ComponentType<Props>
+    //   >
+    // },
+    getAdditionalVariants: () => {
+      return values
+        .filter(item => item !== config[defaultVariant])
         .map(item => item.component) as Array<React.ComponentType<Props>>
-      return [visibleComponent, hiddenComponents] as const
     },
 
-    getVisibleComponent: <K extends keyof T>(key: K): T[K]['component'] => config[key].component,
-    getHiddenComponents: (key: keyof T) => {
-      return values.filter(item => item !== config[key]).map(item => item.component) as Array<
-        React.ComponentType<Props>
-      >
+    /** [defaultVariant, additionalVariants] */
+    // getSplitVariants: <K extends keyof T>(key: K) => {
+    //   const visibleComponent: T[K]['component'] = config[key].component
+    //   const hiddenComponents = values
+    //     .filter(item => item !== config[key])
+    //     .map(item => item.component) as Array<React.ComponentType<Props>>
+    //   return [visibleComponent, hiddenComponents] as const
+    // },
+    getSplitVariants: () => {
+      const visibleComponent: T[typeof defaultVariant]['component'] =
+        config[defaultVariant].component
+      const hiddenComponents = values
+        .filter(item => item !== config[defaultVariant])
+        .map(item => item.component) as Array<React.ComponentType<Props>>
+      return [visibleComponent, hiddenComponents] as const
     },
   } as const
 }

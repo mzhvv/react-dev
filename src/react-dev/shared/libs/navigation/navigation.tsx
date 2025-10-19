@@ -1,7 +1,10 @@
+// src/react-dev/shared/navigation/navigation.tsx
+
 import { HandshakeIcon } from 'lucide-react'
 
 import type { NavigationLink, NavigationSectionKey } from '@global/libs/navigation/types'
-import type { Path } from '@react-dev/shared/types'
+
+import type { Path } from './types'
 
 export const navigationReactDev = {
   application: [

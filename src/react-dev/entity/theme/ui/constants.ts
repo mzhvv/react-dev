@@ -1,6 +1,6 @@
-// src/react-dev/shared/libs/theme/ui/constants.ts
+// src/react-dev/entity/theme/ui/constants.ts
 
-import type { ModeOptionMap, ColorOptionMap } from './types'
+import type { ModeOptionMap, ColorOptionMap } from '../types'
 
 type ModeOption = { label: string; image: string }
 export const modeOptionMap = {

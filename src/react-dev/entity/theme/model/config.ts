@@ -1,4 +1,4 @@
-// src/react-dev/shared/libs/theme/model/config.ts
+// src/react-dev/entity/theme/model/config.ts
 
 import type { Color, Mode, ThemeConfig } from '../types'
 
