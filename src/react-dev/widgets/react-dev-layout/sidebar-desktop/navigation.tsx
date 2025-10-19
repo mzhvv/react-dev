@@ -1,17 +1,15 @@
 // src/react-dev/widgets/react-dev-layout/sidebar/navigation.tsx
 
 import { Link } from 'react-router'
-import type { NavigationLink, NavigationSection } from '@global/libs/navigation'
-import { Button } from '@ui/components/button'
 
+import type { NavigationLink, NavigationSection } from '@global/libs/navigation'
 import { NAVIGATION_SECTIONS_FOR_SIDEBAR } from '@global/libs/navigation'
 
+import { Button } from '@ui/components/button'
+import { DotIcon } from 'lucide-react'
+
 export const Navigation = () => {
-  return (
-    <nav aria-label='navigation' className='flex-1'>
-      <NavigationList navigationSections={NAVIGATION_SECTIONS_FOR_SIDEBAR} />
-    </nav>
-  )
+  return <NavigationList navigationSections={NAVIGATION_SECTIONS_FOR_SIDEBAR} />
 }
 
 export const NavigationList: React.FC<{ navigationSections: NavigationSection[] }> = ({
@@ -20,8 +18,10 @@ export const NavigationList: React.FC<{ navigationSections: NavigationSection[] 
   return (
     <ul className='p-2'>
       {navigationSections.map(sections => (
-        <li key={sections.title} className='space-y-2 p-2'>
-          <h3 className='text-sidebar-foreground/70 px-2 text-xs font-medium'>{sections.title}</h3>
+        <li key={sections.title} className='p-2'>
+          <h3 className='text-sidebar-foreground/70 flex h-8 items-center px-2 text-xs font-medium'>
+            {sections.title}
+          </h3>
           <ul>
             {sections.links.map(link => (
               <NavigationItem key={link.path} link={link} />
@@ -36,9 +36,9 @@ export const NavigationList: React.FC<{ navigationSections: NavigationSection[] 
 const NavigationItem: React.FC<{ link: NavigationLink }> = ({ link }) => {
   return (
     <li>
-      <Button asChild variant='ghost' size='sm' className='w-full justify-start px-2'>
+      <Button asChild variant='ghost' size='sm' className='h-8 w-full justify-start p-2'>
         <Link to={link.path}>
-          {'icon' in link && link.icon && <link.icon />}
+          {('icon' in link && link.icon && <link.icon />) || <DotIcon />}
           {link.title}
         </Link>
       </Button>
