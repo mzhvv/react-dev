@@ -11,40 +11,37 @@ import {
 export const ThemeSection = () => {
   const { modes, mode, setMode, colors, color, setColor } = useTheme()
 
-  const styles =
-    'grid grid-cols-1 items-center justify-center *:p-3 md:grid-cols-1 lg:grid-cols-3 *:max-w-94'
-
   return (
-    <section id='theme' className='mx-auto max-w-screen-lg px-3'>
+    <section id='theme' className='mx-auto max-w-screen-lg space-y-4 px-8'>
       <header>
         <h2>Theme</h2>
       </header>
 
-      <section id='theme-color' className='mt-3'>
+      <section style={cssVariables} id='theme-color' className='space-y-4'>
         <header>
           <h3>Color</h3>
         </header>
-        <fieldset>
+        <fieldset className='space-y-4'>
           <legend className='sr-only'>Choose a color</legend>
-          <div style={cssVariables} className={styles}>
-            {colorRadioGroupVariants.components.map((Component, i) => (
-              <Component key={i} {...{ options: colors, value: color, onValueChange: setColor }} />
-            ))}
-          </div>
+          {colorRadioGroupVariants.components.map((Component, i) => (
+            <div key={i} className='w-94'>
+              <Component {...{ options: colors, value: color, onValueChange: setColor }} />
+            </div>
+          ))}
         </fieldset>
       </section>
 
-      <section id='theme-mode'>
+      <section id='theme-mode' className='space-y-4'>
         <header>
           <h3>Mode</h3>
         </header>
-        <fieldset>
+        <fieldset className='space-y-4'>
           <legend className='sr-only'>Choose a mode</legend>
-          <div className={styles}>
-            {modeRadioGroupVariants.components.map((Component, i) => (
-              <Component key={i} {...{ options: modes, value: mode, onValueChange: setMode }} />
-            ))}
-          </div>
+          {modeRadioGroupVariants.components.map((Component, i) => (
+            <div key={i} className='w-94'>
+              <Component {...{ options: modes, value: mode, onValueChange: setMode }} />
+            </div>
+          ))}
         </fieldset>
       </section>
     </section>

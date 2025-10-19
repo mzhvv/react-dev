@@ -1,7 +1,9 @@
 export const CollaborationPage = () => {
   return (
-    <div>
-      <h1>collaboration</h1>
-    </div>
+    <main>
+      <header className='pt-4'>
+        <h1>collaboration</h1>
+      </header>
+    </main>
   )
 }

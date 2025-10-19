@@ -2,9 +2,9 @@ import { Navigation } from '@react-dev/widgets/home'
 
 export const HomePage = () => {
   return (
-    <main className='mx-auto max-w-screen-sm space-y-8 pt-4 text-center'>
-      <header className='space-y-4'>
-        <div>
+    <main className='mx-auto max-w-screen-sm space-y-8 text-center'>
+      <header className='pt-4'>
+        <div className='space-y-2'>
           <h1>Welcome in react-dev</h1>
           <p>
             Built by{' '}

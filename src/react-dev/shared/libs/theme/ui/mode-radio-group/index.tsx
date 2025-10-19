@@ -14,5 +14,5 @@ export const modeRadioGroupVariants = createVariantsFactory<Variant, ModeRadioGr
     '1': { component: Variant1 },
     '4': { component: Variant4 },
   } as const satisfies FactoryVariantObject<Variant, ModeRadioGroupProps>,
-  '0'
+  '4'
 )
