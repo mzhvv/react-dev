@@ -18,8 +18,8 @@ import { colorRadioGroupVariants, modeRadioGroupVariants } from '@react-dev/feat
 export const ThemeControls = () => {
   const { modes, mode, setMode, colors, color, setColor } = useTheme()
 
-  const ColorRadioGroup = colorRadioGroupVariants.getDefaultVariant()
-  const ModeRadioGroup = modeRadioGroupVariants.getDefaultVariant()
+  const ColorRadioGroup = colorRadioGroupVariants.getDefaultComponent()
+  const ModeRadioGroup = modeRadioGroupVariants.getDefaultComponent()
 
   return (
     <div className='space-y-3'>

@@ -1,5 +1,5 @@
-import type { FactoryVariantObject } from '@factories/variants'
-import { createVariantsFactory } from '@factories/variants'
+import type { FactoryComponentVariantsConfig } from '@factories/component-variants'
+import { createComponentVariantsFactory } from '@factories/component-variants'
 
 import type { ModeRadioGroupProps } from '../../types'
 
@@ -8,11 +8,11 @@ import { Variant4 } from './variants/variant-4'
 
 type Variant = '0' | '1' | '4'
 
-export const modeRadioGroupVariants = createVariantsFactory<Variant, ModeRadioGroupProps>(
+export const modeRadioGroupVariants = createComponentVariantsFactory<Variant, ModeRadioGroupProps>(
   {
     '0': { component: Variant0 },
     '1': { component: Variant1 },
     '4': { component: Variant4 },
-  } as const satisfies FactoryVariantObject<Variant, ModeRadioGroupProps>,
+  } as const satisfies FactoryComponentVariantsConfig<Variant, ModeRadioGroupProps>,
   '4'
 )
