@@ -2,13 +2,13 @@
 
 import type { NavigationAccumulate } from '@global/libs/navigation'
 
-import { navigationPproject01 } from './project-01'
+import { navigationPproject0 } from './project-0'
 import { navigationDashboard01 } from './dashboard-01'
 
 export const navigationAccumulate = {
   application: [],
   author: [],
   projects: [],
-  development: [...navigationPproject01],
+  development: [...navigationPproject0],
   secondary: [...navigationDashboard01],
 } as const satisfies NavigationAccumulate
