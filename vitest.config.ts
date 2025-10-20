@@ -1,14 +1,19 @@
-// vite.config.ts
+// vitest.config.ts
+
+/// <reference types="vitest" />
 
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
-import tailwindcss from '@tailwindcss/vite'
 
 import { alias } from './vite.aliases'
 
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
-
+  plugins: [react()],
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: ['./src/test/setup.ts'],
+  },
   resolve: {
     alias: alias,
   },

@@ -2,6 +2,6 @@ import type { NavigationLink } from '@global/libs/navigation'
 
 import type { Path } from './types'
 
-export const navigationPproject01 = [
-  { path: '/project-01', title: 'project-01' },
+export const navigationPproject0 = [
+  { path: '/project-0', title: 'project-0' },
 ] as const satisfies NavigationLink<Path>[]

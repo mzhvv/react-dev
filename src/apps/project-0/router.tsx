@@ -1,12 +1,12 @@
 import type { RouteObject } from '@global/libs/router'
 
 import type { Path } from './types'
-import { Project01Page } from './page'
+import { Project0Page } from './page'
 
-export const routesPproject01 = [
+export const routesPproject0 = [
   {
-    path: 'project-01',
-    element: <Project01Page />,
+    path: 'project-0',
+    element: <Project0Page />,
   },
 ] as const satisfies RouteObject<Path>[]
 
