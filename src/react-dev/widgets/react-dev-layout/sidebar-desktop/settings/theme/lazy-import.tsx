@@ -3,9 +3,9 @@
 import type { ModeRadioGroupProps } from '@react-dev/features/theme'
 import { modeRadioGroupVariants } from '@react-dev/features/theme'
 
-// const [_, additionalVariants] = modeRadioGroupVariants.getSplitVariants()
-const additionalVariants = modeRadioGroupVariants.getAdditionalVariants()
+// const [_, nonDefaultComponents] = modeRadioGroupVariants.getNonDefaultComponents()
+const nonDefaultComponents = modeRadioGroupVariants.getNonDefaultComponents()
 
 export const ModeRadioGroupVariants: React.FC<ModeRadioGroupProps> = props => {
-  return additionalVariants.map((Component, i) => <Component key={i} {...props} />)
+  return nonDefaultComponents.map((Component, i) => <Component key={i} {...props} />)
 }

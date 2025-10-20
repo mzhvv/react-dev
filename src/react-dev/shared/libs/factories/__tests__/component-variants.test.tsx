@@ -1,8 +1,10 @@
+// src/react-dev/shared/libs/factories/__tests__/component-variants.test.tsx
+
 import { describe, it, expect } from 'vitest'
 import { render } from '@testing-library/react'
 
-import type { FactoryVariantConfig } from '../variants'
-import { createVariantsFactory } from '../variants'
+import type { FactoryComponentVariantsConfig } from '../component-variants'
+import { createComponentVariantsFactory } from '../component-variants'
 
 //
 type Variant = 'variant-1' | 'variant-2' | 'variant-3'
@@ -17,18 +19,18 @@ const ComponentWithProps: React.FC<ComponentWithProps> = ({ value }) => (
   </div>
 )
 
-describe('createVariantsFactoryStrict', () => {
-  describe('factory with components without props', () => {
+describe('createComponentVariantsFactory', () => {
+  describe('Фабрика с вариантами компонентов без пропсов', () => {
     // Мок-фабрика
     const config = {
       'variant-1': { component: ComponentWithoutProps },
       'variant-2': { component: ComponentWithoutProps },
       'variant-3': { component: ComponentWithoutProps },
-    } as const // satisfies FactoryVariantConfig<Variant, {}>
-    const factory = createVariantsFactory(config, 'variant-1')
+    } as const // satisfies FactoryComponentVariantsConfig<Variant, {}>
+    const factory = createComponentVariantsFactory(config, 'variant-1')
 
     // Данные
-    it('should have correct data structure', () => {
+    it('должны корректно инициализировать данные фабрики', () => {
       expect(factory.map).toEqual(config)
       expect(factory.keys).toHaveLength(3)
       expect(factory.values).toHaveLength(3)
@@ -39,17 +41,17 @@ describe('createVariantsFactoryStrict', () => {
     // it('', () => {})
   })
 
-  describe('factory with components with props', () => {
+  describe('Фабрика с вариантами компонентов с пропсами', () => {
     // Мок-фабрика
     const config = {
       'variant-1': { component: ComponentWithProps },
       'variant-2': { component: ComponentWithProps },
       'variant-3': { component: ComponentWithProps },
-    } as const satisfies FactoryVariantConfig<Variant, ComponentWithProps>
-    const factory = createVariantsFactory<Variant, ComponentWithProps>(config, 'variant-1')
+    } as const satisfies FactoryComponentVariantsConfig<Variant, ComponentWithProps>
+    const factory = createComponentVariantsFactory<Variant, ComponentWithProps>(config, 'variant-1')
 
     // Данные
-    it('should have correct data structure', () => {
+    it('должны корректно инициализировать данные фабрики', () => {
       expect(factory.map).toEqual(config)
       expect(factory.keys).toEqual(['variant-1', 'variant-2', 'variant-3'])
       expect(factory.values).toEqual([
@@ -65,11 +67,11 @@ describe('createVariantsFactoryStrict', () => {
     })
 
     // Методы
-    it('getDefaultVariant', () => {
-      const DefaultVariant = factory.getDefaultVariant()
-      expect(DefaultVariant).toBe(ComponentWithProps)
+    it('должен возвращать компонент по умолчанию', () => {
+      const DefaultComponent = factory.getDefaultComponent()
+      expect(DefaultComponent).toBe(ComponentWithProps)
 
-      const rendered = render(<DefaultVariant value='value' />)
+      const rendered = render(<DefaultComponent value='value' />)
 
       // 1. Если getByTestId не выбросил ошибку - элемент уже отрендерилися в DOM
       const element = rendered.getByTestId('component-with-props')
@@ -81,11 +83,11 @@ describe('createVariantsFactoryStrict', () => {
       // expect(element).toHaveTextContent('value')
     })
 
-    it('getAdditionalVariants', () => {
-      const additionalVariants = factory.getAdditionalVariants()
-      expect(additionalVariants).toHaveLength(2)
+    it('должен возвращать массив всех компонентов, кроме компонента по умолчанию', () => {
+      const nonDefaultComponents = factory.getNonDefaultComponents()
+      expect(nonDefaultComponents).toHaveLength(2)
 
-      const renderedComponents = additionalVariants.map((Component, index) => {
+      const renderedComponents = nonDefaultComponents.map((Component, index) => {
         const container = document.createElement('div')
         return render(<Component value='value' key={index} />, { container })
       })
@@ -102,12 +104,12 @@ describe('createVariantsFactoryStrict', () => {
       })
     })
 
-    it('getSplitVariants', () => {
-      const [DefaultVariant, additionalVariants] = factory.getSplitVariants()
-      expect(DefaultVariant).toBe(ComponentWithProps)
-      expect(additionalVariants).toHaveLength(2)
+    it('возвращает кортеж [компонент по умолчанию, массив остальных компонентов]', () => {
+      const [DefaultComponent, nonDefaultComponents] = factory.getComponentGroups()
+      expect(DefaultComponent).toBe(ComponentWithProps)
+      expect(nonDefaultComponents).toHaveLength(2)
 
-      // Логика Идентична getDefaultVariant и getAdditionalVariants
+      // Логика Идентична getDefaultComponent и getNonDefaultComponents
     })
   })
 })
