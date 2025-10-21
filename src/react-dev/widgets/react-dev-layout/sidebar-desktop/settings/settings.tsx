@@ -13,6 +13,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@ui/components/dialog'
+import { Slot } from '@radix-ui/react-slot'
 
 export const Settings = () => {
   return (
@@ -25,22 +26,24 @@ export const Settings = () => {
       <DialogContent
         showCloseButton={false}
         aria-describedby={undefined}
-        className='gap-0 space-y-3 p-3 !transition-none sm:max-w-[425px]' // !duration-0 !ease-[0]
+        className='gap-0 p-3 !transition-none sm:max-w-[425px]' // !duration-0 !ease-[0]
       >
-        <DialogHeader className='p-3'>
-          <DialogTitle className='flex items-center justify-between'>
-            Settings
-            <DialogClose asChild>
-              <Button
-                variant='ghost'
-                size='icon-sm'
-                title='Close settings'
-                aria-label='Close settings'
-              >
-                <XIcon />
-              </Button>
-            </DialogClose>
-          </DialogTitle>
+        <DialogHeader className='p-3 pb-0'>
+          <Slot className=''>
+            <DialogTitle className='flex items-center justify-between'>
+              Settings
+              <DialogClose asChild>
+                <Button
+                  variant='ghost'
+                  size='icon-sm'
+                  title='Close settings'
+                  aria-label='Close settings'
+                >
+                  <XIcon />
+                </Button>
+              </DialogClose>
+            </DialogTitle>
+          </Slot>
         </DialogHeader>
 
         <div

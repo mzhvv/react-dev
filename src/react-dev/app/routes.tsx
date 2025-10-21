@@ -4,7 +4,7 @@ import type { RouteObject } from '@global/libs/router'
 import type { Path } from '@react-dev/shared/libs/navigation'
 
 import { ReactDevLayout } from '@react-dev/widgets/react-dev-layout'
-import { UiVariantPage } from '@react-dev/pages/ui-variant'
+import { UiComponentVariantsPage } from '@react-dev/pages/ui-component-variants'
 import { HomePage } from '@react-dev/pages/home'
 import { AboutPage } from '@react-dev/pages/about'
 import { CollaborationPage } from '@react-dev/pages/collaboration'
@@ -18,8 +18,8 @@ export const routesReactDev = {
       element: <HomePage />,
     },
     {
-      path: 'ui-variant',
-      element: <UiVariantPage />,
+      path: 'ui-component-variants',
+      element: <UiComponentVariantsPage />,
     },
     {
       path: 'about',

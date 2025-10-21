@@ -1,9 +1,15 @@
+import { Header, Main, Section, SectionContent } from '@ui/layout-system'
+
 export const AboutPage = () => {
   return (
-    <main>
-      <header className='pt-4'>
-        <h1>about</h1>
-      </header>
-    </main>
+    <Main>
+      <Header>
+        <h1>Aabout</h1>
+      </Header>
+
+      <Section>
+        <SectionContent>.</SectionContent>
+      </Section>
+    </Main>
   )
 }

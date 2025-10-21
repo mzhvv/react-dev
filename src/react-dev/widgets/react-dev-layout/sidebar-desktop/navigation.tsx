@@ -7,6 +7,7 @@ import { NAVIGATION_SECTIONS_FOR_SIDEBAR } from '@global/libs/navigation'
 
 import { Button } from '@ui/components/button'
 import { DotIcon } from 'lucide-react'
+import { Label2 } from '@ui/components/label-2'
 
 export const Navigation = () => {
   return <NavigationList navigationSections={NAVIGATION_SECTIONS_FOR_SIDEBAR} />
@@ -19,9 +20,9 @@ export const NavigationList: React.FC<{ navigationSections: NavigationSection[] 
     <ul className='p-2'>
       {navigationSections.map(sections => (
         <li key={sections.title} className='p-2'>
-          <h3 className='text-sidebar-foreground/70 flex h-8 items-center px-2 text-xs font-medium'>
-            {sections.title}
-          </h3>
+          <Label2 asChild className='px-3'>
+            <h3>{sections.title}</h3>
+          </Label2>
           <ul>
             {sections.links.map(link => (
               <NavigationItem key={link.path} link={link} />
@@ -36,7 +37,7 @@ export const NavigationList: React.FC<{ navigationSections: NavigationSection[] 
 const NavigationItem: React.FC<{ link: NavigationLink }> = ({ link }) => {
   return (
     <li>
-      <Button asChild variant='ghost' size='sm' className='h-8 w-full justify-start p-2'>
+      <Button asChild variant='ghost' size='sm-full'>
         <Link to={link.path}>
           {('icon' in link && link.icon && <link.icon />) || <DotIcon />}
           {link.title}

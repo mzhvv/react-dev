@@ -159,16 +159,25 @@ html[color="blue"] {
     @apply bg-background text-foreground;
   }
 
+  /* Typography */
+
   h1 {
-    @apply scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance;
+    @apply text-3xl leading-tight;
   }
   h2 {
-    @apply scroll-m-20 text-3xl font-semibold tracking-tight first:mt-0;
+    @apply flex h-8 items-center text-2xl leading-tight;
   }
   h3 {
-    @apply scroll-m-20 text-2xl font-semibold tracking-tight;
+    @apply flex h-8 items-center text-xl leading-snug;
   }
-  h4 {
-    @apply scroll-m-20 text-xl font-semibold tracking-tight;
+
+  h4,
+  h5 {
+    @apply flex h-8 items-center text-lg leading-snug;
+  }
+
+  p,
+  span {
+    @apply text-base leading-relaxed;
   }
 }

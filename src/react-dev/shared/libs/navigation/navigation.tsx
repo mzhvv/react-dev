@@ -13,6 +13,5 @@ export const navigationReactDev = {
   ],
   author: [{ path: '/collaboration', title: 'Collaboration', icon: HandshakeIcon }],
   projects: [],
-  development: [],
-  secondary: [{ path: '/ui-variant', title: 'ui-variant' }],
+  development: [{ path: '/ui-component-variants', title: 'ui-component-variants' }],
 } as const satisfies Record<NavigationSectionKey, NavigationLink<Path | ''>[]>

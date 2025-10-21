@@ -9,6 +9,5 @@ export const navigationAccumulate = {
   application: [],
   author: [],
   projects: [],
-  development: [...navigationPproject0],
-  secondary: [...navigationDashboard01],
+  development: [...navigationPproject0, ...navigationDashboard01],
 } as const satisfies NavigationAccumulate

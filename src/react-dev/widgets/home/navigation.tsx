@@ -2,36 +2,48 @@
 
 import { Link } from 'react-router'
 
-import type { NavigationLink, NavigationSection } from '@global/libs/navigation'
-import { Button } from '@ui/components/button'
-
+import type {
+  NavigationLink,
+  NavigationSection as NavigationSectionT,
+} from '@global/libs/navigation'
 import {
   NAVIGATION_SECTIONS_FOR_PAGE_1,
   NAVIGATION_SECTIONS_FOR_PAGE_2,
 } from '@global/libs/navigation'
 
-export const Navigation = () => {
+import { Section, SectionContent, SectionHeader } from '@ui/layout-system'
+import { Button } from '@ui/components/button'
+import { Label2 } from '@ui/components/label-2'
+
+export const NavigationSection = () => {
   return (
-    <>
-      <section>
-        <NavigationList navigationSections={NAVIGATION_SECTIONS_FOR_PAGE_1} />
-      </section>
-      <section>
-        <NavigationList navigationSections={NAVIGATION_SECTIONS_FOR_PAGE_2} />
-      </section>
-    </>
+    <Section>
+      <SectionHeader>
+        <h2>Навигация</h2>
+      </SectionHeader>
+      <SectionContent
+      // className='max-w-107' // 45 + 3 + 14
+      >
+        <nav className='space-y-4'>
+          <NavigationGroup navigationSections={NAVIGATION_SECTIONS_FOR_PAGE_1} />
+          <NavigationGroup navigationSections={NAVIGATION_SECTIONS_FOR_PAGE_2} />
+        </nav>
+      </SectionContent>
+    </Section>
   )
 }
 
-export const NavigationList: React.FC<{ navigationSections: NavigationSection[] }> = ({
+const NavigationGroup: React.FC<{ navigationSections: NavigationSectionT[] }> = ({
   navigationSections,
 }) => {
   return (
-    <ul className='flex justify-center gap-4'>
+    <ul className='flex justify-center gap-3'>
       {navigationSections.map(sections => (
-        <li key={sections.title} className='space-y-2'>
-          <h3 className='text-sidebar-foreground/70 px-2 text-xs font-medium'>{sections.title}</h3>
-          <ul>
+        <li key={sections.title}>
+          <Label2 asChild className='px-3'>
+            <h3>{sections.title}</h3>
+          </Label2>
+          <ul className='w-45'>
             {sections.links.map(link => (
               <NavigationItem key={link.path} link={link} />
             ))}
@@ -45,7 +57,7 @@ export const NavigationList: React.FC<{ navigationSections: NavigationSection[] 
 const NavigationItem: React.FC<{ link: NavigationLink }> = ({ link }) => {
   return (
     <li>
-      <Button asChild variant='ghost' size='sm'>
+      <Button asChild variant='ghost' size='sm-full'>
         <Link to={link.path}>
           {'icon' in link && link.icon && <link.icon />}
           {link.title}

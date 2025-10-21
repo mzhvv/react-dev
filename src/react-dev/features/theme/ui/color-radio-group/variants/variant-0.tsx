@@ -11,7 +11,11 @@ import type { ColorRadioGroupProps } from '../../../types'
 
 export const ColorRadioGroup: React.FC<ColorRadioGroupProps> = ({ options, ...props }) => {
   return (
-    <RadioGroup aria-label='Choose color scheme' className='flex gap-1.5' {...props}>
+    <RadioGroup
+      aria-label='Choose color scheme'
+      className='flex h-8 items-center gap-1.5'
+      {...props}
+    >
       {options.map(option => {
         const { value, label } = colorOptionMap[option]
 
