@@ -1,9 +1,9 @@
 // src/react-dev/widgets/react-dev-layout/sidebar-desktop/settings/theme/theme.tsx
 
 // import { lazy, Suspense } from 'react'
-
 import { cssVariables } from '@styles'
 
+import { Label2 } from '@ui/components/label-2'
 // import { Skeleton } from '@ui/components/skeleton'
 
 import { useTheme } from '@react-dev/entity/theme'
@@ -22,16 +22,20 @@ export const ThemeControls = () => {
   const ModeRadioGroup = modeRadioGroupVariants.getDefaultComponent()
 
   return (
-    <div className='space-y-3'>
-      <h2>Theme</h2>
+    <div className='space-y-1.5'>
+      <h3>Theme</h3>
 
-      <fieldset style={cssVariables} className='space-y-3'>
-        <legend className='text-foreground text-sm leading-none font-medium'>Choose a color</legend>
+      <fieldset style={cssVariables} className='space-y-1.5'>
+        <Label2 asChild>
+          <legend>Choose a color</legend>
+        </Label2>
         <ColorRadioGroup {...{ options: colors, value: color, onValueChange: setColor }} />
       </fieldset>
 
-      <fieldset className='space-y-3'>
-        <legend className='text-foreground text-sm leading-none font-medium'>Choose a mode</legend>
+      <fieldset className='space-y-1.5'>
+        <Label2 asChild>
+          <legend>Choose a mode</legend>
+        </Label2>
         <ModeRadioGroup {...{ options: modes, value: mode, onValueChange: setMode }} />
 
         {/* <Suspense fallback={<Skeleton className='h-[calc(60px+12px+93.063px)]' />}>

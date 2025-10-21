@@ -22,21 +22,11 @@ const NAVIGATION_SECTIONS = [
     title: 'Development',
     links: [...navigationReactDev.development, ...navigationAccumulate.development],
   },
-  {
-    title: 'Secondary',
-    links: [...navigationReactDev.secondary, ...navigationAccumulate.secondary],
-  },
 ] as const satisfies NavigationSection[]
 
-const [application, author, projects, development, secondary] = NAVIGATION_SECTIONS
+const [application, author, projects, development] = NAVIGATION_SECTIONS
 
-const MODIFIED_NAVIGATION_SECTIONS_FOR_SIDEBAR = [
-  application,
-  author,
-  projects,
-  development,
-  secondary,
-]
+const MODIFIED_NAVIGATION_SECTIONS_FOR_SIDEBAR = [application, author, projects, development]
 
 const MODIFIED_NAVIGATION_SECTIONS_FOR_PAGE_1 = [
   {
@@ -45,7 +35,7 @@ const MODIFIED_NAVIGATION_SECTIONS_FOR_PAGE_1 = [
   },
   author,
 ]
-const MODIFIED_NAVIGATION_SECTIONS_FOR_PAGE_2 = [projects, development, secondary]
+const MODIFIED_NAVIGATION_SECTIONS_FOR_PAGE_2 = [projects, development]
 
 export {
   MODIFIED_NAVIGATION_SECTIONS_FOR_SIDEBAR as NAVIGATION_SECTIONS_FOR_SIDEBAR,

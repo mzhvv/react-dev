@@ -11,7 +11,7 @@ import type { ModeRadioGroupProps } from '../../../types'
 /* ThemeRadioGroup */
 export const Variant0: React.FC<ModeRadioGroupProps> = ({ options, ...props }) => {
   return (
-    <RadioGroup aria-label='Choose theme' className='flex items-center gap-4' {...props}>
+    <RadioGroup aria-label='Choose theme' className='flex h-8 items-center gap-4' {...props}>
       {options.map(option => {
         const { value, label } = modeOptionMap[option]
 

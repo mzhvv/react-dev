@@ -1,9 +1,15 @@
+import { Main, Header, Section, SectionContent } from '@ui/layout-system'
+
 export const CollaborationPage = () => {
   return (
-    <main>
-      <header className='pt-4'>
-        <h1>collaboration</h1>
-      </header>
-    </main>
+    <Main>
+      <Header>
+        <h1>Collaboration</h1>
+      </Header>
+
+      <Section>
+        <SectionContent>.</SectionContent>
+      </Section>
+    </Main>
   )
 }

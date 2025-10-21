@@ -1,11 +1,6 @@
 import type { LucideIcon } from 'lucide-react'
 
-export type NavigationSectionKey =
-  | 'application'
-  | 'author'
-  | 'projects'
-  | 'development'
-  | 'secondary'
+export type NavigationSectionKey = 'application' | 'author' | 'projects' | 'development'
 
 export type NavigationLink<T extends string = string> = {
   path: `/${T}`
