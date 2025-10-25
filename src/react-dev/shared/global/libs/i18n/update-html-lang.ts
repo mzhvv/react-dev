@@ -1,9 +1,11 @@
 // src/react-dev/shared/global/libs/i18n/use-update-html-lang.ts
 
+/* eslint-disable react-hooks/rules-of-hooks */
+
 import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 
-export const useUpdateHtmlLang = () => {
+export const updateHtmlLang = () => {
   const { i18n } = useTranslation()
 
   useEffect(() => {

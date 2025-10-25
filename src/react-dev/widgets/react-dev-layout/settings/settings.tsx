@@ -13,12 +13,12 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@ui/components/dialog'
-import { Locales } from './locales/locales'
+import { Language } from './language/language'
 
 export const Settings = () => {
   return (
     <Modal>
-      <Locales />
+      <Language />
       <ThemeControls />
     </Modal>
   )
