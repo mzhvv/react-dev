@@ -7,15 +7,15 @@ import type { NavigationSection } from './types'
 
 const NAVIGATION_SECTIONS = [
   {
-    title: 'Application',
+    title: 'Приложение ', // Application
     links: [...navigationReactDev.application, ...navigationAccumulate.application],
   },
   {
-    title: 'Author',
+    title: 'Автор', // Author
     links: [...navigationReactDev.author, ...navigationAccumulate.author],
   },
   {
-    title: 'Projects',
+    title: 'Проекты', // Projects
     links: [...navigationReactDev.projects, ...navigationAccumulate.projects],
   },
   {
@@ -25,6 +25,8 @@ const NAVIGATION_SECTIONS = [
 ] as const satisfies NavigationSection[]
 
 const [application, author, projects, development] = NAVIGATION_SECTIONS
+
+//
 
 const MODIFIED_NAVIGATION_SECTIONS_FOR_SIDEBAR = [application, author, projects, development]
 

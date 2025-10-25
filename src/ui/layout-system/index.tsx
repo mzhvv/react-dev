@@ -1,7 +1,6 @@
 import { cn } from '@ui/lib'
 
 import { styles } from './styles'
-import React from 'react'
 
 const container = styles.container
 
@@ -11,7 +10,9 @@ export const Header: React.FC<{ children: React.ReactNode; className?: string }>
   children,
   className,
 }) => {
-  return <header className={cn(container, 'pt-4', className)}>{children}</header>
+  return (
+    <header className={cn(container, 'mb-0! flex h-17 items-center', className)}>{children}</header>
+  )
 }
 
 // Main

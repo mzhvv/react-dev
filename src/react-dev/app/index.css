@@ -161,16 +161,12 @@ html[color="blue"] {
 
   /* Typography */
 
-  h1 {
-    @apply text-3xl leading-tight;
-  }
+  h1,
   h2 {
-    @apply flex h-8 items-center text-2xl leading-tight;
-  }
-  h3 {
-    @apply flex h-8 items-center text-xl leading-snug;
+    @apply flex h-8 items-center text-xl leading-tight;
   }
 
+  h3,
   h4,
   h5 {
     @apply flex h-8 items-center text-lg leading-snug;

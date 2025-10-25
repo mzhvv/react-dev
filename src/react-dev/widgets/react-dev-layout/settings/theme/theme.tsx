@@ -22,19 +22,19 @@ export const ThemeControls = () => {
   const ModeRadioGroup = modeRadioGroupVariants.getDefaultComponent()
 
   return (
-    <div className='space-y-1.5'>
-      <h3>Theme</h3>
+    <div className='p-2'>
+      <h3>Внешний вид</h3>
 
-      <fieldset style={cssVariables} className='space-y-1.5'>
-        <Label2 asChild>
-          <legend>Choose a color</legend>
+      <fieldset style={cssVariables}>
+        <Label2 asChild className='px-0'>
+          <legend>Цветовая схема</legend>
         </Label2>
         <ColorRadioGroup {...{ options: colors, value: color, onValueChange: setColor }} />
       </fieldset>
 
-      <fieldset className='space-y-1.5'>
-        <Label2 asChild>
-          <legend>Choose a mode</legend>
+      <fieldset>
+        <Label2 asChild className='px-0'>
+          <legend>Режим темы</legend>
         </Label2>
         <ModeRadioGroup {...{ options: modes, value: mode, onValueChange: setMode }} />
 

@@ -11,7 +11,7 @@ export const Label2: React.FC<
   return (
     <Comp
       className={cn(
-        'text-accent-foreground/70 flex h-8 w-full items-center text-sm font-medium',
+        'text-accent-foreground/70 flex h-8 w-full items-center px-2.5 text-xs font-medium',
         className
       )}
       {...props}
