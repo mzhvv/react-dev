@@ -1,8 +1,10 @@
 {
+  "aaaaa": "RURURU",
+
   "settings": {
     "localization": {
       "heading": "Локализация",
-      "label": "Основной язык"
+      "label": "Язык"
     }
   }
 }
