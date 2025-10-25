@@ -18,14 +18,14 @@ const SidebarControl: React.FC<{ children: React.ReactNode }> = ({ children }) =
 
   if (isMobile)
     return (
-      <div className='[&>*:first-child]:min-h-[calc(100svh-53px)]'>
+      <div className='[&>*:first-child]:min-h-[calc(100svh-57px)]'>
         {children}
         <SidebarMobile />
       </div>
     )
 
   return (
-    <div className='flex *:flex-none [&>*:last-child]:flex-auto'>
+    <div className='flex [&>*:first-child]:shrink-0 [&>*:last-child]:grow'>
       <SidebarDesktop />
       {children}
     </div>

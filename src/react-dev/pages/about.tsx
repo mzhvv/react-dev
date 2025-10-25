@@ -1,10 +1,10 @@
-import { Header, Main, Section, SectionContent } from '@ui/layout-system'
+import { Main, Header, Section, SectionContent } from '@ui/layout-system'
 
 export const AboutPage = () => {
   return (
     <Main>
       <Header>
-        <h1>Aabout</h1>
+        <h1>О приложении</h1>
       </Header>
 
       <Section>

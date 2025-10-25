@@ -1,6 +1,13 @@
 // src/react-dev/shared/navigation/navigation.tsx
 
-import { HandshakeIcon } from 'lucide-react'
+import {
+  HeartIcon,
+  HandHeartIcon,
+  HeartHandshakeIcon,
+  // HouseHeartIcon,
+  // HandHelpingIcon,
+  // HandshakeIcon,
+} from 'lucide-react'
 
 import type { NavigationLink, NavigationSectionKey } from '@global/libs/navigation/types'
 
@@ -8,10 +15,24 @@ import type { Path } from './types'
 
 export const navigationReactDev = {
   application: [
-    { path: '/', title: 'Home' },
-    { path: '/about', title: 'About' },
+    {
+      path: '/',
+      title: 'Главная',
+      icon: HeartIcon, // HouseHeartIcon
+    },
+    {
+      path: '/about',
+      title: 'О приложении',
+      icon: HandHeartIcon, // HandHelpingIcon
+    },
   ],
-  author: [{ path: '/collaboration', title: 'Collaboration', icon: HandshakeIcon }],
+  author: [
+    {
+      path: '/collaboration',
+      title: 'Сотрудничество',
+      icon: HeartHandshakeIcon, // HandshakeIcon
+    },
+  ],
   projects: [],
   development: [{ path: '/ui-component-variants', title: 'ui-component-variants' }],
 } as const satisfies Record<NavigationSectionKey, NavigationLink<Path | ''>[]>

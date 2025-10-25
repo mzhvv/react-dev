@@ -14,19 +14,21 @@ export const ThemeSection = () => {
   return (
     <Section id='theme'>
       <SectionHeader>
-        <h2>Theme</h2>
+        <h2>Внешний вид</h2>
       </SectionHeader>
 
-      <SectionContent className='mx-auto max-w-110 space-y-1.5'>
-        <section style={cssVariables}>
+      <SectionContent
+        className='mx-auto max-w-108' // max-w-[375px]
+      >
+        <section id='theme-color' style={cssVariables}>
           <header className='sr-only'>
-            <h3>Choose a color</h3>
+            <h3>Цветовая схема</h3>
           </header>
 
           <div>
-            <fieldset className='[&>*]:mb-3 [&>*:first-child]:mb-1.5 [&>*:last-child]:mb-0'>
-              <Label2 asChild>
-                <legend>Choose a color</legend>
+            <fieldset className='[&>*]:mb-3 [&>*:first-child]:mb-0 [&>*:last-child]:mb-0'>
+              <Label2 asChild className='px-0'>
+                <legend>Цветовая схема</legend>
               </Label2>
 
               {colorRadioGroupVariants.components.map((Component, i) => (
@@ -39,14 +41,14 @@ export const ThemeSection = () => {
           </div>
         </section>
 
-        <section>
+        <section id='theme-mode'>
           <header className='sr-only'>
-            <h3>Choose a mode</h3>
+            <h3>Режим темы</h3>
           </header>
           <div>
-            <fieldset className='[&>*:not(:first-child):not(:last-child)]:mb-3'>
-              <Label2 asChild>
-                <legend>Choose a mode</legend>
+            <fieldset className='[&>*]:mb-3 [&>*:first-child]:mb-0 [&>*:last-child]:mb-0'>
+              <Label2 asChild className='px-0'>
+                <legend>Режим темы</legend>
               </Label2>
               {modeRadioGroupVariants.components.map((Component, i) => (
                 <Component key={i} {...{ options: modes, value: mode, onValueChange: setMode }} />

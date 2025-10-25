@@ -21,10 +21,10 @@ const buttonVariants = cva(
         ghost: 'hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50',
         link: 'text-primary underline-offset-4 hover:underline',
 
-        'gradient-primary-sky':
-          'bg-gradient-to-br from-primary hover:from-primary/90 to-sky-400 hover:to-sky-400/90 text-primary-foreground',
-        'gradient-secondary-white':
-          'bg-gradient-to-br from-secondary hover:from-secondary/90 to-white hover:to-white text-secondary-foreground',
+        // 'gradient-primary-sky':
+        //   'bg-gradient-to-br from-primary hover:from-primary/90 to-sky-400 hover:to-sky-400/90 text-primary-foreground',
+        // 'gradient-secondary-white':
+        //   'bg-gradient-to-br from-secondary hover:from-secondary/90 to-white hover:to-white text-secondary-foreground',
       },
       size: {
         sm: 'h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5',
@@ -35,7 +35,7 @@ const buttonVariants = cva(
         icon: 'size-9',
         'icon-lg': 'size-10',
 
-        'sm-full': 'h-8 w-full justify-start gap-1.5 rounded-md has-[>svg]:px-2.5 px-3', // has-[>svg]:px-0 sm:has-[>svg]:px-2.5 px-0 sm:px-3
+        'sidebar-sm': 'h-8 w-full justify-start gap-1.5 rounded-md has-[>svg]:px-2.5 px-2.5 w-full',
       },
     },
     defaultVariants: {
