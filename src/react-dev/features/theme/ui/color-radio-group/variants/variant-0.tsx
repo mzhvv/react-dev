@@ -7,20 +7,24 @@ import { colorOptionMap } from '@react-dev/entity/theme/ui/constants'
 import { cn } from '@ui/lib'
 import { RadioGroup, RadioGroupItem } from '@ui/components/radio-group'
 
-import type { ColorRadioGroupProps } from '../../../types'
+import type { ColorRadioGroupProps } from '../../../types' // '@react-dev/features/theme'
 
 export const ColorRadioGroup: React.FC<ColorRadioGroupProps> = ({ options, ...props }) => {
   return (
     <RadioGroup
-      aria-label='Choose color scheme'
+      aria-label='Выбор цветовой схемы'
       className='flex h-8 items-center gap-1.5'
       {...props}
     >
       {options.map(option => {
-        const { value, label } = colorOptionMap[option]
+        const {
+          value,
+          // label,
+          specialLabel,
+        } = colorOptionMap[option]
 
-        const id = `variant4-${value}`
-        const aria = `Switch to "${label}" color scheme`
+        const id = `variant-0-${value}`
+        const aria = `Переключить на ${specialLabel} цветовую схему` // `Переключить на цветовую схему «${label}»`
 
         return (
           <RadioGroupItem
