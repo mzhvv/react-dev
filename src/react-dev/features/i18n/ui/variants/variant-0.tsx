@@ -1,32 +1,15 @@
 import { RadioGroup, RadioGroupItem } from '@ui/components/radio-group'
-import { useTranslation } from 'react-i18next'
 import { Label } from '@ui/components/label'
 
+import type { LanguageSwitcherRadioVariantsProps } from '../../types'
+import { languagesMap } from '../constants'
+
 /* Variant0 */
-export const LanguageSwitcherRadio: React.FC = () => {
-  const { i18n } = useTranslation()
-
-  const currentLang = i18n.language.startsWith('ru') ? 'ru' : 'en'
-
-  const languages = ['ru', 'en'] as const
-
-  const languagesMap = {
-    ru: {
-      label: 'RU',
-      ariaLabel: 'Переключить на Русский',
-      title: 'Русский',
-    },
-    en: {
-      label: 'EN',
-      ariaLabel: 'Switch to English',
-      title: 'English',
-    },
-  } as const
-
-  const handleLanguageChange = (value: string) => {
-    i18n.changeLanguage(value)
-  }
-
+export const LanguageSwitcherRadio: React.FC<LanguageSwitcherRadioVariantsProps> = ({
+  currentLang,
+  languages,
+  handleLanguageChange,
+}) => {
   return (
     <RadioGroup
       value={currentLang}
@@ -35,7 +18,11 @@ export const LanguageSwitcherRadio: React.FC = () => {
       className='flex h-8 items-center gap-4'
     >
       {languages.map(value => {
-        const { label, title, ariaLabel } = languagesMap[value]
+        const {
+          // label,
+          title,
+          ariaLabel,
+        } = languagesMap[value]
 
         return (
           <div key={value} className='flex items-center *:cursor-pointer'>

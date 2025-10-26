@@ -1,3 +1,5 @@
+// src/react-dev/features/theme/ui/mode-radio-group/index.tsx
+
 import type { FactoryComponentVariantsConfig } from '@factories/component-variants'
 import { createComponentVariantsFactory } from '@factories/component-variants'
 
