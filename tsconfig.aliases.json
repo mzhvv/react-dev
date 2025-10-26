@@ -7,13 +7,15 @@
       "@global/*": ["./src/react-dev/shared/global/*"],
       "@factories/*": ["./src/react-dev/shared/libs/factories/*"],
       "@styles": ["./src/react-dev/shared/styles/index.ts"],
+      "@ui/*": ["./src/ui/*"],
 
       "@react-dev/*": ["./src/react-dev/*"],
       "@apps/*": ["./src/apps/*"],
       "@apps": ["./src/apps/index.ts"],
 
-      "@ui/*": ["./src/ui/*"],
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+
+      "@public/*": ["./public/*"]
     }
   }
 }

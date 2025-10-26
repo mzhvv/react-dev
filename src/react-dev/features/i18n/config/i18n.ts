@@ -1,9 +1,9 @@
-// src/react-dev/shared/global/libs/i18n/i18n.tsx
+// src/react-dev/features/i18n/config/i18n.ts
 
 import i18n from 'i18next'
-import { initReactI18next } from 'react-i18next'
-import LanguageDetector from 'i18next-browser-languagedetector'
 import Backend from 'i18next-http-backend'
+import LanguageDetector from 'i18next-browser-languagedetector'
+import { initReactI18next } from 'react-i18next'
 
 type I18nNSs = 'common' | 'test'
 
@@ -12,9 +12,11 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    // fallbackLng: 'en',
+    lng: 'ru',
+    fallbackLng: 'ru',
+
     defaultNS: 'common' satisfies I18nNSs,
-    ns: ['common', 'test'] satisfies Array<I18nNSs>,
+    ns: ['common'] satisfies Array<I18nNSs>,
 
     backend: {
       loadPath: '/locales/{{lng}}/{{ns}}.json',

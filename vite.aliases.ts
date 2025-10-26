@@ -13,4 +13,6 @@ export const alias = {
   '@apps': path.resolve(__dirname, './src/apps'),
 
   '@': path.resolve(__dirname, './src'),
+
+  '@public': path.relative(__dirname, './public'),
 } as const satisfies AliasOptions
