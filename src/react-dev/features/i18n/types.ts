@@ -8,4 +8,9 @@ export type ReturnUseLanguageSwitcher = {
   languages: Array<Language>
   handleLanguageChange: (value: Language) => void
 }
-export type LanguageSwitcherRadioVariantsProps = ReturnUseLanguageSwitcher
+
+export type LanguageSwitcherRadioProps = {
+  options: ReturnUseLanguageSwitcher['languages']
+  value: ReturnUseLanguageSwitcher['currentLang']
+  onValueChange: ReturnUseLanguageSwitcher['handleLanguageChange']
+}

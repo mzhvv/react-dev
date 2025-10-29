@@ -17,10 +17,10 @@ import {
   IconUsers,
 } from '@tabler/icons-react'
 
-import { NavDocuments } from '@/ui/blocks/dashboard-01/nav-documents'
-import { NavMain } from '@/ui/blocks/dashboard-01/nav-main'
-import { NavSecondary } from '@/ui/blocks/dashboard-01/nav-secondary'
-import { NavUser } from '@/ui/blocks/dashboard-01/nav-user'
+import { NavDocuments } from '@ui/blocks/dashboard-01/nav-documents'
+import { NavMain } from '@ui/blocks/dashboard-01/nav-main'
+import { NavSecondary } from '@ui/blocks/dashboard-01/nav-secondary'
+import { NavUser } from '@ui/blocks/dashboard-01/nav-user'
 import {
   Sidebar,
   SidebarContent,

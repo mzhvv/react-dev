@@ -7,14 +7,16 @@ import { languageSwitcherRadioVariants, useLanguageSwitcher } from '@react-dev/f
 export const Language = () => {
   const { t } = useTranslation('common')
   const LanguageSwitcherRadio = languageSwitcherRadioVariants.getDefaultComponent()
-  const state = useLanguageSwitcher()
+  const { currentLang, languages, handleLanguageChange } = useLanguageSwitcher()
 
   return (
     <div className='p-2'>
       <h3>{t('settings.localization.heading')}</h3>
       <div>
         <Label2 className='px-0'>{t('settings.localization.label')}</Label2>
-        <LanguageSwitcherRadio {...state} />
+        <LanguageSwitcherRadio
+          {...{ options: languages, value: currentLang, onValueChange: handleLanguageChange }}
+        />
       </div>
     </div>
   )

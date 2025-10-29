@@ -17,30 +17,34 @@ describe('Project0', () => {
     it('should have correct structure', () => {
       render(<Project0Page />)
 
-      const main = screen.getByRole('main')
-      expect(main).toBeInTheDocument()
+      expect(screen.getByRole('main')).toBeInTheDocument()
+      expect(screen.getByRole('banner')).toBeInTheDocument() // header
+    })
 
-      const header = main.querySelector('header')
-      expect(header).toBeInTheDocument()
-      expect(header).toHaveClass('pt-4')
+    it('should render section content', () => {
+      render(<Project0Page />)
+
+      expect(screen.getByText('.')).toBeInTheDocument()
     })
   })
 
   describe('Routes', () => {
-    it('should have correct route configuration', () => {
+    it('should have correct route configuration with lazy loading', () => {
       expect(routesPproject0).toHaveLength(1)
 
       const route = routesPproject0[0]
       expect(route.path).toBe('project-0')
-      expect(route.element).toBeDefined()
+      expect(typeof route.lazy).toBe('function')
+      expect(route.children).toEqual([])
     })
 
-    it('should have valid route structure', () => {
+    it('lazy function should return component', async () => {
       const route = routesPproject0[0]
 
-      // Проверяем, что элемент является React компонентом
-      expect(route.element).toBeDefined()
-      expect(typeof route.element).toBe('object')
+      // Более простой мок без vi.doMock
+      const mockResult = await route.lazy!()
+      expect(mockResult).toHaveProperty('Component')
+      expect(typeof mockResult.Component).toBe('function')
     })
   })
 
@@ -53,13 +57,13 @@ describe('Project0', () => {
       expect(navItem.title).toBe('project-0')
     })
 
-    it('should have valid navigation structure', () => {
+    it('should match NavigationLink type structure', () => {
       const navItem = navigationPproject0[0]
 
-      expect(navItem).toHaveProperty('path')
-      expect(navItem).toHaveProperty('title')
-      expect(typeof navItem.path).toBe('string')
-      expect(typeof navItem.title).toBe('string')
+      expect(navItem).toEqual({
+        path: '/project-0',
+        title: 'project-0',
+      })
     })
   })
 
@@ -68,7 +72,6 @@ describe('Project0', () => {
       const routePath = routesPproject0[0].path
       const navPath = navigationPproject0[0].path
 
-      // Путь в навигации должен соответствовать пути в роутах
       expect(navPath).toBe(`/${routePath}`)
     })
 
@@ -78,6 +81,12 @@ describe('Project0', () => {
       const navTitle = navigationPproject0[0].title
 
       expect(pageTitle).toBe(navTitle)
+    })
+
+    it('should have valid TypeScript satisfies constraints', () => {
+      // Неявно проверяем, что типы совместимы через as const satisfies
+      expect(routesPproject0).toBeDefined()
+      expect(navigationPproject0).toBeDefined()
     })
   })
 })

@@ -1,17 +1,34 @@
 // src/react-dev/app/main.tsx
 
-import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-
-import { Router } from '@global/libs/router'
-import { Providers } from './providers'
 
 import './index.css'
 
+import { lazy, StrictMode, Suspense } from 'react'
+// import { LoadingFallback } from '@ui/components/fallback'
+
+const LazyProviders = lazy(() =>
+  import('./providers').then(module => ({
+    default: module.Providers,
+  }))
+)
+const LazyRouter = lazy(() =>
+  import('../shared/global/libs/router').then(module => ({
+    default: module.Router,
+  }))
+)
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <Providers>
-      <Router />
-    </Providers>
+    <Suspense
+      fallback={
+        null
+        // <LoadingFallback message='Loading providers and router ...' />
+      }
+    >
+      <LazyProviders>
+        <LazyRouter />
+      </LazyProviders>
+    </Suspense>
   </StrictMode>
 )

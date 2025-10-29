@@ -56,6 +56,7 @@ const FirstColumn: React.FC<{ isNavigationVisible: boolean; toggleNavigation: ()
           >
             <GripIcon />
           </Button>
+
           <NavigationModal />
         </div>
       </div>
