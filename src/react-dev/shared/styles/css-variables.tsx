@@ -1,6 +1,6 @@
 // src/react-dev/shared/styles/css-variables.tsx
 
-import type { Color } from '@react-dev/entity/theme'
+import type { Color } from '@react-dev/features/theme'
 
 export const cssVariables = {
   '--primary-light-neutral': 'oklch(0.205 0 0)',

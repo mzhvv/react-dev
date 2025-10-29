@@ -1,4 +1,4 @@
-// src/react-dev/entity/theme/model/context.ts
+// src/react-dev/features/theme/config/context.ts
 
 import { createContext } from 'react'
 

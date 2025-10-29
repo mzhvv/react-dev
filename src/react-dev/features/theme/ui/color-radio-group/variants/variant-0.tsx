@@ -2,7 +2,7 @@
 
 import { colorMap } from '@styles'
 
-import { colorOptionMap } from '@react-dev/entity/theme/ui/constants'
+import { colorOptionMap } from '../../constants'
 
 import { cn } from '@ui/lib'
 import { RadioGroup, RadioGroupItem } from '@ui/components/radio-group'

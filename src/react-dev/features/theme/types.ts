@@ -1,6 +1,27 @@
 // src/react-dev/features/theme/types.ts
 
-import type { Theme } from '@react-dev/entity/theme'
+export type Mode = 'dark' | 'light' | 'system'
+export type Color = 'neutral' | 'blue'
+
+export type ThemeConfig = {
+  defaultMode: Mode
+  modeStorageKey: 'theme-mode'
+
+  defaultColor: Color
+  colorStorageKey: 'theme-color'
+}
+
+export type Theme = {
+  modes: Mode[]
+  mode: Mode
+  setMode: (theme: Mode) => void
+
+  colors: Color[]
+  color: Color
+  setColor: (color: Color) => void
+}
+
+//
 
 export type ModeRadioGroupProps = {
   options: Theme['modes']
@@ -13,3 +34,8 @@ export type ColorRadioGroupProps = {
   value: Theme['color']
   onValueChange: Theme['setColor']
 }
+
+// constants
+
+export type ModeOptionMap<T> = Record<Mode, { value: Mode } & T>
+export type ColorOptionMap<T> = Record<Color, { value: Color } & T>

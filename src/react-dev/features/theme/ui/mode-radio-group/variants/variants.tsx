@@ -1,6 +1,6 @@
 // src/react-dev/features/theme/ui/mode-radio-group/variants/variants.tsx
 
-import { modeOptionMap } from '@react-dev/entity/theme/ui/constants'
+import { modeOptionMap } from '../../constants'
 
 import { cn } from '@ui/lib'
 import { RadioGroup, RadioGroupItem } from '@ui/components/radio-group'

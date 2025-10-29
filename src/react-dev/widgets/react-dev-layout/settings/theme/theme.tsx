@@ -6,7 +6,7 @@ import { cssVariables } from '@styles'
 import { Label2 } from '@ui/components/label-2'
 // import { Skeleton } from '@ui/components/skeleton'
 
-import { useTheme } from '@react-dev/entity/theme'
+import { useTheme } from '@react-dev/features/theme'
 import { colorRadioGroupVariants, modeRadioGroupVariants } from '@react-dev/features/theme'
 
 // const LazyModeadioGroupVariants = lazy(() =>

@@ -1,3 +1,5 @@
+// src/apps/dashboard-01/navigation.tsx
+
 import type { NavigationLink } from '@global/libs/navigation'
 
 import type { Path } from './types'

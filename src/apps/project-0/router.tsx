@@ -1,13 +1,15 @@
-import type { RouteObject } from '@global/libs/router'
+// src/apps/project-0/router.tsx
 
+import type { RouteObject } from '@global/libs/router'
 import type { Path } from './types'
-import { Project0Page } from './page'
 
 export const routesPproject0 = [
   {
     path: 'project-0',
-    element: <Project0Page />,
+    lazy: () =>
+      import('./page').then(module => ({
+        Component: module.Project0Page,
+      })),
+    children: [],
   },
 ] as const satisfies RouteObject<Path>[]
-
-//

@@ -13,7 +13,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@ui/components/dialog'
-import { Language } from './language/language'
+import { Language } from './language'
 
 export const Settings = () => {
   return (

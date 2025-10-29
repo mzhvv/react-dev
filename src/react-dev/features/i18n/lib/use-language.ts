@@ -20,28 +20,3 @@ export const useLanguageSwitcher = (): ReturnUseLanguageSwitcher => {
     handleLanguageChange,
   }
 }
-
-// import { useTranslation } from 'react-i18next'
-// import { useCallback, useMemo } from 'react'
-// import type { Language } from '../types'
-
-// export const useLanguageSwitcher = () => {
-//   const { i18n } = useTranslation()
-
-//   const currentLang = useMemo((): Language =>
-//     i18n.language.startsWith('ru') ? 'ru' : 'en',
-//     [i18n.language]
-//   )
-
-//   const languages: Language[] = useMemo(() => ['ru', 'en'], [])
-
-//   const handleLanguageChange = useCallback((value: Language) => {
-//     i18n.changeLanguage(value)
-//   }, [i18n])
-
-//   return {
-//     currentLang,
-//     languages,
-//     handleLanguageChange,
-//   }
-// }

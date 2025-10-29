@@ -5,7 +5,7 @@ import { cssVariables } from '@styles'
 import { Section, SectionContent, SectionHeader } from '@ui/layout-system'
 import { Label2 } from '@ui/components/label-2'
 
-import { useTheme } from '@react-dev/entity/theme'
+import { useTheme } from '@react-dev/features/theme'
 import { colorRadioGroupVariants, modeRadioGroupVariants } from '@react-dev/features/theme'
 
 export const ThemeSection = () => {

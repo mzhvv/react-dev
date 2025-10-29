@@ -1,10 +1,7 @@
-// src/react-dev/features/theme/index.ts
+export type { ColorRadioGroupProps, ModeRadioGroupProps, Color } from './types'
 
-// types
-
-export type { ColorRadioGroupProps, ModeRadioGroupProps } from './types'
-
-// ui
+export { ThemeProvider } from './lib/provider'
+export { useTheme } from './lib/use-theme'
 
 export { colorRadioGroupVariants } from './ui/color-radio-group'
 export { modeRadioGroupVariants } from './ui/mode-radio-group'
