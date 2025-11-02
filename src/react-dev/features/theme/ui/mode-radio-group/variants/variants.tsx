@@ -1,7 +1,5 @@
 // src/react-dev/features/theme/ui/mode-radio-group/variants/variants.tsx
 
-import { modeOptionMap } from '../../constants'
-
 import { cn } from '@ui/lib'
 import { RadioGroup, RadioGroupItem } from '@ui/components/radio-group'
 import { Label } from '@ui/components/label'
@@ -9,20 +7,19 @@ import { Label } from '@ui/components/label'
 import type { ModeRadioGroupProps } from '../../../types'
 
 /* ThemeRadioGroup */
-export const Variant0: React.FC<ModeRadioGroupProps> = ({ options, ...props }) => {
+export const Variant0: React.FC<ModeRadioGroupProps> = ({ state, options, CONSTANTS }) => {
   return (
-    <RadioGroup aria-label='Choose theme' className='flex h-8 items-center gap-4' {...props}>
+    <RadioGroup aria-label='Choose theme' className='flex h-8 items-center gap-4' {...state}>
       {options.map(option => {
-        const { value, label } = modeOptionMap[option]
+        const { value, title, ariaLabel, label } = CONSTANTS[option]
 
-        const id = `variant0-${label}`
-        const aria = `Switch to "${label}" theme`
+        const id = `variant0-${value}`
 
         return (
           <div key={id} className='flex items-center *:cursor-pointer'>
             <RadioGroupItem value={value} id={id} />
-            <Label htmlFor={id} title={aria} aria-label={aria} className='pl-2'>
-              {option}
+            <Label htmlFor={id} title={title} aria-label={ariaLabel || title} className='pl-2'>
+              {label}
             </Label>
           </div>
 
@@ -30,8 +27,8 @@ export const Variant0: React.FC<ModeRadioGroupProps> = ({ options, ...props }) =
           //   <RadioGroupItem value={value} id={id} />
           //   <Label
           //     htmlFor={id}
-          //     title={aria}
-          //     aria-label={aria}
+          //     title={title}
+          //     aria-label={ariaLabel || title}
           //     className='cursor-pointer after:absolute after:inset-0'
           //   >
           //     {label}
@@ -44,14 +41,13 @@ export const Variant0: React.FC<ModeRadioGroupProps> = ({ options, ...props }) =
 }
 
 /* ThemeRadioGroup */
-export const Variant1: React.FC<ModeRadioGroupProps> = ({ options, ...props }) => {
+export const Variant1: React.FC<ModeRadioGroupProps> = ({ state, options, CONSTANTS }) => {
   return (
-    <RadioGroup aria-label='Choose theme' className='grid grid-cols-3 gap-3' {...props}>
+    <RadioGroup aria-label='Choose theme' className='grid grid-cols-3 gap-3' {...state}>
       {options.map(option => {
-        const { value, label } = modeOptionMap[option]
+        const { value, title, ariaLabel, label } = CONSTANTS[option]
 
-        const id = `variant1-${label}`
-        const aria = `Switch to "${label}" theme`
+        const id = `variant1-${value}`
 
         return (
           <div
@@ -68,11 +64,11 @@ export const Variant1: React.FC<ModeRadioGroupProps> = ({ options, ...props }) =
             />
             <label
               htmlFor={id}
-              title={aria}
-              aria-label={aria}
+              title={title}
+              aria-label={ariaLabel || title}
               className='flex size-full cursor-pointer items-center justify-center after:absolute after:inset-0'
             >
-              {option}
+              {label}
             </label>
           </div>
         )

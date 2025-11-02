@@ -1,8 +1,11 @@
 // src/react-dev/shared/libs/factories/component-variants.tsx
 
+export type FactoryComponentVariantsProps<T> = { component: React.ComponentType<T> }
+export type FactoryComponentsVariantProps<T> = { components: Array<React.ComponentType<T>> }
+
 export type FactoryComponentVariantsConfig<Key extends string, ComponentType> = Record<
   Key,
-  { component: React.ComponentType<ComponentType> }
+  FactoryComponentVariantsProps<ComponentType>
 >
 
 export function createComponentVariantsFactory<
