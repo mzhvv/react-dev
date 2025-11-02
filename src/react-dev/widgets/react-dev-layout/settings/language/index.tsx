@@ -1,4 +1,4 @@
-// src/react-dev/widgets/react-dev-layout/settings/language/language.tsx
+// src/react-dev/widgets/react-dev-layout/settings/language/index.tsx
 
 import { useTranslation } from 'react-i18next'
 import { Label2 } from '@ui/components/label-2'

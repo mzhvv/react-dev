@@ -1,22 +1,19 @@
 // src/react-dev/features/theme/ui/mode-radio-group/variants/variant-4.tsx
 
-import { modeOptionMap } from '../../constants'
-
 import { cn } from '@ui/lib'
 import { RadioGroup, RadioGroupItem } from '@ui/components/radio-group'
+import { Image } from '@ui/components/image'
 
 import type { ModeRadioGroupProps } from '../../../types'
 
 /* Variant4 */
-const ThemeRadioGroup: React.FC<ModeRadioGroupProps> = ({ options, ...props }) => {
+const ThemeRadioGroup: React.FC<ModeRadioGroupProps> = ({ state, options, CONSTANTS }) => {
   return (
-    <RadioGroup {...props} aria-label='Choose theme' className='grid grid-cols-3 gap-3'>
+    <RadioGroup aria-label='Choose theme' className='grid grid-cols-3 gap-3' {...state}>
       {options.map(option => {
-        const { value, label, image } = modeOptionMap[option]
+        const { value, title, ariaLabel, image } = CONSTANTS[option]
 
         const id = `variant4-${value}`
-        const aria = `Switch to "${label}" theme`
-        const alt = `Preview of ${label} theme`
 
         return (
           <div
@@ -34,16 +31,11 @@ const ThemeRadioGroup: React.FC<ModeRadioGroupProps> = ({ options, ...props }) =
             />
             <label
               htmlFor={id}
-              title={aria}
-              aria-label={aria}
+              title={title}
+              aria-label={title || ariaLabel}
               className={cn('cursor-pointer after:absolute after:inset-0')}
             >
-              <img
-                src={image}
-                alt={alt}
-                loading='lazy'
-                className='aspect-[44/35] size-full object-cover'
-              />
+              <Image {...{ image, width: 176, height: 140, loading: 'lazy', decoding: 'async' }} />
             </label>
           </div>
         )

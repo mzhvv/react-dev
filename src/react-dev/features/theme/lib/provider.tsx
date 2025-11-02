@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useCallback } from 'react'
 
-import type { ThemeConfig, Color, Mode } from '../types'
+import type { ThemeConfig, Color, Mode, Theme } from '../types'
 import { colors, modes, themeConfig } from '../config/config'
 import { ThemeProviderContext } from '../config/context'
 
@@ -60,17 +60,23 @@ export function ThemeProvider({
   }, [color]) // Зависит от color для корректной работы
 
   const value = {
-    modes: modes,
-    mode,
-    setMode: (mode: Mode) => {
-      localStorage.setItem(modeStorageKey, mode)
-      setMode(mode)
-    },
+    themeMode: {
+      mode,
+      setMode: (mode: Mode) => {
+        localStorage.setItem(modeStorageKey, mode)
+        setMode(mode)
+      },
 
-    colors: colors,
-    color,
-    setColor, // используем нашу новую функцию
-  }
+      modes: modes,
+    } satisfies Theme['themeMode'],
+
+    themeColor: {
+      color,
+      setColor,
+
+      colors: colors,
+    } satisfies Theme['themeColor'],
+  } //  satisfies Theme
 
   return (
     <ThemeProviderContext.Provider {...props} value={value}>
