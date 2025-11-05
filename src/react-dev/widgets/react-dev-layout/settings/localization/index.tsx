@@ -4,8 +4,8 @@ import { useTranslation } from 'react-i18next'
 import { Label2 } from '@ui/components/label-2'
 import { languageSwitcherRadioVariants, useLanguageSwitcher } from '@react-dev/features/i18n'
 
-export const Language = () => {
-  const { t } = useTranslation('common')
+export const LocalizationSection = () => {
+  const { t } = useTranslation('settings')
   const LanguageSwitcherRadio = languageSwitcherRadioVariants.getDefaultComponent()
   const { currentLang, languages, handleLanguageChange } = useLanguageSwitcher()
 

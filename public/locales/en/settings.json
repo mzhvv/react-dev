@@ -1,0 +1,34 @@
+{
+  "settings": {
+    "localization": {
+      "heading": "Localization",
+      "label": "Language"
+    },
+
+    "theme": {
+      "shared": {
+        "heading": "Appearance"
+      },
+
+      "mode": {
+        "legend": "Theme Mode",
+
+        "label": {
+          "system": "System",
+          "light": "Light",
+          "dark": "Dark"
+        },
+        "title": {
+          "system": "Switch to system theme",
+          "light": "Switch to light theme",
+          "dark": "Switch to dark theme"
+        },
+        "imageAlt": {
+          "system": "System theme preview — automatic switching",
+          "light": "Light theme preview — light interface",
+          "dark": "Dark theme preview — dark interface"
+        }
+      }
+    }
+  }
+}

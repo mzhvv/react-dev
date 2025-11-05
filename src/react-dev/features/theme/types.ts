@@ -2,64 +2,79 @@
 
 import type { ImageProps } from '@ui/components/image'
 
-export type Mode = 'dark' | 'light' | 'system'
 export type Color = 'neutral' | 'blue'
+export type Mode = 'dark' | 'light' | 'system'
 
 export type ThemeConfig = {
-  defaultMode: Mode
-  modeStorageKey: 'theme-mode'
-
   defaultColor: Color
   colorStorageKey: 'theme-color'
+
+  defaultMode: Mode
+  modeStorageKey: 'theme-mode'
 }
+
+// useTheme
 
 export type ThemeColor = {
-  themeColor: { colors: Color[]; color: Color; setColor: (color: Color) => void }
+  themeColor: { color: Color; setColor: (color: Color) => void; colors: Color[] }
 }
 export type ThemeMode = {
-  themeMode: {
-    modes: Mode[]
-    mode: Mode
-    setMode: (theme: Mode) => void
-  }
+  themeMode: { mode: Mode; setMode: (theme: Mode) => void; modes: Mode[] }
 }
-
 export type Theme = ThemeMode & ThemeColor
 
-// constants / DATA
+// useThemeUI
 
-export type ModeOption = {
-  value: Mode
-  label: string
-  title: string
-  ariaLabel?: string
-} & ImageProps
+export type ThemeColorUi = {
+  themeColorUi: { state: { value: Color; onValueChange: (color: Color) => void }; options: Color[] }
+}
+export type ThemeModeUi = {
+  themeModeUi: { state: { value: Mode; onValueChange: (theme: Mode) => void }; options: Mode[] }
+}
+export type ThemeUi = ThemeModeUi & ThemeColorUi
 
-export type ThemeModeData = {
+// constants
+
+export type ThemeSharedConstants = {
+  heading: string
+}
+
+export type ThemeColorConstants = {
   legend: string
-  optionMap: Record<Mode, ModeOption>
+  optionMap: Record<
+    Color,
+    {
+      value: Color
+      label: string
+      specialLabel: string
+    }
+  >
+}
+
+export type ThemeModeConstants = {
+  legend: string
+  optionMap: Record<
+    Mode,
+    {
+      value: Mode
+      label: string
+      title: string
+      ariaLabel?: string
+    } & ImageProps
+  >
 }
 
 export type ThemeConstants = {
-  heading: string
-  mode: ThemeModeData
+  theme: ThemeSharedConstants
+  color: ThemeColorConstants
+  mode: ThemeModeConstants
 }
-
-export type ColorOptionMap<T> = Record<Color, { value: Color } & T>
 
 // ui
 
-export type ColorRadioGroupProps = {
-  options: Theme['themeColor']['colors']
-  value: Theme['themeColor']['color']
-  onValueChange: Theme['themeColor']['setColor']
+export type ColorRadioGroupProps = ThemeColorUi & {
+  CONSTANTS: ThemeColorConstants['optionMap']
 }
-
-export type ModeRadioGroupProps = {
-  state: {
-    value: Theme['themeMode']['mode']
-    onValueChange: Theme['themeMode']['setMode']
-  }
-  options: Theme['themeMode']['modes']
-  CONSTANTS: ThemeModeData['optionMap']
+export type ModeRadioGroupProps = ThemeModeUi & {
+  CONSTANTS: ThemeModeConstants['optionMap']
 }
