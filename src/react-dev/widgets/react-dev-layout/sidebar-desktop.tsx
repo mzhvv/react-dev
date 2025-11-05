@@ -5,7 +5,7 @@ import { GripIcon, User2Icon } from 'lucide-react'
 import { cn } from '@ui/lib'
 import { Button } from '@ui/components/button'
 
-import { Settings } from './settings'
+import { SettingsModal } from './settings-modal'
 import { NavigationModal, NavigationSidebar } from './navigation'
 
 export const SidebarDesktop = () => {
@@ -63,7 +63,7 @@ const FirstColumn: React.FC<{ isNavigationVisible: boolean; toggleNavigation: ()
 
       <div>
         <div className='px-2'>
-          <Settings />
+          <SettingsModal />
         </div>
         <div className='p-2'>
           <Button variant='secondary' size='icon' className='shadow'>

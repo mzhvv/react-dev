@@ -1,20 +1,28 @@
 // src/react-dev/features/theme/ui/mode-radio-group/index.tsx
 
+import type { Variant as V } from '@react-dev/shared/types'
+
 import type { FactoryComponentVariantsConfig } from '@factories/component-variants'
 import { createComponentVariantsFactory } from '@factories/component-variants'
 
-import type { ModeRadioGroupProps } from '../../types'
+import type { ThemeModeRadioGroupProps } from '../../types'
 
 import { Variant0, Variant1 } from './variants/variants'
-import { Variant4 } from './variants/variant-4'
+import { ThemeModeRadioGroup as Variant4 } from './variants/variant-4'
 
-type Variant = '0' | '1' | '4'
+type ThemeModeRadioGroupFactoryVariant = V<0 | 1 | 4>
 
-export const modeRadioGroupVariants = createComponentVariantsFactory<Variant, ModeRadioGroupProps>(
+export const themeModeRadioGroupVariants = createComponentVariantsFactory<
+  ThemeModeRadioGroupFactoryVariant,
+  ThemeModeRadioGroupProps
+>(
   {
-    '0': { component: Variant0 },
-    '1': { component: Variant1 },
-    '4': { component: Variant4 },
-  } as const satisfies FactoryComponentVariantsConfig<Variant, ModeRadioGroupProps>,
-  '4'
+    'variant-0': { component: Variant0 },
+    'variant-1': { component: Variant1 },
+    'variant-4': { component: Variant4 },
+  } as const satisfies FactoryComponentVariantsConfig<
+    ThemeModeRadioGroupFactoryVariant,
+    ThemeModeRadioGroupProps
+  >,
+  'variant-4'
 )

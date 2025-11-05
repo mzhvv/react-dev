@@ -4,10 +4,10 @@ import { cn } from '@ui/lib'
 import { RadioGroup, RadioGroupItem } from '@ui/components/radio-group'
 import { Image } from '@ui/components/image'
 
-import type { ModeRadioGroupProps } from '../../../types'
+import type { ThemeModeRadioGroupProps } from '../../../types'
 
 /* Variant4 */
-const ThemeRadioGroup: React.FC<ModeRadioGroupProps> = ({
+export const ThemeModeRadioGroup: React.FC<ThemeModeRadioGroupProps> = ({
   themeModeUi: { state, options },
   CONSTANTS,
 }) => {
@@ -46,5 +46,3 @@ const ThemeRadioGroup: React.FC<ModeRadioGroupProps> = ({
     </RadioGroup>
   )
 }
-
-export { ThemeRadioGroup as Variant4 }

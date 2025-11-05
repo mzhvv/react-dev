@@ -2,7 +2,10 @@
   "settings": {
     "localization": {
       "heading": "Локализация",
-      "label": "Язык"
+
+      "language": {
+        "legend": "Язык"
+      }
     },
 
     "theme": {

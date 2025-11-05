@@ -1,13 +1,14 @@
 // src/react-dev/features/theme/ui/color-radio-group/variants/variant-0.tsx
 
-import { colorMap } from '@styles'
-import type { ColorRadioGroupProps } from '@react-dev/features/theme'
+import type { ThemeColorRadioGroupProps } from '@react-dev/features/theme/types'
+
 import { cn } from '@ui/lib'
 import { RadioGroup, RadioGroupItem } from '@ui/components/radio-group'
 
-export const ColorRadioGroup: React.FC<ColorRadioGroupProps> = ({
+export const ThemeColorRadioGroup: React.FC<ThemeColorRadioGroupProps> = ({
   themeColorUi: { options, state },
   CONSTANTS,
+  colorMap,
 }) => {
   return (
     <RadioGroup

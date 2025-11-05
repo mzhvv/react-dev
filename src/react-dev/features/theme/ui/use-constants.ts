@@ -1,27 +1,22 @@
 // src/react-dev/features/theme/ui/constants.ts
 
 import { useTranslation } from 'react-i18next'
-import type {
-  ThemeSharedConstants,
-  ThemeColorConstants,
-  ThemeModeConstants,
-  ThemeConstants,
-} from '../types'
+import type { ThemeConstants, ThemeConstant, ThemeColorConstant, ThemeModeConstant } from '../types'
 
-export function useThemeConstants() {
+export function useThemeConstants(): ThemeConstants {
   const { t } = useTranslation('settings')
 
   const theme = {
     heading: t('settings.theme.shared.heading'),
-  } as const satisfies ThemeSharedConstants
+  } as const satisfies ThemeConstant
 
   const color = {
-    legend: t('settings.localization.heading'),
+    legend: t('settings.localization.language.legend'),
     optionMap: {
       neutral: { value: 'neutral', label: 'Нейтральный', specialLabel: 'нейтральную' },
       blue: { value: 'blue', label: 'Синий', specialLabel: 'синюю' },
     },
-  } as const satisfies ThemeColorConstants
+  } as const satisfies ThemeColorConstant
 
   const mode = {
     legend: t('settings.theme.mode.legend'),
@@ -60,13 +55,13 @@ export function useThemeConstants() {
         },
       },
     },
-  } as const satisfies ThemeModeConstants
+  } as const satisfies ThemeModeConstant
 
   const themeConstants = {
     theme,
     color,
     mode,
-  } as const satisfies ThemeConstants
+  } as const // satisfies ThemeConstants
 
   return themeConstants
 }
