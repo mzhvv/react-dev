@@ -1,26 +1,64 @@
-// src/react-dev/widgets/react-dev-layout/sidebar-desktop/settings/settings.tsx
+// src/react-dev/widgets/react-dev-layout/settings-modal/index.tsx
 
 import { Settings2Icon, XIcon } from 'lucide-react'
 
-import { ThemeSection } from './theme'
+import { colorMap, cssVariables } from '@styles'
+
+import {
+  useThemeUi,
+  useThemeConstants,
+  themeColorRadioGroupVariants,
+  themeModeRadioGroupVariants,
+} from '@react-dev/features/theme'
 
 import { Button } from '@ui/components/button'
 import {
   Dialog,
-  DialogClose,
+  DialogTrigger,
   DialogContent,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
+  DialogClose,
 } from '@ui/components/dialog'
-import { LocalizationSection } from './localization'
 
-export const Settings = () => {
+import { LocalizationSections } from './localization'
+import { ThemeSections } from './theme'
+
+export const SettingsModal = () => {
   return (
     <Modal>
-      <LocalizationSection />
-      <ThemeSection />
+      <Settings />
     </Modal>
+  )
+}
+
+const Settings = () => {
+  const { themeColorUi, themeModeUi } = useThemeUi()
+  const themeColorComponent = themeColorRadioGroupVariants.getDefaultComponent()
+  const themeModeComponent = themeModeRadioGroupVariants.getDefaultComponent()
+  const { theme, color, mode } = useThemeConstants()
+
+  return (
+    <div>
+      <LocalizationSections />
+      <ThemeSections
+        {...{
+          themeColorSection: {
+            themeColorUi,
+            component: themeColorComponent,
+            CONSTANTS: color,
+            style: cssVariables,
+            colorMap: colorMap,
+          },
+          themeModeSection: {
+            themeModeUi,
+            component: themeModeComponent,
+            CONSTANTS: mode,
+          },
+          CONSTANTS: theme,
+        }}
+      />
+    </div>
   )
 }
 
@@ -57,7 +95,7 @@ const Modal: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             </DialogClose>
           </DialogTitle>
         </DialogHeader>
-        <div>{children}</div>
+        {children}
       </DialogContent>
     </Dialog>
   )

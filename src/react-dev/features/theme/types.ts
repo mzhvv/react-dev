@@ -35,11 +35,11 @@ export type ThemeUi = ThemeModeUi & ThemeColorUi
 
 // constants
 
-export type ThemeSharedConstants = {
+export type ThemeConstant = {
   heading: string
 }
 
-export type ThemeColorConstants = {
+export type ThemeColorConstant = {
   legend: string
   optionMap: Record<
     Color,
@@ -51,7 +51,7 @@ export type ThemeColorConstants = {
   >
 }
 
-export type ThemeModeConstants = {
+export type ThemeModeConstant = {
   legend: string
   optionMap: Record<
     Mode,
@@ -65,16 +65,17 @@ export type ThemeModeConstants = {
 }
 
 export type ThemeConstants = {
-  theme: ThemeSharedConstants
-  color: ThemeColorConstants
-  mode: ThemeModeConstants
+  theme: ThemeConstant
+  color: ThemeColorConstant
+  mode: ThemeModeConstant
 }
 
 // ui
 
-export type ColorRadioGroupProps = ThemeColorUi & {
-  CONSTANTS: ThemeColorConstants['optionMap']
+export type ThemeColorRadioGroupProps = ThemeColorUi & {
+  CONSTANTS: ThemeConstants['color']['optionMap']
+  colorMap: Record<Color, string>
 }
-export type ModeRadioGroupProps = ThemeModeUi & {
-  CONSTANTS: ThemeModeConstants['optionMap']
+export type ThemeModeRadioGroupProps = ThemeModeUi & {
+  CONSTANTS: ThemeConstants['mode']['optionMap']
 }

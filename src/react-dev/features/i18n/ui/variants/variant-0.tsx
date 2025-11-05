@@ -1,15 +1,14 @@
 import { RadioGroup, RadioGroupItem } from '@ui/components/radio-group'
 import { Label } from '@ui/components/label'
 
-import type { LanguageSwitcherRadioProps } from '../../types'
-import { languagesMap } from '../constants'
-import type React from 'react'
+import type { LocalizationRadioGroupProps } from '../../types'
 
-/* Variant0 */
-export const LanguageSwitcherRadio: React.FC<LanguageSwitcherRadioProps> = ({
-  value,
-  onValueChange,
-  options,
+export const LocalizationLanguageRadioGroup: React.FC<LocalizationRadioGroupProps> = ({
+  localizationLanguagesUi: {
+    state: { value, onValueChange },
+    options,
+  },
+  CONSTANTS,
 }) => {
   return (
     <RadioGroup
@@ -20,9 +19,9 @@ export const LanguageSwitcherRadio: React.FC<LanguageSwitcherRadioProps> = ({
       {options.map(value => {
         const {
           // label,
-          title,
           ariaLabel,
-        } = languagesMap[value]
+          title,
+        } = CONSTANTS[value]
 
         return <Item key={value} {...{ value, ariaLabel, title }} />
       })}

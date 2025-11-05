@@ -3,14 +3,51 @@
 export type Language = 'ru' | 'en'
 export type LanguagesMap<T> = Record<Language, T>
 
-export type ReturnUseLanguageSwitcher = {
-  currentLang: Language
-  languages: Array<Language>
+// useLocalization
+
+export type LocalizationLanguages = {
+  currentLanguage: Language
   handleLanguageChange: (value: Language) => void
+  languages: Array<Language>
 }
 
-export type LanguageSwitcherRadioProps = {
-  options: ReturnUseLanguageSwitcher['languages']
-  value: ReturnUseLanguageSwitcher['currentLang']
-  onValueChange: ReturnUseLanguageSwitcher['handleLanguageChange']
+// useLocalizationUI
+
+export type LocalizationLanguagesUI = {
+  localizationLanguagesUi: {
+    state: {
+      value: LocalizationLanguages['currentLanguage']
+      onValueChange: LocalizationLanguages['handleLanguageChange']
+    }
+    options: LocalizationLanguages['languages']
+  }
+}
+
+// constants
+
+export type LocalizationConstant = {
+  heading: string
+}
+
+export type LocalizationLanguagesConstant = {
+  legend: string
+  optionMap: Record<
+    Language,
+    {
+      label: string
+      ariaLabel: string
+      title: string
+    }
+  >
+}
+
+export type LocalizationConstants = {
+  localization: LocalizationConstant
+  language: LocalizationLanguagesConstant
+}
+
+// ui
+
+export type LocalizationRadioGroupProps = LocalizationLanguagesUI & {
+  CONSTANTS: LocalizationConstants['language']['optionMap']
 }

@@ -1,19 +1,25 @@
 // src/react-dev/features/theme/ui/color-radio-group/index.ts
 
+import type { Variant as V } from '@react-dev/shared/types'
+
 import type { FactoryComponentVariantsConfig } from '@factories/component-variants'
 import { createComponentVariantsFactory } from '@factories/component-variants'
 
-import type { ColorRadioGroupProps } from '../../types'
+import type { ThemeColorRadioGroupProps } from '../../types'
 
-import { ColorRadioGroup } from './variants/variant-0'
+import { ThemeColorRadioGroup as Variant0 } from './variants/variant-0'
 
-type Variant = '0'
-export const colorRadioGroupVariants = createComponentVariantsFactory<
-  Variant,
-  ColorRadioGroupProps
+type ThemeColorRadioGroupFactoryVariant = V<0>
+
+export const themeColorRadioGroupVariants = createComponentVariantsFactory<
+  ThemeColorRadioGroupFactoryVariant,
+  ThemeColorRadioGroupProps
 >(
   {
-    '0': { component: ColorRadioGroup },
-  } satisfies FactoryComponentVariantsConfig<Variant, ColorRadioGroupProps>,
-  '0'
+    'variant-0': { component: Variant0 },
+  } satisfies FactoryComponentVariantsConfig<
+    ThemeColorRadioGroupFactoryVariant,
+    ThemeColorRadioGroupProps
+  >,
+  'variant-0'
 )

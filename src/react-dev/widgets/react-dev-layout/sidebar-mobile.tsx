@@ -1,7 +1,7 @@
 import { Button } from '@ui/components/button'
 import { User2Icon } from 'lucide-react'
 
-import { Settings } from './settings'
+import { SettingsModal } from './settings-modal'
 import { NavigationModal } from './navigation'
 
 export const SidebarMobile = () => {
@@ -13,7 +13,7 @@ export const SidebarMobile = () => {
           <span className='text-sm font-bold tracking-tighter'>RD</span>
         </Button>
         <NavigationModal />
-        <Settings />
+        <SettingsModal />
         <Button variant='secondary' size='icon'>
           <User2Icon />
         </Button>
