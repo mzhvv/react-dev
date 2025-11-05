@@ -2,7 +2,7 @@
 
 import { Settings2Icon, XIcon } from 'lucide-react'
 
-import { ThemeControls } from './theme'
+import { ThemeSection } from './theme'
 
 import { Button } from '@ui/components/button'
 import {
@@ -13,13 +13,13 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@ui/components/dialog'
-import { Language } from './language'
+import { LocalizationSection } from './localization'
 
 export const Settings = () => {
   return (
     <Modal>
-      <Language />
-      <ThemeControls />
+      <LocalizationSection />
+      <ThemeSection />
     </Modal>
   )
 }

@@ -7,7 +7,10 @@ import { Image } from '@ui/components/image'
 import type { ModeRadioGroupProps } from '../../../types'
 
 /* Variant4 */
-const ThemeRadioGroup: React.FC<ModeRadioGroupProps> = ({ state, options, CONSTANTS }) => {
+const ThemeRadioGroup: React.FC<ModeRadioGroupProps> = ({
+  themeModeUi: { state, options },
+  CONSTANTS,
+}) => {
   return (
     <RadioGroup aria-label='Choose theme' className='grid grid-cols-3 gap-3' {...state}>
       {options.map(option => {

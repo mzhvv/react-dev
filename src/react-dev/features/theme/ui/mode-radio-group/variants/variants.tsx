@@ -7,7 +7,10 @@ import { Label } from '@ui/components/label'
 import type { ModeRadioGroupProps } from '../../../types'
 
 /* ThemeRadioGroup */
-export const Variant0: React.FC<ModeRadioGroupProps> = ({ state, options, CONSTANTS }) => {
+export const Variant0: React.FC<ModeRadioGroupProps> = ({
+  themeModeUi: { state, options },
+  CONSTANTS,
+}) => {
   return (
     <RadioGroup aria-label='Choose theme' className='flex h-8 items-center gap-4' {...state}>
       {options.map(option => {
@@ -41,7 +44,10 @@ export const Variant0: React.FC<ModeRadioGroupProps> = ({ state, options, CONSTA
 }
 
 /* ThemeRadioGroup */
-export const Variant1: React.FC<ModeRadioGroupProps> = ({ state, options, CONSTANTS }) => {
+export const Variant1: React.FC<ModeRadioGroupProps> = ({
+  themeModeUi: { state, options },
+  CONSTANTS,
+}) => {
   return (
     <RadioGroup aria-label='Choose theme' className='grid grid-cols-3 gap-3' {...state}>
       {options.map(option => {

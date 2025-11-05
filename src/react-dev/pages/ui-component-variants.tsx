@@ -1,5 +1,6 @@
-import { ThemeSection } from '@react-dev/widgets/ui-component-variants'
 import { Main, Header } from '@ui/layout-system'
+
+import { LocalizationSection, ThemeSection } from '@react-dev/widgets/ui-component-variants'
 
 export const UiComponentVariantsPage = () => {
   return (
@@ -7,7 +8,7 @@ export const UiComponentVariantsPage = () => {
       <Header>
         <h1>ui-component-variants</h1>
       </Header>
-
+      <LocalizationSection />
       <ThemeSection />
     </Main>
   )

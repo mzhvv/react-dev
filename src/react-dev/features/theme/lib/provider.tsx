@@ -2,8 +2,8 @@
 
 import { useEffect, useState, useCallback } from 'react'
 
-import type { ThemeConfig, Color, Mode, Theme } from '../types'
-import { colors, modes, themeConfig } from '../config/config'
+import type { ThemeConfig, Color, Theme, Mode } from '../types'
+import { themeConfig, modes, colors } from '../config/config'
 import { ThemeProviderContext } from '../config/context'
 
 type ThemeProviderProps = Partial<ThemeConfig> & {
@@ -26,7 +26,6 @@ export function ThemeProvider({
     () => (localStorage.getItem(colorStorageKey) as Color) || defaultColor
   )
 
-  // Функция для смены цвета
   const setColor = useCallback(
     (newColor: Color) => {
       const root = window.document.documentElement
@@ -37,11 +36,9 @@ export function ThemeProvider({
     [colorStorageKey]
   )
 
-  // Эффект для установки темы (режим)
   useEffect(() => {
     const root = window.document.documentElement
 
-    // Устанавливаем тему
     root.classList.remove('light', 'dark')
     if (mode === 'system') {
       const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
@@ -53,11 +50,10 @@ export function ThemeProvider({
     }
   }, [mode])
 
-  // Эффект для установки цвета (только при монтировании)
   useEffect(() => {
     const root = window.document.documentElement
     root.setAttribute('color', color)
-  }, [color]) // Зависит от color для корректной работы
+  }, [color])
 
   const value = {
     themeMode: {
@@ -66,17 +62,15 @@ export function ThemeProvider({
         localStorage.setItem(modeStorageKey, mode)
         setMode(mode)
       },
-
       modes: modes,
-    } satisfies Theme['themeMode'],
+    },
 
     themeColor: {
       color,
       setColor,
-
       colors: colors,
-    } satisfies Theme['themeColor'],
-  } //  satisfies Theme
+    },
+  } as const satisfies Theme
 
   return (
     <ThemeProviderContext.Provider {...props} value={value}>

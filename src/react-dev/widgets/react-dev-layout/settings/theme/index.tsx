@@ -1,65 +1,82 @@
 // src/react-dev/widgets/react-dev-layout/settings/theme/index.tsx
 
+import type { FactoryComponentVariantProps } from '@factories/component-variants'
 import { cssVariables } from '@styles'
 
 import { Label2 } from '@ui/components/label-2'
 
-import { useTheme } from '@react-dev/features/theme'
-import { colorRadioGroupVariants, modeRadioGroupVariants } from '@react-dev/features/theme'
-import { useThemeConstants } from '@react-dev/features/theme/ui/constants'
+import type {
+  ThemeModeUi,
+  ThemeColorUi,
+  ThemeColorConstants,
+  ThemeModeConstants,
+  ColorRadioGroupProps,
+  ModeRadioGroupProps,
+} from '@react-dev/features/theme/types'
+import {
+  useThemeUi,
+  useThemeConstants,
+  colorRadioGroupVariants,
+  modeRadioGroupVariants,
+} from '@react-dev/features/theme'
 
-export const ThemeControls = () => {
+export const ThemeSection = () => {
+  const { themeColorUi, themeModeUi } = useThemeUi()
+  const {
+    theme: { heading },
+    color,
+    mode,
+  } = useThemeConstants()
+
   return (
     <div className='p-2'>
-      <h3>Внешний вид</h3>
-      <Color />
-      <Mode />
+      <h3>{heading}</h3>
+      <ThemeColorSection
+        {...{
+          themeColorUi,
+          component: colorRadioGroupVariants.getDefaultComponent(),
+          CONSTANTS: color,
+          style: cssVariables,
+        }}
+      />
+      <ThemeModeSection
+        {...{
+          themeModeUi,
+          component: modeRadioGroupVariants.getDefaultComponent(),
+          CONSTANTS: mode,
+        }}
+      />
     </div>
   )
 }
 
-const Mode = () => {
-  const { themeMode } = useTheme()
-  const ModeRadioGroup = modeRadioGroupVariants.getDefaultComponent()
-  const CONSTANTS_MODE = useThemeConstants().mode
-
-  const LEGEND = CONSTANTS_MODE.legend
-
-  const componentProps = {
-    state: {
-      value: themeMode.mode,
-      onValueChange: themeMode.setMode,
-    },
-    options: themeMode.modes,
-    CONSTANTS: CONSTANTS_MODE.optionMap,
-  } // as const satisfies ModeRadioGroupProps
-
+const ThemeColorSection: React.FC<
+  FactoryComponentVariantProps<ColorRadioGroupProps> &
+    (ThemeColorUi & { CONSTANTS: ThemeColorConstants }) &
+    Pick<React.ComponentProps<'div'>, 'style'>
+> = ({ component: Component, themeColorUi, CONSTANTS: { legend, optionMap }, style }) => {
   return (
-    <fieldset>
-      <Label2 asChild className='px-0'>
-        <legend>{LEGEND}</legend>
-      </Label2>
-      <ModeRadioGroup {...componentProps} />
-    </fieldset>
+    <div {...{ style }}>
+      <fieldset className='[&>*]:mb-3 [&>*:first-child]:mb-0 [&>*:last-child]:mb-0'>
+        <Label2 asChild className='px-0'>
+          <legend>{legend}</legend>
+        </Label2>
+        <Component {...{ themeColorUi, CONSTANTS: optionMap }} />
+      </fieldset>
+    </div>
   )
 }
 
-const Color = () => {
-  const ColorRadioGroup = colorRadioGroupVariants.getDefaultComponent()
-  const { themeColor } = useTheme()
-
+const ThemeModeSection: React.FC<
+  FactoryComponentVariantProps<ModeRadioGroupProps> &
+    (ThemeModeUi & { CONSTANTS: ThemeModeConstants })
+> = ({ component: Component, themeModeUi, CONSTANTS: { legend, optionMap } }) => {
   return (
-    <fieldset style={cssVariables}>
+    <fieldset className='[&>*]:mb-3 [&>*:first-child]:mb-0 [&>*:last-child]:mb-0'>
       <Label2 asChild className='px-0'>
-        <legend>Цветовая схема</legend>
+        <legend>{legend}</legend>
       </Label2>
-      <ColorRadioGroup
-        {...{
-          value: themeColor.color,
-          onValueChange: themeColor.setColor,
-          options: themeColor.colors,
-        }}
-      />
+      <Component {...{ themeModeUi, CONSTANTS: optionMap }} />
     </fieldset>
   )
 }

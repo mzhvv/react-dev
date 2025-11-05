@@ -1,51 +1,55 @@
 // src/react-dev/widgets/ui-component-variants/theme/index.ts
 
+import type { FactoryComponentsVariantProps } from '@factories/component-variants'
 import { cssVariables } from '@styles'
 
 import { Section, SectionContent, SectionHeader } from '@ui/layout-system'
 import { Label2 } from '@ui/components/label-2'
 
-import { useTheme } from '@react-dev/features/theme'
-import { colorRadioGroupVariants, modeRadioGroupVariants } from '@react-dev/features/theme'
-import { useThemeConstants } from '@react-dev/features/theme/ui/constants'
 import type {
+  ThemeModeUi,
+  ThemeColorUi,
+  ThemeColorConstants,
+  ThemeModeConstants,
   ColorRadioGroupProps,
   ModeRadioGroupProps,
-  ThemeColor,
-  ThemeMode,
-  ThemeModeData,
 } from '@react-dev/features/theme/types'
-import type { ComponentType } from 'react'
-import type { FactoryComponentsVariantProps } from '@factories/component-variants'
+import {
+  useThemeUi,
+  useThemeConstants,
+  colorRadioGroupVariants,
+  modeRadioGroupVariants,
+} from '@react-dev/features/theme'
 
 export const ThemeSection = () => {
-  const { themeMode, themeColor } = useTheme()
-
-  const colorComponents = colorRadioGroupVariants.components
-
-  const modeComponents = modeRadioGroupVariants.components
-  const themeConstants = useThemeConstants()
+  const { themeColorUi, themeModeUi } = useThemeUi()
+  const {
+    theme: { heading },
+    color,
+    mode,
+  } = useThemeConstants()
 
   return (
     <Section id='theme'>
       <SectionHeader>
-        <h2>{themeConstants.heading}</h2>
+        <h2>{heading}</h2>
       </SectionHeader>
       <SectionContent
         className='mx-auto max-w-108' // max-w-[375px]
       >
         <ThemeColorSection
           {...{
-            themeColor, // ThemeColor
-            components: colorComponents,
+            themeColorUi,
+            components: colorRadioGroupVariants.components,
+            CONSTANTS: color,
+            style: cssVariables,
           }}
         />
         <ThemeModeSection
-          // prettier-ignore
           {...{
-            themeMode, // ThemeMode
-            components: modeComponents, // FactoryComponentsVariantProps<ModeRadioGroupProps>
-            CONSTANTS: themeConstants.mode, // { CONSTANTS: ThemeModeData }
+            themeModeUi,
+            components: modeRadioGroupVariants.components,
+            CONSTANTS: mode,
           }}
         />
       </SectionContent>
@@ -53,32 +57,24 @@ export const ThemeSection = () => {
   )
 }
 
-const ThemeModeSection: React.FC<
-  ThemeMode & FactoryComponentsVariantProps<ModeRadioGroupProps> & { CONSTANTS: ThemeModeData }
-> = ({ themeMode, components, CONSTANTS }) => {
-  const LEGEND = CONSTANTS.legend
-  const componentProps = {
-    state: {
-      value: themeMode.mode,
-      onValueChange: themeMode.setMode,
-    },
-    options: themeMode.modes,
-    CONSTANTS: CONSTANTS.optionMap,
-  } as const satisfies ModeRadioGroupProps
-
+const ThemeColorSection: React.FC<
+  FactoryComponentsVariantProps<ColorRadioGroupProps> &
+    (ThemeColorUi & { CONSTANTS: ThemeColorConstants }) &
+    Pick<React.ComponentProps<'section'>, 'style'>
+> = ({ components, themeColorUi, CONSTANTS: { legend, optionMap }, style }) => {
   return (
-    <section id='theme-mode'>
+    <section id='theme-color' {...{ style }}>
       <header className='sr-only'>
-        <h3>{LEGEND}</h3>
+        <h3>{legend}</h3>
       </header>
 
       <div>
         <fieldset className='[&>*]:mb-3 [&>*:first-child]:mb-0 [&>*:last-child]:mb-0'>
           <Label2 asChild className='px-0'>
-            <legend>{LEGEND}</legend>
+            <legend>{legend}</legend>
           </Label2>
           {components.map((Component, i) => (
-            <Component key={i} {...componentProps} />
+            <Component key={i} {...{ themeColorUi, CONSTANTS: optionMap }} />
           ))}
         </fieldset>
       </div>
@@ -86,29 +82,23 @@ const ThemeModeSection: React.FC<
   )
 }
 
-const ThemeColorSection: React.FC<
-  ThemeColor & { components: ComponentType<ColorRadioGroupProps>[] }
-> = ({ themeColor, components }) => {
+const ThemeModeSection: React.FC<
+  FactoryComponentsVariantProps<ModeRadioGroupProps> &
+    (ThemeModeUi & { CONSTANTS: ThemeModeConstants })
+> = ({ components, themeModeUi, CONSTANTS: { legend, optionMap } }) => {
   return (
-    <section id='theme-color' style={cssVariables}>
+    <section id='theme-mode'>
       <header className='sr-only'>
-        <h3>Цветовая схема</h3>
+        <h3>{legend}</h3>
       </header>
 
       <div>
         <fieldset className='[&>*]:mb-3 [&>*:first-child]:mb-0 [&>*:last-child]:mb-0'>
           <Label2 asChild className='px-0'>
-            <legend>Цветовая схема</legend>
+            <legend>{legend}</legend>
           </Label2>
           {components.map((Component, i) => (
-            <Component
-              key={i}
-              {...{
-                value: themeColor.color,
-                onValueChange: themeColor.setColor,
-                options: themeColor.colors,
-              }}
-            />
+            <Component key={i} {...{ themeModeUi, CONSTANTS: optionMap }} />
           ))}
         </fieldset>
       </div>
