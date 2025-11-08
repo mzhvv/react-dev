@@ -1,1 +1,2 @@
-export type Variant<T extends number | string> = `variant-${T}`
+export type Variant<T extends string | number> = `variant-${T}`
+export type VariantId<T extends string | number> = `variant-${T}-${string}`

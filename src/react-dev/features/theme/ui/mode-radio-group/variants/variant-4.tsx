@@ -4,39 +4,40 @@ import { cn } from '@ui/lib'
 import { RadioGroup, RadioGroupItem } from '@ui/components/radio-group'
 import { Image } from '@ui/components/image'
 
+import type { VariantId } from '@react-dev/shared/types'
+
 import type { ThemeModeRadioGroupProps } from '../../../types'
 
 /* Variant4 */
 export const ThemeModeRadioGroup: React.FC<ThemeModeRadioGroupProps> = ({
-  themeModeUi: { state, options },
-  CONSTANTS,
+  themeMode: { state, options },
+  CONSTANTS: {
+    themeModeGroup: { ariaLabel },
+    themeModeGroupItemMap,
+  },
 }) => {
   return (
-    <RadioGroup aria-label='Choose theme' className='grid grid-cols-3 gap-3' {...state}>
+    <RadioGroup {...{ ...state, 'aria-label': ariaLabel }} className='grid grid-cols-3 gap-3'>
       {options.map(option => {
-        const { value, title, ariaLabel, image } = CONSTANTS[option]
+        const { value, title, ariaLabel, image } = themeModeGroupItemMap[option]
 
-        const id = `variant4-${value}`
+        const variantId: VariantId<4> = `variant-4-${value}`
 
         return (
           <div
-            key={id}
+            key={variantId}
             className={cn(
               'outline-input relative overflow-hidden rounded-md shadow-xs outline',
-
               'has-data-[state=checked]:outline-primary/50 has-focus-visible:ring-ring/50 has-focus-visible:ring-[3px]'
             )}
           >
             <RadioGroupItem
-              id={id}
-              value={value}
+              {...{ id: variantId, value }}
               className='bg-background/50 dark:bg-background/50 absolute top-2 left-2 size-4' // sr-only - при необходимости
             />
             <label
-              htmlFor={id}
-              title={title}
-              aria-label={title || ariaLabel}
-              className={cn('cursor-pointer after:absolute after:inset-0')}
+              {...{ htmlFor: variantId, title, 'aria-label': ariaLabel }}
+              className='cursor-pointer after:absolute after:inset-0'
             >
               <Image {...{ image, width: 176, height: 140, loading: 'lazy', decoding: 'async' }} />
             </label>

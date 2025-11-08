@@ -1,52 +1,48 @@
 // src/react-dev/features/theme/ui/color-radio-group/variants/variant-0.tsx
 
-import type { ThemeColorRadioGroupProps } from '@react-dev/features/theme/types'
-
 import { cn } from '@ui/lib'
 import { RadioGroup, RadioGroupItem } from '@ui/components/radio-group'
 
+import type { VariantId } from '@react-dev/shared/types'
+import type { ThemeColorRadioGroupProps } from '@react-dev/features/theme'
+
+/* Variant0 */
 export const ThemeColorRadioGroup: React.FC<ThemeColorRadioGroupProps> = ({
-  themeColorUi: { options, state },
-  CONSTANTS,
-  colorMap,
+  themeColor: { state, options },
+  CONSTANTS: {
+    themeColorGroup: { ariaLabel },
+    themeColorGroupItemMap,
+  },
+  style: { COLOR_MAP },
 }) => {
   return (
     <RadioGroup
-      aria-label='Выбор цветовой схемы'
+      {...{ ...state, 'aria-label': ariaLabel }}
       className='flex h-8 items-center gap-1.5'
-      {...state}
     >
       {options.map(option => {
         const {
           value,
           // label,
-          specialLabel,
-        } = CONSTANTS[option]
+          title,
+          ariaLabel,
+        } = themeColorGroupItemMap[option]
 
-        const id = `variant-0-${value}`
-        const aria = `Переключить на ${specialLabel} цветовую схему` // `Переключить на цветовую схему «${label}»`
+        const variantId: VariantId<0> = `variant-0-${value}`
 
         return (
           <RadioGroupItem
-            key={id}
-            value={value}
-            title={aria}
-            aria-label={aria}
+            key={variantId}
+            {...{ value, title, 'aria-label': ariaLabel }}
             className={cn(
               'size-7',
               'border-none', // data-[state=checked]:border-input border-input
               '[&_[data-slot=radio-group-indicator]_svg]:fill-background text-background [&_[data-slot=radio-group-indicator]_svg]:size-2.5',
-              colorMap[option]
+              COLOR_MAP[option]
             )}
           />
         )
       })}
-
-      {/* {Array.from({ length: 1 }, (_, i) => ({ value: `disabled-variant4-${i + 1}` })).map(
-        option => (
-          <RadioGroupItem key={option.value} disabled value={option.value} className='size-7' />
-        )
-      )} */}
     </RadioGroup>
   )
 }

@@ -1,6 +1,6 @@
 // src/react-dev/features/theme/types.ts
 
-import type { ImageProps } from '@ui/components/image'
+// theme config
 
 export type Color = 'neutral' | 'blue'
 export type Mode = 'dark' | 'light' | 'system'
@@ -16,44 +16,61 @@ export type ThemeConfig = {
 // useTheme
 
 export type ThemeColor = {
-  themeColor: { color: Color; setColor: (color: Color) => void; colors: Color[] }
+  color: Color
+  setColor: (value: Color) => void
+  colors: Color[]
 }
 export type ThemeMode = {
-  themeMode: { mode: Mode; setMode: (theme: Mode) => void; modes: Mode[] }
+  mode: Mode
+  setMode: (value: Mode) => void
+  modes: Mode[]
 }
-export type Theme = ThemeMode & ThemeColor
+export type Theme = {
+  themeColor: ThemeColor
+  themeMode: ThemeMode
+}
 
 // useThemeUI
 
 export type ThemeColorUi = {
-  themeColorUi: { state: { value: Color; onValueChange: (color: Color) => void }; options: Color[] }
+  state: { value: Color; onValueChange: (value: Color) => void }
+  options: Color[]
 }
 export type ThemeModeUi = {
-  themeModeUi: { state: { value: Mode; onValueChange: (theme: Mode) => void }; options: Mode[] }
+  state: { value: Mode; onValueChange: (value: Mode) => void }
+  options: Mode[]
 }
-export type ThemeUi = ThemeModeUi & ThemeColorUi
+export type ThemeUi = {
+  themeColor: ThemeColorUi
+  themeMode: ThemeModeUi
+}
 
 // constants
 
+import type { ImageProps } from '@ui/components/image'
+
 export type ThemeConstant = {
-  heading: string
+  themeSection: { id: string; heading: string }
 }
 
 export type ThemeColorConstant = {
-  legend: string
-  optionMap: Record<
+  themeColorSection: { id: string; heading: string }
+  themeColorGroup: { ariaLabel: string }
+  themeColorGroupItemMap: Record<
     Color,
     {
       value: Color
       label: string
-      specialLabel: string
+      title: string
+      ariaLabel: string
     }
   >
 }
 
 export type ThemeModeConstant = {
-  legend: string
-  optionMap: Record<
+  themeModeSection: { id: string; heading: string }
+  themeModeGroup: { ariaLabel: string }
+  themeModeGroupItemMap: Record<
     Mode,
     {
       value: Mode
@@ -65,17 +82,33 @@ export type ThemeModeConstant = {
 }
 
 export type ThemeConstants = {
-  theme: ThemeConstant
-  color: ThemeColorConstant
-  mode: ThemeModeConstant
+  THEME: ThemeConstant
+  COLOR: ThemeColorConstant
+  MODE: ThemeModeConstant
 }
 
 // ui
 
-export type ThemeColorRadioGroupProps = ThemeColorUi & {
-  CONSTANTS: ThemeConstants['color']['optionMap']
-  colorMap: Record<Color, string>
+import type { StyleProps } from '@styles'
+
+export type ThemeColorSectionProps<T> = T & {
+  themeColor: ThemeColorUi
+  CONSTANTS: ThemeColorConstant
+  style: StyleProps
 }
-export type ThemeModeRadioGroupProps = ThemeModeUi & {
-  CONSTANTS: ThemeConstants['mode']['optionMap']
+
+export interface ThemeColorRadioGroupProps {
+  themeColor: ThemeColorUi
+  CONSTANTS: Pick<ThemeColorConstant, 'themeColorGroup' | 'themeColorGroupItemMap'>
+  style: Pick<StyleProps, 'COLOR_MAP'>
+}
+
+export type ThemeModeSectionProps<T> = T & {
+  themeMode: ThemeModeUi
+  CONSTANTS: ThemeModeConstant
+}
+
+export interface ThemeModeRadioGroupProps {
+  themeMode: ThemeModeUi
+  CONSTANTS: Pick<ThemeModeConstant, 'themeModeGroup' | 'themeModeGroupItemMap'>
 }

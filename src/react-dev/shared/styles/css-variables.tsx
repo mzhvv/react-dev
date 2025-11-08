@@ -2,6 +2,14 @@
 
 import type { Color } from '@react-dev/features/theme'
 
+type CSSVariables = React.CSSProperties
+type ColorMap = Record<Color, string>
+
+export type StyleProps = {
+  cssVariables: CSSVariables
+  COLOR_MAP: ColorMap
+}
+
 export const cssVariables = {
   '--primary-light-neutral': 'oklch(0.205 0 0)',
   '--ring-light-neutral': 'oklch(0.708 0 0)',
@@ -12,9 +20,9 @@ export const cssVariables = {
   '--ring-light-blue': 'oklch(0.623 0.214 259.815)',
   '--primary-dark-blue': 'oklch(0.546 0.245 262.881)',
   '--ring-dark-blue': 'oklch(0.488 0.243 264.376)',
-} as React.CSSProperties
+} as CSSVariables
 
-export const colorMap = {
+export const COLOR_MAP = {
   neutral:
     'bg-[var(--primary-light-neutral)] dark:bg-[var(--primary-dark-neutral)] data-[state=checked]:bg-[var(--primary-light-neutral)] dark:data-[state=checked]:bg-[var(--primary-dark-neutral)]',
   blue: 'bg-[var(--primary-light-blue)] dark:bg-[var(--primary-dark-blue)] data-[state=checked]:bg-[var(--primary-light-blue)] dark:data-[state=checked]:bg-[var(--primary-dark-blue)]',

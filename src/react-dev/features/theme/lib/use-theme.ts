@@ -14,26 +14,26 @@ export function useTheme(): Theme {
 
 /** Подготовленные данные я использование в UI */
 export function useThemeUi(): ThemeUi {
-  const { themeMode, themeColor } = useTheme()
+  const { themeMode: themeModeDefault, themeColor: themeColorDefault } = useTheme()
 
-  const themeModeUi = {
+  const themeMode = {
     state: {
-      value: themeMode.mode,
-      onValueChange: themeMode.setMode,
+      value: themeModeDefault.mode,
+      onValueChange: themeModeDefault.setMode,
     },
-    options: themeMode.modes,
+    options: themeModeDefault.modes,
   }
 
-  const themeColorUi = {
+  const themeColor = {
     state: {
-      value: themeColor.color,
-      onValueChange: themeColor.setColor,
+      value: themeColorDefault.color,
+      onValueChange: themeColorDefault.setColor,
     },
-    options: themeColor.colors,
+    options: themeColorDefault.colors,
   }
 
   return {
-    themeModeUi,
-    themeColorUi,
+    themeMode,
+    themeColor,
   }
 }
