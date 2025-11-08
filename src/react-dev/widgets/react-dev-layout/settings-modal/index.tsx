@@ -2,15 +2,6 @@
 
 import { Settings2Icon, XIcon } from 'lucide-react'
 
-import { colorMap, cssVariables } from '@styles'
-
-import {
-  useThemeUi,
-  useThemeConstants,
-  themeColorRadioGroupVariants,
-  themeModeRadioGroupVariants,
-} from '@react-dev/features/theme'
-
 import { Button } from '@ui/components/button'
 import {
   Dialog,
@@ -33,31 +24,10 @@ export const SettingsModal = () => {
 }
 
 const Settings = () => {
-  const { themeColorUi, themeModeUi } = useThemeUi()
-  const themeColorComponent = themeColorRadioGroupVariants.getDefaultComponent()
-  const themeModeComponent = themeModeRadioGroupVariants.getDefaultComponent()
-  const { theme, color, mode } = useThemeConstants()
-
   return (
     <div>
       <LocalizationSections />
-      <ThemeSections
-        {...{
-          themeColorSection: {
-            themeColorUi,
-            component: themeColorComponent,
-            CONSTANTS: color,
-            style: cssVariables,
-            colorMap: colorMap,
-          },
-          themeModeSection: {
-            themeModeUi,
-            component: themeModeComponent,
-            CONSTANTS: mode,
-          },
-          CONSTANTS: theme,
-        }}
-      />
+      <ThemeSections />
     </div>
   )
 }

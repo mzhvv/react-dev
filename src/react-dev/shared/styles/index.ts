@@ -1,2 +1,2 @@
-export { cssVariables } from './css-variables'
-export { colorMap } from './css-variables'
+export type { StyleProps } from './css-variables'
+export { cssVariables, COLOR_MAP } from './css-variables'

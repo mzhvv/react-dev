@@ -1,75 +1,103 @@
 // src/react-dev/widgets/react-dev-layout/settings-modal/theme/index.tsx
 
-import type { FactoryComponentVariantProps } from '@factories/component-variants'
-import type {
-  ThemeColorRadioGroupProps,
-  ThemeColorUi,
-  ThemeColorConstant,
-  ThemeModeRadioGroupProps,
-  ThemeModeUi,
-  ThemeModeConstant,
-  ThemeConstant,
-} from '@react-dev/features/theme/types'
-
 import { Label2 } from '@ui/components/label-2'
 
-type ThemeColorSectionProps = FactoryComponentVariantProps<ThemeColorRadioGroupProps> &
-  (ThemeColorUi & { CONSTANTS: ThemeColorConstant }) &
-  (Pick<React.ComponentProps<'div'>, 'style'> & Pick<ThemeColorRadioGroupProps, 'colorMap'>)
+import type { FactoryComponentVariantProps } from '@factories/component-variants'
+import { cssVariables, COLOR_MAP } from '@styles'
 
-type ThemeModeSectionProps = FactoryComponentVariantProps<ThemeModeRadioGroupProps> &
-  (ThemeModeUi & { CONSTANTS: ThemeModeConstant })
+import type {
+  ThemeColorSectionProps,
+  ThemeModeSectionProps,
+  ThemeModeRadioGroupProps,
+  ThemeColorRadioGroupProps,
+} from '@react-dev/features/theme'
+import {
+  themeColorRadioGroupVariants,
+  themeModeRadioGroupVariants,
+  useThemeConstants,
+  useThemeUi,
+} from '@react-dev/features/theme'
 
-interface ThemeSectionsProps {
-  themeColorSection: ThemeColorSectionProps
-  themeModeSection: ThemeModeSectionProps
-  CONSTANTS: ThemeConstant
-}
+export const ThemeSections = () => {
+  const { themeColor, themeMode } = useThemeUi()
+  const {
+    THEME: {
+      themeSection: { heading },
+    },
+    COLOR,
+    MODE,
+  } = useThemeConstants()
+  const ThemeColorDefaultComponent = themeColorRadioGroupVariants.getDefaultComponent()
+  const ThemeModeDefaultComponent = themeModeRadioGroupVariants.getDefaultComponent()
+  const style = { cssVariables, COLOR_MAP }
 
-export const ThemeSections: React.FC<ThemeSectionsProps> = ({
-  themeColorSection,
-  themeModeSection,
-  CONSTANTS: { heading },
-}) => {
   return (
     <div className='p-2'>
       <h3>{heading}</h3>
-      <ThemeColorSection {...themeColorSection} />
-      <ThemeModeSection {...themeModeSection} />
+      <ThemeColorSection
+        {...{
+          themeColor: themeColor,
+          CONSTANTS: COLOR,
+          component: ThemeColorDefaultComponent,
+          style: style,
+        }}
+      />
+      <ThemeModeSection
+        {...{
+          themeMode: themeMode,
+          CONSTANTS: MODE,
+          component: ThemeModeDefaultComponent,
+        }}
+      />
     </div>
   )
 }
 
-const ThemeColorSection: React.FC<ThemeColorSectionProps> = ({
+const ThemeColorSection: React.FC<
+  ThemeColorSectionProps<FactoryComponentVariantProps<ThemeColorRadioGroupProps>>
+> = ({
+  themeColor,
+  CONSTANTS: {
+    themeColorSection: {
+      // id,
+      heading,
+    },
+    ...REST_CONSTANTS
+  },
+  style: { cssVariables, COLOR_MAP },
   component: Component,
-  themeColorUi,
-  CONSTANTS: { legend, optionMap },
-  style,
-  colorMap,
 }) => {
   return (
-    <div {...{ style }}>
+    <div {...{ style: cssVariables }}>
       <fieldset className='[&>*]:mb-3 [&>*:first-child]:mb-0 [&>*:last-child]:mb-0'>
         <Label2 asChild className='px-0'>
-          <legend>{legend}</legend>
+          <legend>{heading}</legend>
         </Label2>
-        <Component {...{ themeColorUi, CONSTANTS: optionMap, colorMap: colorMap }} />
+        <Component {...{ themeColor, CONSTANTS: REST_CONSTANTS, style: { COLOR_MAP } }} />
       </fieldset>
     </div>
   )
 }
 
-const ThemeModeSection: React.FC<ThemeModeSectionProps> = ({
+const ThemeModeSection: React.FC<
+  ThemeModeSectionProps<FactoryComponentVariantProps<ThemeModeRadioGroupProps>>
+> = ({
+  themeMode,
+  CONSTANTS: {
+    themeModeSection: {
+      // id,
+      heading,
+    },
+    ...REST_CONSTANTS
+  },
   component: Component,
-  themeModeUi,
-  CONSTANTS: { legend, optionMap },
 }) => {
   return (
     <fieldset className='[&>*]:mb-3 [&>*:first-child]:mb-0 [&>*:last-child]:mb-0'>
       <Label2 asChild className='px-0'>
-        <legend>{legend}</legend>
+        <legend>{heading}</legend>
       </Label2>
-      <Component {...{ themeModeUi, CONSTANTS: optionMap }} />
+      <Component {...{ themeMode, CONSTANTS: REST_CONSTANTS }} />
     </fieldset>
   )
 }

@@ -1,11 +1,9 @@
 export type {
-  ThemeColorUi,
-  ThemeModeUi,
-  ThemeColorConstant,
-  ThemeModeConstant,
+  ThemeColorSectionProps,
   ThemeColorRadioGroupProps,
-  ThemeModeRadioGroupProps,
   Color,
+  ThemeModeSectionProps,
+  ThemeModeRadioGroupProps,
 } from './types'
 
 export { ThemeProvider } from './lib/provider'
