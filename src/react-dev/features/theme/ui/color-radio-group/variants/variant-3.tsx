@@ -6,7 +6,7 @@ import { RadioGroup, RadioGroupItem } from '@ui/components/radio-group'
 import type { VariantId } from '@react-dev/shared/types'
 import type { ThemeColorRadioGroupProps } from '@react-dev/features/theme'
 
-/* Variant0 */
+/* Variant1 */
 export const ThemeColorRadioGroup: React.FC<ThemeColorRadioGroupProps> = ({
   themeColor: { state, options },
   CONSTANTS: {

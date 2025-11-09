@@ -38,15 +38,11 @@ const Item: React.FC<{ value: string; title: string; ariaLabel: string }> = ({
     <div
       key={value}
       className={cn(
-        'outline-input relative h-8 rounded-md shadow-xs outline',
-        'has-data-[state=checked]:outline-primary/50 has-focus-visible:ring-ring/50 has-focus-visible:ring-[3px]'
+        'outline-input relative h-8 rounded-md shadow-xs outline-2',
+        'has-data-[state=checked]:outline-primary/50 has-focus-visible:ring-ring/50 has-focus-visible:ring-2'
       )}
     >
-      <RadioGroupItem
-        id={value}
-        value={value}
-        className='absolute top-2 left-2 size-4' // sr-only - при необходимости
-      />
+      <RadioGroupItem id={value} value={value} className='sr-only' />
       <label
         htmlFor={value}
         title={ariaLabel}

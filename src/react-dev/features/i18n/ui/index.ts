@@ -20,5 +20,5 @@ export const localizationLanguageRadioGroupVariants = createComponentVariantsFac
     'variant-0': { component: Variant0 },
     'variant-1': { component: Variant1 },
   } satisfies FactoryComponentVariantsConfig<Variants, LocalizationRadioGroupProps>,
-  'variant-1'
+  'variant-0'
 )
