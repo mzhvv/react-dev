@@ -27,13 +27,13 @@ export const ThemeModeRadioGroup: React.FC<ThemeModeRadioGroupProps> = ({
           <div
             key={variantId}
             className={cn(
-              'outline-input relative overflow-hidden rounded-md shadow-xs outline',
-              'has-data-[state=checked]:outline-primary/50 has-focus-visible:ring-ring/50 has-focus-visible:ring-[3px]'
+              'outline-input relative overflow-hidden rounded-md shadow-xs outline-2',
+              'has-data-[state=checked]:outline-primary/50 has-focus-visible:ring-ring/50 has-focus-visible:ring-2'
             )}
           >
             <RadioGroupItem
               {...{ id: variantId, value }}
-              className='bg-background/50 dark:bg-background/50 absolute top-2 left-2 size-4' // sr-only - при необходимости
+              className='bg-background/50 dark:bg-background/50 absolute top-2 left-2 size-4' // sr-only
             />
             <label
               {...{ htmlFor: variantId, title, 'aria-label': ariaLabel }}

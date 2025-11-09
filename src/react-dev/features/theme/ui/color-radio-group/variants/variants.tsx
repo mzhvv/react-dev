@@ -1,25 +1,24 @@
-// src/react-dev/features/theme/ui/mode-radio-group/variants/variants.tsx
+// src/react-dev/features/theme/ui/color-radio-group/variants/variant-0.tsx
 
 import { cn } from '@ui/lib'
 import { RadioGroup, RadioGroupItem } from '@ui/components/radio-group'
 import { Label } from '@ui/components/label'
 
 import type { VariantId } from '@react-dev/shared/types'
+import type { ThemeColorRadioGroupProps } from '@react-dev/features/theme'
 
-import type { ThemeModeRadioGroupProps } from '../../../types'
-
-/* ThemeModeRadioGroup */
-export const Variant0: React.FC<ThemeModeRadioGroupProps> = ({
-  themeMode: { state, options },
+/* ThemeColorRadioGroup */
+export const Variant0: React.FC<ThemeColorRadioGroupProps> = ({
+  themeColor: { state, options },
   CONSTANTS: {
-    themeModeGroup: { ariaLabel },
-    themeModeGroupItemMap,
+    themeColorGroup: { ariaLabel },
+    themeColorGroupItemMap,
   },
 }) => {
   return (
     <RadioGroup {...{ ...state, 'aria-label': ariaLabel }} className='flex h-8 items-center gap-4'>
       {options.map(option => {
-        const { value, title, ariaLabel, label } = themeModeGroupItemMap[option]
+        const { value, title, ariaLabel, label } = themeColorGroupItemMap[option]
 
         const variantId: VariantId<0> = `variant-0-${value}`
 
@@ -39,18 +38,18 @@ export const Variant0: React.FC<ThemeModeRadioGroupProps> = ({
   )
 }
 
-/* ThemeModeRadioGroup */
-export const Variant1: React.FC<ThemeModeRadioGroupProps> = ({
-  themeMode: { state, options },
+/* ThemeColorRadioGroup */
+export const Variant1: React.FC<ThemeColorRadioGroupProps> = ({
+  themeColor: { state, options },
   CONSTANTS: {
-    themeModeGroup: { ariaLabel },
-    themeModeGroupItemMap,
+    themeColorGroup: { ariaLabel },
+    themeColorGroupItemMap,
   },
 }) => {
   return (
-    <RadioGroup {...{ ...state, 'aria-label': ariaLabel }} className='grid grid-cols-3 gap-3'>
+    <RadioGroup {...{ ...state, 'aria-label': ariaLabel }} className='grid grid-cols-2 gap-3'>
       {options.map(option => {
-        const { value, title, ariaLabel, label } = themeModeGroupItemMap[option]
+        const { value, title, ariaLabel, label } = themeColorGroupItemMap[option]
 
         const variantId: VariantId<1> = `variant-1-${value}`
 

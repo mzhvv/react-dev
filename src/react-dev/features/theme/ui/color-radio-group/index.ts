@@ -7,9 +7,10 @@ import { createComponentVariantsFactory } from '@factories/component-variants'
 
 import type { ThemeColorRadioGroupProps } from '../../types'
 
-import { ThemeColorRadioGroup as Variant0 } from './variants/variant-0'
+import { Variant0, Variant1 } from './variants/variants'
+import { ThemeColorRadioGroup as Variant3 } from './variants/variant-3'
 
-type ThemeColorRadioGroupFactoryVariant = V<0>
+type ThemeColorRadioGroupFactoryVariant = V<0 | 1 | 3>
 
 export const themeColorRadioGroupVariants = createComponentVariantsFactory<
   ThemeColorRadioGroupFactoryVariant,
@@ -17,6 +18,9 @@ export const themeColorRadioGroupVariants = createComponentVariantsFactory<
 >(
   {
     'variant-0': { component: Variant0 },
+    'variant-1': { component: Variant1 },
+
+    'variant-3': { component: Variant3 },
   } satisfies FactoryComponentVariantsConfig<
     ThemeColorRadioGroupFactoryVariant,
     ThemeColorRadioGroupProps

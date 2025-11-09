@@ -1,39 +1,67 @@
 {
   "settings": {
     "localization": {
-      "heading": "Localization",
+      "heading": "Language & Region",
 
       "language": {
-        "legend": "Language"
+        "legend": "Interface Language"
       }
     },
 
     "theme": {
-      "shared": {
+      "themeSection": {
         "heading": "Appearance"
       },
 
-      "color": {
-        "legend": "Color scheme"
+      "colorSection": {
+        "heading": "Color Palette",
+
+        "group": {
+          "ariaLabel": "Choose color scheme"
+        },
+        "groupItem": {
+          "label": {
+            "neutral": "Neutral",
+            "blue": "Blue"
+          },
+          "title": {
+            "neutral": "Neutral color scheme",
+            "blue": "Blue color scheme"
+          },
+          "ariaLabel": {
+            "neutral": "Neutral color scheme",
+            "blue": "Blue color scheme"
+          }
+        }
       },
 
-      "mode": {
-        "legend": "Theme Mode",
+      "modeSection": {
+        "heading": "Theme Mode",
 
-        "label": {
-          "system": "System",
-          "light": "Light",
-          "dark": "Dark"
+        "group": {
+          "ariaLabel": "Choose theme mode"
         },
-        "title": {
-          "system": "Switch to system theme",
-          "light": "Switch to light theme",
-          "dark": "Switch to dark theme"
-        },
-        "imageAlt": {
-          "system": "System theme preview — automatic switching",
-          "light": "Light theme preview — light interface",
-          "dark": "Dark theme preview — dark interface"
+        "groupItem": {
+          "label": {
+            "system": "System",
+            "light": "Light",
+            "dark": "Dark"
+          },
+          "title": {
+            "system": "Follow system settings",
+            "light": "Light theme",
+            "dark": "Dark theme"
+          },
+          "ariaLabel": {
+            "system": "System theme",
+            "light": "Light theme",
+            "dark": "Dark theme"
+          },
+          "imageAlt": {
+            "system": "Automatic theme detection",
+            "light": "Light interface",
+            "dark": "Dark interface"
+          }
         }
       }
     }

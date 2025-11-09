@@ -19,10 +19,11 @@ export const themeModeRadioGroupVariants = createComponentVariantsFactory<
   {
     'variant-0': { component: Variant0 },
     'variant-1': { component: Variant1 },
+
     'variant-4': { component: Variant4 },
   } as const satisfies FactoryComponentVariantsConfig<
     ThemeModeRadioGroupFactoryVariant,
     ThemeModeRadioGroupProps
   >,
-  'variant-4'
+  'variant-0'
 )
