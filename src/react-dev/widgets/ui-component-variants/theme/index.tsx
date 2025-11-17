@@ -1,6 +1,16 @@
 // src/react-dev/widgets/ui-component-variants/theme/index.tsx
 
-import { Section, SectionContent, SectionHeader } from '@ui/layout-system'
+import {
+  Article,
+  ArticleContent,
+  ArticleHeader,
+  Section,
+  SectionContent,
+  SectionHeader,
+  SubSection,
+  SubSectionContent,
+  SubSectionHeader,
+} from '@ui/layout-system'
 import { Label2 } from '@ui/components/label-2'
 
 import type { FactoryComponentsVariantProps } from '@factories/component-variants'
@@ -25,25 +35,25 @@ export const ThemeSection = () => {
     THEME: {
       themeSection: { id, heading },
     },
-    COLOR,
-    MODE,
+    THEME_COLOR,
+    THEME_MODE,
   } = useThemeConstants()
   const themeColorComponents = themeColorRadioGroupVariants.components
   const themeModeComponents = themeModeRadioGroupVariants.components
   const style = { cssVariables, COLOR_MAP }
 
   return (
-    <Section {...{ id }}>
+    <Section {...{ id }} className='space-y-4'>
       <SectionHeader>
         <h2>{heading}</h2>
       </SectionHeader>
       <SectionContent
-        className='mx-auto max-w-108' // max-w-[375px]
+        className='space-y-4' // max-w-[375px]
       >
         <ThemeColorSection
           {...{
             themeColor: themeColor,
-            CONSTANTS: COLOR,
+            CONSTANTS: THEME_COLOR,
             components: themeColorComponents,
             style: style,
           }}
@@ -51,7 +61,7 @@ export const ThemeSection = () => {
         <ThemeModeSection
           {...{
             themeMode: themeMode,
-            CONSTANTS: MODE,
+            CONSTANTS: THEME_MODE,
             components: themeModeComponents,
           }}
         />
@@ -65,36 +75,41 @@ const ThemeColorSection: React.FC<
 > = ({
   themeColor,
   CONSTANTS: {
-    themeColorSection: { id, heading },
+    themeColorSection: { id, heading, HeadingIcon },
     ...REST_CONSTANTS
   },
   style: { cssVariables, COLOR_MAP },
   components,
 }) => {
   return (
-    <section {...{ id }}>
-      <header className='sr-only'>
-        <h3>{heading}</h3>
-      </header>
-
-      <div {...{ style: cssVariables }}>
-        <fieldset className='[&>*]:mb-3 [&>*:first-child]:mb-0 [&>*:last-child]:mb-0'>
-          <Label2 asChild className='px-0'>
-            <legend>{heading}</legend>
-          </Label2>
-          {components.map((Component, i) => (
-            <Component
-              key={i}
-              {...{
-                themeColor: themeColor,
-                CONSTANTS: REST_CONSTANTS,
-                style: { COLOR_MAP },
-              }}
-            />
-          ))}
-        </fieldset>
-      </div>
-    </section>
+    <SubSection {...{ id, heading, style: cssVariables }}>
+      <SubSectionHeader>
+        <h3 className='inline-flex items-center gap-2'>
+          {HeadingIcon && <HeadingIcon className='size-4' />}
+          {heading}
+        </h3>
+      </SubSectionHeader>
+      <SubSectionContent className='mx-auto max-w-106 space-y-4'>
+        {components.map((Component, i) => (
+          <Article key={i}>
+            <ArticleHeader>
+              <Label2 asChild className='px-0'>
+                <h4>{`Вариант ${i}`}</h4>
+              </Label2>
+            </ArticleHeader>
+            <ArticleContent className='rounded-md border p-4'>
+              <Component
+                {...{
+                  themeColor: themeColor,
+                  CONSTANTS: REST_CONSTANTS,
+                  style: { COLOR_MAP },
+                }}
+              />
+            </ArticleContent>
+          </Article>
+        ))}
+      </SubSectionContent>
+    </SubSection>
   )
 }
 
@@ -103,33 +118,38 @@ const ThemeModeSection: React.FC<
 > = ({
   themeMode,
   CONSTANTS: {
-    themeModeSection: { id, heading },
+    themeModeSection: { id, heading, HeadingIcon },
     ...REST_CONSTANTS
   },
   components,
 }) => {
   return (
-    <section {...{ id }}>
-      <header className='sr-only'>
-        <h3>{heading}</h3>
-      </header>
-
-      <div>
-        <fieldset className='[&>*]:mb-3 [&>*:first-child]:mb-0 [&>*:last-child]:mb-0'>
-          <Label2 asChild className='px-0'>
-            <legend>{heading}</legend>
-          </Label2>
-          {components.map((Component, i) => (
-            <Component
-              key={i}
-              {...{
-                themeMode: themeMode,
-                CONSTANTS: REST_CONSTANTS,
-              }}
-            />
-          ))}
-        </fieldset>
-      </div>
-    </section>
+    <SubSection {...{ id, heading }}>
+      <SubSectionHeader>
+        <h3 className='inline-flex items-center gap-2'>
+          {HeadingIcon && <HeadingIcon className='size-4' />}
+          {heading}
+        </h3>
+      </SubSectionHeader>
+      <SubSectionContent className='mx-auto max-w-106 space-y-4'>
+        {components.map((Component, i) => (
+          <Article key={i}>
+            <ArticleHeader>
+              <Label2 asChild className='px-0'>
+                <h4>{`Вариант ${i}`}</h4>
+              </Label2>
+            </ArticleHeader>
+            <ArticleContent className='rounded-md border p-4'>
+              <Component
+                {...{
+                  themeMode: themeMode,
+                  CONSTANTS: REST_CONSTANTS,
+                }}
+              />
+            </ArticleContent>
+          </Article>
+        ))}
+      </SubSectionContent>
+    </SubSection>
   )
 }

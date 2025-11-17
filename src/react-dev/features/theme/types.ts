@@ -54,7 +54,8 @@ export type ThemeConstant = {
 }
 
 export type ThemeColorConstant = {
-  themeColorSection: { id: string; heading: string }
+  themeColorSection: { id: string; heading: string; HeadingIcon: LucideIcon }
+  themeColorForm: { legend: string }
   themeColorGroup: { ariaLabel: string }
   themeColorGroupItemMap: Record<
     Color,
@@ -68,7 +69,8 @@ export type ThemeColorConstant = {
 }
 
 export type ThemeModeConstant = {
-  themeModeSection: { id: string; heading: string }
+  themeModeSection: { id: string; heading: string; HeadingIcon: LucideIcon }
+  themeModeForm: { legend: string }
   themeModeGroup: { ariaLabel: string }
   themeModeGroupItemMap: Record<
     Mode,
@@ -76,20 +78,21 @@ export type ThemeModeConstant = {
       value: Mode
       label: string
       title: string
-      ariaLabel?: string
+      ariaLabel: string
     } & ImageProps
   >
 }
 
 export type ThemeConstants = {
   THEME: ThemeConstant
-  COLOR: ThemeColorConstant
-  MODE: ThemeModeConstant
+  THEME_COLOR: ThemeColorConstant
+  THEME_MODE: ThemeModeConstant
 }
 
 // ui
 
 import type { StyleProps } from '@styles'
+import type { LucideIcon } from 'lucide-react'
 
 export type ThemeColorSectionProps<T> = T & {
   themeColor: ThemeColorUi
@@ -99,7 +102,10 @@ export type ThemeColorSectionProps<T> = T & {
 
 export interface ThemeColorRadioGroupProps {
   themeColor: ThemeColorUi
-  CONSTANTS: Pick<ThemeColorConstant, 'themeColorGroup' | 'themeColorGroupItemMap'>
+  CONSTANTS: Pick<
+    ThemeColorConstant,
+    'themeColorForm' | 'themeColorGroup' | 'themeColorGroupItemMap'
+  >
   style: Pick<StyleProps, 'COLOR_MAP'>
 }
 
@@ -110,5 +116,5 @@ export type ThemeModeSectionProps<T> = T & {
 
 export interface ThemeModeRadioGroupProps {
   themeMode: ThemeModeUi
-  CONSTANTS: Pick<ThemeModeConstant, 'themeModeGroup' | 'themeModeGroupItemMap'>
+  CONSTANTS: Pick<ThemeModeConstant, 'themeModeForm' | 'themeModeGroup' | 'themeModeGroupItemMap'>
 }

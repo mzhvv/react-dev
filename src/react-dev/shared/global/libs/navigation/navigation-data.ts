@@ -5,6 +5,11 @@ import { navigationAccumulate } from '@apps/navigation-accumulate'
 
 import type { NavigationSection } from './types'
 
+// TODO!
+const [ui, project0, dashboard01] = navigationAccumulate.development
+const navigationDevelopmentUI = [ui]
+const RestNavigationDevelopment = [project0, dashboard01]
+
 const NAVIGATION_SECTIONS = [
   {
     title: 'Приложение ', // Application
@@ -16,11 +21,15 @@ const NAVIGATION_SECTIONS = [
   },
   {
     title: 'Проекты', // Projects
-    links: [...navigationReactDev.projects, ...navigationAccumulate.projects],
+    links: [...navigationReactDev.projects],
   },
   {
     title: 'Development',
-    links: [...navigationReactDev.development, ...navigationAccumulate.development],
+    links: [
+      ...navigationDevelopmentUI,
+      ...navigationReactDev.development,
+      ...RestNavigationDevelopment,
+    ],
   },
 ] as const satisfies NavigationSection[]
 

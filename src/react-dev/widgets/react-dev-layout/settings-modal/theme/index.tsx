@@ -1,6 +1,13 @@
 // src/react-dev/widgets/react-dev-layout/settings-modal/theme/index.tsx
 
-import { Label2 } from '@ui/components/label-2'
+import {
+  ModalSection,
+  ModalSectionHeader,
+  ModalSectionContent,
+  ModalSubSection,
+  ModalSubSectionContent,
+  ModalSubSectionHeader,
+} from '@ui/layout-system'
 
 import type { FactoryComponentVariantProps } from '@factories/component-variants'
 import { cssVariables, COLOR_MAP } from '@styles'
@@ -24,32 +31,36 @@ export const ThemeSections = () => {
     THEME: {
       themeSection: { heading },
     },
-    COLOR,
-    MODE,
+    THEME_COLOR,
+    THEME_MODE,
   } = useThemeConstants()
   const ThemeColorDefaultComponent = themeColorRadioGroupVariants.getDefaultComponent()
   const ThemeModeDefaultComponent = themeModeRadioGroupVariants.getDefaultComponent()
   const style = { cssVariables, COLOR_MAP }
 
   return (
-    <div className='p-2'>
-      <h3>{heading}</h3>
-      <ThemeColorSection
-        {...{
-          themeColor: themeColor,
-          CONSTANTS: COLOR,
-          component: ThemeColorDefaultComponent,
-          style: style,
-        }}
-      />
-      <ThemeModeSection
-        {...{
-          themeMode: themeMode,
-          CONSTANTS: MODE,
-          component: ThemeModeDefaultComponent,
-        }}
-      />
-    </div>
+    <ModalSection>
+      <ModalSectionHeader>
+        <h3 className='text-base'>{heading}</h3>
+      </ModalSectionHeader>
+      <ModalSectionContent>
+        <ThemeColorSection
+          {...{
+            themeColor: themeColor,
+            CONSTANTS: THEME_COLOR,
+            component: ThemeColorDefaultComponent,
+            style: style,
+          }}
+        />
+        <ThemeModeSection
+          {...{
+            themeMode: themeMode,
+            CONSTANTS: THEME_MODE,
+            component: ThemeModeDefaultComponent,
+          }}
+        />
+      </ModalSectionContent>
+    </ModalSection>
   )
 }
 
@@ -58,24 +69,24 @@ const ThemeColorSection: React.FC<
 > = ({
   themeColor,
   CONSTANTS: {
-    themeColorSection: {
-      // id,
-      heading,
-    },
+    themeColorSection: { heading, HeadingIcon },
     ...REST_CONSTANTS
   },
   style: { cssVariables, COLOR_MAP },
   component: Component,
 }) => {
   return (
-    <div {...{ style: cssVariables }}>
-      <fieldset className='[&>*]:mb-3 [&>*:first-child]:mb-0 [&>*:last-child]:mb-0'>
-        <Label2 asChild className='px-0'>
-          <legend>{heading}</legend>
-        </Label2>
+    <ModalSubSection {...{ style: cssVariables }}>
+      <ModalSubSectionHeader>
+        <h4 className='inline-flex items-center gap-2'>
+          {HeadingIcon && <HeadingIcon className='size-4' />}
+          {heading}
+        </h4>
+      </ModalSubSectionHeader>
+      <ModalSubSectionContent>
         <Component {...{ themeColor, CONSTANTS: REST_CONSTANTS, style: { COLOR_MAP } }} />
-      </fieldset>
-    </div>
+      </ModalSubSectionContent>
+    </ModalSubSection>
   )
 }
 
@@ -84,20 +95,22 @@ const ThemeModeSection: React.FC<
 > = ({
   themeMode,
   CONSTANTS: {
-    themeModeSection: {
-      // id,
-      heading,
-    },
+    themeModeSection: { heading, HeadingIcon },
     ...REST_CONSTANTS
   },
   component: Component,
 }) => {
   return (
-    <fieldset className='[&>*]:mb-3 [&>*:first-child]:mb-0 [&>*:last-child]:mb-0'>
-      <Label2 asChild className='px-0'>
-        <legend>{heading}</legend>
-      </Label2>
-      <Component {...{ themeMode, CONSTANTS: REST_CONSTANTS }} />
-    </fieldset>
+    <ModalSubSection>
+      <ModalSubSectionHeader>
+        <h4 className='inline-flex items-center gap-2'>
+          {HeadingIcon && <HeadingIcon className='size-4' />}
+          {heading}
+        </h4>
+      </ModalSubSectionHeader>
+      <ModalSubSectionContent>
+        <Component {...{ themeMode, CONSTANTS: REST_CONSTANTS }} />
+      </ModalSubSectionContent>
+    </ModalSubSection>
   )
 }

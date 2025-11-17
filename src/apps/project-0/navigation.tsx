@@ -2,8 +2,8 @@
 
 import type { NavigationLink } from '@global/libs/navigation'
 
-import type { Path } from './types'
+import type { ParentRoutePath } from './types/router-and-navigation'
 
 export const navigationPproject0 = [
   { path: '/project-0', title: 'project-0' },
-] as const satisfies NavigationLink<Path>[]
+] as const satisfies NavigationLink<ParentRoutePath>[]
