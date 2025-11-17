@@ -1,1 +1,1 @@
-export * from './_accumulators'
+export * from './accumulators'
