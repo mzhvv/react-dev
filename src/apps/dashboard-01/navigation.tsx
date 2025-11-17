@@ -1,6 +1,7 @@
 // src/apps/dashboard-01/navigation.tsx
 
 import type { NavigationLink } from '@global/libs/navigation'
+
 import type { ParentRoutePath } from '@apps/dashboard-01/types/router-and-navigation'
 
 export const navigationDashboard01 = [

@@ -2,17 +2,19 @@
 
 import type { RouteObject } from 'react-router'
 
-import { ReactDevLayout } from '@react-dev/widgets/react-dev-layout'
+import type { ChildrenRouteObject, ParentRouteObject } from '@global/libs/router'
 
-import { HomePage } from '@react-dev/pages/home'
-import { AboutPage } from '@react-dev/pages/about'
-import { CollaborationPage } from '@react-dev/pages/collaboration'
 import type {
   ChildrenRouteKey,
   ChildrenRoutePaths,
   ParentRoutePath,
 } from '@react-dev/shared/types/router-and-navigation'
-import type { ChildrenRouteObject, ParentRouteObject } from '@global/libs/router/types'
+
+import { ReactDevLayout } from '@react-dev/widgets/react-dev-layout'
+
+import { HomePage } from '@react-dev/pages/home'
+import { AboutPage } from '@react-dev/pages/about'
+import { CollaborationPage } from '@react-dev/pages/collaboration'
 
 export const pagesReactDev = {
   uiComponentVariants: {

@@ -1,14 +1,14 @@
 // src/apps/ui/shared/navigation.tsx
 
-import type { ChildrenNavigationPath } from '@global/libs/router/types'
+import type { NavigationChildrenPath, NavigationLink } from '@global/libs/navigation'
+
 import type {
   ParentRoutePath,
   ChildrenRoutePaths,
 } from '@apps/ui/shared/types/router-and-navigation'
-import type { NavigationLink } from '@global/libs/navigation'
 
 /** для src/apps/ui/... */
-export const navigation = ['/ui/radio-group'] as const satisfies ChildrenNavigationPath<
+export const navigation = ['/ui/radio-group'] as const satisfies NavigationChildrenPath<
   ParentRoutePath,
   ChildrenRoutePaths
 >[]
