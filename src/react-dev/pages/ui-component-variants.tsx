@@ -8,8 +8,10 @@ export const UiComponentVariantsPage = () => {
       <Header>
         <h1>ui-component-variants</h1>
       </Header>
-      <LocalizationSection />
-      <ThemeSection />
+      <div>
+        <LocalizationSection />
+        <ThemeSection />
+      </div>
     </Main>
   )
 }

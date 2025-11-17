@@ -1,77 +1,94 @@
 // src/react-dev/features/theme/ui/mode-radio-group/variants/variants.tsx
 
-import { cn } from '@ui/lib'
-import { RadioGroup, RadioGroupItem } from '@ui/components/radio-group'
-import { Label } from '@ui/components/label'
+import { Label2 } from '@ui/components/label-2'
+import {
+  RadioGroup,
+  RadioGroupItem_V0,
+  RadioGroupItem_V1,
+  RadioGroupItem_V4,
+} from '@ui/components/radio-group'
 
 import type { VariantId } from '@react-dev/shared/types'
 
 import type { ThemeModeRadioGroupProps } from '../../../types'
 
-/* ThemeModeRadioGroup */
-export const Variant0: React.FC<ThemeModeRadioGroupProps> = ({
+export { ThemeModeRadioGroupV0 as Variant0 }
+const ThemeModeRadioGroupV0: React.FC<ThemeModeRadioGroupProps> = ({
   themeMode: { state, options },
   CONSTANTS: {
+    themeModeForm: { legend },
     themeModeGroup: { ariaLabel },
     themeModeGroupItemMap,
   },
 }) => {
   return (
-    <RadioGroup {...{ ...state, 'aria-label': ariaLabel }} className='flex h-8 items-center gap-4'>
-      {options.map(option => {
-        const { value, title, ariaLabel, label } = themeModeGroupItemMap[option]
+    <fieldset>
+      <Label2 asChild className='px-0'>
+        <legend>{legend}</legend>
+      </Label2>
 
-        const variantId: VariantId<0> = `variant-0-${value}`
-
-        return (
-          <div key={variantId} className='flex items-center *:cursor-pointer'>
-            <RadioGroupItem {...{ id: variantId, value }} />
-            <Label
-              {...{ htmlFor: variantId, title, 'aria-label': ariaLabel }}
-              className='pl-2 text-sm font-medium whitespace-nowrap'
-            >
-              {label}
-            </Label>
-          </div>
-        )
-      })}
-    </RadioGroup>
+      <RadioGroup
+        {...{ ...state, 'aria-label': ariaLabel }}
+        className='flex h-8 items-center gap-4'
+      >
+        {options.map(option => {
+          const { value, ...CONSTANTS } = themeModeGroupItemMap[option]
+          const variantId: VariantId<0> = `variant-0-${value}`
+          return <RadioGroupItem_V0 key={variantId} {...{ id: variantId, value, ...CONSTANTS }} />
+        })}
+      </RadioGroup>
+    </fieldset>
   )
 }
 
-/* ThemeModeRadioGroup */
-export const Variant1: React.FC<ThemeModeRadioGroupProps> = ({
+export { ThemeModeRadioGroupV1 as Variant1 }
+const ThemeModeRadioGroupV1: React.FC<ThemeModeRadioGroupProps> = ({
   themeMode: { state, options },
   CONSTANTS: {
+    themeModeForm: { legend },
     themeModeGroup: { ariaLabel },
     themeModeGroupItemMap,
   },
 }) => {
   return (
-    <RadioGroup {...{ ...state, 'aria-label': ariaLabel }} className='grid grid-cols-3 gap-3'>
-      {options.map(option => {
-        const { value, title, ariaLabel, label } = themeModeGroupItemMap[option]
+    <fieldset>
+      <Label2 asChild className='px-0'>
+        <legend>{legend}</legend>
+      </Label2>
 
-        const variantId: VariantId<1> = `variant-1-${value}`
+      <RadioGroup {...{ ...state, 'aria-label': ariaLabel }} className='grid grid-cols-3 gap-3'>
+        {options.map(option => {
+          const { value, ...CONSTANTS } = themeModeGroupItemMap[option]
+          const variantId: VariantId<1> = `variant-1-${value}`
+          return <RadioGroupItem_V1 key={variantId} {...{ id: variantId, value, ...CONSTANTS }} />
+        })}
+      </RadioGroup>
+    </fieldset>
+  )
+}
 
-        return (
-          <div
-            key={variantId}
-            className={cn(
-              'outline-input relative h-8 rounded-md shadow-xs outline-2',
-              'has-data-[state=checked]:outline-primary/50 has-focus-visible:ring-ring/50 has-focus-visible:ring-2'
-            )}
-          >
-            <RadioGroupItem {...{ id: variantId, value: value }} className='sr-only' />
-            <label
-              {...{ htmlFor: variantId, title, 'aria-label': ariaLabel }}
-              className='inline-flex size-full cursor-pointer items-center justify-center text-sm font-medium whitespace-nowrap after:absolute after:inset-0'
-            >
-              {label}
-            </label>
-          </div>
-        )
-      })}
-    </RadioGroup>
+export { ThemeModeRadioGroupV2 as Variant2 }
+const ThemeModeRadioGroupV2: React.FC<ThemeModeRadioGroupProps> = ({
+  themeMode: { state, options },
+  CONSTANTS: {
+    themeModeForm: { legend },
+    themeModeGroup: { ariaLabel },
+    themeModeGroupItemMap,
+  },
+}) => {
+  return (
+    <fieldset>
+      <Label2 asChild className='px-0'>
+        <legend>{legend}</legend>
+      </Label2>
+
+      <RadioGroup {...{ ...state, 'aria-label': ariaLabel }} className='grid grid-cols-3 gap-3'>
+        {options.map(option => {
+          const { value, ...CONSTANTS } = themeModeGroupItemMap[option]
+          const variantId: VariantId<2> = `variant-2-${value}`
+          return <RadioGroupItem_V4 key={variantId} {...{ id: variantId, value, ...CONSTANTS }} />
+        })}
+      </RadioGroup>
+    </fieldset>
   )
 }

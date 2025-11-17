@@ -172,7 +172,7 @@ html[color="blue"] {
   h3,
   h4,
   h5 {
-    @apply flex h-8 items-center text-lg leading-snug;
+    @apply flex h-8 items-center text-base leading-snug;
   }
 
   p,

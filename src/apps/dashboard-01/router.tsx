@@ -1,8 +1,8 @@
 // src/apps/dashboard-01/router.tsx
 
-import type { RouteObject } from '@global/libs/router'
-
-import type { Path } from './types'
+import type { RouteObject } from 'react-router'
+import type { ParentRouteObject } from '@global/libs/router/types'
+import type { ParentRoutePath } from '@apps/dashboard-01/types/router-and-navigation'
 
 export const routesDashboard01 = [
   {
@@ -11,6 +11,5 @@ export const routesDashboard01 = [
       import('./page').then(module => ({
         Component: module.Dashboard01Page,
       })),
-    children: [],
-  },
-] as const satisfies RouteObject<Path>[]
+  } as const satisfies ParentRouteObject<ParentRoutePath>,
+] as const satisfies RouteObject[]

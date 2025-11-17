@@ -2,6 +2,7 @@
 
 import { useTranslation } from 'react-i18next'
 import type { ThemeConstants, ThemeConstant, ThemeColorConstant, ThemeModeConstant } from '../types'
+import { PaletteIcon, SunMoonIcon } from 'lucide-react'
 
 export function useThemeConstants() {
   const { t } = useTranslation('settings')
@@ -10,8 +11,15 @@ export function useThemeConstants() {
     themeSection: { id: 'theme', heading: t('settings.theme.themeSection.heading') },
   } as const satisfies ThemeConstant
 
-  const COLOR = {
-    themeColorSection: { id: 'theme-color', heading: t('settings.theme.colorSection.heading') },
+  const THEME_COLOR = {
+    themeColorSection: {
+      id: 'theme-color',
+      heading: t('settings.theme.colorSection.heading'),
+      HeadingIcon: PaletteIcon,
+    },
+    themeColorForm: {
+      legend: t('settings.theme.colorSection.form.legend'),
+    },
     themeColorGroup: {
       ariaLabel: t('settings.theme.colorSection.group.ariaLabel'),
     },
@@ -31,15 +39,22 @@ export function useThemeConstants() {
     },
   } as const satisfies ThemeColorConstant
 
-  const MODE = {
-    themeModeSection: { id: 'theme-mode', heading: t('settings.theme.modeSection.heading') },
+  const THEME_MODE = {
+    themeModeSection: {
+      id: 'theme-mode',
+      heading: t('settings.theme.modeSection.heading'),
+      HeadingIcon: SunMoonIcon,
+    },
+    themeModeForm: {
+      legend: t('settings.theme.modeSection.form.legend'),
+    },
     themeModeGroup: { ariaLabel: t('settings.theme.modeSection.group.ariaLabel') },
     themeModeGroupItemMap: {
       system: {
         value: 'system',
         label: t('settings.theme.modeSection.groupItem.label.system'),
         title: t('settings.theme.modeSection.groupItem.title.system'),
-        ariaLabel: '',
+        ariaLabel: t('settings.theme.modeSection.groupItem.ariaLabel.system'),
         image: {
           webp: '/assets/theme/ui-system.webp',
           src: '/assets/theme/ui-system.png',
@@ -76,8 +91,8 @@ export function useThemeConstants() {
 
   const themeConstants = {
     THEME,
-    COLOR,
-    MODE,
+    THEME_COLOR,
+    THEME_MODE,
   } as const satisfies ThemeConstants
 
   return themeConstants

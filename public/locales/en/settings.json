@@ -16,6 +16,9 @@
       "colorSection": {
         "heading": "Color Palette",
 
+        "form": {
+          "legend": "Color Palette"
+        },
         "group": {
           "ariaLabel": "Choose color scheme"
         },

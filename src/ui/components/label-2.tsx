@@ -11,7 +11,8 @@ export const Label2: React.FC<
   return (
     <Comp
       className={cn(
-        'text-accent-foreground/70 flex h-8 w-full items-center px-2.5 text-xs font-medium',
+        'text-accent-foreground/70 inline-flex h-8 w-full items-center gap-2 px-2.5 text-xs font-medium',
+        '[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*="size-"])]:size-3.5',
         className
       )}
       {...props}
