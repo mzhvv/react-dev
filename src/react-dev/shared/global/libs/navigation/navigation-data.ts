@@ -2,47 +2,39 @@
 
 import { navigationReactDev } from '@react-dev/shared/libs/navigation'
 import { navigationAccumulate } from '@apps/accumulators/navigation-accumulate'
-
 import type { NavigationSection } from './types'
 
-// TODO!
+// TODO! - Сортировка
 const [ui, project0, dashboard01] = navigationAccumulate.development
-const navigationDevelopmentUI = [ui]
-const RestNavigationDevelopment = [project0, dashboard01]
+const [uiComponentVariants] = navigationReactDev.development
 
 const NAVIGATION_SECTIONS = [
   {
-    title: 'Приложение ', // Application
+    group: 'application', // Приложение
     links: [...navigationReactDev.application, ...navigationAccumulate.application],
   },
   {
-    title: 'Автор', // Author
+    group: 'author', //  Автор
     links: [...navigationReactDev.author, ...navigationAccumulate.author],
   },
   {
-    title: 'Проекты', // Projects
-    links: [...navigationReactDev.projects],
+    group: 'projects', // Проекты
+    links: [...navigationReactDev.projects, ...navigationAccumulate.projects],
   },
   {
-    title: 'Development',
-    links: [
-      ...navigationDevelopmentUI,
-      ...navigationReactDev.development,
-      ...RestNavigationDevelopment,
-    ],
+    group: 'development',
+    links: [ui, uiComponentVariants, project0, dashboard01],
   },
 ] as const satisfies NavigationSection[]
-
 const [application, author, projects, development] = NAVIGATION_SECTIONS
 
-//
+// TODO! - Педелать что ниже
 
 const MODIFIED_NAVIGATION_SECTIONS_FOR_SIDEBAR = [application, author, projects, development]
-
 const MODIFIED_NAVIGATION_SECTIONS_FOR_PAGE_1 = [
   {
     ...application,
-    links: application.links.filter(item => item.path !== '/'),
+    links: application.links.filter(item => item !== '/'),
   },
   author,
 ]
