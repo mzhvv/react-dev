@@ -1,7 +1,7 @@
 // src/apps/ui/shared/constants/navigation.ts
 
 import type { NavigationLink } from '@global/libs/navigation'
-import type { ChildrenNavigationPath } from '@global/libs/router/types'
+import type { NavigationChildrenPath } from '@global/libs/navigation'
 import type {
   ParentRoutePath,
   ChildrenRoutePaths,
@@ -12,7 +12,7 @@ type NavigationObject = { title: string }
 /** для src/apps/ui/... */
 export const NAVIGATION = {
   '/ui/radio-group': { title: 'radio-group' },
-} satisfies Record<ChildrenNavigationPath<ParentRoutePath, ChildrenRoutePaths>, NavigationObject>
+} satisfies Record<NavigationChildrenPath<ParentRoutePath, ChildrenRoutePaths>, NavigationObject>
 
 /** для src/apps/constants-accumulate.ts */
 export const NAVIGATION_UI = [

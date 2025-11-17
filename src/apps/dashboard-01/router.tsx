@@ -1,7 +1,8 @@
 // src/apps/dashboard-01/router.tsx
 
 import type { RouteObject } from 'react-router'
-import type { ParentRouteObject } from '@global/libs/router/types'
+import type { ParentRouteObject } from '@global/libs/router'
+
 import type { ParentRoutePath } from '@apps/dashboard-01/types/router-and-navigation'
 
 export const routesDashboard01 = [
