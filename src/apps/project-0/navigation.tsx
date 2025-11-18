@@ -1,6 +1,6 @@
 // src/apps/project-0/navigation.tsx
 
-import type { NavigationParentPath } from '@global/libs/navigation'
+import type { NavigationParentPath } from '@react-dev/global/navigation'
 import type { ParentRoutePath } from './types/router-and-navigation'
 
 export const navigationPproject0 =

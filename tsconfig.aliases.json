@@ -4,7 +4,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@global/*": ["./src/react-dev/shared/global/*"],
+      "@global/*": ["./src/react-dev/global/*"],
       "@factories/*": ["./src/react-dev/shared/libs/factories/*"],
       "@styles": ["./src/react-dev/shared/styles/index.ts"],
       "@ui/*": ["./src/ui/*"],

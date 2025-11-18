@@ -4,7 +4,7 @@ import path from 'path'
 import type { AliasOptions } from 'vite'
 
 export const alias = {
-  '@global': path.resolve(__dirname, './src/react-dev/shared/global'),
+  '@global': path.resolve(__dirname, './src/react-dev/global'),
   '@factories': path.resolve(__dirname, './src/react-dev/shared/libs/factories'),
   '@styles': path.resolve(__dirname, './src/react-dev/shared/styles/index.ts'),
   '@ui': path.resolve(__dirname, './src/ui'),

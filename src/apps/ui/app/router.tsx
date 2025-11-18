@@ -1,7 +1,7 @@
 // src/apps/ui/app/router.tsx
 
 import type { RouteObject } from 'react-router'
-import type { ChildrenRouteObject, ParentRouteObject } from '@global/libs/router'
+import type { ChildrenRouteObject, ParentRouteObject } from '@react-dev/global/router'
 
 import type {
   ChildrenRouteKey,

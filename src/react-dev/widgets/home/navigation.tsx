@@ -2,7 +2,7 @@ import {
   NavigationDataRender,
   NAVIGATION_SECTIONS_FOR_PAGE_1,
   NAVIGATION_SECTIONS_FOR_PAGE_2,
-} from '@global/libs/navigation'
+} from '@react-dev/global/navigation'
 
 export const Navigation = () => {
   return (

@@ -8,6 +8,7 @@ import { Button } from '@ui/components/button'
 import { Label2 } from '@ui/components/label-2'
 import { DialogClose } from '@ui/components/dialog'
 import type { NavigationSection } from './types'
+import { useGlobalNavigationConstants } from '../constants'
 
 type Variant = 'sidebar' | 'modal' | 'page'
 type Orientation = 'horizontal' | 'vertical'
@@ -18,6 +19,7 @@ export const NavigationDataRender: React.FC<{
   orientation: Orientation
   size?: string
 }> = ({ navigationSections, variant, orientation = 'vertical', size }) => {
+  const CONSTANTS = useGlobalNavigationConstants()
   return (
     <ul
       className={cn(
@@ -26,18 +28,21 @@ export const NavigationDataRender: React.FC<{
           : 'flex flex-col justify-center gap-3 sm:flex-row'
       )}
     >
-      {navigationSections.map(sections => (
-        <li key={sections.group} className={cn(orientation === 'vertical' ? 'py-2' : 'p-0')}>
-          <Label2 asChild>
-            <h3>{sections.group}</h3>
-          </Label2>
-          <ul className={cn('space-y-px', size ? size : 'w-auto')}>
-            {sections.links.map(link => (
-              <NavigationItem key={link} {...{ variant, link }} />
-            ))}
-          </ul>
-        </li>
-      ))}
+      {navigationSections.map(sections => {
+        const group = CONSTANTS.group[sections.group]
+        return (
+          <li key={group} className={cn(orientation === 'vertical' ? 'py-2' : 'p-0')}>
+            <Label2 asChild>
+              <h3>{group}</h3>
+            </Label2>
+            <ul className={cn('space-y-px', size ? size : 'w-auto')}>
+              {sections.links.map(link => (
+                <NavigationItem key={link} {...{ variant, link }} />
+              ))}
+            </ul>
+          </li>
+        )
+      })}
     </ul>
   )
 }
