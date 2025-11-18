@@ -1,6 +1,6 @@
 import { GripIcon, XIcon } from 'lucide-react'
 
-import { NavigationDataRender, NAVIGATION_SECTIONS_FOR_SIDEBAR } from '@global/libs/navigation'
+import { NavigationDataRender, NAVIGATION_SECTIONS_FOR_SIDEBAR } from '@react-dev/global/navigation'
 
 import {
   Dialog,

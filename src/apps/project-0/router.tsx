@@ -1,7 +1,7 @@
 // src/apps/project-0/router.tsx
 
 import type { RouteObject } from 'react-router'
-import type { ParentRouteObject } from '@global/libs/router'
+import type { ParentRouteObject } from '@react-dev/global/router'
 
 import type { ParentRoutePath } from '@apps/project-0/types/router-and-navigation'
 

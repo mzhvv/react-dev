@@ -1,6 +1,6 @@
 export type {
   NavigationSectionKey,
-  NavigationAccumulate,
+  // NavigationAccumulate,
   NavigationParentPath,
   NavigationChildrenPath,
 } from './types'

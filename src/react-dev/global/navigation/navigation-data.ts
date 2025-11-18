@@ -1,6 +1,6 @@
 // src/react-dev/shared/global/libs/navigation/navigation-data.ts
 
-import { navigationReactDev } from '@react-dev/shared/libs/navigation'
+import { navigationReactDev } from '@react-dev/shared/navigation'
 import { navigationAccumulate } from '@apps/accumulators/navigation-accumulate'
 import type { NavigationSection } from './types'
 

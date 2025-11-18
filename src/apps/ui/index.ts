@@ -1,3 +1,6 @@
-export type { ParentRoutePath } from './shared/types/router-and-navigation'
-
 export { routesUi } from './app/router'
+export { navigationUi } from './shared/navigation'
+export {
+  uiNavigationConstants,
+  // useUiNavigationConstants
+} from './shared/constants/navigation'

@@ -1,10 +1,10 @@
-// src/apps/navigation-accumulate.ts
+// src/apps/accumulators/navigation-accumulate.ts
 
-import type { NavigationSectionKey } from '@global/libs/navigation'
+import type { NavigationSectionKey } from '@global/navigation'
 
-import { navigationPproject0 } from '@apps/project-0/navigation'
-import { navigationDashboard01 } from '@apps/dashboard-01/navigation'
-import { navigationUi } from '@apps/ui/shared/navigation'
+import { navigationDashboard01 } from '@apps/dashboard-01'
+import { navigationPproject0 } from '@apps/project-0'
+import { navigationUi } from '@apps/ui'
 
 export const navigationAccumulate = {
   application: [],
