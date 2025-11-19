@@ -1,8 +1,17 @@
-// src/react-dev/shared/global/libs/router/types.ts
+// src/react-dev/global/router/types.ts
 
-import type { RouteObject, NonIndexRouteObject } from 'react-router'
+import type { RouteObject } from 'react-router'
 
-export type ParentRouteObject<P extends string> = Omit<RouteObject, 'path'> & {
-  path: P
+export type LayoutRouteObject = RouteObject
+
+export type RootRouteObject<Path extends string> = Omit<RouteObject, 'path'> & {
+  path: Path
 }
-export type ChildrenRouteObject<T extends string> = Omit<NonIndexRouteObject, 'path'> & { path: T }
+
+export type DomainRouteObject<Path extends string> = Omit<RouteObject, 'path'> & {
+  path: Path
+}
+
+export type PageRouteObject<Path extends string> = Omit<RouteObject, 'path'> & {
+  path: Path
+}

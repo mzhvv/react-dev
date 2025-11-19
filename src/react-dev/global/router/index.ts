@@ -1,2 +1,7 @@
-export type { ParentRouteObject, ChildrenRouteObject } from './types'
+export type {
+  LayoutRouteObject,
+  RootRouteObject,
+  DomainRouteObject,
+  PageRouteObject,
+} from './types'
 export { router, Router } from './router'

@@ -1,7 +1,10 @@
 // src/apps/dashboard-01/navigation.tsx
 
-import type { NavigationParentPath } from '@react-dev/global/navigation'
-import type { ParentRoutePath } from './types/router-and-navigation'
+import type { DomainPathNavigation } from '@global/navigation'
+import type { DomainRoutePath } from '@apps/dashboard-01/types'
 
-export const navigationDashboard01 =
-  '/dashboard-01' as const satisfies NavigationParentPath<ParentRoutePath>
+type Dashboard01DomainNavigation = DomainPathNavigation<DomainRoutePath>[]
+
+export const dashboard01DomainNavigation = [
+  '/dashboard-01',
+] as const satisfies Dashboard01DomainNavigation

@@ -1,6 +1,5 @@
-export { routesDashboard01 } from './router'
-export { navigationDashboard01 } from './navigation'
-export {
-  dashboard01NavigationConstants,
-  // useDashboard01NavigationConstants
-} from './constants'
+// src/apps/dashboard-01/index.ts
+
+export { dashboard01Routes } from './router'
+export { dashboard01DomainNavigation } from './navigation'
+export { useDashboard01NavigationConstants } from './constants'

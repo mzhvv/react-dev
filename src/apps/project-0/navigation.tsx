@@ -1,7 +1,10 @@
 // src/apps/project-0/navigation.tsx
 
-import type { NavigationParentPath } from '@react-dev/global/navigation'
-import type { ParentRoutePath } from './types/router-and-navigation'
+import type { DomainPathNavigation } from '@global/navigation'
+import type { DomainRoutePath } from '@apps/project-0/types'
 
-export const navigationPproject0 =
-  '/project-0' as const satisfies NavigationParentPath<ParentRoutePath>
+type Project0DomainNavigation = DomainPathNavigation<DomainRoutePath>[]
+
+export const project0DomainNavigation = ['/project-0'] as const satisfies Project0DomainNavigation
+
+export const project0Navigation = [...project0DomainNavigation] as const

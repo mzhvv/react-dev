@@ -1,8 +1,8 @@
 export type {
-  NavigationSectionKey,
-  // NavigationAccumulate,
-  NavigationParentPath,
-  NavigationChildrenPath,
+  SectionKeyNavigation,
+  SectionNavigation,
+  DomainPathNavigation,
+  PagePathNavigation,
 } from './types'
 
 export {

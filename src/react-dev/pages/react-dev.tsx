@@ -1,7 +1,7 @@
 import { Navigation } from '@react-dev/widgets/home'
 import { Main, Header, Section, SectionHeader, SectionContent } from '@ui/layout-system'
 
-export const HomePage = () => {
+export const ReactDevPage = () => {
   return (
     <Main>
       <Header>

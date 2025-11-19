@@ -1,11 +1,12 @@
-// src/apps/ui/shared/navigation.tsx
+// src/apps/ui/shared/navigation/index.ts
 
-import type { NavigationChildrenPath, NavigationParentPath } from '@react-dev/global/navigation'
-import type { ParentRoutePath, ChildrenRoutePaths } from '../types/router-and-navigation'
+import type { DomainPathNavigation, PagePathNavigation } from '@global/navigation'
+import type { DomainRoutePath, PageRoutePath } from '@apps/ui/shared/types'
 
-export const navigationUi = '/ui' as const satisfies NavigationParentPath<ParentRoutePath>
+type UiDomainNavigation = DomainPathNavigation<DomainRoutePath>[]
+type UiPagesNavigation = PagePathNavigation<DomainRoutePath, PageRoutePath>[]
 
-export const navigation = ['/ui/radio-group'] as const satisfies NavigationChildrenPath<
-  ParentRoutePath,
-  ChildrenRoutePaths
->[]
+export const uiDomainsNavigation = ['/ui'] as const satisfies UiDomainNavigation
+export const uiPagesNavigation = ['/ui/radio-group'] as const satisfies UiPagesNavigation
+
+export const uiNavigation = [...uiDomainsNavigation, ...uiPagesNavigation] as const

@@ -2,12 +2,12 @@
 
 import type { RouteObject } from 'react-router'
 
-import { routesDashboard01 } from '@apps/dashboard-01'
-import { routesPproject0 } from '@apps/project-0'
-import { routesUi } from '@apps/ui'
+import { dashboard01Routes } from '@apps/dashboard-01'
+import { project0Routes } from '@apps/project-0'
+import { uiRoutes } from '@apps/ui'
 
 export const routesAccumulate = [
-  ...routesDashboard01,
-  ...routesPproject0,
-  ...routesUi,
+  ...dashboard01Routes,
+  ...project0Routes,
+  ...uiRoutes,
 ] as const satisfies RouteObject[]

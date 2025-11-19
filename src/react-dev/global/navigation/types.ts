@@ -1,15 +1,7 @@
-// import type { LucideIcon } from 'lucide-react'
+// src/react-dev/global/navigation/types.ts
 
-// export type NavigationAccumulate = Record<NavigationSectionKey, NavigationLink[]>
+export type SectionKeyNavigation = 'application' | 'author' | 'projects' | 'development'
+export type SectionNavigation = { group: SectionKeyNavigation; links: string[] }
 
-// export type NavigationLink<T extends string = string> = {
-//   path: `/${T}`
-//   title: string
-//   icon?: LucideIcon
-// }
-
-export type NavigationSectionKey = 'application' | 'author' | 'projects' | 'development'
-export type NavigationSection = { group: NavigationSectionKey; links: string[] }
-
-export type NavigationParentPath<T extends string> = `/${T}`
-export type NavigationChildrenPath<P extends string, C extends string> = `/${P}/${C}`
+export type DomainPathNavigation<Domain extends string> = `/${Domain}`
+export type PagePathNavigation<Domain extends string, Page extends string> = `/${Domain}/${Page}`

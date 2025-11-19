@@ -1,33 +1,28 @@
 // src/apps/dashboard-01/constants.tsx
 
-import type { NavigationParentPath } from '@global/navigation'
-import type { GlobalNavigationConstants } from '@global/constants'
-
-import type { ParentRoutePath } from './types/router-and-navigation'
-
-export const dashboard01NavigationConstants = {
-  dashboard01ParentLink: { '/dashboard-01': { title: 'dashboard-01' } } as const satisfies Record<
-    NavigationParentPath<ParentRoutePath>,
-    GlobalNavigationConstants
-  >,
-  dashboard01ChildrensLink: {} as const,
-} as const
-
-// // i18n
-
 // import { useTranslation } from 'react-i18next'
 
-// export function useDashboard01NavigationConstants() {
-//   const { t } = useTranslation('common')
+import type { DomainPathNavigation } from '@global/navigation'
+import type { GlobalNavigationConstants } from '@global/constants'
+import type { DomainRoutePath } from '@apps/dashboard-01/types'
 
-//   const dashboard01ParentLink = {
-//     '/dashboard-01': { title: t('') || 'dashboard-01' },
-//   } as const satisfies Record<NavigationParentPath<ParentRoutePath>, GlobalNavigationConstants>
+type Dashboard01DomainNavigationLinks = Record<
+  DomainPathNavigation<DomainRoutePath>,
+  GlobalNavigationConstants<DomainRoutePath, DomainPathNavigation<DomainRoutePath>>
+>
 
-//   const dashboard01ChildrensLink = {} as const
+export function useDashboard01NavigationConstants() {
+  // const { t } = useTranslation('common')
 
-//   return {
-//     dashboard01ParentLink,
-//     dashboard01ChildrensLink,
-//   }
-// }
+  const DASHBOARD01_DOMAIN_NAVIGATION_LINKS = {
+    '/dashboard-01': {
+      relativePath: 'dashboard-01',
+      absolutePath: '/dashboard-01',
+      title: 'dashboard-01', // t('') || 'dashboard-01',
+    },
+  } as const satisfies Dashboard01DomainNavigationLinks
+
+  return {
+    DASHBOARD01_DOMAIN_NAVIGATION_LINKS,
+  }
+}
