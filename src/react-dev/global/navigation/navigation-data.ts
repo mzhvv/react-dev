@@ -1,34 +1,36 @@
-// src/react-dev/shared/global/libs/navigation/navigation-data.ts
+// src/react-dev/global/navigation/navigation-data.ts
 
-import { navigationReactDev } from '@react-dev/shared/navigation'
+import { reactDevNavigation } from '@react-dev/shared/navigation'
 import { navigationAccumulate } from '@apps/accumulators/navigation-accumulate'
-import type { NavigationSection } from './types'
+
+import type { SectionNavigation } from './types'
 
 // TODO! - Сортировка
 const [ui, project0, dashboard01] = navigationAccumulate.development
-const [uiComponentVariants] = navigationReactDev.development
+const [uiComponentVariants] = reactDevNavigation.development
+const developmentSort = [ui, uiComponentVariants, project0, dashboard01]
 
 const NAVIGATION_SECTIONS = [
   {
-    group: 'application', // Приложение
-    links: [...navigationReactDev.application, ...navigationAccumulate.application],
+    group: 'application',
+    links: [...reactDevNavigation.application, ...navigationAccumulate.application],
   },
   {
-    group: 'author', //  Автор
-    links: [...navigationReactDev.author, ...navigationAccumulate.author],
+    group: 'author',
+    links: [...reactDevNavigation.author, ...navigationAccumulate.author],
   },
   {
-    group: 'projects', // Проекты
-    links: [...navigationReactDev.projects, ...navigationAccumulate.projects],
+    group: 'projects',
+    links: [...reactDevNavigation.projects, ...navigationAccumulate.projects],
   },
   {
     group: 'development',
-    links: [ui, uiComponentVariants, project0, dashboard01],
+    links: developmentSort,
   },
-] as const satisfies NavigationSection[]
-const [application, author, projects, development] = NAVIGATION_SECTIONS
+] as const satisfies SectionNavigation[]
 
 // TODO! - Педелать что ниже
+const [application, author, projects, development] = NAVIGATION_SECTIONS
 
 const MODIFIED_NAVIGATION_SECTIONS_FOR_SIDEBAR = [application, author, projects, development]
 const MODIFIED_NAVIGATION_SECTIONS_FOR_PAGE_1 = [

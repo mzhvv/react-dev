@@ -1,4 +1,4 @@
-// src/react-dev/shared/global/libs/navigation/ui/render-data.tsx
+// src/react-dev/global/navigation/render-data.tsx
 
 import { Link } from 'react-router'
 // import { DotIcon } from 'lucide-react'
@@ -7,14 +7,14 @@ import { cn } from '@ui/lib'
 import { Button } from '@ui/components/button'
 import { Label2 } from '@ui/components/label-2'
 import { DialogClose } from '@ui/components/dialog'
-import type { NavigationSection } from './types'
+import type { SectionNavigation } from './types'
 import { useGlobalNavigationConstants } from '../constants'
 
 type Variant = 'sidebar' | 'modal' | 'page'
 type Orientation = 'horizontal' | 'vertical'
 
 export const NavigationDataRender: React.FC<{
-  navigationSections: NavigationSection[]
+  navigationSections: SectionNavigation[]
   variant: Variant
   orientation: Orientation
   size?: string

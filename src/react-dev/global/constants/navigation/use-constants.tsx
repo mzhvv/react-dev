@@ -1,47 +1,38 @@
 // src/react-dev/global/constants/navigation/use-constants.tsx
 
-import { useTranslation } from 'react-i18next'
+// import { useTranslation } from 'react-i18next'
 
-import type { NavigationSectionKey } from '@global/navigation'
+import type { SectionKeyNavigation } from '@global/navigation'
 
-import {
-  // reactdevNavigationConstants,
-  useReactdevNavigationConstants,
-} from '@react-dev/shared/constants/navigation'
-import {
-  APPS_CONSTANTS_ACCUMULATE,
-  // APPS_CONSTANTS_ACCUMULATE_HOOK
-} from '@apps/accumulators'
+import { APPS_CONSTANTS_ACCUMULATE } from '@apps/accumulators'
+import { useReactdevNavigationConstants } from '@react-dev/shared/constants/navigation'
 
 export function useGlobalNavigationConstants() {
-  const { t } = useTranslation('common')
+  // const { t } = useTranslation('common')
 
-  const { reactdevParentLink } = useReactdevNavigationConstants()
+  const {
+    useUiNavigationConstants,
+    useProject0NavigationConstants,
+    useDashboard01NavigationConstants,
+  } = APPS_CONSTANTS_ACCUMULATE
 
-  // const {
-  //   useDashboard01NavigationConstants,
-  //   useProject0NavigationConstants,
-  //   useUiNavigationConstants,
-  // } = APPS_CONSTANTS_ACCUMULATE_HOOK
-  // const { dashboard01ParentLink } = useDashboard01NavigationConstants()
-  // const { project0ParentLink } = useProject0NavigationConstants()
-  // const { uiParentLink } = useUiNavigationConstants()
-
-  // const { reactdevParentLink } = reactdevNavigationConstants
-  const { dashboard01ParentLink, project0ParentLink, uiParentLink } = APPS_CONSTANTS_ACCUMULATE
+  const { REACTDEV_DOMAIN_NAVIGATION_LINKS } = useReactdevNavigationConstants()
+  const { DASHBOARD01_DOMAIN_NAVIGATION_LINKS } = useDashboard01NavigationConstants()
+  const { PROJECT0_DOMAIN_NAVIGATION_LINKS } = useProject0NavigationConstants()
+  const { UI_DOMAIN_NAVIGATION_LINKS } = useUiNavigationConstants()
 
   const constants = {
     group: {
-      application: t('') || 'Приложение', // 'Application',
-      author: t('') || 'Автор', //'Author',
-      projects: t('') || 'Проекты', // 'Projects',
-      development: t('') || 'Development',
-    } as const satisfies Record<NavigationSectionKey, string>,
+      application: 'Приложение', //t('') || 'Приложение', // 'Application',
+      author: 'Автор', // t('') || 'Автор', //'Author',
+      projects: 'Проекты', // t('') || 'Проекты', // 'Projects',
+      development: 'Development', // t('') || 'Development',
+    } as const satisfies Record<SectionKeyNavigation, string>,
     link: {
-      ...reactdevParentLink,
-      ...dashboard01ParentLink,
-      ...project0ParentLink,
-      ...uiParentLink,
+      ...REACTDEV_DOMAIN_NAVIGATION_LINKS,
+      ...DASHBOARD01_DOMAIN_NAVIGATION_LINKS,
+      ...PROJECT0_DOMAIN_NAVIGATION_LINKS,
+      ...UI_DOMAIN_NAVIGATION_LINKS,
     },
   }
 

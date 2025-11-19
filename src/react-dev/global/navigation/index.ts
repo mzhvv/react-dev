@@ -1,3 +1,5 @@
+// src/react-dev/global/navigation/index.ts
+
 export type {
   SectionKeyNavigation,
   SectionNavigation,

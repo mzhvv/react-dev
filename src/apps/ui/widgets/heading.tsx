@@ -1,13 +1,22 @@
+// src/apps/ui/widgets/heading.tsx
+
 import { Link } from 'react-router'
-import { useConstantsUiNavigation } from '../shared/constants/navigation'
-import { navigationUiDomain } from '../shared/navigation'
+import { useUiNavigationConstants } from '../shared/constants/navigation'
+import { uiDomainsNavigation } from '../shared/navigation'
 
 export const ReactdevHeading = () => {
-  const { CONSTANTS_UI_LINK_DOMAIN } = useConstantsUiNavigation()
-  const { absolutePath, title } = CONSTANTS_UI_LINK_DOMAIN[navigationUiDomain]
+  const { UI_DOMAIN_NAVIGATION_LINKS } = useUiNavigationConstants()
+
   return (
     <h1>
-      <Link to={absolutePath}>{title}</Link>
+      {uiDomainsNavigation.map(pathKey => {
+        const { absolutePath, title } = UI_DOMAIN_NAVIGATION_LINKS[pathKey]
+        return (
+          <Link key={pathKey} to={absolutePath}>
+            {title}
+          </Link>
+        )
+      })}
     </h1>
   )
 }

@@ -1,3 +1,5 @@
+// src/apps/ui/widgets/section-list.tsx
+
 import { Link } from 'react-router'
 
 import {
@@ -6,19 +8,23 @@ import {
   // SectionHeader
 } from '@ui/layout-system'
 
-import { useConstantsUiNavigation } from '../shared/constants/navigation'
-import { navigationUIPages } from '../shared/navigation'
+import { useUiNavigationConstants } from '../shared/constants/navigation'
+import { uiPagesNavigation } from '../shared/navigation'
 
 export const UiSectionList = () => {
-  const { CONSTANTS_UI_LINK_PAGES } = useConstantsUiNavigation()
+  const { UI_PAGES_NAVIGATION_LINKS } = useUiNavigationConstants()
   return (
     <Section>
       {/* <SectionHeader>навигация</SectionHeader> */}
       <SectionContent>
         <nav>
-          {navigationUIPages.map(pathKey => {
-            const { absolutePath, title } = CONSTANTS_UI_LINK_PAGES[pathKey]
-            return <Link to={absolutePath}>{title}</Link>
+          {uiPagesNavigation.map(pathKey => {
+            const { absolutePath, title } = UI_PAGES_NAVIGATION_LINKS[pathKey]
+            return (
+              <Link key={pathKey} to={absolutePath}>
+                {title}
+              </Link>
+            )
           })}
         </nav>
       </SectionContent>

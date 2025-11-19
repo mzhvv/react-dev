@@ -1,20 +1,20 @@
-// src/react-dev/shared/global/libs/router/router.tsx
+// src/react-dev/global/router/router.tsx
 
 import type { RouteObject } from 'react-router'
 import { createBrowserRouter, RouterProvider } from 'react-router'
 
 // import { LoadingFallback } from '@ui/components/fallback'
 
-import { routesReactDev } from '@react-dev/app/routes'
+import { rootRoute, reactDevDomainRoutes } from '@react-dev/app/routes'
 import { routesAccumulate as accumulateRoutesProjects } from '@apps'
 
-const { children: childrenRoutesReactDev, ...restRoutesReactDev } = routesReactDev
+const { children: rootRoutes, ...rootLayout } = rootRoute
 
 const routes = [
   {
-    ...restRoutesReactDev,
+    ...rootLayout,
     hydrateFallbackElement: <></>, // <LoadingFallback message='Loading hydrate ...' />,
-    children: [...childrenRoutesReactDev, ...accumulateRoutesProjects],
+    children: [...rootRoutes, ...Object.values(reactDevDomainRoutes), ...accumulateRoutesProjects],
   },
 ] as const satisfies RouteObject[]
 

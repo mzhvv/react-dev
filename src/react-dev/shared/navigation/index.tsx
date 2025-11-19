@@ -1,14 +1,14 @@
-// src/react-dev/shared/libs/navigation/index.tsx
+// src/react-dev/shared/navigation/index.tsx
 
-import type { NavigationParentPath, NavigationSectionKey } from '@global/navigation/types'
-import type { ParentRoutePath } from '../types/router-and-navigation'
+import type { DomainPathNavigation, SectionKeyNavigation } from '@global/navigation/types'
+import type { RootRoutePath, DomainRoutePath } from '@react-dev/shared/types'
 
-export const navigationReactDev = {
+export const reactDevNavigation = {
   application: ['/', '/about'],
   author: ['/collaboration'],
   projects: [],
   development: ['/ui-component-variants'],
 } as const satisfies Record<
-  NavigationSectionKey,
-  Array<'/' | NavigationParentPath<ParentRoutePath>>
+  SectionKeyNavigation,
+  Array<RootRoutePath | DomainPathNavigation<DomainRoutePath>>
 >

@@ -1,5 +1,8 @@
+// src/react-dev/global/router/index.ts
+
 export type {
   LayoutRouteObject,
+  IndexDomainRouteObject,
   RootRouteObject,
   DomainRouteObject,
   PageRouteObject,
