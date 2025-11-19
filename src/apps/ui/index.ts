@@ -1,6 +1,5 @@
-export { routesUi } from './app/router'
-export { navigationUi } from './shared/navigation'
-export {
-  uiNavigationConstants,
-  // useUiNavigationConstants
-} from './shared/constants/navigation'
+// src/apps/ui/index.ts
+
+export { uiRoutes } from './app/router'
+export { uiDomainsNavigation } from './shared/navigation'
+export { useUiNavigationConstants } from './shared/constants/navigation'

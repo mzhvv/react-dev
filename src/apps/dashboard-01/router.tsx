@@ -1,16 +1,17 @@
 // src/apps/dashboard-01/router.tsx
 
 import type { RouteObject } from 'react-router'
-import type { ParentRouteObject } from '@react-dev/global/router'
+import type { DomainRouteObject } from '@global/router'
+import type { DomainRoutePath } from '@apps/dashboard-01/types'
 
-import type { ParentRoutePath } from '@apps/dashboard-01/types/router-and-navigation'
+type Dashboard01Routes = DomainRouteObject<DomainRoutePath>
 
-export const routesDashboard01 = [
+export const dashboard01Routes = [
   {
     path: 'dashboard-01',
     lazy: () =>
       import('./page').then(module => ({
         Component: module.Dashboard01Page,
       })),
-  } as const satisfies ParentRouteObject<ParentRoutePath>,
+  } as const satisfies Dashboard01Routes,
 ] as const satisfies RouteObject[]

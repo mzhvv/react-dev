@@ -1,14 +1,18 @@
 // src/apps/accumulators/navigation-accumulate.ts
 
-import type { NavigationSectionKey } from '@global/navigation'
+import type { SectionKeyNavigation } from '@global/navigation'
 
-import { navigationDashboard01 } from '@apps/dashboard-01'
-import { navigationPproject0 } from '@apps/project-0'
-import { navigationUi } from '@apps/ui'
+import { dashboard01DomainNavigation } from '@apps/dashboard-01'
+import { project0DomainNavigation } from '@apps/project-0'
+import { uiDomainsNavigation } from '@apps/ui'
 
 export const navigationAccumulate = {
   application: [],
   author: [],
   projects: [],
-  development: [navigationUi, navigationPproject0, navigationDashboard01],
-} as const satisfies Record<NavigationSectionKey, string[]>
+  development: [
+    ...uiDomainsNavigation,
+    ...project0DomainNavigation,
+    ...dashboard01DomainNavigation,
+  ],
+} as const satisfies Record<SectionKeyNavigation, string[]>

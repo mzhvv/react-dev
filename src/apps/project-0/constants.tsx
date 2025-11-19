@@ -1,33 +1,28 @@
 // src/apps/project-0/constants.tsx
 
-import type { NavigationParentPath } from '@global/navigation'
-import type { GlobalNavigationConstants } from '@global/constants'
-
-import type { ParentRoutePath } from './types/router-and-navigation'
-
-export const project0NavigationConstants = {
-  project0ParentLink: { '/project-0': { title: 'project-0' } } as const satisfies Record<
-    NavigationParentPath<ParentRoutePath>,
-    GlobalNavigationConstants
-  >,
-  project0ChildrensLink: {} as const,
-} as const
-
-// // i18n
-
 // import { useTranslation } from 'react-i18next'
 
-// export function useProject0NavigationConstants() {
-//   const { t } = useTranslation('common')
+import type { DomainPathNavigation } from '@global/navigation'
+import type { GlobalNavigationConstants } from '@global/constants'
+import type { DomainRoutePath } from '@apps/project-0/types'
 
-//   const project0ParentLink = {
-//     '/project-0': { title: t('') || 'project-0' },
-//   } as const satisfies Record<NavigationParentPath<ParentRoutePath>, GlobalNavigationConstants>
+type Project0DomainNavigationLinks = Record<
+  DomainPathNavigation<DomainRoutePath>,
+  GlobalNavigationConstants<DomainRoutePath, DomainPathNavigation<DomainRoutePath>>
+>
 
-//   const project0ChildrensLink = {} as const
+export function useProject0NavigationConstants() {
+  // const { t } = useTranslation('common')
 
-//   return {
-//     project0ParentLink,
-//     project0ChildrensLink,
-//   }
-// }
+  const PROJECT0_DOMAIN_NAVIGATION_LINKS = {
+    '/project-0': {
+      relativePath: 'project-0',
+      absolutePath: '/project-0',
+      title: 'project-0', // t('') || 'project-0'
+    },
+  } as const satisfies Project0DomainNavigationLinks
+
+  return {
+    PROJECT0_DOMAIN_NAVIGATION_LINKS,
+  }
+}
