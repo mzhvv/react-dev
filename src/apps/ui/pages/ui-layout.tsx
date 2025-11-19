@@ -4,11 +4,11 @@ import { ReactdevHeading } from '../widgets/heading'
 
 export const UiLayout = () => {
   return (
-    <>
+    <div>
       <Header>
         <ReactdevHeading />
       </Header>
       <Outlet />
-    </>
+    </div>
   )
 }

@@ -1,8 +1,11 @@
 // src/react-dev/global/router/types.ts
 
-import type { RouteObject } from 'react-router'
+import type { IndexRouteObject, RouteObject } from 'react-router'
 
-export type LayoutRouteObject = RouteObject
+export type LayoutRouteObject<Path extends string> = Omit<RouteObject, 'path'> & {
+  path: Path
+}
+export type IndexDomainRouteObject = IndexRouteObject
 
 export type RootRouteObject<Path extends string> = Omit<RouteObject, 'path'> & {
   path: Path

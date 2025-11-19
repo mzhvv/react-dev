@@ -1,65 +1,51 @@
+// src/react-dev/shared/constants/navigation.ts
+
+// import { useTranslation } from 'react-i18next'
 import { HeartIcon, HandHeartIcon, HeartHandshakeIcon } from 'lucide-react'
 
-import type { NavigationParentPath } from '@global/navigation'
+import type { DomainPathNavigation } from '@global/navigation'
 import type { GlobalNavigationConstants } from '@global/constants'
+import type { RootRoutePath, DomainRoutePath } from '@react-dev/shared/types'
 
-import type { ParentRoutePath } from '../types/router-and-navigation'
-
-// export const reactdevNavigationConstants = {
-//   reactdevParentLink: {
-//     '/': {
-//       title: 'Главная',
-//       icon: HeartIcon, // HouseHeartIcon
-//     },
-//     '/about': {
-//       title: 'О приложении',
-//       icon: HandHeartIcon, // HandHelpingIcon
-//     },
-//     '/collaboration': {
-//       title: 'Сотрудничество',
-//       icon: HeartHandshakeIcon, // HandshakeIcon
-//     },
-
-//     '/ui-component-variants': { title: 'ui-component-variants' },
-//   } as const satisfies Record<
-//     '/' | NavigationParentPath<ParentRoutePath>,
-//     GlobalNavigationConstants
-//   >,
-
-//   reactdevChildrensLink: {} as const,
-// } as const
-
-// i18n
-
-import { useTranslation } from 'react-i18next'
+type ReactDevDomainNavigationLinks = Record<
+  RootRoutePath | DomainPathNavigation<DomainRoutePath>,
+  GlobalNavigationConstants<
+    RootRoutePath | DomainRoutePath,
+    RootRoutePath | DomainPathNavigation<DomainRoutePath>
+  >
+>
 
 export function useReactdevNavigationConstants() {
-  const { t } = useTranslation('common')
+  // const { t } = useTranslation('common')
 
-  const reactdevParentLink = {
+  const REACTDEV_DOMAIN_NAVIGATION_LINKS = {
     '/': {
-      title: t('') || 'Главная',
+      relativePath: '/',
+      absolutePath: '/',
+      title: 'Главная', // t('') || 'Главная',
       icon: HeartIcon, // HouseHeartIcon
     },
     '/about': {
-      title: t('') || 'О приложении',
+      relativePath: 'about',
+      absolutePath: '/about',
+      title: 'О приложении', // t('') || 'О приложении',
       icon: HandHeartIcon, // HandHelpingIcon
     },
     '/collaboration': {
-      title: t('') || 'Сотрудничество',
+      relativePath: 'collaboration',
+      absolutePath: '/collaboration',
+      title: 'Сотрудничество', // t('') || 'Сотрудничество',
       icon: HeartHandshakeIcon, // HandshakeIcon
     },
 
-    '/ui-component-variants': { title: 'ui-component-variants' },
-  } as const satisfies Record<
-    '/' | NavigationParentPath<ParentRoutePath>,
-    GlobalNavigationConstants
-  >
-
-  const reactdevChildrensLink = {} as const
+    '/ui-component-variants': {
+      relativePath: 'ui-component-variants',
+      absolutePath: '/ui-component-variants',
+      title: 'ui-component-variants',
+    },
+  } as const satisfies ReactDevDomainNavigationLinks
 
   return {
-    reactdevParentLink,
-    reactdevChildrensLink,
+    REACTDEV_DOMAIN_NAVIGATION_LINKS,
   }
 }
