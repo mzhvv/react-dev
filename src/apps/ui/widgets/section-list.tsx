@@ -8,7 +8,7 @@ import {
   // SectionHeader
 } from '@ui/layout-system'
 
-import { useUiNavigationConstants } from '../shared/constants/navigation'
+import { useUiNavigationConstants } from '../shared/constants/use-navigation'
 import { uiPagesNavigation } from '../shared/navigation'
 
 export const UiSectionList = () => {

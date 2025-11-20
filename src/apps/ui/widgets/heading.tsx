@@ -1,7 +1,7 @@
 // src/apps/ui/widgets/heading.tsx
 
 import { Link } from 'react-router'
-import { useUiNavigationConstants } from '../shared/constants/navigation'
+import { useUiNavigationConstants } from '../shared/constants/use-navigation'
 import { uiDomainsNavigation } from '../shared/navigation'
 
 export const ReactdevHeading = () => {

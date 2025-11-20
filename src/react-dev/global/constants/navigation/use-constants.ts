@@ -1,11 +1,11 @@
-// src/react-dev/global/constants/navigation/use-constants.tsx
+// src/react-dev/global/constants/navigation/use-constants.ts
 
 // import { useTranslation } from 'react-i18next'
 
 import type { SectionNavigationKey } from '@global/navigation'
 
 import { APPS_CONSTANTS_ACCUMULATE } from '@apps/accumulators'
-import { useReactdevNavigationConstants } from '@react-dev/shared/constants/navigation'
+import { useReactdevNavigationConstants } from '@react-dev/shared/constants/use-navigation'
 
 export function useGlobalNavigationConstants() {
   // const { t } = useTranslation('common')
