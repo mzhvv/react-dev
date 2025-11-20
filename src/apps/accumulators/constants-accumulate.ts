@@ -8,4 +8,4 @@ export const APPS_CONSTANTS_ACCUMULATE = {
   useDashboard01NavigationConstants,
   useProject0NavigationConstants,
   useUiNavigationConstants,
-}
+} as const

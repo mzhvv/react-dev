@@ -1,16 +1,11 @@
 // src/react-dev/global/navigation/index.ts
 
 export type {
-  SectionKeyNavigation,
-  SectionNavigation,
+  SectionNavigationKey,
+  SectionsNavigation,
   DomainPathNavigation,
   PagePathNavigation,
 } from './types'
 
-export {
-  NAVIGATION_SECTIONS_FOR_SIDEBAR,
-  NAVIGATION_SECTIONS_FOR_PAGE_1,
-  NAVIGATION_SECTIONS_FOR_PAGE_2,
-} from './navigation-data'
-
+export { SIDEBAR_NAVIGATION, PAGE_NAVIGATION } from './navigation-data'
 export { NavigationDataRender } from './render-data'

@@ -1,6 +1,6 @@
 // src/react-dev/shared/navigation/index.tsx
 
-import type { DomainPathNavigation, SectionKeyNavigation } from '@global/navigation/types'
+import type { DomainPathNavigation, SectionNavigationKey } from '@global/navigation/types'
 import type { RootRoutePath, DomainRoutePath } from '@react-dev/shared/types'
 
 export const reactDevNavigation = {
@@ -9,6 +9,6 @@ export const reactDevNavigation = {
   projects: [],
   development: ['/ui-component-variants'],
 } as const satisfies Record<
-  SectionKeyNavigation,
+  SectionNavigationKey,
   Array<RootRoutePath | DomainPathNavigation<DomainRoutePath>>
 >

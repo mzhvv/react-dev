@@ -1,6 +1,6 @@
 import { GripIcon, XIcon } from 'lucide-react'
 
-import { NavigationDataRender, NAVIGATION_SECTIONS_FOR_SIDEBAR } from '@react-dev/global/navigation'
+import { NavigationDataRender, SIDEBAR_NAVIGATION } from '@react-dev/global/navigation'
 
 import {
   Dialog,
@@ -16,7 +16,7 @@ export const NavigationModal = () => {
   return (
     <Modal>
       <NavigationDataRender
-        navigationSections={NAVIGATION_SECTIONS_FOR_SIDEBAR}
+        navigationSections={SIDEBAR_NAVIGATION}
         orientation='vertical'
         variant='modal'
       />

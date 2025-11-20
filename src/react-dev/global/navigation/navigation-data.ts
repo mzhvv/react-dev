@@ -1,49 +1,54 @@
 // src/react-dev/global/navigation/navigation-data.ts
 
+// Аккумуляторы
 import { reactDevNavigation } from '@react-dev/shared/navigation'
 import { navigationAccumulate } from '@apps/accumulators/navigation-accumulate'
 
-import type { SectionNavigation } from './types'
+import type { SectionsNavigation, SectionNavigationKey } from './types'
+import { sortNavigation } from './navigation-sort'
 
-// TODO! - Сортировка
-const [ui, project0, dashboard01] = navigationAccumulate.development
-const [uiComponentVariants] = reactDevNavigation.development
-const developmentSort = [ui, uiComponentVariants, project0, dashboard01]
-
-const NAVIGATION_SECTIONS = [
+// Формирование навигационных секций
+const navigationSections = [
   {
-    group: 'application',
+    section: 'application',
     links: [...reactDevNavigation.application, ...navigationAccumulate.application],
   },
   {
-    group: 'author',
+    section: 'author',
     links: [...reactDevNavigation.author, ...navigationAccumulate.author],
   },
   {
-    group: 'projects',
+    section: 'projects',
     links: [...reactDevNavigation.projects, ...navigationAccumulate.projects],
   },
   {
-    group: 'development',
-    links: developmentSort,
+    section: 'development',
+    links: [...reactDevNavigation.development, ...navigationAccumulate.development],
   },
-] as const satisfies SectionNavigation[]
+] as const satisfies SectionsNavigation[]
 
-// TODO! - Педелать что ниже
-const [application, author, projects, development] = NAVIGATION_SECTIONS
+// Индексы секций для безопасного доступа
+const sectionIndex = {
+  application: 0,
+  author: 1,
+  projects: 2,
+  development: 3,
+} as const satisfies Record<SectionNavigationKey, number>
 
-const MODIFIED_NAVIGATION_SECTIONS_FOR_SIDEBAR = [application, author, projects, development]
-const MODIFIED_NAVIGATION_SECTIONS_FOR_PAGE_1 = [
-  {
-    ...application,
-    links: application.links.filter(item => item !== '/'),
-  },
-  author,
+// Сортировка ссылок внутри секций
+const sortedNavigationSections = sortNavigation(navigationSections)
+
+export const SIDEBAR_NAVIGATION = sortedNavigationSections
+export const PAGE_NAVIGATION = [
+  [
+    {
+      ...sortedNavigationSections[sectionIndex.application],
+      links: sortedNavigationSections[sectionIndex.application].links.filter(item => item !== '/'),
+    },
+    sortedNavigationSections[sectionIndex.author],
+  ],
+  [
+    sortedNavigationSections[sectionIndex.projects],
+    sortedNavigationSections[sectionIndex.development],
+  ],
 ]
-const MODIFIED_NAVIGATION_SECTIONS_FOR_PAGE_2 = [projects, development]
-
-export {
-  MODIFIED_NAVIGATION_SECTIONS_FOR_SIDEBAR as NAVIGATION_SECTIONS_FOR_SIDEBAR,
-  MODIFIED_NAVIGATION_SECTIONS_FOR_PAGE_1 as NAVIGATION_SECTIONS_FOR_PAGE_1,
-  MODIFIED_NAVIGATION_SECTIONS_FOR_PAGE_2 as NAVIGATION_SECTIONS_FOR_PAGE_2,
-}

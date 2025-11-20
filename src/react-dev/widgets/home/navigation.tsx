@@ -1,20 +1,16 @@
-import {
-  NavigationDataRender,
-  NAVIGATION_SECTIONS_FOR_PAGE_1,
-  NAVIGATION_SECTIONS_FOR_PAGE_2,
-} from '@react-dev/global/navigation'
+import { NavigationDataRender, PAGE_NAVIGATION } from '@react-dev/global/navigation'
 
 export const Navigation = () => {
   return (
     <>
       <NavigationDataRender
-        navigationSections={NAVIGATION_SECTIONS_FOR_PAGE_1}
+        navigationSections={PAGE_NAVIGATION[0]}
         orientation='horizontal'
         variant='page'
         size='w-45'
       />
       <NavigationDataRender
-        navigationSections={NAVIGATION_SECTIONS_FOR_PAGE_2}
+        navigationSections={PAGE_NAVIGATION[1]}
         orientation='horizontal'
         variant='page'
         size='w-45'
