@@ -1,4 +1,4 @@
-// src/apps/project-0/constants.tsx
+// src/apps/project-0/constants.ts
 
 // import { useTranslation } from 'react-i18next'
 

@@ -1,4 +1,4 @@
-// src/apps/project-0/index.tsx
+// src/apps/project-0/index.ts
 
 export type { DomainRoutePath as Project0DomainRoutePath } from './types'
 export { project0Routes } from './router'

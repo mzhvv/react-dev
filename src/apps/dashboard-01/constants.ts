@@ -1,4 +1,4 @@
-// src/apps/dashboard-01/constants.tsx
+// src/apps/dashboard-01/constants.ts
 
 // import { useTranslation } from 'react-i18next'
 

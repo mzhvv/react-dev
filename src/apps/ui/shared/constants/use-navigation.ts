@@ -1,4 +1,4 @@
-// src/apps/ui/shared/constants/navigation.ts
+// src/apps/ui/shared/constants/use-navigation.ts
 
 // import { useTranslation } from 'react-i18next'
 

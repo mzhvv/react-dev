@@ -1,4 +1,4 @@
-// src/react-dev/shared/constants/navigation.ts
+// src/react-dev/shared/constants/use-navigation.ts
 
 // import { useTranslation } from 'react-i18next'
 import { HeartIcon, HandHeartIcon, HeartHandshakeIcon } from 'lucide-react'
