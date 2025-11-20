@@ -7,14 +7,15 @@ import { cn } from '@ui/lib'
 import { Button } from '@ui/components/button'
 import { Label2 } from '@ui/components/label-2'
 import { DialogClose } from '@ui/components/dialog'
-import type { SectionNavigation } from './types'
+
+import type { SectionsNavigation } from './types'
 import { useGlobalNavigationConstants } from '../constants'
 
 type Variant = 'sidebar' | 'modal' | 'page'
 type Orientation = 'horizontal' | 'vertical'
 
 export const NavigationDataRender: React.FC<{
-  navigationSections: SectionNavigation[]
+  navigationSections: SectionsNavigation[]
   variant: Variant
   orientation: Orientation
   size?: string
@@ -29,7 +30,7 @@ export const NavigationDataRender: React.FC<{
       )}
     >
       {navigationSections.map(sections => {
-        const group = CONSTANTS.group[sections.group]
+        const group = CONSTANTS.section[sections.section]
         return (
           <li key={group} className={cn(orientation === 'vertical' ? 'py-2' : 'p-0')}>
             <Label2 asChild>

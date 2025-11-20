@@ -2,7 +2,7 @@
 
 // import { useTranslation } from 'react-i18next'
 
-import type { SectionKeyNavigation } from '@global/navigation'
+import type { SectionNavigationKey } from '@global/navigation'
 
 import { APPS_CONSTANTS_ACCUMULATE } from '@apps/accumulators'
 import { useReactdevNavigationConstants } from '@react-dev/shared/constants/navigation'
@@ -22,19 +22,19 @@ export function useGlobalNavigationConstants() {
   const { UI_DOMAIN_NAVIGATION_LINKS } = useUiNavigationConstants()
 
   const constants = {
-    group: {
+    section: {
       application: 'Приложение', //t('') || 'Приложение', // 'Application',
       author: 'Автор', // t('') || 'Автор', //'Author',
       projects: 'Проекты', // t('') || 'Проекты', // 'Projects',
       development: 'Development', // t('') || 'Development',
-    } as const satisfies Record<SectionKeyNavigation, string>,
-    link: {
+    } as const satisfies Record<SectionNavigationKey, string>,
+    links: {
       ...REACTDEV_DOMAIN_NAVIGATION_LINKS,
       ...DASHBOARD01_DOMAIN_NAVIGATION_LINKS,
       ...PROJECT0_DOMAIN_NAVIGATION_LINKS,
       ...UI_DOMAIN_NAVIGATION_LINKS,
-    },
-  }
+    } as const,
+  } as const
 
   return constants
 }

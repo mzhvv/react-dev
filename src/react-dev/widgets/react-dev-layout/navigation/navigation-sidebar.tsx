@@ -1,9 +1,9 @@
-import { NavigationDataRender, NAVIGATION_SECTIONS_FOR_SIDEBAR } from '@react-dev/global/navigation'
+import { NavigationDataRender, SIDEBAR_NAVIGATION } from '@react-dev/global/navigation'
 
 export const NavigationSidebar = () => {
   return (
     <NavigationDataRender
-      navigationSections={NAVIGATION_SECTIONS_FOR_SIDEBAR}
+      navigationSections={SIDEBAR_NAVIGATION}
       orientation='vertical'
       variant='sidebar'
     />
