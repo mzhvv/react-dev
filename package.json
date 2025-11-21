@@ -6,6 +6,8 @@
   "scripts": {
     "automation:create-app": "node automation/create-app.cjs",
     "aca": "node automation/create-app.cjs",
+    "automation:delete-app new-app": "node automation/delete-app.cjs",
+    "ada": "node automation/delete-app.cjs",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
