@@ -1,4 +1,4 @@
-// automation/delete-app.cjs
+// __automation__/delete-app.cjs
 
 const fs = require('fs')
 const path = require('path')

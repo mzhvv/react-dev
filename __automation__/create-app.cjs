@@ -1,4 +1,4 @@
-// automation/create-app.cjs
+// __automation__/create-app.cjs
 
 const fs = require('fs')
 const path = require('path')
