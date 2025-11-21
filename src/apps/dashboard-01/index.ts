@@ -1,6 +1,7 @@
 // src/apps/dashboard-01/index.ts
+/** @private - только для src/apps/__accumulators__/* */
 
-export type { DomainRoutePath as Dashboard01DomainRoutePath } from './types'
-export { dashboard01Routes } from './router'
-export { dashboard01DomainNavigation } from './navigation'
-export { useDashboard01NavigationConstants } from './constants'
+export type { DomainRelativePath as Dashboard01DomainRoutePath } from './shared/types/rnc'
+export { Routes as dashboard01Routes } from './app/routes'
+export { domainNavigation as dashboard01DomainNavigation } from './shared/navigation'
+export { useNavigationConstants as useDashboard01NavigationConstants } from './shared/constants/use-navigation'

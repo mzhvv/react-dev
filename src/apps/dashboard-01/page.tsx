@@ -7,7 +7,7 @@ import { SidebarInset, SidebarProvider } from '@/ui/components/sidebar'
 // import { SectionCards } from '@/ui/blocks/dashboard-01/section-cards'
 // import data from './data.json'
 
-export const Dashboard01Page = () => {
+export const Dashboard01 = () => {
   return (
     <SidebarProvider
       style={

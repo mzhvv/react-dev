@@ -1,19 +1,12 @@
 // src/apps/ui/shared/constants/use-navigation.ts
 
+import type {
+  UiDomainNavigationLinks,
+  UiSegmentNavigationLinks,
+  UiComponentsNavigationLinks,
+} from '@apps/ui/shared/types'
+
 // import { useTranslation } from 'react-i18next'
-
-import type { DomainPathNavigation, PagePathNavigation } from '@global/navigation'
-import type { GlobalNavigationConstants } from '@global/constants'
-import type { DomainRoutePath, PageRoutePath } from '@apps/ui/shared/types'
-
-type UiDomainNavigationLinks = Record<
-  DomainPathNavigation<DomainRoutePath>,
-  GlobalNavigationConstants<DomainRoutePath, DomainPathNavigation<DomainRoutePath>>
->
-type UiPagesNavigationLinks = Record<
-  PagePathNavigation<DomainRoutePath, PageRoutePath>,
-  GlobalNavigationConstants<PageRoutePath, PagePathNavigation<DomainRoutePath, PageRoutePath>>
->
 
 export function useUiNavigationConstants() {
   // const { t } = useTranslation('common')
@@ -26,22 +19,37 @@ export function useUiNavigationConstants() {
     },
   } as const satisfies UiDomainNavigationLinks
 
-  const UI_PAGES_NAVIGATION_LINKS = {
-    '/ui/radio-group': {
+  const UI_SEGMENT_NAVIGATION_LINKS = {
+    '/ui/components': {
+      relativePath: 'components',
+      absolutePath: '/ui/components',
+      title: 'components',
+    },
+    '/ui/blocks': {
+      relativePath: 'blocks',
+      absolutePath: '/ui/blocks',
+      title: 'blocks',
+    },
+  } as const satisfies UiSegmentNavigationLinks
+
+  const UI_COMPONENTS_NAVIGATION_LINKS = {
+    '/ui/components/radio-group': {
       relativePath: 'radio-group',
-      absolutePath: '/ui/radio-group',
+      absolutePath: '/ui/components/radio-group',
       title: 'radio-group', // t('') || 'radio-group',
     },
-  } as const satisfies UiPagesNavigationLinks
+  } as const satisfies UiComponentsNavigationLinks
 
   const UI_NAVIGATION_LINKS = {
     ...UI_DOMAIN_NAVIGATION_LINKS,
-    ...UI_PAGES_NAVIGATION_LINKS,
+    ...UI_SEGMENT_NAVIGATION_LINKS,
+    ...UI_COMPONENTS_NAVIGATION_LINKS,
   } as const
 
   return {
     UI_DOMAIN_NAVIGATION_LINKS,
-    UI_PAGES_NAVIGATION_LINKS,
+    UI_SEGMENT_NAVIGATION_LINKS,
+    UI_COMPONENTS_NAVIGATION_LINKS,
 
     UI_NAVIGATION_LINKS,
   }

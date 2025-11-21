@@ -1,6 +1,6 @@
 // src/react-dev/app/routes.tsx
 
-import type { RootRouteObject, DomainRouteObject } from '@global/router'
+import type { RootRouteObject, DomainRouteObject } from '@react-dev/__global__/router'
 import type { RootRoutePath, DomainRouteKey, DomainRoutePath } from '@react-dev/shared/types'
 
 import { ReactDevLayout } from '@react-dev/widgets/react-dev-layout'
