@@ -1,7 +1,7 @@
 // src/apps/project-0/router.tsx
 
 import type { RouteObject } from 'react-router'
-import type { DomainRouteObject } from '@global/router'
+import type { DomainRouteObject } from '@react-dev/__global__/router'
 import type { DomainRoutePath } from '@apps/project-0/types'
 
 type Project0Routes = DomainRouteObject<DomainRoutePath>

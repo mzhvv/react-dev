@@ -4,6 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "automation:create-app": "node automation/create-app.cjs",
+    "aca": "node automation/create-app.cjs",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",

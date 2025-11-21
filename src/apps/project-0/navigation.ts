@@ -1,6 +1,6 @@
 // src/apps/project-0/navigation.ts
 
-import type { DomainPathNavigation } from '@global/navigation'
+import type { DomainPathNavigation } from '@react-dev/__global__/navigation'
 import type { DomainRoutePath } from '@apps/project-0/types'
 
 type Project0DomainNavigation = DomainPathNavigation<DomainRoutePath>[]

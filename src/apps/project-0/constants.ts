@@ -2,8 +2,8 @@
 
 // import { useTranslation } from 'react-i18next'
 
-import type { DomainPathNavigation } from '@global/navigation'
-import type { GlobalNavigationConstants } from '@global/constants'
+import type { DomainPathNavigation } from '@react-dev/__global__/navigation'
+import type { GlobalNavigationConstants } from '@react-dev/__global__/constants'
 import type { DomainRoutePath } from '@apps/project-0/types'
 
 type Project0DomainNavigationLinks = Record<

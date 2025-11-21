@@ -1,4 +1,4 @@
-import { NavigationDataRender, SIDEBAR_NAVIGATION } from '@react-dev/global/navigation'
+import { NavigationDataRender, SIDEBAR_NAVIGATION } from '@react-dev/__global__/navigation'
 
 export const NavigationSidebar = () => {
   return (

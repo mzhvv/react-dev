@@ -11,7 +11,7 @@ const LazyProviders = lazy(() =>
   }))
 )
 const LazyRouter = lazy(() =>
-  import('../global/router').then(module => ({
+  import('../__global__/router').then(module => ({
     default: module.Router,
   }))
 )
