@@ -7,7 +7,7 @@ const domainRoutes = {
   project0: {
     path: 'project-0',
     lazy: () =>
-      import('../page').then(module => ({
+      import('../pages/project-0').then(module => ({
         Component: module.Project0,
       })),
   },

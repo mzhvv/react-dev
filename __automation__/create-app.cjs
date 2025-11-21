@@ -117,6 +117,19 @@ function addToAccumulators(appName, appNamePascal, appNameCamel) {
   fs.writeFileSync(typesPath, typesContent)
 }
 
+function renameTemplateFiles(appDir, appName) {
+  console.log(`\n🔄 Переименование файлов...`)
+
+  const templateAppFile = path.join(appDir, 'pages', 'template-app.tsx')
+  const newAppFile = path.join(appDir, 'pages', `${appName}.tsx`)
+
+  if (fs.existsSync(templateAppFile)) {
+    fs.renameSync(templateAppFile, newAppFile)
+    console.log(`    template-app.tsx → ${appName}.tsx`)
+  }
+  console.log(`✅ Все файлоы переименованы`)
+}
+
 const appName = process.argv[2]
 if (!appName) {
   console.error('Usage: npm run apps:create <app-name>')
@@ -132,7 +145,10 @@ const { execSync } = require('child_process')
 execSync(`cp -r src/apps/__template-app__ src/apps/${appName}`)
 console.log(`\n✅ Шаблон "__template-app__" успешно скопирован как "${appName}"`)
 
-// 2. Заменяем все варианты
+// 2. Переименовываем файлы
+renameTemplateFiles(`src/apps/${appName}`, appName)
+
+// 3. Заменяем все варианты
 console.log('\n🔄 Замена шаблонных значений...')
 replaceInFiles(`src/apps/${appName}`, {
   '__template-app__': appName, // исправляем пути в импортах
@@ -144,7 +160,7 @@ replaceInFiles(`src/apps/${appName}`, {
 })
 console.log('✅ Все значения заменены!')
 
-// 3. Добавляем в аккумуляторы (после успешного создания)
+// 4. Добавляем в аккумуляторы (после успешного создания)
 console.log('\n🔄 Интеграция с аккумуляторами...')
 addToAccumulators(appName, appNamePascal, appNameCamel)
 console.log('✅ Интеграция завершена!')

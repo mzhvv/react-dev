@@ -7,7 +7,7 @@ const domainRoutes = {
   templateApp: {
     path: 'template-app',
     lazy: () =>
-      import('../page').then(module => ({
+      import('../pages/template-app').then(module => ({
         Component: module.TemplateApp,
       })),
   },
