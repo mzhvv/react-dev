@@ -1,6 +1,8 @@
-import { Header, Main, Section, SectionContent } from '@ui/layout-system'
+// src/apps/project-0/page.tsx
 
-export const Project0Page = () => {
+import { Main, Header, Section, SectionContent } from '@ui/layout-system'
+
+export const Project0 = () => {
   return (
     <Main>
       <Header>
@@ -8,7 +10,9 @@ export const Project0Page = () => {
       </Header>
 
       <Section>
-        <SectionContent>.</SectionContent>
+        <SectionContent>
+          <div>✅ App project-0 created successfully!</div>
+        </SectionContent>
       </Section>
     </Main>
   )
