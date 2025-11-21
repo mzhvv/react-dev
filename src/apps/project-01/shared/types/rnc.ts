@@ -1,11 +1,11 @@
-// src/apps/project-0/shared/types/rnc.ts
+// src/apps/project-01/shared/types/rnc.ts
 /** @description rnc = Router-Navigation-Constants */
 
 import type { CamelCase } from '@global/types/utils'
 
 // #region Routes
 
-export type DomainRelativePath = 'project-0'
+export type DomainRelativePath = 'project-01'
 export type DomainAbsolutePath = `/${DomainRelativePath}`
 export type DomainKey = CamelCase<DomainRelativePath>
 

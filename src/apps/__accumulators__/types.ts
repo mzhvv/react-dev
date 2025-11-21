@@ -2,9 +2,9 @@
 
 import type { Dashboard01DomainRelativePath } from '@apps/dashboard-01'
 import type { UiDomainRoutePath } from '@apps/ui'
-import type { Project0DomainRelativePath } from '@apps/project-0'
+import type { Project01DomainRelativePath } from '@apps/project-01'
 
 export type AppsDomainRoutePath =
   | Dashboard01DomainRelativePath
   | UiDomainRoutePath
-  | Project0DomainRelativePath
+  | Project01DomainRelativePath

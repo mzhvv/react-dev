@@ -2,10 +2,10 @@
 
 import { useDashboard01NavigationConstants } from '@apps/dashboard-01'
 import { useUiNavigationConstants } from '@apps/ui'
-import { useProject0NavigationConstants } from '@apps/project-0'
+import { useProject01NavigationConstants } from '@apps/project-01'
 
 export const APPS_CONSTANTS_ACCUMULATE = {
   useDashboard01NavigationConstants,
   useUiNavigationConstants,
-  useProject0NavigationConstants,
+  useProject01NavigationConstants,
 } as const

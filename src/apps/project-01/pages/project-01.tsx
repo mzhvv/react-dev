@@ -1,17 +1,17 @@
-// src/apps/project-0/page.tsx
+// src/apps/project-01/page.tsx
 
 import { Main, Header, Section, SectionContent } from '@ui/layout-system'
 
-export const Project0 = () => {
+export const Project01 = () => {
   return (
     <Main>
       <Header>
-        <h1>project-0</h1>
+        <h1>project-01</h1>
       </Header>
 
       <Section>
         <SectionContent>
-          <div>✅ App project-0 created successfully!</div>
+          <div>✅ App project-01 created successfully!</div>
         </SectionContent>
       </Section>
     </Main>

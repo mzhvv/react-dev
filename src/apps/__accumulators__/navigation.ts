@@ -4,7 +4,7 @@ import type { SectionNavigationKey } from '@react-dev/__global__/navigation'
 
 import { dashboard01DomainNavigation } from '@apps/dashboard-01'
 import { uiDomainsNavigation } from '@apps/ui'
-import { project0DomainNavigation } from '@apps/project-0'
+import { project01DomainNavigation } from '@apps/project-01'
 
 export const navigationAccumulate = {
   application: [],
@@ -13,6 +13,6 @@ export const navigationAccumulate = {
   development: [
     ...uiDomainsNavigation,
     ...dashboard01DomainNavigation,
-    ...project0DomainNavigation,
+    ...project01DomainNavigation,
   ],
 } as const satisfies Record<SectionNavigationKey, string[]>
