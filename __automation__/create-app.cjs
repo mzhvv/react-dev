@@ -3,17 +3,11 @@
 const fs = require('fs')
 const path = require('path')
 
-function toPascalCase(str) {
-  return str.replace(/(^\w|-\w)/g, match => match.replace('-', '').toUpperCase())
-}
-
-function toCamelCase(str) {
-  return str.replace(/-\w/g, match => match[1].toUpperCase())
-}
-
-function toConstCase(str) {
-  return str.replace(/-/g, '_').toUpperCase()
-}
+const {
+  toPascalCase,
+  toCamelCase,
+  toConstCase,
+} = require('../src/react-dev/__global__/utils/string.ts')
 
 function replaceInFiles(dir, replacements) {
   const files = fs.readdirSync(dir, { recursive: true })
@@ -39,84 +33,6 @@ function replaceInFiles(dir, replacements) {
   })
 }
 
-function addImport(content, importStmt, importType = 'import {') {
-  const importEnd = content.lastIndexOf(importType)
-  if (importEnd !== -1) {
-    const nextLine = content.indexOf('\n', importEnd) + 1
-    return content.substring(0, nextLine) + importStmt + '\n' + content.substring(nextLine)
-  }
-  return content
-}
-
-function addToAccumulators(appName, appNamePascal, appNameCamel) {
-  const accumulatorsPath = 'src/apps/__accumulators__'
-
-  // 1. constants.ts
-  const constantsPath = path.join(accumulatorsPath, 'constants.ts')
-  let constantsContent = fs.readFileSync(constantsPath, 'utf8')
-  console.log(`   constants.ts`)
-
-  const importConstants = `import { use${appNamePascal}NavigationConstants } from '@apps/${appName}'`
-  constantsContent = addImport(constantsContent, importConstants)
-  console.log(`      import: ${importConstants}`)
-
-  constantsContent = constantsContent.replace(
-    'useUiNavigationConstants,',
-    `useUiNavigationConstants,\n  use${appNamePascal}NavigationConstants,`
-  )
-  console.log(`      to object: use${appNamePascal}NavigationConstants`)
-
-  fs.writeFileSync(constantsPath, constantsContent)
-
-  // 2. routes.ts
-  const routesPath = path.join(accumulatorsPath, 'routes.ts')
-  let routesContent = fs.readFileSync(routesPath, 'utf8')
-  console.log(`   routes.ts`)
-
-  const importRoutes = `import { ${appNameCamel}Routes } from '@apps/${appName}'`
-  routesContent = addImport(routesContent, importRoutes)
-  console.log(`      import: ${importRoutes}`)
-
-  routesContent = routesContent.replace('...uiRoutes,', `...uiRoutes,\n  ...${appNameCamel}Routes,`)
-  console.log(`      to array: ...${appNameCamel}Routes`)
-
-  fs.writeFileSync(routesPath, routesContent)
-
-  // 3. navigation.ts
-  const navigationPath = path.join(accumulatorsPath, 'navigation.ts')
-  let navigationContent = fs.readFileSync(navigationPath, 'utf8')
-  console.log(`   navigation.ts`)
-
-  const importNavigation = `import { ${appNameCamel}DomainNavigation } from '@apps/${appName}'`
-  navigationContent = addImport(navigationContent, importNavigation)
-  console.log(`      import: ${importNavigation}`)
-
-  navigationContent = navigationContent.replace(
-    '...dashboard01DomainNavigation,',
-    `...dashboard01DomainNavigation,\n    ...${appNameCamel}DomainNavigation,`
-  )
-  console.log(`      to array: ...${appNameCamel}DomainNavigation`)
-
-  fs.writeFileSync(navigationPath, navigationContent)
-
-  // 4. types.ts
-  const typesPath = path.join(accumulatorsPath, 'types.ts')
-  let typesContent = fs.readFileSync(typesPath, 'utf8')
-  console.log(`   types.ts`)
-
-  const importTypes = `import type { ${appNamePascal}DomainRelativePath } from '@apps/${appName}'`
-  typesContent = addImport(typesContent, importTypes, 'import type')
-  console.log(`      import: ${importTypes}`)
-
-  typesContent = typesContent.replace(
-    '| UiDomainRoutePath',
-    `| UiDomainRoutePath\n  | ${appNamePascal}DomainRelativePath`
-  )
-  console.log(`      to union: | ${appNamePascal}DomainRelativePath`)
-
-  fs.writeFileSync(typesPath, typesContent)
-}
-
 function renameTemplateFiles(appDir, appName) {
   console.log(`\n🔄 Переименование файлов...`)
 
@@ -129,6 +45,177 @@ function renameTemplateFiles(appDir, appName) {
   }
   console.log(`✅ Все файлоы переименованы`)
 }
+
+//
+
+// function addImport(content, importStmt, importType = 'import {') {
+//   const importEnd = content.lastIndexOf(importType)
+//   if (importEnd !== -1) {
+//     const nextLine = content.indexOf('\n', importEnd) + 1
+//     return content.substring(0, nextLine) + importStmt + '\n' + content.substring(nextLine)
+//   }
+//   return content
+// }
+
+// function addToAccumulators(appName, appNamePascal, appNameCamel) {
+//   const accumulatorsPath = 'src/apps/__accumulators__'
+
+//   // 1. constants.ts
+//   const constantsPath = path.join(accumulatorsPath, 'constants.ts')
+//   let constantsContent = fs.readFileSync(constantsPath, 'utf8')
+//   console.log(`   constants.ts`)
+
+//   const importConstants = `import { use${appNamePascal}NavigationConstants } from '@apps/${appName}'`
+//   constantsContent = addImport(constantsContent, importConstants)
+//   console.log(`      import: ${importConstants}`)
+
+//   constantsContent = constantsContent.replace(
+//     'useUiNavigationConstants,',
+//     `useUiNavigationConstants,\n  use${appNamePascal}NavigationConstants,`
+//   )
+//   console.log(`      to object: use${appNamePascal}NavigationConstants`)
+
+//   fs.writeFileSync(constantsPath, constantsContent)
+
+//   // 2. routes.ts
+//   const routesPath = path.join(accumulatorsPath, 'routes.ts')
+//   let routesContent = fs.readFileSync(routesPath, 'utf8')
+//   console.log(`   routes.ts`)
+
+//   const importRoutes = `import { ${appNameCamel}Routes } from '@apps/${appName}'`
+//   routesContent = addImport(routesContent, importRoutes)
+//   console.log(`      import: ${importRoutes}`)
+
+//   routesContent = routesContent.replace('...uiRoutes,', `...uiRoutes,\n  ...${appNameCamel}Routes,`)
+//   console.log(`      to array: ...${appNameCamel}Routes`)
+
+//   fs.writeFileSync(routesPath, routesContent)
+
+//   // 3. navigation.ts
+//   const navigationPath = path.join(accumulatorsPath, 'navigation.ts')
+//   let navigationContent = fs.readFileSync(navigationPath, 'utf8')
+//   console.log(`   navigation.ts`)
+
+//   const importNavigation = `import { ${appNameCamel}DomainNavigation } from '@apps/${appName}'`
+//   navigationContent = addImport(navigationContent, importNavigation)
+//   console.log(`      import: ${importNavigation}`)
+
+//   navigationContent = navigationContent.replace(
+//     '...dashboard01DomainNavigation,',
+//     `...dashboard01DomainNavigation,\n    ...${appNameCamel}DomainNavigation,`
+//   )
+//   console.log(`      to array: ...${appNameCamel}DomainNavigation`)
+
+//   fs.writeFileSync(navigationPath, navigationContent)
+
+//   // 4. types.ts
+//   const typesPath = path.join(accumulatorsPath, 'types.ts')
+//   let typesContent = fs.readFileSync(typesPath, 'utf8')
+//   console.log(`   types.ts`)
+
+//   const importTypes = `import type { ${appNamePascal}DomainRelativePath } from '@apps/${appName}'`
+//   typesContent = addImport(typesContent, importTypes, 'import type')
+//   console.log(`      import: ${importTypes}`)
+
+//   typesContent = typesContent.replace(
+//     '| UiDomainRoutePath',
+//     `| UiDomainRoutePath\n  | ${appNamePascal}DomainRelativePath`
+//   )
+//   console.log(`      to union: | ${appNamePascal}DomainRelativePath`)
+
+//   fs.writeFileSync(typesPath, typesContent)
+// }
+
+function addImport(content, importStmt, importType = 'import {') {
+  const importEnd = content.lastIndexOf(importType)
+  if (importEnd !== -1) {
+    const nextLine = content.indexOf('\n', importEnd) + 1
+    return content.substring(0, nextLine) + importStmt + '\n' + content.substring(nextLine)
+  }
+  return content
+}
+
+function addToAccumulators(appName, appNamePascal, appNameCamel) {
+  const accumulatorsPath = 'src/apps/__accumulators__'
+
+  // 1. constants.ts - РАБОТАЕТ ✅
+  const constantsPath = path.join(accumulatorsPath, 'constants.ts')
+  let constantsContent = fs.readFileSync(constantsPath, 'utf8')
+  console.log(`   constants.ts`)
+
+  const importConstants = `import { use${appNamePascal}NavigationConstants } from '@apps/${appName}'`
+  constantsContent = addImport(constantsContent, importConstants)
+  console.log(`      import: ${importConstants}`)
+
+  constantsContent = constantsContent.replace(
+    /(\s*)\}(\s*as const)/,
+    `$1  use${appNamePascal}NavigationConstants,$1}$2`
+  )
+  console.log(`      to object: use${appNamePascal}NavigationConstants`)
+
+  fs.writeFileSync(constantsPath, constantsContent)
+
+  // 2. routes.ts - РАБОТАЕТ ✅
+  const routesPath = path.join(accumulatorsPath, 'routes.ts')
+  let routesContent = fs.readFileSync(routesPath, 'utf8')
+  console.log(`   routes.ts`)
+
+  const importRoutes = `import { ${appNameCamel}Routes } from '@apps/${appName}'`
+  routesContent = addImport(routesContent, importRoutes)
+  console.log(`      import: ${importRoutes}`)
+
+  routesContent = routesContent.replace(
+    /(\s*)\](\s*as const satisfies RouteObject\[\])/,
+    `$1  ...${appNameCamel}Routes,$1]$2`
+  )
+  console.log(`      to array: ...${appNameCamel}Routes`)
+
+  fs.writeFileSync(routesPath, routesContent)
+
+  // 3. navigation.ts - ИСПРАВЛЕНА 🛠️
+  const navigationPath = path.join(accumulatorsPath, 'navigation.ts')
+  let navigationContent = fs.readFileSync(navigationPath, 'utf8')
+  console.log(`   navigation.ts`)
+
+  const importNavigation = `import { ${appNameCamel}DomainNavigation } from '@apps/${appName}'`
+  navigationContent = addImport(navigationContent, importNavigation)
+  console.log(`      import: ${importNavigation}`)
+
+  // ИСПРАВЛЕННАЯ РЕГУЛЯРКА - добавляем перед ], с правильным отступом
+  navigationContent = navigationContent.replace(
+    /(development:\s*\[[^\]]*?)(\s*\],)/s,
+    `$1,\n    ...${appNameCamel}DomainNavigation$2`
+  )
+  console.log(`      to array: ...${appNameCamel}DomainNavigation`)
+
+  fs.writeFileSync(navigationPath, navigationContent)
+
+  // 4. types.ts -
+  const typesPath = path.join(accumulatorsPath, 'types.ts')
+  let typesContent = fs.readFileSync(typesPath, 'utf8')
+  console.log(`   types.ts`)
+
+  const importTypes = `import type { ${appNamePascal}DomainRelativePath } from '@apps/${appName}'`
+  typesContent = addImport(typesContent, importTypes, 'import type')
+  console.log(`      import: ${importTypes}`)
+
+  // Для однострочного union типа: "TypeA | TypeB | TypeC"
+  if (typesContent.includes('export type AppsDomainRoutePath =')) {
+    // Находим строку с union типом
+    const unionLineMatch = typesContent.match(/(export type AppsDomainRoutePath =[^;]+);/)
+    if (unionLineMatch) {
+      const oldUnion = unionLineMatch[1]
+      // Добавляем новый тип в конец union
+      const newUnion = oldUnion + ` | ${appNamePascal}DomainRelativePath`
+      typesContent = typesContent.replace(oldUnion, newUnion)
+      console.log(`      to union: | ${appNamePascal}DomainRelativePath`)
+    }
+  }
+
+  fs.writeFileSync(typesPath, typesContent)
+}
+
+//
 
 const appName = process.argv[2]
 if (!appName) {

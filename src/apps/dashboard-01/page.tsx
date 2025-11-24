@@ -1,3 +1,5 @@
+// src/apps/dashboard-01/page.tsx
+
 import { AppSidebar } from '@ui/blocks/dashboard-01/app-sidebar'
 import { SiteHeader } from '@ui/blocks/dashboard-01/site-header'
 import { SidebarInset, SidebarProvider } from '@/ui/components/sidebar'

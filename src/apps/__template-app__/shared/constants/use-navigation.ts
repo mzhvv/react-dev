@@ -1,4 +1,4 @@
-// src/apps/__template-app__/shared/constants/use-navigation.tsx
+// src/apps/__template-app__/shared/constants/use-navigation.ts
 
 import type { DomainNavigationLinks } from '@apps/__template-app__/shared/types/rnc'
 

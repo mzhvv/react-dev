@@ -1,7 +1,7 @@
 // src/react-dev/shared/types/index.ts
 
 export * from './rnc'
-export * from '../../__global__/types/utils'
+export * from '../../../core/types/utils'
 
 // variant
 export type Variant<T extends string | number> = `variant-${T}`

@@ -25,3 +25,6 @@ dist-ssr
 
 # AI
 prompt
+
+# ignore
+README.md

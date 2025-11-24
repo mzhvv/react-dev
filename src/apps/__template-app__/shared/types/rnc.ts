@@ -1,7 +1,7 @@
 // src/apps/__template-app__/shared/types/rnc.ts
 /** @description rnc = Router-Navigation-Constants */
 
-import type { CamelCase } from '@global/types/utils'
+import type { CamelCase } from '@utils/string'
 
 // #region Routes
 
@@ -13,7 +13,7 @@ export type DomainKey = CamelCase<DomainRelativePath>
 
 // #region Router
 
-import type { StrictRouteObject } from '@global/router'
+import type { StrictRouteObject } from '@react-dev/__aggregator__/router'
 
 export type DomainRoutes = Record<DomainKey, StrictRouteObject<DomainRelativePath>>
 
@@ -27,7 +27,7 @@ export type DomainNavigationKey = DomainAbsolutePath
 
 // #region Constants
 
-import type { GlobalNavigationConstants } from '@global/constants'
+import type { GlobalNavigationConstants } from '@react-dev/__aggregator__/constants'
 
 export type DomainNavigationLinks = Record<
   DomainNavigationKey,

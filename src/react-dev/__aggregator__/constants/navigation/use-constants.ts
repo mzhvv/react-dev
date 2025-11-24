@@ -2,7 +2,7 @@
 
 // import { useTranslation } from 'react-i18next'
 
-import type { SectionNavigationKey } from '@react-dev/__global__/navigation'
+import type { SectionNavigationKey } from '@react-dev/__aggregator__/navigation'
 
 import { APPS_CONSTANTS_ACCUMULATE } from '@apps/__accumulators__'
 import { useReactdevNavigationConstants } from '@react-dev/shared/constants/use-navigation'

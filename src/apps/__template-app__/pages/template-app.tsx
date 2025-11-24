@@ -1,4 +1,4 @@
-// src/apps/__template-app__/page.tsx
+// src/apps/__template-app__/pages/template-app.tsx
 
 import { Main, Header, Section, SectionContent } from '@ui/layout-system'
 

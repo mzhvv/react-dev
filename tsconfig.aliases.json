@@ -4,15 +4,21 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@global/*": ["./src/react-dev/__global__/*"],
-      "@accumulators/*": ["src/apps/__accumulators__/*"],
+      "@public/*": ["./public/*"],
+
+      // src
+      "@core/*": ["./src/core/*"],
+      "@libs/*": ["./src/core/shared/libs/*"],
+      "@utils/*": ["./src/core/shared/utils/*"],
 
       "@apps/*": ["./src/apps/*"],
       "@react-dev/*": ["./src/react-dev/*"],
       "@ui/*": ["./src/ui/*"],
-
       "@/*": ["./src/*"],
-      "@public/*": ["./public/*"]
+
+      // service
+      "@accumulators/*": ["src/apps/__accumulators__/*"],
+      "@aggregator": ["src/react-dev/__aggregator__/*"]
     }
   }
 }

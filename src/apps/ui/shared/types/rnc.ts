@@ -20,7 +20,7 @@ export type UiComponentsPath =
 
 // Router
 
-import type { StrictRouteObject } from '@react-dev/__global__/router'
+import type { StrictRouteObject } from '@react-dev/__aggregator__/router'
 
 export type UiDomainRoutes = Record<DomainRouteKey, StrictRouteObject<DomainRoutePath>>
 export type UiSegmentRoutes = Record<SegmentRouteKey, StrictRouteObject<SegmentRoutePath>>
@@ -34,7 +34,7 @@ export type UiComponentsNavigation = UiComponentsPath
 
 // Constants
 
-import type { GlobalNavigationConstants } from '@react-dev/__global__/constants'
+import type { GlobalNavigationConstants } from '@react-dev/__aggregator__/constants'
 
 export type UiDomainNavigationLinks = Record<
   UiDomainNavigation,

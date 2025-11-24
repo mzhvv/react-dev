@@ -1,4 +1,4 @@
-// src/apps/dashboard-01/shared/constants/use-navigation.tsx
+// src/apps/dashboard-01/shared/constants/use-navigation.ts
 
 import type { DomainNavigationLinks } from '@apps/dashboard-01/shared/types/rnc'
 

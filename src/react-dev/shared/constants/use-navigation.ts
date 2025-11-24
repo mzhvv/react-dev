@@ -3,8 +3,8 @@
 // import { useTranslation } from 'react-i18next'
 import { HeartIcon, HandHeartIcon, HeartHandshakeIcon } from 'lucide-react'
 
-import type { DomainPathNavigation } from '@react-dev/__global__/navigation'
-import type { GlobalNavigationConstants } from '@react-dev/__global__/constants'
+import type { DomainPathNavigation } from '@react-dev/__aggregator__/navigation'
+import type { GlobalNavigationConstants } from '@react-dev/__aggregator__/constants'
 import type { RootRoutePath, DomainRoutePath } from '@react-dev/shared/types'
 
 type ReactDevDomainNavigationLinks = Record<
