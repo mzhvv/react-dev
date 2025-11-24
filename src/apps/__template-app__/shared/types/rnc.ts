@@ -13,7 +13,7 @@ export type DomainKey = CamelCase<DomainRelativePath>
 
 // #region Router
 
-import type { StrictRouteObject } from '@react-dev/__aggregator__/router'
+import type { StrictRouteObject } from '@libs/router'
 
 export type DomainRoutes = Record<DomainKey, StrictRouteObject<DomainRelativePath>>
 
@@ -27,7 +27,7 @@ export type DomainNavigationKey = DomainAbsolutePath
 
 // #region Constants
 
-import type { GlobalNavigationConstants } from '@react-dev/__aggregator__/constants'
+import type { GlobalNavigationConstants } from '@libs/constants'
 
 export type DomainNavigationLinks = Record<
   DomainNavigationKey,

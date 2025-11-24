@@ -1,4 +1,4 @@
-// src/react-dev/app/main.tsx
+// src/react-dev/app/providers.tsx
 
 import { ThemeProvider } from '@react-dev/features/theme'
 import { I18nextProvider } from '@react-dev/features/i18n'

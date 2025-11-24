@@ -1,6 +1,6 @@
-// src/react-dev/global/navigation/types.ts
+// src/react-dev/__aggregator__/navigation/types.ts
 
-import type { AppsDomainRoutePath } from '@apps'
+import type { AppsDomainRoutePath } from '@accumulators/types'
 
 import type {
   DomainRoutePath as ReactDevDomainRoutePath,

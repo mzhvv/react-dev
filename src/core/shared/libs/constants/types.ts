@@ -1,5 +1,4 @@
-// src/react-dev/__global__/constants/navigation/type.ts
-/** @public - только ЧИСТЫЕ типы маршрутизации */
+// src/core/shared/libs/constants/types.ts
 
 import type { LucideIcon } from 'lucide-react'
 
