@@ -1,14 +1,20 @@
-// src/react-dev/global/navigation/navigation-data.ts
+// src/react-dev/__aggregator__/navigation/navigation-data.ts
 
-// Аккумуляторы
+import type { SectionNavigationKey, RootPath } from '@libs/navigation'
+import type { AppsDomainNavigation } from '@accumulators/types'
+
+import { navigationAccumulate } from '@accumulators/navigation'
 import { reactDevNavigation } from '@react-dev/shared/navigation'
-import { navigationAccumulate } from '@apps/__accumulators__/navigation'
 
-import type { SectionsNavigation, SectionNavigationKey } from './types'
 import { sortNavigation } from './navigation-sort'
 
+export type NavigationAggregate = {
+  section: SectionNavigationKey
+  links: Array<RootPath | AppsDomainNavigation>
+}[]
+
 // Формирование навигационных секций
-const navigationSections = [
+const navigationAggregate = [
   {
     section: 'application',
     links: [...reactDevNavigation.application, ...navigationAccumulate.application],
@@ -25,7 +31,9 @@ const navigationSections = [
     section: 'development',
     links: [...reactDevNavigation.development, ...navigationAccumulate.development],
   },
-] as const satisfies SectionsNavigation[]
+] as const satisfies NavigationAggregate
+
+//------------------------------------------------------------------------------
 
 // Индексы секций для безопасного доступа
 const sectionIndex = {
@@ -36,7 +44,7 @@ const sectionIndex = {
 } as const satisfies Record<SectionNavigationKey, number>
 
 // Сортировка ссылок внутри секций
-const sortedNavigationSections = sortNavigation(navigationSections)
+const sortedNavigationSections = sortNavigation(navigationAggregate)
 
 export const SIDEBAR_NAVIGATION = sortedNavigationSections
 export const PAGE_NAVIGATION = [

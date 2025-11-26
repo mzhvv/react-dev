@@ -1,9 +1,9 @@
 // src/apps/dashboard-01/app/routes.tsx
 
 import type { RouteObject } from 'react-router'
-import type { DomainRoutes } from '@apps/dashboard-01/shared/types/rnc'
+import type { DomainRoutes } from '@apps/dashboard-01/shared/types/prnc'
 
-const DomainRoutes = {
+const domainRoutes = {
   dashboard01: {
     path: 'dashboard-01',
     lazy: () =>
@@ -13,4 +13,4 @@ const DomainRoutes = {
   },
 } as const satisfies DomainRoutes
 
-export const Routes = [...Object.values(DomainRoutes)] as const satisfies RouteObject[]
+export const routes = [...Object.values(domainRoutes)] as const satisfies RouteObject[]

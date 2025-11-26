@@ -2,6 +2,6 @@
 
 import type { RouteObject } from 'react-router'
 
-export type StrictRouteObject<Path extends string> = Omit<RouteObject, 'path'> & {
+export type StrictPathRouteObject<Path extends string> = Omit<RouteObject, 'path'> & {
   path: Path
 }

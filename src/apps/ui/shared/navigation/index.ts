@@ -1,24 +1,21 @@
 // src/apps/ui/shared/navigation/index.ts
 
 import type {
-  UiDomainNavigation,
-  UiSegmentNavigation,
-  UiComponentsNavigation,
-} from '@apps/ui/shared/types'
+  DomainNavigation,
+  SegmentNavigation,
+  ComponentsNavigation,
+} from '@apps/ui/shared/types/prnc'
 
-export const uiDomainsNavigation = ['/ui'] as const satisfies UiDomainNavigation[]
+export const domainNavigation = ['/ui'] as const satisfies DomainNavigation[]
 
-const uiSegmentNavigation = [
-  '/ui/components',
-  '/ui/blocks',
-] as const satisfies UiSegmentNavigation[]
+const segmentNavigation = ['/ui/components', '/ui/blocks'] as const satisfies SegmentNavigation[]
 
-const uiComponentsNavigation = [
+const componentsNavigation = [
   '/ui/components/radio-group',
-] as const satisfies UiComponentsNavigation[]
+] as const satisfies ComponentsNavigation[]
 
-export const uiNavigation = [
-  ...uiDomainsNavigation,
-  ...uiSegmentNavigation,
-  ...uiComponentsNavigation,
+export const navigation = [
+  ...domainNavigation,
+  ...segmentNavigation,
+  ...componentsNavigation,
 ] as const

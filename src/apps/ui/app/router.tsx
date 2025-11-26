@@ -1,18 +1,18 @@
 // src/apps/ui/app/router.tsx
 
 import type { RouteObject } from 'react-router'
-import type { UiComponentsRoutes, UiSegmentRoutes, UiDomainRoutes } from '@apps/ui/shared/types'
+import type { ComponentsRoutes, SegmentRoutes, DomainRoutes } from '@apps/ui/shared/types'
 
 import { UiLayout } from '@apps/ui/pages/ui-layout'
 import { UiPage } from '@apps/ui/pages/ui'
 import { RadioGroupSection } from '@apps/ui/widgets/radio-group-section'
 
-const uiComponentsRoutes = {
+const componentsRoutes = {
   radioGroup: {
     path: 'radio-group',
     element: <RadioGroupSection />,
   },
-} as const satisfies UiComponentsRoutes
+} as const satisfies ComponentsRoutes
 
 const uiSegmentRoutes = {
   components: {
@@ -22,7 +22,7 @@ const uiSegmentRoutes = {
       {
         index: true,
         element: <>components</>,
-        ...Object.values(uiComponentsRoutes),
+        ...Object.values(componentsRoutes),
       },
     ],
   },
@@ -36,9 +36,9 @@ const uiSegmentRoutes = {
       },
     ],
   },
-} as const satisfies UiSegmentRoutes
+} as const satisfies SegmentRoutes
 
-const uiDomainRoutes = {
+const domainRoutes = {
   ui: {
     path: 'ui',
     element: <UiLayout />,
@@ -50,6 +50,6 @@ const uiDomainRoutes = {
       ...Object.values(uiSegmentRoutes),
     ],
   },
-} as const satisfies UiDomainRoutes
+} as const satisfies DomainRoutes
 
-export const uiRoutes = [...Object.values(uiDomainRoutes)] as const satisfies RouteObject[]
+export const routes = [...Object.values(domainRoutes)] as const satisfies RouteObject[]

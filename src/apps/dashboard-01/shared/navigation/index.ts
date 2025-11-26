@@ -1,5 +1,5 @@
 // src/apps/dashboard-01/shared/navigation/index.ts
 
-import type { DomainNavigationKey } from '@apps/dashboard-01/shared/types/rnc'
+import type { DomainNavigation } from '@apps/dashboard-01/shared/types/prnc'
 
-export const domainNavigation = ['/dashboard-01'] as const satisfies DomainNavigationKey[]
+export const domainNavigation = ['/dashboard-01'] as const satisfies DomainNavigation[]

@@ -1,4 +1,4 @@
-// src/react-dev/global/router/router.tsx
+// src/react-dev/__aggregator__/router/router.tsx
 
 import type { RouteObject } from 'react-router'
 import { createBrowserRouter, RouterProvider } from 'react-router'

@@ -5,13 +5,12 @@ import { Header } from '@ui/layout-system'
 
 import { ReactdevHeading } from '@apps/ui/widgets/heading'
 
-export const UiLayout: React.FC = () => {
+export const UiLayout = () => {
   return (
     <div>
       <Header>
         <ReactdevHeading />
       </Header>
-
       <Outlet />
     </div>
   )

@@ -1,25 +1,23 @@
 // src/apps/ui/shared/constants/use-navigation.ts
 
 import type {
-  UiDomainNavigationLinks,
-  UiSegmentNavigationLinks,
-  UiComponentsNavigationLinks,
-} from '@apps/ui/shared/types'
+  Constants,
+  ConstantsDomainNavigationLink,
+  ConstantsSegmentNavigationLinks,
+  ConstantsComponentsNavigationLinks,
+  ConstantsNavigationLink,
+} from '@apps/ui/shared/types/prnc'
 
-// import { useTranslation } from 'react-i18next'
-
-export function useUiNavigationConstants() {
-  // const { t } = useTranslation('common')
-
-  const UI_DOMAIN_NAVIGATION_LINKS = {
+export function useConstants() {
+  const DOMAIN_NAVIGATION_LINKS = {
     '/ui': {
       relativePath: 'ui',
       absolutePath: '/ui',
-      title: 'ui', // t('') || 'ui',
+      title: 'ui',
     },
-  } as const satisfies UiDomainNavigationLinks
+  } as const satisfies ConstantsDomainNavigationLink
 
-  const UI_SEGMENT_NAVIGATION_LINKS = {
+  const SEGMENT_NAVIGATION_LINKS = {
     '/ui/components': {
       relativePath: 'components',
       absolutePath: '/ui/components',
@@ -30,27 +28,27 @@ export function useUiNavigationConstants() {
       absolutePath: '/ui/blocks',
       title: 'blocks',
     },
-  } as const satisfies UiSegmentNavigationLinks
+  } as const satisfies ConstantsSegmentNavigationLinks
 
-  const UI_COMPONENTS_NAVIGATION_LINKS = {
+  const COMPONENTS_NAVIGATION_LINKS = {
     '/ui/components/radio-group': {
       relativePath: 'radio-group',
       absolutePath: '/ui/components/radio-group',
-      title: 'radio-group', // t('') || 'radio-group',
+      title: 'radio-group',
     },
-  } as const satisfies UiComponentsNavigationLinks
+  } as const satisfies ConstantsComponentsNavigationLinks
 
-  const UI_NAVIGATION_LINKS = {
-    ...UI_DOMAIN_NAVIGATION_LINKS,
-    ...UI_SEGMENT_NAVIGATION_LINKS,
-    ...UI_COMPONENTS_NAVIGATION_LINKS,
-  } as const
+  const NAVIGATION_LINKS = {
+    ...DOMAIN_NAVIGATION_LINKS,
+    ...SEGMENT_NAVIGATION_LINKS,
+    ...COMPONENTS_NAVIGATION_LINKS,
+  } as const satisfies ConstantsNavigationLink
 
   return {
-    UI_DOMAIN_NAVIGATION_LINKS,
-    UI_SEGMENT_NAVIGATION_LINKS,
-    UI_COMPONENTS_NAVIGATION_LINKS,
+    NAVIGATION_LINKS,
 
-    UI_NAVIGATION_LINKS,
-  }
+    DOMAIN_NAVIGATION_LINKS,
+    SEGMENT_NAVIGATION_LINKS,
+    COMPONENTS_NAVIGATION_LINKS,
+  } as const satisfies Constants
 }
