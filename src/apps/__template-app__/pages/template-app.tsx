@@ -1,19 +1,13 @@
 // src/apps/__template-app__/pages/template-app.tsx
 
-import { Main, Header, Section, SectionContent } from '@ui/layout-system'
+import { Main } from '@ui/layout-system'
+
+import { DefaultSection } from '@template-app/widgets/default-section'
 
 export const TemplateApp = () => {
   return (
     <Main>
-      <Header>
-        <h1>template-app</h1>
-      </Header>
-
-      <Section>
-        <SectionContent>
-          <div>✅ App template-app created successfully!</div>
-        </SectionContent>
-      </Section>
+      <DefaultSection />
     </Main>
   )
 }

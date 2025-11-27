@@ -28,12 +28,12 @@ export function toKebabCase(string: string): string {
     .toLowerCase()
 }
 
-export function stringCases(string: string): StringCases {
+export function stringCases(string: string) {
   return {
     default: string,
     camel: toCamelCase(string),
     pascal: toPascalCase(string),
     const: toConstCase(string),
     kebab: toKebabCase(string),
-  } as const // satisfies StringCases
+  } as const satisfies StringCases
 }

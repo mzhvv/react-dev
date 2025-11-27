@@ -2,7 +2,7 @@
 
 import type { LucideIcon } from 'lucide-react'
 
-export type GlobalNavigationConstants<RelativePath extends string, AbsolutePath extends string> = {
+export type LinkEntity<RelativePath extends string, AbsolutePath extends string> = {
   relativePath: RelativePath
   absolutePath: AbsolutePath
 

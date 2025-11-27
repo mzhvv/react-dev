@@ -1,8 +1,10 @@
 // src/apps/__template-app__/shared/types/prnc.ts
 /** @description prnc = Paths-Routes-Navigations-Constants */
 
+import type { RouteObject } from 'react-router'
+
 import type { StrictPathRouteObject } from '@libs/router'
-import type { GlobalNavigationConstants } from '@libs/constants'
+import type { LinkEntity } from '@libs/constants'
 import type { CamelCase } from '@utils/string'
 
 // #region Paths
@@ -10,12 +12,26 @@ import type { CamelCase } from '@utils/string'
 type DomainRelativePath = 'template-app'
 type DomainAbsolutePath = `/${DomainRelativePath}`
 
+export type AbsolutePath = DomainAbsolutePath
+
 // #endregion
 
 // #region Routes
 
-type DomainRoutesKey = CamelCase<DomainRelativePath>
-export type DomainRoutes = Record<DomainRoutesKey, StrictPathRouteObject<DomainRelativePath>>
+export type Routes = EntranceRoutes
+
+export type EntranceRoutes = Omit<RouteObject, 'children'> & {
+  children: Array<
+    Omit<RouteObject, 'children'> & {
+      children: Array<DomainRoutes[keyof DomainRoutes]>
+    }
+  >
+}
+
+export type DomainRoutes = Record<
+  CamelCase<DomainRelativePath>,
+  StrictPathRouteObject<DomainRelativePath>
+>
 
 // #endregion
 
@@ -28,17 +44,19 @@ export type DomainNavigation = DomainAbsolutePath
 // #region Constants
 
 export type Constants = {
-  NAVIGATION_LINKS: ConstantsNavigationLink
+  navigation: () => ConstantsNavigation
+}
 
-  DOMAIN_NAVIGATION_LINKS: ConstantsDomainNavigationLink
+export type ConstantsNavigation = {
+  domainLinks: ConstantsDomainNavigationLink
+  allLinks: ConstantsNavigationLink
 }
 
 export type ConstantsNavigationLink = ConstantsDomainNavigationLink
 
-type ConstantsDomainNavigationKey = DomainAbsolutePath
 export type ConstantsDomainNavigationLink = Record<
-  ConstantsDomainNavigationKey,
-  GlobalNavigationConstants<DomainRelativePath, DomainAbsolutePath>
+  DomainAbsolutePath,
+  LinkEntity<DomainRelativePath, DomainAbsolutePath>
 >
 
 // #endregion

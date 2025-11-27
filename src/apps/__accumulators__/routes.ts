@@ -1,6 +1,7 @@
 // src/apps/__accumulators__/routes.ts
 
-import { uiRoutes } from '@apps/ui'
-import { dashboard01Routes } from '@apps/dashboard-01'
+import type { AppRoutes } from '@accumulators/types'
 
-export const routesAccumulate = [...uiRoutes, ...dashboard01Routes] as const
+import { templateAppRoutes } from '@template-app'
+
+export const routesAccumulate = [...templateAppRoutes] as const satisfies AppRoutes[]
