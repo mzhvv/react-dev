@@ -3,10 +3,9 @@
 // import { useTranslation } from 'react-i18next'
 
 import type {
-  ConstantsDomainNavigationLink,
-  ConstantsNavigationLink,
+  ConstantsNavigationDomainLink,
   ConstantsNavigation,
-  Constants,
+  ConstantsAPI,
 } from '@template-app/shared/types/prnc'
 
 function useConstantsNavigation() {
@@ -18,18 +17,13 @@ function useConstantsNavigation() {
       absolutePath: '/template-app',
       title: 'template-app', // t('')
     },
-  } as const satisfies ConstantsDomainNavigationLink
-
-  const allLinks = {
-    ...domainLinks,
-  } as const satisfies ConstantsNavigationLink
+  } as const satisfies ConstantsNavigationDomainLink
 
   return {
     domainLinks,
-    allLinks,
   } as const satisfies ConstantsNavigation
 }
 
 export const constantsAPI = {
   navigation: useConstantsNavigation,
-} as const satisfies Constants
+} as const satisfies ConstantsAPI

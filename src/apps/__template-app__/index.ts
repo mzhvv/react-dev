@@ -4,7 +4,7 @@
 export type {
   Routes as TemplateAppRoutes,
   DomainNavigation as TemplateAppDomainNavigation,
-  ConstantsDomainNavigationLink as TemplateAppConstantsDomainNavigationLink,
+  ConstantsNavigationDomainLink as TemplateAppConstantsNavigationDomainLink,
 } from '@template-app/shared/types/prnc'
 export { routes as templateAppRoutes } from '@template-app/app/routes'
 export { domainNavigation as templateAppDomainNavigation } from '@template-app/shared/navigation'

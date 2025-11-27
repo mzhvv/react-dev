@@ -1,6 +1,6 @@
 // src/apps/__template-app__/app/routes.tsx
 
-import type { EntranceRoutes, DomainRoutes, Routes } from '@template-app/shared/types/prnc'
+import type { DomainRoutes, EntranceRoutes, Routes } from '@template-app/shared/types/prnc'
 import { Providers } from '@template-app/app/providers'
 import { TemplateAppLayout } from '@template-app/pages/template-app-layout'
 import { TemplateApp } from '@template-app/pages/template-app'

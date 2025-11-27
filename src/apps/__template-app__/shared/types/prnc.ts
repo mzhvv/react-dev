@@ -11,8 +11,6 @@ import type { CamelCase } from '@utils/string'
 type DomainRelativePath = 'template-app'
 type DomainAbsolutePath = `/${DomainRelativePath}`
 
-export type AbsolutePath = DomainAbsolutePath
-
 // #endregion
 
 // #region Routes
@@ -42,18 +40,15 @@ export type DomainNavigation = DomainAbsolutePath
 
 // #region Constants
 
-export type Constants = {
+export type ConstantsAPI = {
   navigation: () => ConstantsNavigation
 }
 
 export type ConstantsNavigation = {
-  domainLinks: ConstantsDomainNavigationLink
-  allLinks: ConstantsNavigationLink
+  domainLinks: ConstantsNavigationDomainLink
 }
 
-export type ConstantsNavigationLink = ConstantsDomainNavigationLink
-
-export type ConstantsDomainNavigationLink = Record<
+export type ConstantsNavigationDomainLink = Record<
   DomainAbsolutePath,
   LinkEntity<DomainRelativePath, DomainAbsolutePath>
 >

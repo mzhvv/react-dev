@@ -1,11 +1,12 @@
 // src/apps/__accumulators__/navigation.ts
 
-import type { DomainNavigationAccumulate } from '@accumulators/types'
+import type { AppsDomainNavigation } from '@accumulators/types'
+
 import { templateAppDomainNavigation } from '@template-app'
 
-export const domainNavigationAccumulate = {
+export const appsDomainNavigation = {
   application: [],
   author: [],
   projects: [],
   development: [...templateAppDomainNavigation],
-} as const satisfies DomainNavigationAccumulate
+} as const satisfies AppsDomainNavigation
