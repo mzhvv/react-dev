@@ -2,7 +2,6 @@
 /** @description prnc = Paths-Routes-Navigations-Constants */
 
 import type { RouteObject } from 'react-router'
-
 import type { StrictPathRouteObject } from '@libs/router'
 import type { LinkEntity } from '@libs/constants'
 import type { CamelCase } from '@utils/string'

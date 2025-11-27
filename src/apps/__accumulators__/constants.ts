@@ -1,16 +1,9 @@
 // src/apps/__accumulators__/constants.ts
 
-import type { AppsConstantsDomainNavigationLink } from '@accumulators/types'
-
+import type { ConstantsAPIAccumulate } from '@accumulators/types'
 import { templateAppConstantsAPI } from '@template-app'
 
-interface ConstantsAPI {
-  navigation: {
-    domainLinks: AppsConstantsDomainNavigationLink
-  }
-}
-
-export function constantsAPI() {
+export function constantsAPIAccumulate() {
   const templateAppConstantsNavigation = templateAppConstantsAPI.navigation()
 
   return {
@@ -19,5 +12,5 @@ export function constantsAPI() {
         ...templateAppConstantsNavigation.domainLinks,
       },
     },
-  } as const satisfies ConstantsAPI
+  } as const satisfies ConstantsAPIAccumulate
 }
