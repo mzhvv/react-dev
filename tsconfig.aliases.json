@@ -6,23 +6,22 @@
     "paths": {
       "@public/*": ["./public/*"],
 
-      // src
+      // core
       "@libs/*": ["./src/core/shared/libs/*"],
       "@utils/*": ["./src/core/shared/utils/*"],
       "@core/*": ["./src/core/*"],
 
-      "@ui/*": ["./src/ui/*"],
-
+      // react-dev
+      "@aggregator": ["./src/react-dev/__aggregator__/*"],
       "@react-dev/*": ["./src/react-dev/*"],
 
       // apps
+      "@accumulators/*": ["./src/apps/__accumulators__/*"],
       "@template-app": ["./src/apps/__template-app__"],
       "@template-app/*": ["./src/apps/__template-app__/*"],
       "@apps/*": ["./src/apps/*"],
 
-      // service
-      "@accumulators/*": ["./src/apps/__accumulators__/*"],
-      "@aggregator": ["./src/react-dev/__aggregator__/*"],
+      "@ui/*": ["./src/ui/*"],
 
       "@/*": ["./src/*"]
     }
