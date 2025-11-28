@@ -1,6 +1,6 @@
 // src/apps/__accumulators__/routes.ts
 
-import type { AppsRoutes } from '@accumulators/types'
+import type { AppsRoutes } from '@apps/accumulators/types'
 
 import { templateAppRoutes } from '@template-app'
 

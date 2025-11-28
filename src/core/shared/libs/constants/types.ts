@@ -1,6 +1,6 @@
 // src/core/shared/libs/constants/types.ts
 
-import type { ToAbsolutePath } from '@core/shared/utils/string'
+import type { ToAbsolutePath } from '@core/utils/string'
 import type { LucideIcon } from 'lucide-react'
 
 type LinkEntity<Path extends string> = {

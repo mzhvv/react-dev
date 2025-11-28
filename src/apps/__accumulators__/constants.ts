@@ -1,6 +1,6 @@
 // src/apps/__accumulators__/constants.ts
 
-import type { AppsConstantsNavigationDomainLink } from '@accumulators/types'
+import type { AppsConstantsNavigationDomainLink } from '@apps/accumulators/types'
 
 import { templateAppConstantsAPI } from '@template-app'
 

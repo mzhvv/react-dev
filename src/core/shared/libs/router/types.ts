@@ -1,7 +1,7 @@
 // src/core/shared/libs/router/types.ts
 
 import type { NonIndexRouteObject } from 'react-router'
-import type { CamelCase } from '@utils/string'
+import type { CamelCase } from '@core/utils/string'
 
 export type EntranceRoutesOf<Children> = Omit<NonIndexRouteObject, 'children'> & {
   children: Array<

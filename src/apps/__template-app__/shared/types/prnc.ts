@@ -1,14 +1,14 @@
 // src/apps/__template-app__/shared/types/prnc.ts
 /** @description prnc = Paths-Routes-Navigations-Constants */
 
-import type { EntranceRoutesOf, StrictRouteObjectOf } from '@libs/router'
-import type { NavigationOf } from '@libs/navigation'
+import type { EntranceRoutesOf, StrictRouteObjectOf } from '@core/libs/router'
+import type { NavigationOf } from '@core/libs/navigation'
 import type {
   ConstantsAPIWith,
   ConstantsNavigationWith,
   ConstantsNavigationLinkEntityOf,
-} from '@libs/constants'
-import type { SafeRelativePath } from '@utils/string'
+} from '@core/libs/constants'
+import type { SafeRelativePath } from '@core/utils/string'
 
 // #region Paths
 

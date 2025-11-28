@@ -1,6 +1,6 @@
 // src/apps/__accumulators__/types.ts
 
-import type { Navigation } from '@libs/navigation'
+import type { Navigation } from '@core/libs/navigation'
 
 import type {
   TemplateAppRoutes,

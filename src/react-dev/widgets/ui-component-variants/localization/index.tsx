@@ -9,12 +9,12 @@ import type {
   LocalizationConstants,
   LocalizationLanguagesUI,
   LocalizationRadioGroupProps,
-} from '@react-dev/features/i18n'
+} from '@core/features/i18n'
 import {
   localizationLanguageRadioGroupVariants,
   useLocalizationUi,
   useLocalizationConstants,
-} from '@react-dev/features/i18n'
+} from '@core/features/i18n'
 
 export const LocalizationSection = () => {
   const { localizationLanguagesUi } = useLocalizationUi()

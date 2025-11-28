@@ -1,6 +1,6 @@
 // src/core/shared/libs/navigation/types.ts
 
-import type { ToAbsolutePath } from '@utils/string'
+import type { ToAbsolutePath } from '@core/utils/string'
 
 export type RootPath = '/'
 

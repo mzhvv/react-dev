@@ -5,7 +5,7 @@ import {
   localizationLanguageRadioGroupVariants,
   useLocalizationConstants,
   useLocalizationUi,
-} from '@react-dev/features/i18n'
+} from '@core/features/i18n'
 
 export const LocalizationSections = () => {
   const { localizationLanguagesUi } = useLocalizationUi()

@@ -17,13 +17,13 @@ import type {
   ThemeModeSectionProps,
   ThemeModeRadioGroupProps,
   ThemeColorRadioGroupProps,
-} from '@react-dev/features/theme'
+} from '@core/features/theme'
 import {
   themeColorRadioGroupVariants,
   themeModeRadioGroupVariants,
   useThemeConstants,
   useThemeUi,
-} from '@react-dev/features/theme'
+} from '@core/features/theme'
 
 export const ThemeSections = () => {
   const { themeColor, themeMode } = useThemeUi()

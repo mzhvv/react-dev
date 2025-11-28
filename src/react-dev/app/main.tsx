@@ -2,6 +2,7 @@
 
 import { createRoot } from 'react-dom/client'
 import './index.css'
+
 import { lazy, StrictMode, Suspense } from 'react'
 // import { LoadingFallback } from '@ui/components/fallback'
 

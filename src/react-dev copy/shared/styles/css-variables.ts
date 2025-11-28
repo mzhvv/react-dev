@@ -1,6 +1,6 @@
 // src/react-dev/shared/styles/css-variables.tsx
 
-import type { Color } from '@react-dev/features/theme'
+import type { Color } from '@core/features/theme'
 
 type CSSVariables = React.CSSProperties
 type ColorMap = Record<Color, string>

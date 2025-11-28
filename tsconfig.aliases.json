@@ -6,16 +6,18 @@
     "paths": {
       "@public/*": ["./public/*"],
 
-      "@libs/*": ["./src/core/shared/libs/*"],
-      "@utils/*": ["./src/core/shared/utils/*"],
+      "@core/features/*": ["./src/core/features/*"],
+      "@core/libs/*": ["./src/core/shared/libs/*"],
+      "@core/utils/*": ["./src/core/shared/utils/*"],
+      "@core/types/*": ["./src/core/types/*"],
       "@core/*": ["./src/core/*"],
 
-      "@aggregator": ["./src/react-dev/__aggregator__/*"],
+      "@react-dev/aggregator": ["./src/react-dev/__aggregator__/*"],
       "@react-dev/*": ["./src/react-dev/*"],
 
-      "@accumulators/*": ["./src/apps/__accumulators__/*"],
       "@template-app": ["./src/apps/__template-app__"],
       "@template-app/*": ["./src/apps/__template-app__/*"],
+      "@apps/accumulators/*": ["./src/apps/__accumulators__/*"],
       "@apps/*": ["./src/apps/*"],
 
       "@ui/*": ["./src/ui/*"],
