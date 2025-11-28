@@ -7,9 +7,9 @@
       "@public/*": ["./public/*"],
 
       // src
-      "@core/*": ["./src/core/*"],
       "@libs/*": ["./src/core/shared/libs/*"],
       "@utils/*": ["./src/core/shared/utils/*"],
+      "@core/*": ["./src/core/*"],
 
       "@ui/*": ["./src/ui/*"],
 

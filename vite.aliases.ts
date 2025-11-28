@@ -7,9 +7,9 @@ export const alias = {
   '@public': path.resolve(__dirname, './public'),
 
   // src
-  '@core': path.resolve(__dirname, './src/core'),
   '@libs': path.resolve(__dirname, './src/core/shared/libs'),
   '@utils': path.resolve(__dirname, './src/core/shared/utils'),
+  '@core': path.resolve(__dirname, './src/core'),
 
   '@ui': path.resolve(__dirname, './src/ui'),
 

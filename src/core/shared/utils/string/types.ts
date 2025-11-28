@@ -30,4 +30,13 @@ export interface StringCases {
   kebab: string
 }
 
+type SafeKebabCase = Lowercase<`${string}-${string}`> | Lowercase<`${string}`>
+
+// #endregion
+
+// #region Paths
+
+export type SafeRelativePath<T extends SafeKebabCase> = T
+export type ToAbsolutePath<T extends string> = `/${T}`
+
 // #endregion

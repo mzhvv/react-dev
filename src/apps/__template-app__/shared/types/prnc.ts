@@ -1,56 +1,44 @@
 // src/apps/__template-app__/shared/types/prnc.ts
 /** @description prnc = Paths-Routes-Navigations-Constants */
 
-import type { RouteObject } from 'react-router'
-import type { StrictPathRouteObject } from '@libs/router'
-import type { LinkEntity } from '@libs/constants'
-import type { CamelCase } from '@utils/string'
+import type { EntranceRoutesOf, StrictRouteObjectOf } from '@libs/router'
+import type { NavigationOf } from '@libs/navigation'
+import type {
+  ConstantsAPIWith,
+  ConstantsNavigationWith,
+  ConstantsNavigationLinkEntityOf,
+} from '@libs/constants'
+import type { SafeRelativePath } from '@utils/string'
 
 // #region Paths
 
-type DomainRelativePath = 'template-app'
-type DomainAbsolutePath = `/${DomainRelativePath}`
+type DomainPath = SafeRelativePath<'template-app'>
 
 // #endregion
 
 // #region Routes
 
 export type Routes = EntranceRoutes
+export type EntranceRoutes = EntranceRoutesOf<DomainRoutes & AAADomainRoutes>
 
-export type EntranceRoutes = Omit<RouteObject, 'children'> & {
-  children: Array<
-    Omit<RouteObject, 'children'> & {
-      children: Array<DomainRoutes[keyof DomainRoutes]>
-    }
-  >
-}
+export type DomainRoutes = StrictRouteObjectOf<DomainPath>
 
-export type DomainRoutes = Record<
-  CamelCase<DomainRelativePath>,
-  StrictPathRouteObject<DomainRelativePath>
->
+export type AAADomainRoutes = StrictRouteObjectOf<'aaaParent', AAAChildrenRoutes>
+export type AAAChildrenRoutes = StrictRouteObjectOf<'aaaChildren1' | 'aaaChildren2'>
 
 // #endregion
 
 // #region Navigations
 
-export type DomainNavigation = DomainAbsolutePath
+export type DomainNavigation = NavigationOf<DomainPath>
 
 // #endregion
 
 // #region Constants
 
-export type ConstantsAPI = {
-  navigation: () => ConstantsNavigation
-}
+export type ConstantsAPI = ConstantsAPIWith<ConstantsNavigation>
+export type ConstantsNavigation = ConstantsNavigationWith<ConstantsNavigationDomainLink>
 
-export type ConstantsNavigation = {
-  domainLinks: ConstantsNavigationDomainLink
-}
-
-export type ConstantsNavigationDomainLink = Record<
-  DomainAbsolutePath,
-  LinkEntity<DomainRelativePath, DomainAbsolutePath>
->
+export type ConstantsNavigationDomainLink = ConstantsNavigationLinkEntityOf<DomainPath>
 
 // #endregion

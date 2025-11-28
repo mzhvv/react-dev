@@ -1,6 +1,6 @@
 // src/apps/__accumulators__/types.ts
 
-import type { SectionNavigationKey } from '@libs/navigation'
+import type { Navigation } from '@libs/navigation'
 
 import type {
   TemplateAppRoutes,
@@ -10,6 +10,6 @@ import type {
 
 export type AppsRoutes = TemplateAppRoutes
 
-export type AppsDomainNavigation = Record<SectionNavigationKey, Array<TemplateAppDomainNavigation>>
+export type AppsDomainNavigation = Navigation<TemplateAppDomainNavigation>
 
 export type AppsConstantsNavigationDomainLink = TemplateAppConstantsNavigationDomainLink
