@@ -1,7 +1,12 @@
 {
   "name": "react-dev",
+  "version": "0.0.1-beta",
+  "author": "https://github.com/mzhvv",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mzhvv/react-dev.git"
+  },
   "private": true,
-  "version": "0.0.0",
   "type": "module",
   "scripts": {
     "automation:create-app": "tsx __automation__/create-app.ts",
