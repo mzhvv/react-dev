@@ -28,3 +28,7 @@ prompt
 
 # ignore
 README.md
+
+#
+src/apps/_
+src/react-dev copy

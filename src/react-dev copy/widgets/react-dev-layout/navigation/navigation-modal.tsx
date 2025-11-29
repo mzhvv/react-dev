@@ -1,9 +1,6 @@
 import { GripIcon, XIcon } from 'lucide-react'
 
-import {
-  NavigationDataRender,
-  SIDEBAR_NAVIGATION,
-} from '@react-dev/features/__aggregator__/navigation'
+import { NavigationDataRender, SIDEBAR_NAVIGATION } from '@react-dev/__aggregator__/navigation'
 
 import {
   Dialog,

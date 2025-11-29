@@ -3,7 +3,7 @@
 import type {
   DomainPathNavigation,
   SectionNavigationKey,
-} from '@react-dev/features/__aggregator__/navigation/types'
+} from '@react-dev/__aggregator__/navigation/types'
 import type { RootRoutePath, DomainRoutePath } from '@react-dev/shared/types'
 
 export const reactDevNavigation = {
