@@ -40,7 +40,7 @@ const Modal: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       <DialogContent
         showCloseButton={false}
         aria-describedby={undefined}
-        className='gap-0 p-4 !transition-none sm:max-w-[425px]' // !duration-0 !ease-[0]
+        className='gap-0 p-4 transition-none! sm:max-w-[425px]' // !duration-0 !ease-[0]
       >
         <DialogHeader className='p-2'>
           <DialogTitle className='flex items-center justify-between'>
