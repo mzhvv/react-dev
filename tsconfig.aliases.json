@@ -12,7 +12,7 @@
       "@core/types/*": ["./src/core/types/*"],
       "@core/*": ["./src/core/*"],
 
-      "@react-dev/aggregator": ["./src/react-dev/__aggregator__/*"],
+      "@react-dev/aggregator": ["./src/react-dev/features/__aggregator__/*"],
       "@react-dev/*": ["./src/react-dev/*"],
 
       "@template-app": ["./src/apps/__template-app__"],

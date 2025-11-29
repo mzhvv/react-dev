@@ -1,4 +1,4 @@
-// src/react-dev/shared/types/rnc.ts // router - navigation - constants
+// src/react-dev/shared/types/rnc.ts
 
 export type RootRoutePath = '/'
 export type DomainRoutePath = 'ui-component-variants' | 'about' | 'collaboration'

@@ -1,4 +1,4 @@
-import { NavigationDataRender, PAGE_NAVIGATION } from '@react-dev/__aggregator__/navigation'
+import { NavigationDataRender, PAGE_NAVIGATION } from '@react-dev/features/__aggregator__/navigation'
 
 export const Navigation = () => {
   return (
