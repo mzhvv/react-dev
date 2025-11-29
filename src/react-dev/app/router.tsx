@@ -16,6 +16,5 @@ const routes = {
   children: [{ path: '/', element: <ReactDevPage /> }, ...appsRoutes],
 }
 
-
 const router = createBrowserRouter([routes] as const satisfies RouteObject[])
 export const Router = () => <RouterProvider router={router} />

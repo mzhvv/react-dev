@@ -22,7 +22,13 @@
     {
       "files": "*.json",
       "options": {
-        "printWidth": 120
+        "printWidth": 100
+      }
+    },
+    {
+      "files": "*.md",
+      "options": {
+        "printWidth": 100
       }
     },
     {
@@ -31,7 +37,5 @@
         "singleQuote": false
       }
     }
-  ],
-
-  "plugins": ["prettier-plugin-tailwindcss"]
+  ]
 }

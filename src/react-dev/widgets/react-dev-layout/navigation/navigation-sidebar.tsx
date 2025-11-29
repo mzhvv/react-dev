@@ -1,4 +1,7 @@
-import { NavigationDataRender, SIDEBAR_NAVIGATION } from '@react-dev/features/__aggregator__/navigation'
+import {
+  NavigationDataRender,
+  SIDEBAR_NAVIGATION,
+} from '@react-dev/features/__aggregator__/navigation'
 
 export const NavigationSidebar = () => {
   return (
