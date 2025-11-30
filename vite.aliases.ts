@@ -12,7 +12,7 @@ export const alias = {
   '@core/types': path.resolve(__dirname, './src/core/types'),
   '@core': path.resolve(__dirname, './src/core'),
 
-  '@react-dev/aggregator': path.resolve(__dirname, './src/react-dev/__aggregator__'),
+  '@react-dev/aggregator': path.resolve(__dirname, './src/react-dev/features/__aggregator__'),
   '@react-dev': path.resolve(__dirname, './src/react-dev'),
 
   '@template-app': path.resolve(__dirname, './src/apps/__template-app__'),
