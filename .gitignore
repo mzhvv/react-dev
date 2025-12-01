@@ -7,14 +7,17 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependencies
 node_modules
-dist
-dist-ssr
+/dist
+/dist-ssr
 *.local
 
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
 .idea
 .DS_Store
 *.suo
@@ -24,7 +27,13 @@ dist-ssr
 *.sw?
 
 # AI
-prompt
+prompt/
 
-# ignore
-README.md
+# Temporary files
+*.tmp
+*.temp
+
+# Environment variables
+.env
+.env.*
+!.env.example

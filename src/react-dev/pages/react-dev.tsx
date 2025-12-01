@@ -1,7 +1,8 @@
 // src/react-dev/pages/react-dev.tsx
 
-import { Navigation } from '@react-dev/widgets/home'
 import { Main, Header, Section, SectionHeader, SectionContent } from '@ui/layout-system'
+
+import { Navigation } from '@react-dev/widgets/react-dev/navigation'
 
 export const ReactDevPage = () => {
   return (
@@ -14,6 +15,7 @@ export const ReactDevPage = () => {
         <SectionHeader className='sr-only'>
           <h2>Навигация</h2>
         </SectionHeader>
+
         <SectionContent>
           <nav className='space-y-4'>
             <Navigation />

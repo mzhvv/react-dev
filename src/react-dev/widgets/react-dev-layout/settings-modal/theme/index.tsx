@@ -9,8 +9,8 @@ import {
   ModalSubSectionHeader,
 } from '@ui/layout-system'
 
-import type { FactoryComponentVariantProps } from '@factories/component-variants'
-import { cssVariables, COLOR_MAP } from '@styles'
+import type { FactoryComponentVariantProps } from '@core/libs/factories/component-variants'
+import { cssVariables, COLOR_MAP } from '@core/features/theme/lib/styles'
 
 import type {
   ThemeColorSectionProps,

@@ -11,5 +11,6 @@ import type {
 export type AppsRoutes = TemplateAppRoutes
 
 export type AppsDomainNavigation = Navigation<TemplateAppDomainNavigation>
+export type NAVIGATIONTEST = TemplateAppDomainNavigation
 
 export type AppsConstantsNavigationDomainLink = TemplateAppConstantsNavigationDomainLink

@@ -1,10 +1,25 @@
+# Build outputs
 dist/
 build/
 coverage/
+*.min.js
+*.min.css
 
+# Dependencies
 node_modules/
 
+# Lock files (они не должны форматироваться)
 package-lock.json
+yarn.lock
+pnpm-lock.yaml
 
+# Logs
 *.log
+npm-debug.log*
+
+# OS files
 .DS_Store
+Thumbs.db
+
+# Package manager files
+.pnpm-store/

@@ -1,6 +1,6 @@
-import { GripIcon, XIcon } from 'lucide-react'
+// src/react-dev/widgets/react-dev-layout/mobile/navigation.tsx
 
-import { NavigationDataRender, SIDEBAR_NAVIGATION } from '@react-dev/__aggregator__/navigation'
+import { GripIcon, XIcon } from 'lucide-react'
 
 import {
   Dialog,
@@ -12,16 +12,8 @@ import {
 } from '@ui/components/dialog'
 import { Button } from '@ui/components/button'
 
-export const NavigationModal = () => {
-  return (
-    <Modal>
-      <NavigationDataRender
-        navigationSections={SIDEBAR_NAVIGATION}
-        orientation='vertical'
-        variant='modal'
-      />
-    </Modal>
-  )
+export const MobileSidebarNavigation = () => {
+  return <Modal>''</Modal>
 }
 
 const Modal: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -40,7 +32,7 @@ const Modal: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       <DialogContent
         showCloseButton={false}
         aria-describedby={undefined}
-        className='gap-0 p-4 !transition-none sm:max-w-[425px]' // !duration-0 !ease-[0]
+        className='gap-0 p-4 transition-none! sm:max-w-[425px]' // !duration-0 !ease-[0]
       >
         <DialogHeader className='p-2'>
           <DialogTitle className='flex items-center justify-between'>

@@ -1,10 +1,11 @@
 import { Button } from '@ui/components/button'
 import { User2Icon } from 'lucide-react'
 
-import { SettingsModal } from './settings-modal'
-import { NavigationModal } from './navigation'
+import { SettingsModal } from '../../settings-modal'
 
-export const SidebarMobile = () => {
+import { MobileSidebarNavigation } from './navigation'
+
+export const MobileSidebar = () => {
   return (
     <div className='sticky bottom-0'>
       <div className='bg-border/50 mx-7 h-px rounded-full' />
@@ -12,7 +13,7 @@ export const SidebarMobile = () => {
         <Button variant='default' size='icon'>
           <span className='text-sm font-bold tracking-tighter'>RD</span>
         </Button>
-        <NavigationModal />
+        <MobileSidebarNavigation />
         <SettingsModal />
         <Button variant='secondary' size='icon'>
           <User2Icon />

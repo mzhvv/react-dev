@@ -1,3 +1,5 @@
+// src/react-dev/widgets/react-dev-layout/desktop/sidebar/index.tsx
+
 import { useState } from 'react'
 import { Link } from 'react-router'
 import { GripIcon, User2Icon } from 'lucide-react'
@@ -5,10 +7,11 @@ import { GripIcon, User2Icon } from 'lucide-react'
 import { cn } from '@ui/lib'
 import { Button } from '@ui/components/button'
 
-import { SettingsModal } from './settings-modal'
-import { NavigationModal, NavigationSidebar } from './navigation'
+import { SettingsModal } from '../../settings-modal'
 
-export const SidebarDesktop = () => {
+import { DesktopSidebarNavigation } from './navigation'
+
+export const DesktopSidebar = () => {
   const [isNavigationVisible, setIsNavigationVisible] = useState(true)
   function toggleNavigation() {
     setIsNavigationVisible(prev => !prev)
@@ -57,7 +60,7 @@ const FirstColumn: React.FC<{ isNavigationVisible: boolean; toggleNavigation: ()
             <GripIcon />
           </Button>
 
-          <NavigationModal />
+          {/* <NavigationModal /> */}
         </div>
       </div>
 
@@ -90,7 +93,7 @@ const SecondColumn = () => {
         </div>
 
         <nav>
-          <NavigationSidebar />
+          <DesktopSidebarNavigation />
         </nav>
       </div>
 

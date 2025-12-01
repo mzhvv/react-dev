@@ -1,4 +1,4 @@
-// src/react-dev/__aggregator__/routes/index.ts
+// src/react-dev/__aggregator__/routes.ts
 
 import type { RouteObject } from 'react-router'
 

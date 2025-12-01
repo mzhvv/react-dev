@@ -1,4 +1,4 @@
-import { Navigation } from '@react-dev/widgets/home'
+import { Navigation } from '@react-dev/widgets/react-dev'
 import { Main, Header, Section, SectionHeader, SectionContent } from '@ui/layout-system'
 
 export const ReactDevPage = () => {
