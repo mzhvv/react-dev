@@ -4,7 +4,7 @@
 import { HeartIcon } from 'lucide-react'
 
 import { appsConstantsNavigationDomainLink } from '@apps/accumulators/constants'
-import type { SectionNavigationKey } from '@core/libs/navigation'
+import type { SectionNavigation } from '@core/libs/navigation'
 
 function useRootConstantsNavigationDomainLink() {
   // const { t } = useTranslation()
@@ -27,7 +27,7 @@ export function useConstantsGlobalNavigation() {
     author: 'Автор',
     projects: 'Проекты',
     development: 'Development',
-  } as const satisfies Record<SectionNavigationKey, string>
+  } as const satisfies Record<SectionNavigation, string>
 
   const links = {
     ...useRootConstantsNavigationDomainLink(),

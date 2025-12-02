@@ -1,7 +1,6 @@
 // src/apps/__accumulators__/navigation.ts
 
 import type { AppsDomainNavigation } from '@apps/accumulators/types'
-
 import { templateAppDomainNavigation } from '@template-app'
 
 export const appsDomainNavigation = {

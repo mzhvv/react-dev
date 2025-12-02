@@ -15,7 +15,6 @@ import type { SafeRelativePath } from '@core/utils/string'
 type DomainPath = SafeRelativePath<'template-app'>
 
 // #endregion
-
 // #region Routes
 
 export type Routes = EntranceRoutes
@@ -27,13 +26,11 @@ export type AAADomainRoutes = StrictRouteObjectOf<'aaaParent', AAAChildrenRoutes
 export type AAAChildrenRoutes = StrictRouteObjectOf<'aaaChildren1' | 'aaaChildren2'>
 
 // #endregion
-
 // #region Navigations
 
 export type DomainNavigation = NavigationOf<DomainPath>
 
 // #endregion
-
 // #region Constants
 
 export type ConstantsAPI = ConstantsAPIWith<ConstantsNavigation>

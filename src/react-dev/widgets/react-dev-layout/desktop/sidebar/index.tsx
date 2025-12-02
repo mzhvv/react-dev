@@ -10,6 +10,7 @@ import { Button } from '@ui/components/button'
 import { SettingsModal } from '../../settings-modal'
 
 import { DesktopSidebarNavigation } from './navigation'
+import { MobileSidebarNavigation } from '../../mobile/sidebar/navigation'
 
 export const DesktopSidebar = () => {
   const [isNavigationVisible, setIsNavigationVisible] = useState(true)
@@ -60,7 +61,7 @@ const FirstColumn: React.FC<{ isNavigationVisible: boolean; toggleNavigation: ()
             <GripIcon />
           </Button>
 
-          {/* <NavigationModal /> */}
+          <MobileSidebarNavigation />
         </div>
       </div>
 
