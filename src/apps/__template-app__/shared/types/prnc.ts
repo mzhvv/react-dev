@@ -18,12 +18,15 @@ type DomainPath = SafeRelativePath<'template-app'>
 // #region Routes
 
 export type Routes = EntranceRoutes
-export type EntranceRoutes = EntranceRoutesOf<DomainRoutes & AAADomainRoutes>
+export type EntranceRoutes = EntranceRoutesOf<TemplateAppDomainRoutes & TestDomainRoutes>
 
-export type DomainRoutes = StrictRouteObjectOf<DomainPath>
+export type TemplateAppDomainRoutes = StrictRouteObjectOf<DomainPath>
 
-export type AAADomainRoutes = StrictRouteObjectOf<'aaaParent', AAAChildrenRoutes>
-export type AAAChildrenRoutes = StrictRouteObjectOf<'aaaChildren1' | 'aaaChildren2'>
+// test
+type TestDomainPath = 'test-domain'
+export type TestDomainRoutes = StrictRouteObjectOf<TestDomainPath, TestSegmentRoutes>
+type TestSegments = 'test-segment-1' | 'test-segment-2'
+export type TestSegmentRoutes = StrictRouteObjectOf<TestSegments>
 
 // #endregion
 // #region Navigations

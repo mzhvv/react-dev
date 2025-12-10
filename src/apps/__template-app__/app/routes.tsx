@@ -1,41 +1,50 @@
 // src/apps/__template-app__/app/routes.tsx
 
+import { Outlet } from 'react-router'
+
 import type {
-  DomainRoutes,
+  TemplateAppDomainRoutes,
+  TestSegmentRoutes,
+  TestDomainRoutes,
   EntranceRoutes,
   Routes,
-  AAADomainRoutes,
-  AAAChildrenRoutes,
 } from '@template-app/shared/types/prnc'
+
 import { Providers } from '@template-app/app/providers'
 import { TemplateAppLayout } from '@template-app/pages/template-app-layout'
 import { TemplateApp } from '@template-app/pages/template-app'
 
-const domainRoutes = {
+// Routes
+
+const templateAppDomainRoutes = {
   templateApp: {
     path: 'template-app',
     element: <TemplateApp />,
   },
-} as const satisfies DomainRoutes
+} as const satisfies TemplateAppDomainRoutes
 
-const aaChildren = {
-  aaaChildren1: {
-    path: 'aaaChildren1',
-    element: <></>,
+const testSegmentRoutes = {
+  testSegment1: {
+    path: 'test-segment-1',
+    element: 'test-segment-1',
   },
-  aaaChildren2: {
-    path: 'aaaChildren2',
-    element: <></>,
+  testSegment2: {
+    path: 'test-segment-2',
+    element: 'test-segment-2',
   },
-} as const satisfies AAAChildrenRoutes
+} as const satisfies TestSegmentRoutes
 
-const aaaRoutes = {
-  aaaParent: {
-    path: 'aaaParent',
-    element: <></>,
-    children: [...Object.values(aaChildren)],
+const testDomainRoutes = {
+  testDomain: {
+    path: 'test-domain',
+    element: <Outlet />,
+    children: [...Object.values(testSegmentRoutes)],
   },
-} as const satisfies AAADomainRoutes
+} as const satisfies TestDomainRoutes
+
+// Config
+
+const domainRoutes = [...Object.values(templateAppDomainRoutes), ...Object.values(testDomainRoutes)]
 
 const entranceRoutes = {
   path: undefined,
@@ -44,7 +53,7 @@ const entranceRoutes = {
     {
       path: undefined,
       element: <TemplateAppLayout />,
-      children: [...Object.values(domainRoutes), ...Object.values(aaaRoutes)],
+      children: [...domainRoutes],
     },
   ],
 } as const satisfies EntranceRoutes
