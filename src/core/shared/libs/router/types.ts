@@ -41,10 +41,11 @@ export type StrictRouteConfigObject<
 
 // export type RouteObject = DefaultRouteObject
 
+export type TupleRouteObjectChildren = unknown[] | undefined
 /** ⚠️ Только tuple! nion Запрет! */
-export type StrictTupleRouteObject<
+export type TupleRouteObject<
   Path extends string | undefined,
-  Children extends unknown[] | undefined = undefined,
+  Children extends TupleRouteObjectChildren = undefined,
 > = Omit<NonIndexRouteObject, 'path' | 'children'> & {
   path: Path
 } & (Children extends undefined ? { children?: undefined } : { children: Children })

@@ -4,7 +4,7 @@ import { Outlet } from 'react-router'
 
 import { routesBuilder } from '@core/libs/router'
 
-import type { Routes, StrictRouteConfig } from '@template-app/shared/types/prnc'
+import type { Routes, Routes2, StrictRouteConfig } from '@template-app/shared/types/prnc'
 
 import { Providers } from '@template-app/app/providers'
 import { TemplateAppLayout } from '@template-app/pages/template-app-layout'
@@ -43,7 +43,7 @@ const routesConfig = {
   },
 } as const satisfies StrictRouteConfig
 
-export const { routes } = routesBuilder.v0<StrictRouteConfig, Routes>(routesConfig)
+export const { routes } = routesBuilder.v0<StrictRouteConfig, Routes & Routes2>(routesConfig)
 
 // @ts-expect-error 6133
 const routes_example = [
@@ -71,4 +71,4 @@ const routes_example = [
       },
     ],
   },
-] as const satisfies Routes
+] as const satisfies Routes & Routes2

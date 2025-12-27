@@ -98,13 +98,20 @@ type UndefinedDomainRoute = strictTupleRouteObject<undefined, UndefinedSegmentRo
 type UndefinedSegmentRoute = [strictTupleRouteObject<'a-a'>]
 
 type BDomainRoute = strictTupleRouteObject<'b', [IndexRouteObject, ...BSegmentRoute]>
-type BSegmentRoute = [strictTupleRouteObject<'b-a'>]
+type BSegmentRoute = [strictTupleRouteObject<'b-a'>, strictTupleRouteObject<'b-b'>]
 
 type CDomainRoute = strictTupleRouteObject<'c', [IndexRouteObject, ...CSegmentRoute]>
 type CSegmentRoute = [strictTupleRouteObject<'c-a', CAtomicRoute>]
 type CAtomicRoute = [strictTupleRouteObject<'c-a-a'>]
 
-type StrictCustomRoute = [UndefinedDomainRoute, BDomainRoute, CDomainRoute]
+type DDomainRoute = strictTupleRouteObject<'d', [IndexRouteObject, ...DSegmentRoute]>
+type DSegmentRoute = [
+  strictTupleRouteObject<'d-a', [...DAtomicRoute]>,
+  strictTupleRouteObject<'d-b'>,
+]
+type DAtomicRoute = [strictTupleRouteObject<'d-a-a'>, strictTupleRouteObject<'d-a-b'>]
+
+type StrictCustomRoute = [UndefinedDomainRoute, BDomainRoute, CDomainRoute, DDomainRoute]
 
 const strictCustomRoute = [
   {
@@ -113,12 +120,20 @@ const strictCustomRoute = [
   },
   {
     path: 'b',
-    children: [{ index: true }, { path: 'b-a' }],
+    children: [{ index: true }, { path: 'b-a' }, { path: 'b-b' }],
   },
 
   {
     path: 'c',
     children: [{ index: true }, { path: 'c-a', children: [{ path: 'c-a-a' }] }],
+  },
+  {
+    path: 'd',
+    children: [
+      { index: true },
+      { path: 'd-a', children: [{ path: 'd-a-a' }, { path: 'd-a-b' }] },
+      { path: 'd-b' },
+    ],
   },
 ] as const satisfies StrictCustomRoute
 

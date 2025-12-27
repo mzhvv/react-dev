@@ -8,7 +8,8 @@ import type { SafeRelativePath } from '@core/utils/string'
 import type {
   StrictCustomRouteConfigObject,
   StrictRouteConfigObject,
-  StrictTupleRouteObject,
+  TupleRouteObject,
+  TupleRouteObjectChildren,
 } from '@core/libs/router'
 import type { NavigationOf } from '@core/libs/navigation'
 import type {
@@ -16,6 +17,7 @@ import type {
   ConstantsNavigationWith,
   ConstantsNavigationLinkEntityOf,
 } from '@core/libs/constants'
+import type { FromUnion } from '@core/utils/types'
 
 // #region Paths
 
@@ -29,26 +31,36 @@ type TestSegmentPath = SafeRelativePath<'test-segment-1' | 'test-segment-2'>
 
 // ℹ️ Entrance / Config
 
-export type StrictRouteConfig = ProviderConfigObject
-
-type ProviderConfigObject = StrictCustomRouteConfigObject<'provider', undefined, RootRoutesConfig>
-type RootRoutesConfig = StrictRouteConfigObject<TemplateApp, TestDomainRoutesConfig>
-
+export type StrictRouteConfig = ProviderRouteConfig
+type ProviderRouteConfig = StrictCustomRouteConfigObject<'provider', undefined, RootRouteConfig>
+type RootRouteConfig = StrictRouteConfigObject<TemplateApp, TestDomainRoutesConfig>
 type TestDomainRoutesConfig = StrictRouteConfigObject<TestDomainPath, TestSegmentRoutesConfig>
 type TestSegmentRoutesConfig = StrictRouteConfigObject<TestSegmentPath>
 
 // ℹ️ Output / Return routesBuilder
 
-export type Routes = [
-  StrictTupleRouteObject<
-    undefined,
-    [StrictTupleRouteObject<TemplateApp, [IndexRouteObject, TestDomainRoutesOutput]>]
-  >,
+export type Routes = Array<ProviderRoute>
+type ProviderRoute = TupleRouteObject<undefined, [TemplateAppLayoutRoute]>
+type TemplateAppLayoutRoute = TupleRouteObject<TemplateApp, [TemplateAppHomeRoute, TestDomainRoute]>
+type TemplateAppHomeRoute = IndexRouteObject
+type TestDomainRoute = TupleRouteObject<TestDomainPath, [...TestSegmentRoutes]>
+type TestSegmentRoutes = [
+  TupleRouteObject<FromUnion<TestSegmentPath, 'test-segment-1'>>,
+  TupleRouteObject<FromUnion<TestSegmentPath, 'test-segment-2'>>,
 ]
-type TestDomainRoutesOutput = StrictTupleRouteObject<TestDomainPath, [...TestSegmentRoutesOutput]>
-type TestSegmentRoutesOutput = [
-  StrictTupleRouteObject<Extract<TestSegmentPath, 'test-segment-1'>>,
-  StrictTupleRouteObject<Extract<TestSegmentPath, 'test-segment-2'>>,
+
+export type Routes2 = Array<
+  ProviderRoute2<
+    [TemplateAppLayoutRoute2<[TemplateAppHomeRoute2, TestDomainRoute2<[...TestSegmentRoutes2]>]>]
+  >
+>
+type ProviderRoute2<T extends TupleRouteObjectChildren> = TupleRouteObject<undefined, T>
+type TemplateAppLayoutRoute2<T extends TupleRouteObjectChildren> = TupleRouteObject<TemplateApp, T>
+type TemplateAppHomeRoute2 = IndexRouteObject
+type TestDomainRoute2<T extends TupleRouteObjectChildren> = TupleRouteObject<TestDomainPath, T>
+type TestSegmentRoutes2 = [
+  TupleRouteObject<FromUnion<TestSegmentPath, 'test-segment-1'>>,
+  TupleRouteObject<FromUnion<TestSegmentPath, 'test-segment-2'>>,
 ]
 
 // #endregion
