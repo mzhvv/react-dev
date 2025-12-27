@@ -1,0 +1,12 @@
+// __experience__/tsconfig.experience.json
+
+{
+  "extends": "../tsconfig.app.json",
+  "include": ["./**/*"],
+
+  // Options
+
+  "compilerOptions": {
+    "noUnusedLocals": false
+  }
+}

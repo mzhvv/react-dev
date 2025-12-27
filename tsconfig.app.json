@@ -2,7 +2,7 @@
 
 {
   "extends": "./tsconfig.aliases.json",
-  "include": ["src", "__automation__/**/*", "__experience__/**/*"],
+  "include": ["src"],
   "exclude": ["src/apps/_/**/*"],
 
   // Options
