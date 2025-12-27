@@ -3,6 +3,7 @@
 import type {
   NonIndexRouteObject,
   IndexRouteObject,
+  RouteObject,
   // RouteObject as DefaultRouteObject,
 } from 'react-router'
 
@@ -39,13 +40,14 @@ export type StrictRouteConfigObject<
 
 // ℹ️ Output / Return routesBuilder
 
-// export type RouteObject = DefaultRouteObject
-
 export type TupleRouteObjectChildren = unknown[] | undefined
-/** ⚠️ Только tuple! nion Запрет! */
 export type TupleRouteObject<
   Path extends string | undefined,
   Children extends TupleRouteObjectChildren = undefined,
 > = Omit<NonIndexRouteObject, 'path' | 'children'> & {
   path: Path
 } & (Children extends undefined ? { children?: undefined } : { children: Children })
+
+export type IsTupleRoutesCompatible<T> = T extends RouteObject[]
+  ? '✅ Совместимы'
+  : '❌ Не совместимы'
