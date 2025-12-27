@@ -1,20 +1,50 @@
 // src/core/shared/libs/router/types.ts
 
-import type { NonIndexRouteObject } from 'react-router'
-import type { CamelCase } from '@core/utils/string'
+import type {
+  NonIndexRouteObject,
+  IndexRouteObject,
+  // RouteObject as DefaultRouteObject,
+} from 'react-router'
 
-export type EntranceRoutesOf<Children> = Omit<NonIndexRouteObject, 'children'> & {
-  children: Array<
-    Omit<NonIndexRouteObject, 'children'> & {
-      children: Array<Children[keyof Children]>
-    }
-  >
+import type { CamelCase } from '@core/utils/string'
+import type { Expand } from '@core/utils/types'
+
+// ℹ️ Entrance / Config
+
+export type RouteConfigNode =
+  | (Omit<NonIndexRouteObject, 'children'> & {
+      children?: Record<string, RouteConfigNode>
+    })
+  | IndexRouteObject
+
+export type RouteConfigObject = {
+  [key: string]: RouteConfigNode
 }
 
-export type StrictRouteObjectOf<Path extends string, Children = never> = Record<
-  CamelCase<Path>,
-  Omit<NonIndexRouteObject, 'path' | 'children'> & {
-    path: Path
-    children?: Array<Children[keyof Children]>
+export type StrictCustomRouteConfigObject<
+  Key extends CamelCase<string>,
+  Path extends string | undefined,
+  Children = never,
+> = Expand<{
+  [K in Key]: Omit<NonIndexRouteObject, 'path' | 'children'> & {
+    path?: Path
+    children?: Children
   }
->
+}>
+
+export type StrictRouteConfigObject<
+  Path extends string,
+  Children = never,
+> = StrictCustomRouteConfigObject<CamelCase<Path>, Path, { index: IndexRouteObject } | Children>
+
+// ℹ️ Output / Return routesBuilder
+
+// export type RouteObject = DefaultRouteObject
+
+/** ⚠️ Только tuple! nion Запрет! */
+export type StrictTupleRouteObject<
+  Path extends string | undefined,
+  Children extends unknown[] | undefined = undefined,
+> = Omit<NonIndexRouteObject, 'path' | 'children'> & {
+  path: Path
+} & (Children extends undefined ? { children?: undefined } : { children: Children })

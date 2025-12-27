@@ -8,7 +8,7 @@ import {
   RadioGroupItem_V3,
 } from '@ui/components/radio-group'
 
-import type { VariantId } from '@react-dev/shared/types'
+import type { VariantId } from '@core/types/shared'
 
 import type { ThemeColorRadioGroupProps } from '../../../types'
 

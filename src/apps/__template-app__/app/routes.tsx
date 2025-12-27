@@ -2,60 +2,73 @@
 
 import { Outlet } from 'react-router'
 
-import type {
-  TemplateAppDomainRoutes,
-  TestSegmentRoutes,
-  TestDomainRoutes,
-  EntranceRoutes,
-  Routes,
-} from '@template-app/shared/types/prnc'
+import { routesBuilder } from '@core/libs/router'
+
+import type { Routes, StrictRouteConfig } from '@template-app/shared/types/prnc'
 
 import { Providers } from '@template-app/app/providers'
 import { TemplateAppLayout } from '@template-app/pages/template-app-layout'
 import { TemplateApp } from '@template-app/pages/template-app'
 
-// Routes
-
-const templateAppDomainRoutes = {
-  templateApp: {
-    path: 'template-app',
-    element: <TemplateApp />,
-  },
-} as const satisfies TemplateAppDomainRoutes
-
-const testSegmentRoutes = {
-  testSegment1: {
-    path: 'test-segment-1',
-    element: 'test-segment-1',
-  },
-  testSegment2: {
-    path: 'test-segment-2',
-    element: 'test-segment-2',
-  },
-} as const satisfies TestSegmentRoutes
-
-const testDomainRoutes = {
-  testDomain: {
-    path: 'test-domain',
-    element: <Outlet />,
-    children: [...Object.values(testSegmentRoutes)],
-  },
-} as const satisfies TestDomainRoutes
-
-// Config
-
-const domainRoutes = [...Object.values(templateAppDomainRoutes), ...Object.values(testDomainRoutes)]
-
-const entranceRoutes = {
-  path: undefined,
-  element: <Providers />,
-  children: [
-    {
-      path: undefined,
-      element: <TemplateAppLayout />,
-      children: [...domainRoutes],
+const routesConfig = {
+  provider: {
+    path: undefined,
+    element: <Providers />,
+    children: {
+      templateApp: {
+        path: 'template-app',
+        element: <TemplateAppLayout />,
+        children: {
+          index: {
+            index: true,
+            element: <TemplateApp />,
+          },
+          testDomain: {
+            path: 'test-domain',
+            element: <Outlet />,
+            children: {
+              testSegment1: {
+                path: 'test-segment-1',
+                element: 'test-segment-1',
+              },
+              testSegment2: {
+                path: 'test-segment-2',
+                element: 'test-segment-2',
+              },
+            },
+          },
+        },
+      },
     },
-  ],
-} as const satisfies EntranceRoutes
+  },
+} as const satisfies StrictRouteConfig
 
-export const routes = [entranceRoutes] as const satisfies Routes[]
+export const { routes } = routesBuilder.v0<StrictRouteConfig, Routes>(routesConfig)
+
+// @ts-expect-error 6133
+const routes_example = [
+  {
+    path: undefined,
+    element: <Providers />,
+    children: [
+      {
+        path: 'template-app',
+        element: <TemplateAppLayout />,
+        children: [
+          {
+            index: true,
+            element: <TemplateApp />,
+          },
+          {
+            path: 'test-domain',
+            element: <Outlet />,
+            children: [
+              { path: 'test-segment-1', element: 'test-segment-1' },
+              { path: 'test-segment-2', element: 'test-segment-2' },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+] as const satisfies Routes

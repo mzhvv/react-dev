@@ -1,37 +1,60 @@
 // src/apps/__template-app__/shared/types/prnc.ts
 /** @description prnc = Paths-Routes-Navigations-Constants */
 
-import type { EntranceRoutesOf, StrictRouteObjectOf } from '@core/libs/router'
+import type { IndexRouteObject } from 'react-router'
+
+import type { SafeRelativePath } from '@core/utils/string'
+
+import type {
+  StrictCustomRouteConfigObject,
+  StrictRouteConfigObject,
+  StrictTupleRouteObject,
+} from '@core/libs/router'
 import type { NavigationOf } from '@core/libs/navigation'
 import type {
   ConstantsAPIWith,
   ConstantsNavigationWith,
   ConstantsNavigationLinkEntityOf,
 } from '@core/libs/constants'
-import type { SafeRelativePath } from '@core/utils/string'
 
 // #region Paths
 
-type DomainPath = SafeRelativePath<'template-app'>
+type TemplateApp = SafeRelativePath<'template-app'>
+
+type TestDomainPath = SafeRelativePath<'test-domain'>
+type TestSegmentPath = SafeRelativePath<'test-segment-1' | 'test-segment-2'>
 
 // #endregion
 // #region Routes
 
-export type Routes = EntranceRoutes
-export type EntranceRoutes = EntranceRoutesOf<TemplateAppDomainRoutes & TestDomainRoutes>
+// ℹ️ Entrance / Config
 
-export type TemplateAppDomainRoutes = StrictRouteObjectOf<DomainPath>
+export type StrictRouteConfig = ProviderConfigObject
 
-// test
-type TestDomainPath = 'test-domain'
-export type TestDomainRoutes = StrictRouteObjectOf<TestDomainPath, TestSegmentRoutes>
-type TestSegments = 'test-segment-1' | 'test-segment-2'
-export type TestSegmentRoutes = StrictRouteObjectOf<TestSegments>
+type ProviderConfigObject = StrictCustomRouteConfigObject<'provider', undefined, RootRoutesConfig>
+type RootRoutesConfig = StrictRouteConfigObject<TemplateApp, TestDomainRoutesConfig>
+
+type TestDomainRoutesConfig = StrictRouteConfigObject<TestDomainPath, TestSegmentRoutesConfig>
+type TestSegmentRoutesConfig = StrictRouteConfigObject<TestSegmentPath>
+
+// ℹ️ Output / Return routesBuilder
+
+export type Routes = [
+  StrictTupleRouteObject<
+    undefined,
+    [StrictTupleRouteObject<TemplateApp, [IndexRouteObject, TestDomainRoutesOutput]>]
+  >,
+]
+type TestDomainRoutesOutput = StrictTupleRouteObject<TestDomainPath, [...TestSegmentRoutesOutput]>
+type TestSegmentRoutesOutput = [
+  StrictTupleRouteObject<Extract<TestSegmentPath, 'test-segment-1'>>,
+  StrictTupleRouteObject<Extract<TestSegmentPath, 'test-segment-2'>>,
+]
 
 // #endregion
 // #region Navigations
 
-export type DomainNavigation = NavigationOf<DomainPath>
+export type DomainNavigation = NavigationOf<TemplateApp>
 
 // #endregion
 // #region Constants
@@ -39,6 +62,6 @@ export type DomainNavigation = NavigationOf<DomainPath>
 export type ConstantsAPI = ConstantsAPIWith<ConstantsNavigation>
 export type ConstantsNavigation = ConstantsNavigationWith<ConstantsNavigationDomainLink>
 
-export type ConstantsNavigationDomainLink = ConstantsNavigationLinkEntityOf<DomainPath>
+export type ConstantsNavigationDomainLink = ConstantsNavigationLinkEntityOf<TemplateApp>
 
 // #endregion

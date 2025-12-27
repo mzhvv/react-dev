@@ -2,6 +2,10 @@
 
 {
   "extends": "./tsconfig.aliases.json",
+  "include": ["src", "__automation__/**/*", "__experience__/**/*"],
+  "exclude": ["src/apps/_/**/*"],
+
+  // Options
 
   "compilerOptions": {
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
@@ -27,7 +31,5 @@
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
-  },
-
-  "include": ["src"]
+  }
 }
