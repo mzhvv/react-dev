@@ -1,10 +1,9 @@
 // src/core/shared/libs/router/builders/build-routes.ts
 
-import type { RouteObject, NonIndexRouteObject } from 'react-router'
-import type { RouteConfigObject, RouteConfigNode } from '../types'
+import type { RouteConfigObject, RouteConfigNode, RouteObject, NonIndexRouteObject } from '../types'
 
 export const builderRoutes = {
-  buildRoutes: <Config extends RouteConfigObject, Output extends RouteObject[]>(
+  buildRoutes: <Config extends RouteConfigObject, Output extends RouteObject>(
     config: Config
   ): Output => {
     const providerConfig = config.provider
@@ -46,6 +45,6 @@ export const builderRoutes = {
     } as NonIndexRouteObject
 
     // return [providerRoute] as unknown as Output
-    return [providerRoute] as unknown as Output
+    return providerRoute as unknown as Output
   },
 }

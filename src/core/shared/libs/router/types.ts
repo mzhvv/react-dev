@@ -1,16 +1,21 @@
 // src/core/shared/libs/router/types.ts
 
 import type {
-  NonIndexRouteObject,
-  IndexRouteObject,
-  RouteObject,
-  // RouteObject as DefaultRouteObject,
+  RouteObject as DefaultRouteObject,
+  IndexRouteObject as DefaultIndexRouteObject,
+  NonIndexRouteObject as DefaultNonIndexRouteObject,
 } from 'react-router'
 
 import type { CamelCase } from '@core/utils/string'
 import type { Expand } from '@core/utils/types'
 
-// ℹ️ Entrance / Config
+// re-export / Managed by default types
+
+export type RouteObject = DefaultRouteObject
+export type IndexRouteObject = DefaultIndexRouteObject
+export type NonIndexRouteObject = DefaultNonIndexRouteObject
+
+// Entrance / Config
 
 export type RouteConfigNode =
   | (Omit<NonIndexRouteObject, 'children'> & {
@@ -38,7 +43,7 @@ export type StrictRouteConfigObject<
   Children = never,
 > = StrictCustomRouteConfigObject<CamelCase<Path>, Path, { index: IndexRouteObject } | Children>
 
-// ℹ️ Output / Return routesBuilder
+// Output / Return routesBuilder
 
 export type TupleRouteObjectChildren = unknown[] | undefined
 export type TupleRouteObject<

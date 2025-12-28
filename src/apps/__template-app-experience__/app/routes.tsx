@@ -1,22 +1,22 @@
-// src/apps/__template-app__/app/routes.tsx
+// src/apps/__template-app-experience__/app/routes.tsx
 
 import { Outlet } from 'react-router'
 
 import { routesBuilder } from '@core/libs/router'
 
-import type { RoutesOutput, StrictRouteConfig } from '@template-app/shared/types/prnc'
+import type { StrictRouteConfig, RoutesOutput } from '../shared/types/prnc'
 
-import { Providers } from '@template-app/app/providers'
-import { TemplateAppLayout } from '@template-app/pages/template-app-layout'
-import { TemplateApp } from '@template-app/pages/template-app'
+import { Providers } from '../app/providers'
+import { TemplateAppLayout } from '../pages/template-app-layout'
+import { TemplateApp } from '../pages/template-app'
 
 const routesConfig = {
   provider: {
     path: undefined,
     element: <Providers />,
     children: {
-      templateApp: {
-        path: 'template-app',
+      templateAppExperience: {
+        path: 'template-app-experience',
         element: <TemplateAppLayout />,
         children: {
           index: {
@@ -52,7 +52,7 @@ const routes2 = [
     element: <Providers />,
     children: [
       {
-        path: 'template-app',
+        path: 'template-app-experience',
         element: <TemplateAppLayout />,
         children: [
           {

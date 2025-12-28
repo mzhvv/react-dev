@@ -1,4 +1,4 @@
-// src/apps/__template-app__/shared/types/prnc.ts
+// src/apps/__template-app-experience__/shared/types/prnc.ts
 /** @description prnc = Paths-Routes-Navigations-Constants */
 
 import type { SafeRelativePath } from '@core/utils/string'
@@ -21,7 +21,7 @@ import type {
 
 // #region Paths
 
-type TemplateAppPath = SafeRelativePath<'template-app'>
+type TemplateAppPath = SafeRelativePath<'template-app-experience'>
 
 type TestDomainPath = SafeRelativePath<'test-domain'>
 type TestSegmentPath = SafeRelativePath<'test-segment-1' | 'test-segment-2'>
@@ -61,6 +61,7 @@ type TestSegmentRoutes = [
 export type Routes2 = ProviderRoute2<
   [TemplateAppLayoutRoute2<[TemplateAppHomeRoute2, TestDomainRoute2<[...TestSegmentRoutes2]>]>]
 >
+
 // @ts-expect-error 6196
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 type __IsRoutes2Compatible__ = IsTupleRoutesCompatible<[Routes2]>

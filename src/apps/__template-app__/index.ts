@@ -2,7 +2,7 @@
 /** @private - только для src/apps/__accumulators__/* */
 
 export type {
-  Routes as TemplateAppRoutes,
+  RoutesOutput as TemplateAppRoutes,
   DomainNavigation as TemplateAppDomainNavigation,
   ConstantsNavigationDomainLink as TemplateAppConstantsNavigationDomainLink,
 } from '@template-app/shared/types/prnc'

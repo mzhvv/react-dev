@@ -17,6 +17,8 @@
 
       "@template-app": ["./src/apps/__template-app__"],
       "@template-app/*": ["./src/apps/__template-app__/*"],
+      "@template-app-experience": ["./src/apps/__template-app-experience__"],
+      "@template-app-experience/*": ["./src/apps/__template-app-experience__/*"],
       "@apps/accumulators/*": ["./src/apps/__accumulators__/*"],
       "@apps/*": ["./src/apps/*"],
 

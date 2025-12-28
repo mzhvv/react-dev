@@ -1,11 +1,10 @@
 // src/core/shared/libs/router/builders/index.ts
 
-import type { RouteObject } from 'react-router'
-import type { RouteConfigObject } from '../types'
+import type { RouteConfigObject, RouteObject } from '../types'
 import { builderRoutes } from './build-routes'
 
 export const routesBuilder = {
-  v0: function <Entrance extends RouteConfigObject, Output extends RouteObject[]>(
+  v0: function <Entrance extends RouteConfigObject, Output extends RouteObject>(
     routesConfig: Entrance
   ) {
     return {

@@ -16,6 +16,7 @@ export const alias = {
   '@react-dev': resolve(__dirname, './src/react-dev'),
 
   '@template-app': resolve(__dirname, './src/apps/__template-app__'),
+  '@template-app-experience': resolve(__dirname, './src/apps/__template-app-experience__'),
   '@apps/accumulators': resolve(__dirname, './src/apps/__accumulators__'),
   '@apps': resolve(__dirname, './src/apps'),
 
