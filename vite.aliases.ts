@@ -7,8 +7,8 @@ export const alias = {
   '@public': resolve(__dirname, './public'),
 
   '@core/features': resolve(__dirname, './src/core/features'),
-  '@core/libs': resolve(__dirname, './src/core/shared/libs'),
-  '@core/utils': resolve(__dirname, './src/core/shared/utils'),
+  '@core/libs': resolve(__dirname, './src/core/libs'),
+  '@core/utils': resolve(__dirname, './src/core/utils'),
   '@core/types': resolve(__dirname, './src/core/types'),
   '@core': resolve(__dirname, './src/core'),
 

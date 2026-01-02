@@ -6,7 +6,7 @@ export const DefaultSection = () => {
   return (
     <Section>
       <SectionContent>
-        <div>✅ App template-app created successfully!</div>
+        <div>template-app-experience</div>
       </SectionContent>
     </Section>
   )

@@ -2,8 +2,8 @@
 
 import type { Variant } from '@core/types/shared'
 
-import type { FactoryComponentVariantsConfig } from '@core/shared/libs/factories/component-variants'
-import { createComponentVariantsFactory } from '@core/shared/libs/factories/component-variants'
+import type { FactoryComponentVariantsConfig } from '@core/libs/factories/component-variants'
+import { createComponentVariantsFactory } from '@core/libs/factories/component-variants'
 
 import type { LocalizationRadioGroupProps } from '../types'
 

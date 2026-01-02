@@ -7,8 +7,8 @@
       "@public/*": ["./public/*"],
 
       "@core/features/*": ["./src/core/features/*"],
-      "@core/libs/*": ["./src/core/shared/libs/*"],
-      "@core/utils/*": ["./src/core/shared/utils/*"],
+      "@core/libs/*": ["./src/core/libs/*"],
+      "@core/utils/*": ["./src/core/utils/*"],
       "@core/types/*": ["./src/core/types/*"],
       "@core/*": ["./src/core/*"],
 

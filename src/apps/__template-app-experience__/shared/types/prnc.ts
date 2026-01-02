@@ -10,7 +10,6 @@ import type {
   StrictRouteConfigObject,
   TupleRouteObject,
   TupleRouteObjectChildren,
-  IsTupleRoutesCompatible,
 } from '@core/libs/router'
 import type { NavigationOf } from '@core/libs/navigation'
 import type {
@@ -42,9 +41,6 @@ type TestSegmentRoutesConfig = StrictRouteConfigObject<TestSegmentPath>
 export type RoutesOutput = Routes & Routes2
 
 export type Routes = ProviderRoute
-// @ts-expect-error 6196
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-type __IsRoutesCompatible__ = IsTupleRoutesCompatible<[Routes]>
 
 type ProviderRoute = TupleRouteObject<undefined, [TemplateAppLayoutRoute]>
 type TemplateAppLayoutRoute = TupleRouteObject<
@@ -61,10 +57,6 @@ type TestSegmentRoutes = [
 export type Routes2 = ProviderRoute2<
   [TemplateAppLayoutRoute2<[TemplateAppHomeRoute2, TestDomainRoute2<[...TestSegmentRoutes2]>]>]
 >
-
-// @ts-expect-error 6196
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-type __IsRoutes2Compatible__ = IsTupleRoutesCompatible<[Routes2]>
 
 type ProviderRoute2<T extends TupleRouteObjectChildren> = TupleRouteObject<undefined, T>
 type TemplateAppLayoutRoute2<T extends TupleRouteObjectChildren> = TupleRouteObject<
