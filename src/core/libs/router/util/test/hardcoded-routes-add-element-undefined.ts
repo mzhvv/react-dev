@@ -6,7 +6,10 @@ export function hardcodedRoutesAddElementUndefined<T extends RouteObject>(route:
   const addElement = (obj: Record<string, unknown>): Record<string, unknown> => {
     if (!obj || typeof obj !== 'object') return obj
 
-    const result: Record<string, unknown> = { ...obj, element: undefined }
+    const result: Record<string, unknown> = {
+      ...obj,
+      ...(!('element' in obj) && { element: undefined }),
+    }
 
     if (Array.isArray(result.children)) {
       result.children = result.children.map(child => addElement(child as Record<string, unknown>))

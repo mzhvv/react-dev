@@ -1,10 +1,16 @@
-// src/core/libs/router/__experience__/__example__/base/base.ts
+// src/core/libs/router/__experience__/__example__/basic-integration/basic-integration.ts
 
-import type { RouteObject, RoutesConfig } from '@core/libs/router/types/foundation'
+/* 📌
+ Базовая инергация с react-router 
+ 
+ ...
+*/
+
+import type { RouteObject, RoutesConfig } from '../../../types/foundation'
 import {
   routesBuilder,
   // routesBuilderVersions
-} from '@core/libs/router/builders'
+} from '../../../builders'
 
 type RoutesConfigEntrance = RoutesConfig
 type RoutesConfigOutput = RouteObject
@@ -23,7 +29,7 @@ export const routesConfig = {
           // 1. Index как fallback. index(fallback), явный path(layout)
           domain1: {
             path: 'domain-1',
-            // element: <Outlet />
+            element: 'outlet', // <Outlet />
             children: {
               index: { index: true }, // не может являться сегментом
               // domain1Segment1 ...
@@ -32,7 +38,7 @@ export const routesConfig = {
           // 2. First-child как fallback. Без index, layout undefined, явный path(fallback children[0])
           domain2: {
             path: undefined,
-            // element: Outlet(react-router) возвращает по умолчанию <Outlet>{children[0]}<Outlet />
+            element: 'outlet', // <Outlet />
             children: {
               domain3FirstChildFallback: { path: 'domain-2' }, // является domain2Segment1
               // domain2Segment2 ...
@@ -75,9 +81,9 @@ export const routes = routesBuilder<RoutesConfigEntrance, RoutesConfigOutput>(ro
 //   routesConfig
 // )
 
-// #region 🎯 ДЛЯ ТЕСТИРОВАНИЯ
+// #region 🧪 ДЛЯ ТЕСТИРОВАНИЯ
 
-import { hardcodedRoutesAddElementUndefined } from '@core/libs/router/util/test'
+import { hardcodedRoutesAddElementUndefined } from '../../../util/test'
 
 // Захардкоженные эталонные routes / mock
 
@@ -88,8 +94,8 @@ export const hardcodedReferenceRoutes = {
       path: 'example-core-libs-router-types-default',
       children: [
         { index: true },
-        { path: 'domain-1', children: [{ index: true }] },
-        { path: undefined, children: [{ path: 'domain-2' }] },
+        { path: 'domain-1', element: 'outlet', children: [{ index: true }] },
+        { path: undefined, element: 'outlet', children: [{ path: 'domain-2' }] },
         {
           path: 'domain-3',
           children: [
@@ -108,6 +114,7 @@ export const hardcodedReferenceRoutes = {
     },
   ],
 } as const satisfies RoutesConfigOutput
+
 export const hardcodedReferenceRoutesWithElementUndefined = hardcodedRoutesAddElementUndefined(
   hardcodedReferenceRoutes
 ) satisfies RoutesConfigOutput
