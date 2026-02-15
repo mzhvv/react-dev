@@ -83,9 +83,7 @@ export const routes = routesBuilder<RoutesConfigEntrance, RoutesConfigOutput>(ro
 
 // #region 🧪 ДЛЯ ТЕСТИРОВАНИЯ
 
-import { hardcodedRoutesAddElementUndefined } from '../../../util/test'
-
-// Захардкоженные эталонные routes / mock
+// Захардкоженный эталонный routes / mock
 
 export const hardcodedReferenceRoutes = {
   path: undefined,
@@ -114,10 +112,5 @@ export const hardcodedReferenceRoutes = {
     },
   ],
 } as const satisfies RoutesConfigOutput
-
-//
-export const hardcodedReferenceRoutesWithElementUndefined = hardcodedRoutesAddElementUndefined(
-  hardcodedReferenceRoutes
-) satisfies RoutesConfigOutput
 
 // #endregion

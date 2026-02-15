@@ -14,12 +14,14 @@ export function builderRoutes<Config extends RoutesConfig, Output extends RouteO
     if ('index' in node && node.index === true) {
       return {
         index: true,
-        element: node.element,
+        // ✅ Добавляем element ТОЛЬКО если он есть в конфиге
+        ...(node.element && { element: node.element }),
       }
     }
 
+    // ✅ Создаем результат ТОЛЬКО с element, если он есть
     const result: NonIndexRouteObject = {
-      element: node.element,
+      ...(node.element && { element: node.element }),
     }
 
     if ('path' in node && node.path !== undefined) {
@@ -43,9 +45,10 @@ export function builderRoutes<Config extends RoutesConfig, Output extends RouteO
       ? Object.values(providerConfig.children).map(transform)
       : []
 
+  // ✅ Для провайдера тоже добавляем element только если он есть
   return {
     path: 'path' in providerConfig ? providerConfig.path : providerKey,
-    element: providerConfig.element,
+    ...(providerConfig.element && { element: providerConfig.element }),
     children: appRoutes.length > 0 ? appRoutes : undefined,
   } as unknown as Output
 }
