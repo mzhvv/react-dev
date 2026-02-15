@@ -1,2 +1,3 @@
-export type * from './types'
+// src/core/libs/router/index.ts
+
 export * from './builders'

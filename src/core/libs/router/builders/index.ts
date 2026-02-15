@@ -1,14 +1,18 @@
-// src/core/shared/libs/router/builders/index.ts
+// src/core/libs/router/builders/index.ts
 
-import type { RouteConfigObject, RouteObject } from '../types'
-import { builderRoutes } from './build-routes'
+import type { RoutesConfig, RouteObject } from '../types/foundation'
+import { builderRoutesV0 } from '../builders/routes' // явный импорт с выходом из папки, чтобы понимать структуру
 
-export const routesBuilder = {
-  v0: function <Entrance extends RouteConfigObject, Output extends RouteObject>(
-    routesConfig: Entrance
-  ) {
-    return {
-      routes: builderRoutes.buildRoutes<Entrance, Output>(routesConfig),
-    }
+export const routesBuilderVersions = {
+  // v0: function <RoutesConfigEntrance extends RoutesConfig, RoutesConfigOutput extends RouteObject>(
+  //   routesConfig: RoutesConfigEntrance
+  // ): RoutesConfigOutput {
+  //   return builderRoutesV0<RoutesConfigEntrance, RoutesConfigOutput>(routesConfig)
+  // },
+
+  v0: function <E extends RoutesConfig, O extends RouteObject>(config: E): O {
+    return builderRoutesV0<E, O>(config)
   },
 }
+
+export const routesBuilder = routesBuilderVersions.v0
