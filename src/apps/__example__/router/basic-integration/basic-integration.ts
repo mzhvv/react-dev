@@ -6,11 +6,11 @@
  ...
 */
 
-import type { RouteObject, RoutesConfig } from '../../../../core/libs/router/types/foundation'
+import type { RouteObject, RoutesConfig } from '../../../../packages/libs/router/types/foundation'
 import {
   routesBuilder,
   // routesBuilderVersions
-} from '../../../../core/libs/router/builders'
+} from '../../../../packages/libs/router/builders'
 
 type RoutesConfigEntrance = RoutesConfig
 type RoutesConfigOutput = RouteObject

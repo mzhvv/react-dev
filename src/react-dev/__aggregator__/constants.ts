@@ -4,7 +4,7 @@
 import { HeartIcon } from 'lucide-react'
 
 import { appsConstantsNavigationDomainLink } from '@apps/accumulators/constants'
-import type { SectionNavigation } from '@core/libs/navigation'
+import type { SectionNavigation } from '@/packages/libs/navigation'
 
 function useRootConstantsNavigationDomainLink() {
   // const { t } = useTranslation()

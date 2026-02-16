@@ -1,9 +1,9 @@
 // src/core/libs/router/__experience__/strict-explicit/types.ts
 
-import type { FromUnion } from '@core/utils/types'
-import type { ValidateKebabCase } from '@core/utils/string'
+import type { FromUnion } from '@/packages/utils/types'
+import type { ValidateKebabCase } from '@/packages/utils/string'
 
-import type { IndexRouteObject } from '../../../../core/libs/router/types/foundation'
+import type { IndexRouteObject } from '../../../../packages/libs/router/types/foundation'
 import type {
   IndexRouteObjectConfig,
   NonIndexRouteObjectConfig,
@@ -12,7 +12,7 @@ import type {
 
   /// Предопределенные
   KeysRouteObjectConfig,
-} from '../../../../core/libs/router/types/strict-explicit'
+} from '../../../../packages/libs/router/types/strict-explicit'
 
 // #region Paths
 

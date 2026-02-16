@@ -1,7 +1,7 @@
 // src/core/libs/router/__experience__/strict-explicit/example.ts
 
-import type { RouteConfig, RouteObject } from '../../../../core/libs/router/types/foundation'
-import { routesBuilder } from '../../../../core/libs/router/builders'
+import type { RouteConfig, RouteObject } from '../../../../packages/libs/router/types/foundation'
+import { routesBuilder } from '../../../../packages/libs/router/builders'
 
 import type { RoutesObjectConfig, RoutesTuple, Routes2 } from './types'
 

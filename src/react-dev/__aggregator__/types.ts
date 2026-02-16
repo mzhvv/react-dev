@@ -1,6 +1,6 @@
 // src/react-dev/__aggregator__/types.ts
 
-import type { SectionNavigation } from '@core/libs/navigation'
+import type { SectionNavigation } from '@/packages/libs/navigation'
 import type {
   ApplicationSectionDomainPaths,
   AuthorSectionDomainPaths,

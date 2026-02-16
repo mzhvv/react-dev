@@ -1,4 +1,4 @@
-// src/apps/__template-app__/shared/types/prnc.ts
+// src/apps/__template-app-experience__/shared/types/prnc.ts
 /** @description prnc = Paths-Routes-Navigations-Constants */
 
 import type { SafeRelativePath } from '@/packages/utils/string'
@@ -6,11 +6,9 @@ import type { FromUnion } from '@/packages/utils/types'
 
 import type {
   IndexRouteObject,
-  StrictCustomRouteConfigObject,
-  StrictRouteConfigObject,
+  StrictRouteObjectConfig,
   TupleRouteObject,
   TupleRouteObjectChildren,
-  IsTupleRoutesCompatible,
 } from '@/packages/libs/router'
 import type { NavigationOf } from '@/packages/libs/navigation'
 import type {
@@ -21,7 +19,7 @@ import type {
 
 // #region Paths
 
-type TemplateAppPath = SafeRelativePath<'template-app'>
+type TemplateAppExperiencePath = SafeRelativePath<'template-app-experience'>
 
 type TestDomainPath = SafeRelativePath<'test-domain'>
 type TestSegmentPath = SafeRelativePath<'test-segment-1' | 'test-segment-2'>
@@ -31,27 +29,33 @@ type TestSegmentPath = SafeRelativePath<'test-segment-1' | 'test-segment-2'>
 
 // Entrance / Config
 
-export type StrictRouteConfig = ProviderRouteConfig
-type ProviderRouteConfig = StrictCustomRouteConfigObject<'provider', undefined, RootRouteConfig>
-type RootRouteConfig = StrictRouteConfigObject<TemplateAppPath, TestDomainRoutesConfig>
-type TestDomainRoutesConfig = StrictRouteConfigObject<TestDomainPath, TestSegmentRoutesConfig>
-type TestSegmentRoutesConfig = StrictRouteConfigObject<TestSegmentPath>
+export type RoutesConfig = ProviderRouteConfig
+type ProviderRouteConfig = StrictRouteObjectConfig<
+  undefined,
+  TemplateAppLayoutRouteConfig,
+  'provider'
+>
+type TemplateAppLayoutRouteConfig = StrictRouteObjectConfig<
+  TemplateAppExperiencePath,
+  TemplateAppHomeRouteConfig | TestDomainRoutesConfig
+>
+type TemplateAppHomeRouteConfig = StrictRouteObjectConfig<'index'>
+type TestDomainRoutesConfig = StrictRouteObjectConfig<TestDomainPath, TestSegmentRoutesConfig>
+type TestSegmentRoutesConfig =
+  | StrictRouteObjectConfig<FromUnion<TestSegmentPath, 'test-segment-1'>>
+  | StrictRouteObjectConfig<FromUnion<TestSegmentPath, 'test-segment-2'>>
 
 // Output / Return routesBuilder
 
 export type RoutesOutput = Routes & Routes2
 
 export type Routes = ProviderRoute
-// @ts-expect-error 6196
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-type __IsRoutesCompatible__ = IsTupleRoutesCompatible<[Routes]>
-
 type ProviderRoute = TupleRouteObject<undefined, [TemplateAppLayoutRoute]>
 type TemplateAppLayoutRoute = TupleRouteObject<
-  TemplateAppPath,
+  TemplateAppExperiencePath,
   [TemplateAppHomeRoute, TestDomainRoute]
 >
-type TemplateAppHomeRoute = IndexRouteObject
+interface TemplateAppHomeRoute extends IndexRouteObject {}
 type TestDomainRoute = TupleRouteObject<TestDomainPath, [...TestSegmentRoutes]>
 type TestSegmentRoutes = [
   TupleRouteObject<FromUnion<TestSegmentPath, 'test-segment-1'>>,
@@ -61,16 +65,12 @@ type TestSegmentRoutes = [
 export type Routes2 = ProviderRoute2<
   [TemplateAppLayoutRoute2<[TemplateAppHomeRoute2, TestDomainRoute2<[...TestSegmentRoutes2]>]>]
 >
-// @ts-expect-error 6196
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-type __IsRoutes2Compatible__ = IsTupleRoutesCompatible<[Routes2]>
-
 type ProviderRoute2<T extends TupleRouteObjectChildren> = TupleRouteObject<undefined, T>
 type TemplateAppLayoutRoute2<T extends TupleRouteObjectChildren> = TupleRouteObject<
-  TemplateAppPath,
+  TemplateAppExperiencePath,
   T
 >
-type TemplateAppHomeRoute2 = IndexRouteObject
+interface TemplateAppHomeRoute2 extends IndexRouteObject {}
 type TestDomainRoute2<T extends TupleRouteObjectChildren> = TupleRouteObject<TestDomainPath, T>
 type TestSegmentRoutes2 = [
   TupleRouteObject<FromUnion<TestSegmentPath, 'test-segment-1'>>,
@@ -80,7 +80,7 @@ type TestSegmentRoutes2 = [
 // #endregion
 // #region Navigations
 
-export type DomainNavigation = NavigationOf<TemplateAppPath>
+export type DomainNavigation = NavigationOf<TemplateAppExperiencePath>
 
 // #endregion
 // #region Constants
@@ -88,6 +88,7 @@ export type DomainNavigation = NavigationOf<TemplateAppPath>
 export type ConstantsAPI = ConstantsAPIWith<ConstantsNavigation>
 export type ConstantsNavigation = ConstantsNavigationWith<ConstantsNavigationDomainLink>
 
-export type ConstantsNavigationDomainLink = ConstantsNavigationLinkEntityOf<TemplateAppPath>
+export type ConstantsNavigationDomainLink =
+  ConstantsNavigationLinkEntityOf<TemplateAppExperiencePath>
 
 // #endregion

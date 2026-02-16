@@ -1,6 +1,6 @@
 // src/apps/__accumulators__/types.ts
 
-import type { SectionNavigation } from '@core/libs/navigation'
+import type { SectionNavigation } from '@/packages/libs/navigation'
 
 import type {
   TemplateAppExperienceDomainNavigation,
@@ -11,7 +11,7 @@ import type {
   TemplateAppDomainNavigation,
   TemplateAppConstantsNavigationDomainLink,
 } from '@template-app'
-import type { IsTupleRoutesCompatible } from '@core/libs/router'
+import type { IsTupleRoutesCompatible } from '@/packages/libs/router'
 
 // #region Routes
 
