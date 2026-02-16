@@ -1,26 +1,26 @@
-// src/core/features/theme/ui/mode-radio-group/index.ts
+// src/core/features/theme/ui/color-radio-group/index.ts
 
-import type { Variant } from '@core/types/shared'
+import type { Variant } from '@/global/types/shared'
 
 import type { FactoryComponentVariantsConfig } from '@core/libs/factories/component-variants'
 import { createComponentVariantsFactory } from '@core/libs/factories/component-variants'
 
-import type { ThemeModeRadioGroupProps } from '../../types'
+import type { ThemeColorRadioGroupProps } from '../../types'
 import { Variant0, Variant1, Variant2 } from './variants/variants'
 
-type ThemeModeRadioGroupFactoryVariant = Variant<0 | 1 | 2>
+type ThemeColorRadioGroupFactoryVariant = Variant<0 | 1 | 2>
 
-export const themeModeRadioGroupVariants = createComponentVariantsFactory<
-  ThemeModeRadioGroupFactoryVariant,
-  ThemeModeRadioGroupProps
+export const themeColorRadioGroupVariants = createComponentVariantsFactory<
+  ThemeColorRadioGroupFactoryVariant,
+  ThemeColorRadioGroupProps
 >(
   {
     'variant-0': { component: Variant0 },
     'variant-1': { component: Variant1 },
     'variant-2': { component: Variant2 },
   } as const satisfies FactoryComponentVariantsConfig<
-    ThemeModeRadioGroupFactoryVariant,
-    ThemeModeRadioGroupProps
+    ThemeColorRadioGroupFactoryVariant,
+    ThemeColorRadioGroupProps
   >,
   'variant-1'
 )

@@ -6,10 +6,6 @@ import { routes as builtRoutes, hardcodedReferenceRoutes } from './basic-integra
 
 describe('src/core/libs/router/__experience__/__example__/basic-integration/basic-integration.test.ts', () => {
   it('builtRoutes должен соответствовать эталону hardcodedReferenceRoutes', () => {
-    // Проверка что builtRoutes - объект, а не массив
-    expect(Array.isArray(builtRoutes)).toBe(false)
-    expect(typeof builtRoutes).toBe('object')
-
     // Проверка идентичности структуры
     expect(builtRoutes).toEqual(hardcodedReferenceRoutes)
 

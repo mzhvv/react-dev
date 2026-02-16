@@ -3,7 +3,7 @@
 import type { FromUnion } from '@core/utils/types'
 import type { ValidateKebabCase } from '@core/utils/string'
 
-import type { IndexRouteObject } from '../../types/foundation'
+import type { IndexRouteObject } from '../../../../core/libs/router/types/foundation'
 import type {
   IndexRouteObjectConfig,
   NonIndexRouteObjectConfig,
@@ -12,7 +12,7 @@ import type {
 
   /// Предопределенные
   KeysRouteObjectConfig,
-} from '../../types/strict-explicit'
+} from '../../../../core/libs/router/types/strict-explicit'
 
 // #region Paths
 

@@ -18,8 +18,8 @@ type RouteObject = IndexRouteObject | NonIndexRouteObject
 
 // #region 🧩 Entrance / *Config
 
-type IndexRouteObjectConfig = IndexRouteObject
-type NonIndexRouteObjectConfig = Omit<NonIndexRouteObject, 'children'> & {
+export type IndexRouteObjectConfig = IndexRouteObject
+export type NonIndexRouteObjectConfig = Omit<NonIndexRouteObject, 'children'> & {
   children?: Record<string, RouteObjectConfig>
 }
 export type RouteObjectConfig = IndexRouteObjectConfig | NonIndexRouteObjectConfig

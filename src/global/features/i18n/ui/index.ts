@@ -1,6 +1,6 @@
 // src/core/features/i18n/ui/index.ts
 
-import type { Variant } from '@core/types/shared'
+import type { Variant } from '@/global/types/shared'
 
 import type { FactoryComponentVariantsConfig } from '@core/libs/factories/component-variants'
 import { createComponentVariantsFactory } from '@core/libs/factories/component-variants'
