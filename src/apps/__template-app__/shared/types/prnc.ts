@@ -1,8 +1,8 @@
 // src/apps/__template-app__/shared/types/prnc.ts
 /** @description prnc = Paths-Routes-Navigations-Constants */
 
-import type { SafeRelativePath } from '@/packages/utils/string'
-import type { FromUnion } from '@/packages/utils/types'
+import type { SafeRelativePath } from '@/packages/@mzhvv/utils/string'
+import type { FromUnion } from '@/packages/@mzhvv/utils/types'
 
 import type {
   IndexRouteObject,
@@ -12,12 +12,12 @@ import type {
   TupleRouteObjectChildren,
   IsTupleRoutesCompatible,
 } from '@/packages/libs/router'
-import type { NavigationOf } from '@/packages/libs/navigation'
+import type { NavigationOf } from '@/packages/libs/@router/navigation'
 import type {
   ConstantsAPIWith,
   ConstantsNavigationWith,
   ConstantsNavigationLinkEntityOf,
-} from '@/packages/libs/constants'
+} from '@/packages/@mzhvv/router/navigation/constants'
 
 // #region Paths
 

@@ -1,13 +1,13 @@
 // src/apps/__accumulators__/constants.ts
 
-import type { AppsConstantsNavigationDomainLink } from '@apps/accumulators/types'
+// import type { AppsConstantsNavigationDomainLink } from '@apps/accumulators/types'
 
-import { templateAppConstantsAPI } from '@template-app'
+// import { templateAppConstantsAPI } from '@template-app'
 
 export function appsConstantsNavigationDomainLink() {
-  const templateAppConstantsNavigation = templateAppConstantsAPI.navigation()
+  // const templateAppConstantsNavigation = templateAppConstantsAPI.navigation()
 
   return {
-    ...templateAppConstantsNavigation.domainLinks,
-  } as const satisfies AppsConstantsNavigationDomainLink
+    // ...templateAppConstantsNavigation.domainLinks,
+  } // as const satisfies AppsConstantsNavigationDomainLink
 }

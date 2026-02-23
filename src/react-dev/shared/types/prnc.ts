@@ -1,7 +1,7 @@
 // src/react-dev/shared/types/prnc.ts
 /** @description prnc = Paths-Routes-Navigations-Constants */
 
-import type { SafeRelativePath } from '@/packages/utils/string'
+import type { SafeRelativePath } from '@/packages/@mzhvv/utils/string'
 
 // #region Paths
 

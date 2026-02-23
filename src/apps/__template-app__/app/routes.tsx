@@ -43,7 +43,7 @@ const routesConfig = {
   },
 } as const satisfies StrictRouteConfig
 
-export const { routes } = routesBuilder.v0<StrictRouteConfig, RoutesOutput>(routesConfig)
+export const { routes } = routesBuilder<StrictRouteConfig, RoutesOutput>(routesConfig)
 
 // @ts-expect-error 6133
 const routes2 = [

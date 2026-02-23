@@ -1,6 +1,6 @@
 // src/react-dev/__aggregator__/types.ts
 
-import type { SectionNavigation } from '@/packages/libs/navigation'
+import type { SectionNavigation } from '@/packages/libs/@router/navigation'
 import type {
   ApplicationSectionDomainPaths,
   AuthorSectionDomainPaths,
@@ -18,6 +18,7 @@ type NavigationSection<S extends SectionNavigation, L> = {
   title: S
   links: L
 }
+
 export type GlobalNavigationSections = Array<
   | NavigationSection<'application', Array<RootPath | ApplicationSectionDomainPaths>>
   | NavigationSection<'author', AuthorSectionDomainPaths[]>

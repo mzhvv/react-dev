@@ -1,21 +1,24 @@
 // src/apps/__accumulators__/types.ts
 
-import type { SectionNavigation } from '@/packages/libs/navigation'
+import type { SectionNavigation } from '@/packages/libs/@router/navigation'
 
-import type {
-  TemplateAppExperienceDomainNavigation,
-  TemplateAppExperienceRoutes,
-} from '@template-app-experience'
+// import type {
+//   TemplateAppExperienceDomainNavigation,
+//   TemplateAppExperienceRoutes,
+// } from '@template-app-experience'
 import type {
   TemplateAppRoutes,
   TemplateAppDomainNavigation,
   TemplateAppConstantsNavigationDomainLink,
 } from '@template-app'
-import type { IsTupleRoutesCompatible } from '@/packages/libs/router'
+// import type { IsTupleRoutesCompatible } from '@/packages/libs/router'
 
 // #region Routes
 
-export type AppsRoutes = [TemplateAppExperienceRoutes, TemplateAppRoutes]
+export type AppsRoutes = [
+  // TemplateAppExperienceRoutes,
+  TemplateAppRoutes,
+]
 // @ts-expect-error 6196
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 type __IsRoutesCompatible__ = IsTupleRoutesCompatible<AppsRoutes>
@@ -28,8 +31,9 @@ export type ApplicationSectionDomainPaths = never
 export type AuthorSectionDomainPaths = never
 export type ProjectsSectionDomainPaths = never
 export type DevelopmentSectionDomainPaths =
-  | TemplateAppDomainNavigation
-  | TemplateAppExperienceDomainNavigation
+  // |
+  TemplateAppDomainNavigation
+// | TemplateAppExperienceDomainNavigation
 
 type NavigationSection<Section extends SectionNavigation, SectionPaths> = Record<
   Section,
