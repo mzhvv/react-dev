@@ -1,4 +1,4 @@
-// src/react-dev/widgets/react-dev-layout/desktop/sidebar/index.tsx
+// src/main/widgets/main-layout/desktop/sidebar/index.tsx
 
 import { useState } from 'react'
 import { Link } from 'react-router'

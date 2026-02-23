@@ -1,7 +1,7 @@
-// src/react-dev/app/providers.tsx
+// src/main/app/providers.tsx
 
-import { ThemeProvider } from '@core/business/features/theme'
-import { I18nextProvider } from '@core/business/features/i18n'
+import { ThemeProvider } from '@business/features/theme'
+import { I18nextProvider } from '@business/features/i18n'
 
 export const Providers: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (

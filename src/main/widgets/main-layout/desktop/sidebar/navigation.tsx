@@ -1,8 +1,8 @@
-// src/react-dev/widgets/react-dev-layout/desktop/sidebar/navigation.tsx
+// src/main/widgets/main-layout/desktop/sidebar/navigation.tsx
 
 import { Link } from 'react-router'
 import { Button } from '@ui/components/button'
-import { globalNavigation } from '@react-dev/aggregator/navigation'
+import { globalNavigation } from '../../../../__aggregators__/navigation'
 
 export const DesktopSidebarNavigation = () =>
   globalNavigation.domainSections.map(navigationSection => (

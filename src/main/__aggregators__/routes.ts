@@ -1,9 +1,10 @@
-// src/react-dev/__aggregator__/routes.ts
+// src/main/__aggregators__/routes.ts
 
 import type { RouteObject } from 'react-router'
 
-import { routes as reactDevRoutes } from '@react-dev/app/routes'
-import { appsRoutes } from '@apps/accumulators/routes'
+import { appsRoutes } from '@accumulators/routes'
+
+import { routes as reactDevRoutes } from '../app/routes'
 
 const { children: reactDevChildren, ...ReactDevLayout } = reactDevRoutes
 

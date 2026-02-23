@@ -4,27 +4,26 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@public/*": ["./public/*"],
+      "@mzhvv/*": ["./src/packages/@mzhvv/*"],
+      "@packages/*": ["./src/packages/*"],
 
-      "@core/features/*": ["./src/core/features/*"],
-      "@core/libs/*": ["./src/core/libs/*"],
-      "@core/utils/*": ["./src/core/utils/*"],
-      "@core/types/*": ["./src/core/types/*"],
+      // core
+
+      "@business/*": ["./src/core/business/*"],
       "@core/*": ["./src/core/*"],
-
-      "@react-dev/aggregator/*": ["./src/react-dev/__aggregator__/*"],
-      "@react-dev/*": ["./src/react-dev/*"],
-
-      "@template-app": ["./src/apps/__template-app__"],
-      "@template-app/*": ["./src/apps/__template-app__/*"],
-      "@template-app-experience": ["./src/apps/__template-app-experience__"],
-      "@template-app-experience/*": ["./src/apps/__template-app-experience__/*"],
-      "@apps/accumulators/*": ["./src/apps/__accumulators__/*"],
-      "@apps/*": ["./src/apps/*"],
 
       "@ui/*": ["./src/ui/*"],
 
-      "@/*": ["./src/*"]
+      "@template-app/*": ["./src/apps/__template-app__/*"],
+      "@accumulators/*": ["./src/apps/__accumulators__/*"],
+      "@apps/*": ["./src/apps/*"],
+
+      "@aggregators/*": ["./src/main/__aggregators__/*"],
+      "@main/*": ["./src/main/*"],
+
+      "@/*": ["./src/*"],
+
+      "@public/*": ["./public/*"]
     }
   }
 }

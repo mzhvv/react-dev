@@ -1,4 +1,4 @@
-// src/react-dev/widgets/react-dev-layout/settings-modal/localization/index.tsx
+// src/main/widgets/main-layout/settings-modal/localization/index.tsx
 
 import { Label2 } from '@ui/components/label-2'
 import {

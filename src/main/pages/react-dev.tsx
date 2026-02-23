@@ -1,8 +1,8 @@
-// src/react-dev/pages/react-dev.tsx
+// src/main/pages/react-dev.tsx
 
 import { Main, Header, Section, SectionHeader, SectionContent } from '@ui/layout-system'
 
-import { Navigation } from '@react-dev/widgets/react-dev/navigation'
+import { Navigation } from '@main/widgets/main/navigation'
 
 export const ReactDevPage = () => {
   return (

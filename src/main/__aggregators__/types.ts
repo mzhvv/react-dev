@@ -1,13 +1,13 @@
-// src/react-dev/__aggregator__/types.ts
+// src/main/__aggregators__/types.ts
 
-import type { SectionNavigation } from '@/packages/libs/@router/navigation'
+import type { SectionNavigation } from '@mzhvv/router/navigation/objects/types'
 import type {
   ApplicationSectionDomainPaths,
   AuthorSectionDomainPaths,
   ProjectsSectionDomainPaths,
   DevelopmentSectionDomainPaths,
-} from '@apps/accumulators/types'
-import type { RootPath } from '@react-dev/shared/types/prnc'
+} from '@accumulators/types'
+import type { RootPath } from '@main/shared/types/prnc'
 
 // #region Routes
 

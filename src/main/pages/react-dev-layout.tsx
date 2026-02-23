@@ -1,9 +1,9 @@
-// src/react-dev/pages/react-dev-layout.tsx
+// src/main/pages/react-dev-layout.tsx
 
 import { useIsMobile } from '@ui/hooks/use-mobile'
 
-import { DesktopSidebar } from '@react-dev/widgets/react-dev-layout/desktop/sidebar'
-import { MobileSidebar } from '@react-dev/widgets/react-dev-layout/mobile/sidebar'
+import { DesktopSidebar } from '@main/widgets/main-layout/desktop/sidebar'
+import { MobileSidebar } from '@main/widgets/main-layout/mobile/sidebar'
 
 export const ReactDevLayout = () => {
   return (

@@ -4,23 +4,22 @@ import { resolve } from 'path'
 import type { AliasOptions } from 'vite'
 
 export const alias = {
-  '@public': resolve(__dirname, './public'),
+  '@mzhvv': resolve(__dirname, './src/packages/@mzhvv'),
+  '@packages': resolve(__dirname, './src/packages'),
 
-  '@core/features': resolve(__dirname, './src/core/features'),
-  '@core/libs': resolve(__dirname, './src/core/libs'),
-  '@core/utils': resolve(__dirname, './src/core/utils'),
-  '@core/types': resolve(__dirname, './src/core/types'),
+  '@business': resolve(__dirname, './src/core/business'),
   '@core': resolve(__dirname, './src/core'),
-
-  '@react-dev/aggregator': resolve(__dirname, './src/react-dev/__aggregator__'),
-  '@react-dev': resolve(__dirname, './src/react-dev'),
-
-  '@template-app': resolve(__dirname, './src/apps/__template-app__'),
-  '@template-app-experience': resolve(__dirname, './src/apps/__template-app-experience__'),
-  '@apps/accumulators': resolve(__dirname, './src/apps/__accumulators__'),
-  '@apps': resolve(__dirname, './src/apps'),
 
   '@ui': resolve(__dirname, './src/ui'),
 
+  '@template-app': resolve(__dirname, './src/apps/__template-app__'),
+  '@accumulators': resolve(__dirname, './src/apps/__accumulators__'),
+  '@apps': resolve(__dirname, './src/apps'),
+
+  '@aggregators': resolve(__dirname, './src/main/__aggregators__'),
+  '@main': resolve(__dirname, './src/main'),
+
   '@': resolve(__dirname, './src'),
+
+  '@public': resolve(__dirname, './public'),
 } as const satisfies AliasOptions

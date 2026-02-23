@@ -1,4 +1,4 @@
-// src/react-dev/widgets/react-dev-layout/settings-modal/index.tsx
+// src/main/widgets/main-layout/settings-modal/index.tsx
 
 import { Settings2Icon, XIcon } from 'lucide-react'
 

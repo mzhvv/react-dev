@@ -1,4 +1,4 @@
-// src/react-dev/app/main.tsx
+// src/main/app/main.tsx
 
 import { createRoot } from 'react-dom/client'
 import './index.css'

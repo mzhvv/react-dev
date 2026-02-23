@@ -1,8 +1,9 @@
-// src/react-dev/__aggregator__/navigation.ts
+// src/main/__aggregators__/navigation.ts
 
-import type { AppsDomainNavigation } from '@apps/accumulators/types'
-import type { GlobalNavigationSections } from '@react-dev/aggregator/types'
-import { appsDomainNavigation } from '@apps/accumulators/navigation'
+import type { AppsDomainNavigation } from '@accumulators/types'
+import { appsDomainNavigation } from '@accumulators/navigation'
+
+import type { GlobalNavigationSections } from './types'
 
 function createGlobalNavgition(appsDomainNavigation: AppsDomainNavigation) {
   const domainSections = [

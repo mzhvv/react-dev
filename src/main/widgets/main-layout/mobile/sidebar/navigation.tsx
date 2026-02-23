@@ -1,4 +1,4 @@
-// src/react-dev/widgets/react-dev-layout/mobile/navigation.tsx
+// src/main/widgets/main-layout/mobile/sidebar/navigation.tsx
 
 import { GripIcon, XIcon } from 'lucide-react'
 

@@ -1,4 +1,4 @@
-// src/react-dev/widgets/react-dev-layout/settings-modal/theme/index.tsx
+// src/main/widgets/main-layout/settings-modal/theme/index.tsx
 
 import {
   ModalSection,
