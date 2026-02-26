@@ -1,4 +1,4 @@
-// src/core/shared/libs/navigation/types.ts
+// src/packages/@mzhvv/router/navigation/objects/types.ts
 
 export type SectionNavigation = 'application' | 'author' | 'projects' | 'development'
 

@@ -1,4 +1,4 @@
-// src/packages/libs/router/builders/index.ts
+// src/packages/@mzhvv/router/routes/index.ts
 
 import type { RoutesConfig, RouteObject } from './types/foundation'
 import { builderRoutesV0 } from './builder'

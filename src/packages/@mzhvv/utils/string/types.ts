@@ -1,4 +1,4 @@
-// src/core/shared/utils/string/types.ts
+// src/packages/@mzhvv/utils/string/types.ts
 
 // #region 🧩 Cases
 

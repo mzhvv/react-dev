@@ -1,4 +1,4 @@
-// src/core/shared/utils/string/cases.ts
+// src/packages/@mzhvv/utils/string/cases.ts
 
 import type { StringCases } from './types'
 

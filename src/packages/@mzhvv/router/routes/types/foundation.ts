@@ -1,4 +1,4 @@
-// src/packages/libs/router/types/foundation.ts
+// src/packages/@mzhvv/router/routes/types/foundation.ts
 
 import type {
   // RouteObject as DefaultRouteObject,

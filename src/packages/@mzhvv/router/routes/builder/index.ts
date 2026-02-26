@@ -1,3 +1,3 @@
-// src/packages/libs/router/builders/routes/index.ts
+// src/packages/@mzhvv/router/routes/builder/index.ts
 
 export * from './versions'

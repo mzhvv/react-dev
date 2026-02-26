@@ -12,7 +12,6 @@ export const alias = {
 
   '@ui': resolve(__dirname, './src/ui'),
 
-  '@template-app': resolve(__dirname, './src/apps/__template-app__'),
   '@accumulators': resolve(__dirname, './src/apps/__accumulators__'),
   '@apps': resolve(__dirname, './src/apps'),
 

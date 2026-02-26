@@ -1,4 +1,4 @@
-// src/core/shared/utils/decoration/string.ts
+// src/packages/@mzhvv/utils/decoration/string.ts
 
 // #region Spaces
 

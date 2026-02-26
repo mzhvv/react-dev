@@ -7,14 +7,11 @@
       "@mzhvv/*": ["./src/packages/@mzhvv/*"],
       "@packages/*": ["./src/packages/*"],
 
-      // core
-
       "@business/*": ["./src/core/business/*"],
       "@core/*": ["./src/core/*"],
 
       "@ui/*": ["./src/ui/*"],
 
-      "@template-app/*": ["./src/apps/__template-app__/*"],
       "@accumulators/*": ["./src/apps/__accumulators__/*"],
       "@apps/*": ["./src/apps/*"],
 
