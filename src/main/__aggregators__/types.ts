@@ -1,6 +1,6 @@
 // src/main/__aggregators__/types.ts
 
-import type { SectionNavigation } from '@mzhvv/router/navigation/objects/types'
+import type { SectionNavigation } from '@mzhvv/router/prnc/navigation/types'
 import type {
   ApplicationSectionDomainPaths,
   AuthorSectionDomainPaths,

@@ -1,4 +1,4 @@
-// src/packages/@mzhvv/router/navigation/objects/types.ts
+// src/packages/@mzhvv/router/prnc/navigation/types.ts
 
 export type SectionNavigation = 'application' | 'author' | 'projects' | 'development'
 

@@ -1,4 +1,4 @@
-// src/packages/@mzhvv/router/navigation/constants/types.ts
+// src/packages/@mzhvv/router/prnc/constants/types.ts
 
 import type { ToAbsolutePath } from '@/packages/@mzhvv/utils/string'
 import type { LucideIcon } from 'lucide-react'

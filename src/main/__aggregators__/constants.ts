@@ -3,7 +3,7 @@
 // import { useTranslation } from 'react-i18next'
 import { HeartIcon } from 'lucide-react'
 
-import type { SectionNavigation } from '@mzhvv/router/navigation/objects/types'
+import type { SectionNavigation } from '@mzhvv/router/prnc/navigation/types'
 import { appsConstantsNavigationDomainLink } from '@accumulators/constants'
 
 function useRootConstantsNavigationDomainLink() {

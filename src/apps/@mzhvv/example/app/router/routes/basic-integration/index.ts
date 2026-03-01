@@ -6,11 +6,11 @@
  ...
 */
 
-import type { RouteObject, RoutesConfig } from '@mzhvv/router/routes/types/foundation'
+import type { RouteObject, RoutesConfig } from '@mzhvv/router/prnc/routes/types/foundation'
 import {
   routesBuilder,
   // routesBuilderVersions
-} from '@mzhvv/router/routes'
+} from '@mzhvv/router/prnc/routes'
 
 type RoutesConfigEntrance = RoutesConfig
 type RoutesConfigOutput = RouteObject

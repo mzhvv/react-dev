@@ -12,12 +12,12 @@ import type {
   TupleRouteObjectChildren,
   IsTupleRoutesCompatible,
 } from '@/packages/libs/router'
-import type { NavigationOf } from '@mzhvv/router/navigation/objects/types'
+import type { NavigationOf } from '@mzhvv/router/prnc/navigation/types'
 import type {
   ConstantsAPIWith,
   ConstantsNavigationWith,
   ConstantsNavigationLinkEntityOf,
-} from '@/packages/@mzhvv/router/navigation/constants'
+} from '@mzhvv/router/prnc/constants'
 
 // #region Paths
 
