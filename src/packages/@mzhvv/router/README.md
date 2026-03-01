@@ -1,6 +1,6 @@
 <!-- src/packages/@mzhvv/router/README.md -->
 
-# @mzhvv/router
+# @mzhvv/router (src/packages/@mzhvv/router)
 
 Библиотека основана на **React Router v7**(v7.9.3)(declarative) ([Официальная документация](https://reactrouter.com/start/declarative/installation 'Официальная документация'), [npm](https://www.npmjs.com/package/react-router 'npm'))
 
