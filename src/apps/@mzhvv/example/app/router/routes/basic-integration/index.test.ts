@@ -1,10 +1,10 @@
-// src/core/libs/router/__experience__/__example__/basic-integration/basic-integration.test.ts
+// src/apps/@mzhvv/example/app/router/routes/basic-integration/index.test.ts
 
 import { describe, it, expect } from 'vitest'
 
-import { routes as builtRoutes, hardcodedReferenceRoutes } from './basic-integration'
+import { routes as builtRoutes, hardcodedReferenceRoutes } from '.'
 
-describe('src/core/libs/router/__experience__/__example__/basic-integration/basic-integration.test.ts', () => {
+describe('src/apps/@mzhvv/example/app/router/routes/basic-integration/index.test.ts', () => {
   it('builtRoutes должен соответствовать эталону hardcodedReferenceRoutes', () => {
     // Проверка идентичности структуры
     expect(builtRoutes).toEqual(hardcodedReferenceRoutes)

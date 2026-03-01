@@ -12,6 +12,7 @@
 
       "@ui/*": ["./src/ui/*"],
 
+      "@template-app/*": ["./src/apps/__template-app__/*"],
       "@accumulators/*": ["./src/apps/__accumulators__/*"],
       "@apps/*": ["./src/apps/*"],
 

@@ -4,8 +4,8 @@ import { Link } from 'react-router'
 
 import { Header } from '@ui/layout-system'
 
-import { domainNavigation } from '@template-app/shared/navigation'
-import { constantsAPI } from '@template-app/shared/constants'
+import { domainNavigation } from '@apps/@mzhvv/template-app/shared/navigation'
+import { constantsAPI } from '@apps/@mzhvv/template-app/shared/constants'
 
 export const TemplateAppLayoutHeader = () => {
   return (

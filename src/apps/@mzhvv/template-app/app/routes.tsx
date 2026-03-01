@@ -2,18 +2,18 @@
 
 import { Outlet } from 'react-router'
 
-import { routesBuilder } from '@/packages/libs/router'
+import { routesBuilder } from '@mzhvv/router/routes'
 
-import type { RoutesOutput, StrictRouteConfig } from '@template-app/shared/types/prnc'
+import type { RoutesOutput, StrictRouteConfig } from '@apps/@mzhvv/template-app/shared/types/prnc'
 
-import { Providers } from '@template-app/app/providers'
-import { TemplateAppLayout } from '@template-app/pages/template-app-layout'
-import { TemplateApp } from '@template-app/pages/template-app'
+import { Providers } from '@apps/@mzhvv/template-app/app/providers'
+import { TemplateAppLayout } from '@apps/@mzhvv/template-app/pages/template-app-layout'
+import { TemplateApp } from '@apps/@mzhvv/template-app/pages/template-app'
 
 const routesConfig = {
   provider: {
     path: undefined,
-    element: <Providers />,
+    element: <Providers />, // при необходимости! по умолчанию Providers => <Outlet />
     children: {
       templateApp: {
         path: 'template-app',

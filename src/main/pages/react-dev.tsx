@@ -8,8 +8,31 @@ export const ReactDevPage = () => {
   return (
     <Main>
       <Header>
-        <h1>react-dev</h1>
+        <h1 className='sr-only'>react-dev | @mzhvv/react-framework@alpha</h1>
       </Header>
+
+      <Section>
+        <SectionHeader>react-dev</SectionHeader>
+        <SectionContent>
+          <p>
+            Изначально react-dev — портфолио. «Монолит» — хаотичная структура папок, полное
+            отсутствие архитектуры и все вытекающие последствия. Как итог — абсолютная
+            неподдерживаемость.
+          </p>
+          <p>
+            И был сформулирован @mzhvv/react-framework — некое архитектурное решение, ни на что не
+            претендующее, для моих целей.
+          </p>
+        </SectionContent>
+      </Section>
+
+      <Section>
+        <SectionHeader>@mzhvv/react-framework</SectionHeader>
+        <SectionContent>
+          <p>react-framework - это свод правил, архетектурных решений</p>
+          <p>...</p>
+        </SectionContent>
+      </Section>
 
       <Section>
         <SectionHeader className='sr-only'>

@@ -6,7 +6,7 @@ import type {
   ConstantsNavigationDomainLink,
   ConstantsNavigation,
   ConstantsAPI,
-} from '@template-app/shared/types/prnc'
+} from '@apps/@mzhvv/template-app/shared/types/prnc'
 
 function useConstantsNavigation() {
   // const { t } = useTranslation()

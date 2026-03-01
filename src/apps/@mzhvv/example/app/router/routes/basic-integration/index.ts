@@ -1,4 +1,4 @@
-// src/core/libs/router/__experience__/__example__/basic-integration/basic-integration.ts
+// src/apps/@mzhvv/example/app/router/routes/basic-integration/index.ts
 
 /* 📌
  Базовая инергация с react-router 
@@ -6,14 +6,11 @@
  ...
 */
 
-import type {
-  RouteObject,
-  RoutesConfig,
-} from '../../../../packages/@mzhvv/router/routes/types/foundation'
+import type { RouteObject, RoutesConfig } from '@mzhvv/router/routes/types/foundation'
 import {
   routesBuilder,
   // routesBuilderVersions
-} from '../../../../packages/@mzhvv/router/routes'
+} from '@mzhvv/router/routes'
 
 type RoutesConfigEntrance = RoutesConfig
 type RoutesConfigOutput = RouteObject

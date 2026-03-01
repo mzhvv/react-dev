@@ -2,7 +2,7 @@
 
 import { Outlet } from 'react-router'
 
-import { TemplateAppLayoutHeader } from '@template-app/widgets/template-app-layout-header'
+import { TemplateAppLayoutHeader } from '@apps/@mzhvv/template-app/widgets/template-app-layout-header'
 
 export const TemplateAppLayout = () => {
   return (

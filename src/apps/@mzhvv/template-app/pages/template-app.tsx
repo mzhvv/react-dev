@@ -2,7 +2,7 @@
 
 import { Main } from '@ui/layout-system'
 
-import { DefaultSection } from '@template-app/widgets/default-section'
+import { DefaultSection } from '@apps/@mzhvv/template-app/widgets/default-section'
 
 export const TemplateApp = () => {
   return (
