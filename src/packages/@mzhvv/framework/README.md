@@ -2,7 +2,7 @@
 
 # @mzhvv/framework (src/packages/@mzhvv/framework)
 
-framework/react-framework - Предоставляет структуру/архертуну и методы!
+framework/framework - Предоставляет структуру/архертуну и методы!
 
 ## Методы
 
