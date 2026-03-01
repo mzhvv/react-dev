@@ -1,6 +1,6 @@
 <!-- src/packages/@mzhvv/framework/README.md -->
 
-# # `packages/@mzhvv/framework` (`@mzhvv/react-framework`)
+# `packages/@mzhvv/framework` (`@mzhvv/react-framework`)
 
 framework/react-framework - Предоставляет структуру/архертуну и методы!
 
