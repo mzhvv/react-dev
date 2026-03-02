@@ -1,4 +1,4 @@
-// src/main/__aggregators__/types.ts
+// src/main/__aggregator__/types.ts
 
 import type { SectionNavigation } from '@mzhvv/router/prnc/navigation/types'
 import type {
@@ -6,7 +6,7 @@ import type {
   AuthorSectionDomainPaths,
   ProjectsSectionDomainPaths,
   DevelopmentSectionDomainPaths,
-} from '@accumulators/types'
+} from '@accumulator/types'
 import type { RootPath } from '@main/shared/types/prnc'
 
 // #region Routes

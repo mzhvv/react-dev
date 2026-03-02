@@ -10,6 +10,8 @@
 
 PRNC (Paths-Routes-Navigations-Constants):
 
+path -> routes -> navigation <- constants
+
 - Paths предоставляет:
   - типы - ...
 - Routes предоставляет:

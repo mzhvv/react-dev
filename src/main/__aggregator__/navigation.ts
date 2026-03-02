@@ -1,7 +1,7 @@
-// src/main/__aggregators__/navigation.ts
+// src/main/__aggregator__/navigation.ts
 
-import type { AppsDomainNavigation } from '@accumulators/types'
-import { appsDomainNavigation } from '@accumulators/navigation'
+import type { AppsDomainNavigation } from '@accumulator/types'
+import { appsDomainNavigation } from '@accumulator/navigation'
 
 import type { GlobalNavigationSections } from './types'
 

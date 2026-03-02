@@ -1,4 +1,4 @@
-// src/packages/@mzhvv/router/routes/builder/versions/v0/builder-routes.ts
+// src/packages/@mzhvv/router/prnc/routes/builder/versions/v0/builder-routes.ts
 
 import type {
   RoutesConfig,

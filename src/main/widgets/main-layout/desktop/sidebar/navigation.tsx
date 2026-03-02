@@ -2,7 +2,7 @@
 
 import { Link } from 'react-router'
 import { Button } from '@ui/components/button'
-import { globalNavigation } from '../../../../__aggregators__/navigation'
+import { globalNavigation } from '../../../../__aggregator__/navigation'
 
 export const DesktopSidebarNavigation = () =>
   globalNavigation.domainSections.map(navigationSection => (

@@ -1,4 +1,4 @@
-// src/packages/@mzhvv/router/routes/types/unit.ts
+// src/packages/@mzhvv/router/prnc/routes/types/unit.ts
 
 import type { AsCamelCase } from '@/packages/@mzhvv/utils/string'
 import type { Expand } from '@/packages/@mzhvv/utils/types'

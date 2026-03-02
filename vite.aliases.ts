@@ -13,10 +13,10 @@ export const alias = {
   '@ui': resolve(__dirname, './src/ui'),
 
   '@template-app': resolve(__dirname, './src/apps/@mzhvv/template-app'),
-  '@accumulators': resolve(__dirname, './src/apps/__accumulators__'),
+  '@accumulator': resolve(__dirname, './src/apps/__accumulator__'),
   '@apps': resolve(__dirname, './src/apps'),
 
-  '@aggregators': resolve(__dirname, './src/main/__aggregators__'),
+  '@aggregator': resolve(__dirname, './src/main/__aggregator__'),
   '@main': resolve(__dirname, './src/main'),
 
   '@': resolve(__dirname, './src'),

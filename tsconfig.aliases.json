@@ -13,10 +13,10 @@
       "@ui/*": ["./src/ui/*"],
 
       "@template-app/*": ["./src/apps/@mzhvv/template-app/*"],
-      "@accumulators/*": ["./src/apps/__accumulators__/*"],
+      "@accumulator/*": ["./src/apps/__accumulator__/*"],
       "@apps/*": ["./src/apps/*"],
 
-      "@aggregators/*": ["./src/main/__aggregators__/*"],
+      "@aggregator/*": ["./src/main/__aggregator__/*"],
       "@main/*": ["./src/main/*"],
 
       "@/*": ["./src/*"],

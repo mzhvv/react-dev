@@ -1,10 +1,10 @@
-// src/main/__aggregators__/constants.ts
+// src/main/__aggregator__/constants.ts
 
 // import { useTranslation } from 'react-i18next'
 import { HeartIcon } from 'lucide-react'
 
 import type { SectionNavigation } from '@mzhvv/router/prnc/navigation/types'
-import { appsConstantsNavigationDomainLink } from '@accumulators/constants'
+import { appsConstantsNavigationDomainLink } from '@accumulator/constants'
 
 function useRootConstantsNavigationDomainLink() {
   // const { t } = useTranslation()

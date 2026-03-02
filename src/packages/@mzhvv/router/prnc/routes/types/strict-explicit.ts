@@ -1,4 +1,4 @@
-// src/packages/@mzhvv/router/routes/types/strict-explicit.ts
+// src/packages/@mzhvv/router/prnc/routes/types/strict-explicit.ts
 
 import type { Expand } from '@/packages/@mzhvv/utils/types'
 import type {
