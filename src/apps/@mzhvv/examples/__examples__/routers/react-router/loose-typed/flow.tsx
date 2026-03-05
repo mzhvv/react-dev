@@ -1,21 +1,17 @@
-// src/apps/@mzhvv/example/app/router/react-router/loose-typed/index.tsx
+// src/apps/@mzhvv/examples/__examples__/routers/react-router/loose-typed/flow.tsx
 
-/* 📌 
-  ...
+/* 📌
+  looseTypes
 */
 
-import type { RouteObject } from 'react-router'
+// #region config
+
 import { Outlet } from 'react-router'
-
 import type { RouteConfig } from '@mzhvv/routers/react-router/config/types/loose-typed'
-import { routesBuilder } from '@mzhvv/routers/react-router/route'
 
-type MzhvvExampleRouteConfig = RouteConfig
-type MzhvvExampleRouteBuilt = RouteObject
-
-export const mzhvvExampleRouteConfig = {
-  mzhvvExample: {
-    path: 'mzhvv-example',
+export const routeConfig = {
+  looseTyped: {
+    path: 'loose-typed',
     children: {
       index: { index: true },
 
@@ -67,15 +63,23 @@ export const mzhvvExampleRouteConfig = {
       },
     },
   },
-} as const satisfies MzhvvExampleRouteConfig
+} as const satisfies RouteConfig
 
-export const mzhvvExampleRouteBuilt = routesBuilder(mzhvvExampleRouteConfig)
+// #endregion
 
-// #region 🧪 ДЛЯ ТЕСТИРОВАНИЯ
+// #region route
 
-// Эталонный routes
-export const mzhvvExampleReferenceRoute = {
-  path: 'mzhvv-example',
+import { routesBuilder } from '@mzhvv/routers/react-router/route'
+export const builtRoute = routesBuilder(routeConfig)
+
+// #endregion
+// #region route 🧪 ДЛЯ ТЕСТИРОВАНИЯ
+
+import type { RouteObject } from 'react-router'
+
+/** Эталонный builtRoute/looseTypesRoute */
+export const referenceRoute = {
+  path: 'loose-typed',
   children: [
     { index: true },
     { path: 'domain-1', element: <Outlet />, children: [{ index: true }] },
@@ -95,6 +99,11 @@ export const mzhvvExampleReferenceRoute = {
       ],
     },
   ],
-} as const satisfies MzhvvExampleRouteBuilt
+} as const satisfies RouteObject
 
+// #endregion
+
+// region navigation
+// #endregion
+// region navigation/constants
 // #endregion

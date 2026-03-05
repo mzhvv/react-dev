@@ -1,13 +1,10 @@
-// src/apps/@mzhvv/example/app/router/react-router/loose-typed/index.test.ts
+// src/apps/@mzhvv/examples/__examples__/routers/react-router/loose-typed/flow.test.ts
 
 import { describe, it, expect } from 'vitest'
 
-import {
-  mzhvvExampleRouteBuilt as builtRoute,
-  mzhvvExampleReferenceRoute as referenceRoute,
-} from './index.tsx'
+import { builtRoute, referenceRoute } from './flow.tsx'
 
-describe('src/apps/@mzhvv/example/app/router/react-router/loose-typed/index.test.ts', () => {
+describe('src/apps/@mzhvv/examples/__examples__/routers/react-router/loose-typed/flow.test.ts', () => {
   it('builtRoute должен соответствовать эталону referenceRoute', () => {
     // Проверка идентичности структуры
     expect(builtRoute).toEqual(referenceRoute)
