@@ -1,5 +1,7 @@
 <!-- src/packages/@mzhvv/README.md -->
 
+_Для удобства предусмотрены ссылки на папку (для github) и README.md (IDE)!_
+
 # @mzhvv:
 
 - [**framework**](./framework 'src/packages/@mzhvv/framework')
