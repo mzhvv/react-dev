@@ -6,11 +6,11 @@
  ...
 */
 
-import type { RouteObject, RoutesConfig } from '@mzhvv/router/prnc/routes/types/foundation'
+import type { RouteObject, RoutesConfig } from '@mzhvv/routers/react-router/route/types/foundation'
 import {
   routesBuilder,
   // routesBuilderVersions
-} from '@mzhvv/router/prnc/routes'
+} from '@mzhvv/routers/react-router/route'
 
 type RoutesConfigEntrance = RoutesConfig
 type RoutesConfigOutput = RouteObject

@@ -1,4 +1,4 @@
-// src/packages/@mzhvv/router/prnc/routes/types/foundation.ts
+// src/packages/@mzhvv/router/react-router/route/types/foundation.ts
 
 import type {
   // RouteObject as DefaultRouteObject,
@@ -23,7 +23,7 @@ export type NonIndexRouteObjectConfig = Omit<NonIndexRouteObject, 'children'> & 
   children?: Record<string, RouteObjectConfig>
 }
 export type RouteObjectConfig = IndexRouteObjectConfig | NonIndexRouteObjectConfig
-export type RoutesConfig = Record<string, RouteObjectConfig>
+export type RouteConfig = Record<string, RouteObjectConfig>
 
 // #endregion
 

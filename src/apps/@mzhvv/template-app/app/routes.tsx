@@ -2,7 +2,7 @@
 
 import { Outlet } from 'react-router'
 
-import { routesBuilder } from '@mzhvv/router/prnc/routes'
+import { routesBuilder } from '@mzhvv/routers/react-router/route'
 
 import type { RoutesOutput, StrictRouteConfig } from '@apps/@mzhvv/template-app/shared/types/prnc'
 

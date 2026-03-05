@@ -1,13 +1,13 @@
-// src/packages/@mzhvv/router/prnc/routes/builder/versions/v0/builder-routes.ts
+// src/packages/@mzhvv/router/react-router/route/builder/versions/v0/builder-routes.ts
 
 import type {
-  RoutesConfig,
+  RouteConfig,
   RouteObjectConfig,
   RouteObject,
   NonIndexRouteObject,
 } from '../../../types/foundation'
 
-export function builderRoutes<Config extends RoutesConfig, Output extends RouteObject>(
+export function builderRoutes<Config extends RouteConfig, Output extends RouteObject>(
   config: Config
 ): Output {
   const transform = (node: RouteObjectConfig): RouteObject => {
