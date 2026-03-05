@@ -1,6 +1,6 @@
 // src/main/__aggregator__/types.ts
 
-import type { SectionNavigation } from '@mzhvv/routers/react-router/navigation/types'
+import type { SectionNavigation } from '@mzhvv/libs/routers/react-router/navigation/types'
 import type {
   ApplicationSectionDomainPaths,
   AuthorSectionDomainPaths,

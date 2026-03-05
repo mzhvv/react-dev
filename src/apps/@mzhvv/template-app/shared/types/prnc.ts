@@ -12,7 +12,7 @@ import type {
   TupleRouteObjectChildren,
   IsTupleRoutesCompatible,
 } from '@/packages/libs/router'
-import type { NavigationOf } from '@mzhvv/routers/react-router/navigation/types'
+import type { NavigationOf } from '@mzhvv/libs/routers/react-router/navigation/types'
 import type {
   ConstantsAPIWith,
   ConstantsNavigationWith,

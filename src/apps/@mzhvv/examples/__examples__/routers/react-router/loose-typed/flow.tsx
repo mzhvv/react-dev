@@ -3,7 +3,7 @@
 // #region 🧩 config
 
 import { Outlet } from 'react-router'
-import type { RouteConfig } from '@mzhvv/routers/react-router/config/types/loose-typed'
+import type { RouteConfig } from '@mzhvv/libs/routers/react-router/config/types/loose-typed'
 
 export const routeConfig = {
   looseTyped: {
@@ -65,7 +65,7 @@ export const routeConfig = {
 
 // #region 🧩 route
 
-import { routesBuilder } from '@mzhvv/routers/react-router/route'
+import { routesBuilder } from '@mzhvv/libs/routers/react-router/route'
 export const builtRoute = routesBuilder(routeConfig)
 
 // #endregion

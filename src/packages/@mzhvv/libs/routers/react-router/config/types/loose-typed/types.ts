@@ -1,4 +1,4 @@
-// src/packages/@mzhvv/routers/react-router/config/types/loose-typed/types.ts
+// src/packages/@mzhvv/libs/routers/react-router/config/types/loose-typed/types.ts
 
 import type { IndexRouteObject, NonIndexRouteObject } from 'react-router'
 
