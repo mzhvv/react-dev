@@ -9,7 +9,7 @@
 - [**framework**](./framework/README.md 'src/packages/@mzhvv/framework/README.md')
 - libs
   - **routes**
-    - [**react-router**](./routers/react-router/README.md 'src/packages/@mzhvv/routers/react-router/README.md')
+    - [**react-router**](./libs/routers/react-router/README.md 'src/packages/@mzhvv/libs/routers/react-router/README.md')
       - **config**
-        - [**types**](./routers/react-router/config/types/README.md 'src/packages/@mzhvv/routers/react-router/config/types/README.md')
+        - [**types**](./libs/routers/react-router/config/types/README.md 'src/packages/@mzhvv/libs/routers/react-router/config/types/README.md')
 - utils

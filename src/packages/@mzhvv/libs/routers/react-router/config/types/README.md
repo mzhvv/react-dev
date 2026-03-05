@@ -1,6 +1,6 @@
 <!-- src/packages/@mzhvv/libs/routers/react-router/config/types/README.md -->
 
-# @mzhvv/routers/react-router/config/types (`src/packages/@mzhvv/libs/routers/react-router/config/types`)
+# @mzhvv/libs/routers/react-router/config/types (`src/packages/@mzhvv/libs/routers/react-router/config/types`)
 
 ## ⚠️ Правила импорта
 
