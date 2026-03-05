@@ -1,10 +1,6 @@
 // src/apps/@mzhvv/examples/__examples__/routers/react-router/loose-typed/flow.tsx
 
-/* 📌
-  looseTypes
-*/
-
-// #region config
+// #region 🧩 config
 
 import { Outlet } from 'react-router'
 import type { RouteConfig } from '@mzhvv/routers/react-router/config/types/loose-typed'
@@ -67,13 +63,13 @@ export const routeConfig = {
 
 // #endregion
 
-// #region route
+// #region 🧩 route
 
 import { routesBuilder } from '@mzhvv/routers/react-router/route'
 export const builtRoute = routesBuilder(routeConfig)
 
 // #endregion
-// #region route 🧪 ДЛЯ ТЕСТИРОВАНИЯ
+// #region 🧩 route 🧪 ДЛЯ ТЕСТИРОВАНИЯ
 
 import type { RouteObject } from 'react-router'
 
@@ -103,7 +99,7 @@ export const referenceRoute = {
 
 // #endregion
 
-// region navigation
+// region 🧩 navigation
 // #endregion
-// region navigation/constants
+// region 🧩 navigation/constants
 // #endregion
