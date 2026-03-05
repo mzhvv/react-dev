@@ -1,6 +1,6 @@
 <!-- src/packages/@mzhvv/README.md -->
 
-# Документация
+# Документация @mzhvv
 
 ## Оглавление
 
@@ -10,7 +10,7 @@
   [README.md](./framework/README.md 'src/packages/@mzhvv/framework/README.md')
 - libs
   - **routes**
-    - [**react-router**](./libs/routers/react-router/README.md 'src/packages/@mzhvv/libs/routers/react-router')
+    - [**react-router**](./libs/routers/react-router 'src/packages/@mzhvv/libs/routers/react-router')
       [README.md](./libs/routers/react-router/README.md 'src/packages/@mzhvv/libs/routers/react-router/README.md')
       - **config**
         - [**types**](./libs/routers/react-router/config/types 'src/packages/@mzhvv/libs/routers/react-router/config/types')
