@@ -1,23 +1,21 @@
-// src/apps/@mzhvv/example/app/router/routes/basic-integration/index.ts
+// src/apps/@mzhvv/example/app/router/react-router/loose-typed/index.tsx
 
-/* 📌
- Базовая инергация с react-router 
- 
- ...
+/* 📌 
+  ...
 */
 
-import type { RouteObject, RoutesConfig } from '@mzhvv/routers/react-router/route/types/foundation'
-import {
-  routesBuilder,
-  // routesBuilderVersions
-} from '@mzhvv/routers/react-router/route'
+import type { RouteObject } from 'react-router'
+import { Outlet } from 'react-router'
 
-type RoutesConfigEntrance = RoutesConfig
-type RoutesConfigOutput = RouteObject
+import type { RouteConfig } from '@mzhvv/routers/react-router/config/types/loose-typed'
+import { routesBuilder } from '@mzhvv/routers/react-router/route'
 
-export const routesConfig = {
-  coreLibsRouterTypesFoundation: {
-    path: 'core-libs-router-types-foundation',
+type MzhvvExampleRouteConfig = RouteConfig
+type MzhvvExampleRouteBuilt = RouteObject
+
+export const mzhvvExampleRouteConfig = {
+  mzhvvExample: {
+    path: 'mzhvv-example',
     children: {
       index: { index: true },
 
@@ -26,7 +24,7 @@ export const routesConfig = {
       // 1. Index как fallback. index(fallback), явный path(layout)
       domain1: {
         path: 'domain-1',
-        element: 'outlet', // <Outlet />
+        element: <Outlet />,
         children: {
           index: { index: true }, // не может являться сегментом
           // domain1Segment1 ...
@@ -35,7 +33,7 @@ export const routesConfig = {
       // 2. First-child как fallback. Без index, layout undefined, явный path(fallback children[0])
       domain2: {
         path: undefined,
-        element: 'outlet', // <Outlet />
+        element: <Outlet />,
         children: {
           domain3FirstChildFallback: { path: 'domain-2' }, // является domain2Segment1
           // domain2Segment2 ...
@@ -69,23 +67,19 @@ export const routesConfig = {
       },
     },
   },
-} as const satisfies RoutesConfigEntrance
+} as const satisfies MzhvvExampleRouteConfig
 
-export const routes = routesBuilder<RoutesConfigEntrance, RoutesConfigOutput>(routesConfig)
-// export const routesV0 = routesBuilderVersions.v0<RoutesConfigEntrance, RoutesConfigOutput>(
-//   routesConfig
-// )
+export const mzhvvExampleRouteBuilt = routesBuilder(mzhvvExampleRouteConfig)
 
 // #region 🧪 ДЛЯ ТЕСТИРОВАНИЯ
 
-// Захардкоженный эталонный routes / mock
-
-export const hardcodedReferenceRoutes = {
-  path: 'core-libs-router-types-foundation',
+// Эталонный routes
+export const mzhvvExampleReferenceRoute = {
+  path: 'mzhvv-example',
   children: [
     { index: true },
-    { path: 'domain-1', element: 'outlet', children: [{ index: true }] },
-    { path: undefined, element: 'outlet', children: [{ path: 'domain-2' }] },
+    { path: 'domain-1', element: <Outlet />, children: [{ index: true }] },
+    { path: undefined, element: <Outlet />, children: [{ path: 'domain-2' }] },
     {
       path: 'domain-3',
       children: [
@@ -101,6 +95,6 @@ export const hardcodedReferenceRoutes = {
       ],
     },
   ],
-} as const satisfies RoutesConfigOutput
+} as const satisfies MzhvvExampleRouteBuilt
 
 // #endregion

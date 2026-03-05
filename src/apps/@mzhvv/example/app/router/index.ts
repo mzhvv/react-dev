@@ -2,7 +2,7 @@
 
 import type { RouteObject } from 'react-router'
 
-import { routes as basicIntegrationRoutes } from './routes/basic-integration'
+import { routes as basicIntegrationRoutes } from './react-router/loose-typed/index.tsx'
 
 type RoutesVersion = 'basicIntegration'
 
