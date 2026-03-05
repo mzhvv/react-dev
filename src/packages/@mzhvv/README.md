@@ -1,10 +1,6 @@
 <!-- src/packages/@mzhvv/README.md -->
 
-# Документация @mzhvv
-
-## Оглавление
-
-### @mzhvv:
+# @mzhvv:
 
 - [**framework**](./framework 'src/packages/@mzhvv/framework')
   [README.md](./framework/README.md 'src/packages/@mzhvv/framework/README.md')
