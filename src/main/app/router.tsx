@@ -2,8 +2,7 @@
 
 import type { RouteObject } from 'react-router'
 import { createBrowserRouter, RouterProvider } from 'react-router'
+import { route } from '@aggregator/route'
 
-import { routes } from '@aggregator/routes'
-
-const router = createBrowserRouter([routes] as const satisfies RouteObject[])
+const router = createBrowserRouter(route satisfies RouteObject[])
 export const Router = () => <RouterProvider router={router} />

@@ -1,15 +1,13 @@
-// src/main/app/routes.tsx
+// src/main/app/route.tsx
 
-import type { RouteObject } from 'react-router'
+import type { NonIndexRouteObject } from 'react-router'
 
 // import { LoadingFallback } from '@ui/components/fallback'
 
-import { ReactDevPage } from '@main/pages/react-dev'
 import { ReactDevLayout } from '@main/pages/react-dev-layout'
 
-export const routes = {
+export const mainRoute = {
   path: undefined,
   element: <ReactDevLayout />,
   hydrateFallbackElement: <></>, // <LoadingFallback message='Loading hydrate ...' />,
-  children: [{ path: '/', element: <ReactDevPage /> }],
-} as const satisfies RouteObject
+} as const satisfies Omit<NonIndexRouteObject, 'children'>
