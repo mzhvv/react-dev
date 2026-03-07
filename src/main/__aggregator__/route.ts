@@ -14,7 +14,6 @@ export const route = [
 /* Избыточно (на данный момент)
 
   ```ts
-
   import type { MainRoute, AccumulatorRoute } from '@core/framework/acc-agg'
 
   function createAggregatorRoute(mainRoute: MainRoute, accumulatorRoute: AccumulatorRoute) {
@@ -28,7 +27,6 @@ export const route = [
   }
 
   export const route = createAggregatorRoute(mainRoute, accumulatorRoute)
-  
   ```
 
   ✅ Но, как условная проверка:
