@@ -1,13 +1,11 @@
 // src/main/app/route.tsx
 
-import type { NonIndexRouteObject } from 'react-router'
-
+import type { MainRoute } from '@mzhvv/framework/acc-agg'
 // import { LoadingFallback } from '@ui/components/fallback'
-
-import { ReactDevLayout } from '@main/pages/react-dev-layout'
+import { MainLayout } from '@main/pages/main-layout'
 
 export const mainRoute = {
   path: undefined,
-  element: <ReactDevLayout />,
+  element: <MainLayout />,
   hydrateFallbackElement: <></>, // <LoadingFallback message='Loading hydrate ...' />,
-} as const satisfies Omit<NonIndexRouteObject, 'children'>
+} as const satisfies MainRoute
