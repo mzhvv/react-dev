@@ -6,6 +6,8 @@ _Для удобства предусмотрены ссылки на папку
 
 - [**framework**](./framework 'src/packages/@mzhvv/framework')
   [README.md](./framework/README.md 'src/packages/@mzhvv/framework/README.md')
+  - **documentation**
+    - [**laziness.md**](./framework/__documentation__/laziness.md 'src/packages/@mzhvv/framework/__documentation__/laziness.md')
 - libs
   - **routes**
     - [**react-router**](./libs/routers/react-router 'src/packages/@mzhvv/libs/routers/react-router')
