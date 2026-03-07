@@ -1,8 +1,9 @@
 // src/main/app/route.tsx
 
-import type { MainRoute } from '@mzhvv/framework/acc-agg'
-// import { LoadingFallback } from '@ui/components/fallback'
+import type { MainRoute } from '@core/framework/acc-agg'
 import { MainLayout } from '@main/pages/main-layout'
+
+// import { LoadingFallback } from '@ui/components/fallback'
 
 /* @description - ⚠️ Конфигурация маршрутов не требуется! */
 

@@ -1,9 +1,8 @@
 // src/main/__aggregator__/route.ts
 
-import type { AggregatorRoute } from '@mzhvv/framework/acc-agg'
-
-import { mainRoute } from '@main/app/route'
+import type { AggregatorRoute } from '@core/framework/acc-agg'
 import { accumulatorRoute } from '@accumulator/route'
+import { mainRoute } from '@main/app/route'
 
 export const route = [
   {

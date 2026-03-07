@@ -2,9 +2,8 @@
 
 import { Outlet } from 'react-router'
 
-import type { AppsRouteObject } from '@mzhvv/framework/acc-agg'
 import { routesBuilder } from '@mzhvv/libs/routers/react-router/route'
-
+import type { AppsRouteObject } from '@core/framework/acc-agg'
 import type { HomeRouteConfig } from '@apps/home/shared/types/route'
 
 const homeRouteConfig = {
