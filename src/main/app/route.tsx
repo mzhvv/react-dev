@@ -5,7 +5,7 @@ import { MainLayout } from '@main/pages/main-layout'
 
 // import { LoadingFallback } from '@ui/components/fallback'
 
-/* @description - ⚠️ Конфигурация маршрутов не требуется! */
+/* ⚠️ Конфигурация маршрутов не требуется! */
 
 export const mainRoute = {
   path: undefined,
