@@ -1,6 +1,6 @@
 <!-- src/packages/@mzhvv/framework/README.md -->
 
-# @mzhvv/framework (`src/packages/@mzhvv/framework`)
+# @mzhvv/framework _(`src/packages/@mzhvv/framework`)_
 
 **@mzhvv/framework** предоставляет:
 
@@ -8,7 +8,8 @@
   - [**Принципы зависимостей**](#принципы-зависимостей)
 
 - **Архитектурные решения / Пакеты-расширения / Интеграции / Адаптеры:**
-  - **acc-agg** - **Фундаментальный механизм**: Обеспечения типобезопасности при обмене **данными** между абстракциями _(модулями)_ \_\_accumulator\_\_ и \_\_aggregator\_\_ _(`src/core/framework/acc-agg` ← `src/packages/@mzhvv/framework/[на данный момент отсутствует]`)_
+  - [**acc-agg**](#acc-agg) - **Фундаментальный механизм** - Обеспечивает обмен **данных** между абстракциями \_\_accumulator\_\_ и \_\_aggregator\_\_ _(`src/core/framework/acc-agg` ← `src/packages/@mzhvv/framework/[на данный момент отсутствует]`)_
+    - [Интеграция с **@mzhvv/libs/routers/react-router**](#интеграция-c-mzhvvlibsroutersreact-router)
 
 - **npm-скрипты:**
   - Создание нового **apps/\***
@@ -64,51 +65,27 @@
 
 Приходиться выходить из `src/main/app/*` в `src/main/__aggregator__/*` и после обратно в `src/main/app/*` - Изоляция единой точки **данных** конфигурации приложения **\_\_aggregator\_\_** требует такой намеренной архитектурной условности!
 
-## Пакеты расширения/Абстракции
+## Архитектурные решения / Пакеты-расширения / Интеграции / Адаптеры:
 
-### **@mzhvv/framework/acc-agg** (`src/packages/@mzhvv/framework/acc-agg`)
+### <span id="acc-agg"></span> **acc-agg** _(`src/packages/@mzhvv/framework/[на данный момент отсутствует]`)_
 
-**@mzhvv/framework/acc-agg предоставляет:**
+**Фундаментальный механизм** - Обеспечивает обмен **данных** между абстракциями **\_\_accumulator\_\_** и **\_\_aggregator\_\_**
 
-- **types** - Обеспечивает типобезопасность при обмене данными между модулям **apps** (`src/apps/__accumulator__`) и **main** (`src/main/__aggregator__`)
-
+`src/packages/@mzhvv/framework/[на данный момент отсутствует]`  
+↓  
+`src/core/framework/acc-agg`  
+↓  
 **Абстракции:**
 
-- **\_\_accumulator\_\_** - Собирает данные из всех `src/apps/*`. Единственная точка экспорта из **apps**!
-- **\_\_aggregator\_\_** - Агрегирует данные в единую конфигурацию приложения из `src/apps/__accumulator__` и `src/main/*`. Единственная точка доступа из **main** к **apps**!
+- `src/apps/__accumulator__`- Собирает **данные** из всех `src/apps/*`. Единственная точка экспорта из **apps**!
+- `src/main/__aggregator__` - Агрегирует **данные** в единую конфигурацию приложения из `src/apps/__accumulator__` и `src/main/*`. Единственная точка доступа из **main** к **apps**!
 
-<!-- ## Методы
+**\_\_accumulator\_\_** и **\_\_aggregator\_\_** используют общие типы `src/core/framework/acc-agg/*/types` для обеспечения типобезопасности при обмене **данными** между абстракциями → [Соблюдение принципов зависимостей](#принципы-зависимостей)
 
-### `create-app`
+<span id="интеграция-c-mzhvvlibsroutersreact-router"></span> **Интеграция с** [**@mzhvv/libs/routers/react-router**](#mzhvvlibsroutersreact-router)
 
-Создание нового приложения/модуля
+...
 
-### `delete-app`
+### <span id="mzhvvlibsroutersreact-router"></span> **@mzhvv/libs/routers/react-router** _(`src/packages/@mzhvv/libs/routers/react-router`)_
 
-Удаление приложения/модуля -->
-
----
-
-<!-- ### FLOW
-
-#### Например @router:
-
-Конфигурируем объекты/источники истины роутов каждомго приложении и точки входа на основе типов из **packages/@mzhvv/router/routes/types →**
-`apps/*/shared/types/prnc → apps/*/app/routes` и
-`main/shared/types/prnc → main/app/routes`
-↓
-Собираем/аккумулируем роуты из **apps/\***
-`apps/*/app/routes → apps/__accumulators__/routes`
-↓
-Конфигурируем/агрегируем роуты всего приложения
-`apps/__accumulators__/routes → main/__aggregator__/routes` и
-`main/app/routes.tsx → main/__aggregator__/routes`
-↓
-`main/__aggregator__/routes → main/app/router.tsx` ← Строим с помощью **packages/@mzhvv/router/routes/builder**
-↓
-`main/app/router → main/app/providers -> main/app/main(точка входа)`
-
-_**PRNC** (Paths-Routes-Navigations-Constants) — объединенные типы по смыслу
-**Конфигурируем объекты/источники истины в 1 шаге** - Из нее в дальнейшем можно построить навигацию с помощью **packages/@mzhvv/router/navigation/builder**_
-
-⚠️ **routes в app по FSD** - Считаю, что это правильное место для его расположения! В приложении(app) есть роуты(app/routes), в нем страницы(pages) — это ЛОГИЧНО! В shared — БРЕД! -->
+...
