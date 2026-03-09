@@ -1,13 +1,15 @@
 // src/main/__aggregator__/route.ts
 
 import type { AggregatorRoute } from '@core/framework/acc-agg'
-import { accumulatorRoute } from '@accumulator/route'
-import { mainRoute } from '@main/app/route'
 
-export const route = [
+import { appsRoute } from '@accumulator/route'
+
+import { mainRoute } from '../app/route'
+
+export const globalRoute = [
   {
     ...mainRoute,
-    children: accumulatorRoute,
+    children: appsRoute,
   },
 ] as const satisfies AggregatorRoute
 

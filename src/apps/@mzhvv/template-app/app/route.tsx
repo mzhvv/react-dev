@@ -1,26 +1,26 @@
-// src/apps/home/app/route.tsx
+// src/apps/@mzhvv/template-app/app/route.tsx
 
 import { Outlet } from 'react-router'
 
 import { routesBuilder } from '@mzhvv/libs/routers/react-router/route'
 
-import type { HomeRouteConfig } from '../shared/types/route'
+import type { TemplateAppRouteConfig } from '../shared/types/route'
 
 const routeConfig = {
-  homeLayout: {
-    path: undefined,
+  templateApp: {
+    path: 'template-app',
     element: <Outlet />,
     children: {
-      homePage: {
-        path: '/',
+      index: {
+        index: true,
         element: (
           <div>
-            <span>react-dev</span>
+            <span>template-app</span>
           </div>
         ),
       },
     },
   },
-} as const satisfies HomeRouteConfig
+} as const satisfies TemplateAppRouteConfig
 
 export const route = routesBuilder(routeConfig)

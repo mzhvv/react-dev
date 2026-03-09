@@ -1,11 +1,12 @@
 // src/main/app/route.tsx
 
-import type { MainRoute } from '@core/framework/acc-agg'
-import { MainLayout } from '@main/pages/main-layout'
-
 // import { LoadingFallback } from '@ui/components/fallback'
 
-/* ⚠️ `Конфигурация маршрутов` и(→) `навигация` не требуется! */
+import type { MainRoute } from '@core/framework/acc-agg'
+
+import { MainLayout } from '../pages/main-layout'
+
+/* ✅ `Конфигурация маршрутов` и(→) `навигация` не требуется! */
 
 export const mainRoute = {
   path: undefined,

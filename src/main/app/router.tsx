@@ -2,9 +2,9 @@
 
 import { createBrowserRouter, RouterProvider } from 'react-router'
 
-import { route } from '@aggregator/route'
+import { globalRoute } from '@aggregator/route'
 
-/* ⚠️ Проверка `route` не требуется! */
+/* ✅ Проверка `globalRoute` не требуется! */
 
-const router = createBrowserRouter(route)
+const router = createBrowserRouter(globalRoute)
 export const Router = () => <RouterProvider router={router} />
