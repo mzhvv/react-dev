@@ -2,17 +2,17 @@
 
 <!-- src/packages/@mzhvv/README.md -->
 
-_Для удобства предусмотрены ссылки на README.md (IDE) и папку (для github)_
+_Для удобства предусмотрены ссылки на README для IDE и FOLDER для github_
 
 # Навигация документации
 
 - react-dev -
-  [README](./README.md#react-dev './README.md#react-dev')
-  [FOLDER](./#react-dev './#react-dev')
+  [README](./README.md#react-dev 'README.md#react-dev')
 
 - @mzhvv
-  - [framework](./README.md#mzhvvframework 'src/packages/@mzhvv/framework/README.md#mzhvvframework')
-    (~~[framework](./src/packages/@mzhvv/framework 'src/packages/@mzhvv/framework')~~
-    ~~[readme.md](./src/packages/@mzhvv/framework/README.md 'src/packages/@mzhvv/framework/README.md')~~)
+  - framework -
+    [README](./README.md#mzhvvframework 'README.md#mzhvvframework')
+    (~~[README](./src/packages/@mzhvv/framework/README.md 'src/packages/@mzhvv/framework/README.md')~~
+    ~~[FOLDER](./src/packages/@mzhvv/framework 'src/packages/@mzhvv/framework')~~)
   - libs
     - ...

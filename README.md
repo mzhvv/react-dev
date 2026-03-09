@@ -1,10 +1,12 @@
 <!-- README.md -->
 
-[**Навигация документации**](#структура-и-архитектурные-принципы)
+[**Навигация документации**](./DOCUMENTATION_NAVIGATION.md './DOCUMENTATION_NAVIGATION.md')
 
 ---
 
 # react-dev
+
+...
 
 # @mzhvv/framework
 
@@ -14,7 +16,7 @@
   - [**Принципы зависимостей**](#принципы-зависимостей)
 
 - **Архитектурные решения:**
-  - [**dataConfig**](#dataconfig) - Абстракции: **\_\_accumulator\_\_** и **\_\_aggregator\_\_** - обеспечивают **поток данных** между **apps** и(→) **main** формируя **конфигурацию данных всего приложения _(react-dev)_**
+  - [**dataConfig**](#dataconfig) - Абстракции: **\_\_accumulator\_\_** и(→) **\_\_aggregator\_\_** - Обеспечивают **поток данных** между `apps` и(→) `main` формируя **конфигурацию данных всего приложения** _(react-dev)_
     - Интеграция с @mzhvv/libs/routers/react-router
 
 ## Структура и архитектурные принципы
@@ -27,13 +29,14 @@
   - **framework** - Конфигурация приложения
     - **dataConfig** - Конфигурация данных приложения
   - **libs**, **utils**, **types** и т.д. - Уникальные внутренние библиотеки, утилиты, типы и т.д. проекта
-- **apps** - Самостоятельные приложения _(модули в монолите или микрофронтенды в монорепозитории)_
-  - **\_\_accumulator\_\_** - **Собирает данные** из всех `apps/*`
-  - **[Самостоятельное приложение]**
-    - [FSD](https://github.com/feature-sliced, 'https://github.com/feature-sliced') _(предпочтительно)_
+- **apps** - Самостоятельные приложения
+  - **\_\_accumulator\_\_** - **Аккумулирует данные** из всех `apps/*`
+  - **[APP_NAME]** - Самостоятельное приложение _(модуль в монолите или микрофронтенд в монорепозитории). Имеет свои, например: маршрут (но не роутер), ..._
+    - `*` - Cоблюдение [Feature-Sliced Design](https://github.com/feature-sliced, 'https://github.com/feature-sliced') _(предпочтительно)_
+
 - **main** - Инфраструктурный слой → Точка входа
-  - **\_\_aggregator\_\_** - **Агрегирует данные** в единую **конфигурацию данных приложения** из `apps/__accumulator__` и `main/*`
-  - [FSD](https://github.com/feature-sliced, 'https://github.com/feature-sliced')
+  - **\_\_aggregator\_\_** - **Агрегирует данные** в единую **конфигурацию данных приложения** _(react-dev)_ из `apps/__accumulator__` и `main/*`
+  - `*` - Cоблюдение [Feature-Sliced Design](https://github.com/feature-sliced, 'https://github.com/feature-sliced')
 
 - **ui** - Независимый ui-кит
 
@@ -45,7 +48,7 @@
 - **core** - Знает о **packages** и **ui**, но не знает об **apps** и **main**
 - **apps** - Каждый из **apps/\*** знает об **packages**, **ui** и **core**, но не знает о другом **apps/\*** и **main**!
   - **\_\_accumulator\_\_** - ⚠️ Единственная точка экспорта из **apps**!
-  - **[Самостоятельное приложение]**
+  - **[APP_NAME]**
     - **index** - ⚠️ Внутренний API самостоятельного приложения. Используется исключительно в **apps/accumulator**
 - **main** — знает о **packages**, **core** и **ui**, но не знает об **apps**
   - **\_\_aggregator\_\_** - ⚠️ Единственная точка доступа из **main** к **apps**!
@@ -54,7 +57,7 @@
 
 **flow dataConfig:**
 
-`apps/[Самостоятельное приложение]/index`  
+`apps/[APP_NAME]/index`  
 ↓  
 `apps/__accumulator__`  
 ↓  
@@ -64,19 +67,23 @@
 
 **flow dataConfig с итеграцией @mzhvv/.../react-router:**
 
-`apps/[Самостоятельное приложение]/app/route` - Маршрут самостоятельного приложения  
+`apps/[APP_NAME]/app/route` - Маршрут самостоятельного приложения  
 ↓  
-`apps/[Самостоятельное приложение]/index` - private API самостоятельного приложения для `apps/__accumulator__/*`  
+`apps/[APP_NAME]/index` - private API самостоятельного приложения для `apps/__accumulator__/*`  
 ↓  
 `apps/__accumulator__/route` - Аккумулирует все маршруты из `apps/*`  
 ↓  
-`main/__aggregator__/route` - Агрегирует маршрут всего приложения _(react-dev)_ → `main/app/router` → `main/app/main` - Точка входа  
+`main/__aggregator__/route` - Агрегирует маршрут всего приложения _(REACTDEV)_ → `main/app/router` → `main/app/main` - Точка входа  
 ↑  
 `main/app/route` - Маршрут инфраструктурного хоста
 
 ⚠️ **Проблема**:
 
 Приходиться выходить из `src/main/app/*` в `src/main/__aggregator__/*` и после обратно в `src/main/app/*` - Изоляция единой точки **данных** конфигурации приложения **\_\_aggregator\_\_** требует такой намеренной архитектурной условности!
+
+---
+
+---
 
 &nbsp;
 
