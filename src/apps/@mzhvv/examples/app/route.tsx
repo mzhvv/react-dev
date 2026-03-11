@@ -3,7 +3,7 @@
 import type { RouteObject } from 'react-router'
 import { Outlet } from 'react-router'
 
-import { looseTypesRoute } from '@apps/@mzhvv/examples/__examples__/routers/react-router/loose-typed'
+import { looseTypesRoute } from '@examples/__examples__/routers/react-router/loose-typed'
 
 export const examplesRoute = {
   path: 'mzhvv/examples',

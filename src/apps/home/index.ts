@@ -2,4 +2,4 @@
 
 /** ⚠️ @private. Внутренний API. Используется исключительно в `src/apps/__accumulator__` */
 
-export { route as homeRoute } from './app/route'
+export { route as homeRoute } from '@home/app/route'

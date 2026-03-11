@@ -4,7 +4,7 @@ import { Outlet } from 'react-router'
 
 import { routesBuilder } from '@mzhvv/libs/routers/react-router/route'
 
-import type { HomeRouteConfig } from '../shared/types/route'
+import type { HomeRouteConfig } from '@home/shared/types/route'
 
 const routeConfig = {
   homeLayout: {

@@ -4,7 +4,7 @@ import { Outlet } from 'react-router'
 
 import { routesBuilder } from '@mzhvv/libs/routers/react-router/route'
 
-import type { TemplateAppRouteConfig } from '../shared/types/route'
+import type { TemplateAppRouteConfig } from '@template-app/shared/types/route'
 
 const routeConfig = {
   templateApp: {

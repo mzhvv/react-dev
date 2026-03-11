@@ -4,15 +4,17 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "@ui/*": ["./src/ui/*"],
+
       "@mzhvv/*": ["./src/packages/@mzhvv/*"],
       "@packages/*": ["./src/packages/*"],
 
       "@core/*": ["./src/core/*"],
       "@business/*": ["./src/business/*"],
 
-      "@ui/*": ["./src/ui/*"],
-
+      "@home/*": ["./src/apps/home/*"],
       "@template-app/*": ["./src/apps/@mzhvv/template-app/*"],
+      "@examples/*": ["./src/apps/@mzhvv/examples/*"],
       "@accumulator/*": ["./src/apps/__accumulator__/*"],
       "@apps/*": ["./src/apps/*"],
 
