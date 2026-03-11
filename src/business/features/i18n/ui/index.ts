@@ -1,9 +1,9 @@
 // src/core/features/i18n/ui/index.ts
 
-import type { Variant } from '@core/types/shared'
+import type { Variant } from '@mzhvv/libs/_/factories/types/shared'
 
-import type { FactoryComponentVariantsConfig } from '@core/libs/factories/component-variants'
-import { createComponentVariantsFactory } from '@core/libs/factories/component-variants'
+import type { FactoryComponentVariantsConfig } from '@mzhvv/libs/_/factories/component-variants'
+import { createComponentVariantsFactory } from '@mzhvv/libs/_/factories/component-variants'
 
 import type { LocalizationRadioGroupProps } from '../types'
 

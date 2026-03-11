@@ -1,9 +1,9 @@
-// src/core/framework/acc-agg/types/route.ts
+// src/core/configs/framework/dataConfig/types/route.ts
 
-/* 📚 Конфигурация `acc-agg` 
+/* 📚 Конфигурация `dataConfig` 
   Зависимости:
-    - `src/packages/@mzhvv/framework`
-    - `react-router` и(→) `src/packages/@mzhvv/libs/routers/react-router`
+    - `./src/packages/@mzhvv/framework`
+    - `react-router` и(→) `./src/packages/@mzhvv/libs/routers/react-router`
 */
 
 import type { RouteObject } from 'react-router'

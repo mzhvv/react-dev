@@ -9,21 +9,21 @@ import {
   ModalSubSectionHeader,
 } from '@ui/layout-system'
 
-import type { FactoryComponentVariantProps } from '@core/libs/factories/component-variants'
-import { cssVariables, COLOR_MAP } from '@core/business/features/theme/lib/styles'
+import type { FactoryComponentVariantProps } from '@mzhvv/libs/_/factories/component-variants'
+import { cssVariables, COLOR_MAP } from '@business/features/theme/lib/styles'
 
 import type {
   ThemeColorSectionProps,
   ThemeModeSectionProps,
   ThemeModeRadioGroupProps,
   ThemeColorRadioGroupProps,
-} from '@core/business/features/theme'
+} from '@business/features/theme'
 import {
   themeColorRadioGroupVariants,
   themeModeRadioGroupVariants,
   useThemeConstants,
   useThemeUi,
-} from '@core/business/features/theme'
+} from '@business/features/theme'
 
 export const ThemeSections = () => {
   const { themeColor, themeMode } = useThemeUi()

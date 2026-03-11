@@ -8,7 +8,7 @@ import {
   RadioGroupItem_V4,
 } from '@ui/components/radio-group'
 
-import type { VariantId } from '@core/types/shared'
+import type { VariantId } from '@mzhvv/libs/_/factories/types/shared'
 
 import type { ThemeModeRadioGroupProps } from '../../../types'
 

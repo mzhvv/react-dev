@@ -7,8 +7,8 @@ export const alias = {
   '@mzhvv': resolve(__dirname, './src/packages/@mzhvv'),
   '@packages': resolve(__dirname, './src/packages'),
 
-  '@business': resolve(__dirname, './src/core/business'),
   '@core': resolve(__dirname, './src/core'),
+  '@business': resolve(__dirname, './src/business'),
 
   '@ui': resolve(__dirname, './src/ui'),
 

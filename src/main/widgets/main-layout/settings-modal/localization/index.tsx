@@ -5,7 +5,7 @@ import {
   localizationLanguageRadioGroupVariants,
   useLocalizationConstants,
   useLocalizationUi,
-} from '@core/business/features/i18n'
+} from '@business/features/i18n'
 
 export const LocalizationSections = () => {
   const { localizationLanguagesUi } = useLocalizationUi()

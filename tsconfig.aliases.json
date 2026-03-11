@@ -7,8 +7,8 @@
       "@mzhvv/*": ["./src/packages/@mzhvv/*"],
       "@packages/*": ["./src/packages/*"],
 
-      "@business/*": ["./src/core/business/*"],
       "@core/*": ["./src/core/*"],
+      "@business/*": ["./src/business/*"],
 
       "@ui/*": ["./src/ui/*"],
 

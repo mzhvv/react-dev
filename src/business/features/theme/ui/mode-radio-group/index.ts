@@ -1,9 +1,9 @@
 // src/core/features/theme/ui/mode-radio-group/index.ts
 
-import type { Variant } from '@core/types/shared'
+import type { Variant } from '@mzhvv/libs/_/factories/types/shared'
 
-import type { FactoryComponentVariantsConfig } from '@core/libs/factories/component-variants'
-import { createComponentVariantsFactory } from '@core/libs/factories/component-variants'
+import type { FactoryComponentVariantsConfig } from '@mzhvv/libs/_/factories/component-variants'
+import { createComponentVariantsFactory } from '@mzhvv/libs/_/factories/component-variants'
 
 import type { ThemeModeRadioGroupProps } from '../../types'
 import { Variant0, Variant1, Variant2 } from './variants/variants'

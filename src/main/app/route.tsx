@@ -2,7 +2,7 @@
 
 // import { LoadingFallback } from '@ui/components/fallback'
 
-import type { MainRoute } from '@core/framework/acc-agg'
+import type { MainRoute } from '@core/configs/framework/dataConfig'
 
 import { MainLayout } from '../pages/main-layout'
 

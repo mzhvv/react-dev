@@ -1,6 +1,6 @@
 // src/main/__aggregator__/route.ts
 
-import type { AggregatorRoute } from '@core/framework/acc-agg'
+import type { AggregatorRoute } from '@core/configs/framework/dataConfig'
 
 import { appsRoute } from '@accumulator/route'
 

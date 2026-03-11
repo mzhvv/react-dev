@@ -1,6 +1,6 @@
 // src/apps/__accumulator__/route.ts
 
-import type { AccumulatorRoute } from '@core/framework/acc-agg'
+import type { AccumulatorRoute } from '@core/configs/framework/dataConfig'
 
 import { homeRoute } from '@apps/home'
 import { examplesRoute } from '@apps/@mzhvv/examples'
