@@ -100,7 +100,4 @@ export const referenceRoute = {
 // #endregion
 
 // region 🧩 navigation
-
-...
-
 // #endregion
