@@ -6,7 +6,7 @@ import { Outlet } from 'react-router'
 import { looseTypesRoute } from '@examples/__examples__/routers/react-router/loose-typed'
 
 export const examplesRoute = {
-  path: 'mzhvv/examples',
+  path: 'examples',
   element: <Outlet />,
   children: [
     {

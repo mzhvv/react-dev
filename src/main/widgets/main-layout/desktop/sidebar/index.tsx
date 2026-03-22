@@ -11,6 +11,7 @@ import { SettingsModal } from '../../settings-modal'
 
 import { DesktopSidebarNavigation } from './navigation'
 import { MobileSidebarNavigation } from '../../mobile/sidebar/navigation'
+import { globalNavigation } from '@accumulator/navigation'
 
 export const DesktopSidebar = () => {
   const [isNavigationVisible, setIsNavigationVisible] = useState(true)
@@ -42,7 +43,10 @@ const FirstColumn: React.FC<{ isNavigationVisible: boolean; toggleNavigation: ()
       <div className='p-2'>
         <div className='flex flex-col gap-2'>
           <Button asChild size='icon' className='shadow'>
-            <Link to='/' className='text-base font-bold tracking-tighter'>
+            <Link
+              to={globalNavigation.root.absolutePath}
+              className='text-base font-bold tracking-tighter'
+            >
               RD
             </Link>
           </Button>
