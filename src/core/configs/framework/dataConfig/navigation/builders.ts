@@ -4,16 +4,23 @@ import { primitiveNavigationBuilders } from '@mzhvv/libs/routers/react-router/na
 
 import type { SectionId } from './types'
 
-// #region SectionObject
+// #region - Адаптация createSectionObject
 
-export function createSectionObject<Id extends SectionId, ConstKey extends Id = Id>(id: Id) {
-  return primitiveNavigationBuilders.createSectionObject<Id, ConstKey>(id)
+// export function createSectionObject<Id extends SectionId, ConstKey extends string = Id>(
+//   id: Id,
+//   constKey?: ConstKey
+// ) {
+//   return primitiveNavigationBuilders.createSectionObject<Id, ConstKey>(id, constKey)
+// }
+
+// constKey не нужен - используется id по умолчанию достаточно
+export function createSectionObject<Id extends SectionId>(id: Id) {
+  return primitiveNavigationBuilders.createSectionObject<Id>(id)
 }
 
 // #endregion
 
-// #region LinkObject
-// Адаптация не требуется
+// #region createLinkObject - Интеграция, адаптация не требуется
 // #endregion
 
 // API

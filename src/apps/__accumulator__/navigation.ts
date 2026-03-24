@@ -10,7 +10,7 @@ const rootNavigation = {
   relativePath: '/',
   absolutePath: '/',
   constKey: 'root',
-} as const satisfies LinkObject<string>
+} as const satisfies LinkObject<string> // Создавать отдельную функцию для root - избыточно, а проверять каждый объект `path === '/'` в createLinkObject - дорого
 
 const appsNavigationDomainOnly = [
   {
@@ -32,4 +32,4 @@ export const globalNavigation = {
   apps: {
     domainOnly: appsNavigationDomainOnly,
   },
-} as const
+} as const satisfies Record<'root' | 'apps', unknown>
