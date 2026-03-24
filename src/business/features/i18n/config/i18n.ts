@@ -5,7 +5,11 @@ import Backend from 'i18next-http-backend'
 import LanguageDetector from 'i18next-browser-languagedetector'
 import { initReactI18next } from 'react-i18next'
 
-type I18nNSs = 'common' | 'settings' | 'navigation'
+type I18nNSs =
+  | 'common'
+  | 'settings'
+  // | 'navigation'
+  | 'mainNavigation'
 
 i18n
   .use(Backend)
@@ -16,11 +20,26 @@ i18n
     fallbackLng: 'ru',
 
     defaultNS: 'common' satisfies I18nNSs,
-    ns: ['common', 'settings', 'navigation'] satisfies Array<I18nNSs>,
+    ns: [
+      'common',
+      'settings',
+      // 'navigation',
+      'mainNavigation',
+    ] satisfies Array<I18nNSs>,
     // fallbackNS: ['common', 'settings'] satisfies Array<I18nNSs>,
 
     backend: {
-      loadPath: '/locales/{{lng}}/{{ns}}.json',
+      // loadPath: '/locales/{{lng}}/{{ns}}.json'
+
+      loadPath: (lngs: string[], ns: string[]) => {
+        const lng = lngs[0]
+        const nsName = ns[0]
+
+        if (nsName === 'mainNavigation') {
+          return `/locales/${lng}/main/${nsName.replace('main', '').toLowerCase()}.json`
+        }
+        return `/locales/${lng}/${nsName}.json`
+      },
     },
 
     react: {

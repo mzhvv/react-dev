@@ -8,7 +8,7 @@ import type { SectionId } from '@core/configs/framework/dataConfig/navigation'
 type ConstantNavigationSectionObjects = { title: string }
 
 export function useGlobalNavigation() {
-  const { t } = useTranslation('navigation')
+  const { t } = useTranslation('mainNavigation')
 
   const globalNavigation = {
     section: {
