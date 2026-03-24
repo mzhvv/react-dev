@@ -2,5 +2,5 @@
 
 // main не имеет свою навигацию
 
-import { globalNavigation } from '@accumulator/navigation'
+import { globalNavigation } from '@accumulator/navigation/global'
 export { globalNavigation }

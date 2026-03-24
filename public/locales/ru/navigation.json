@@ -1,0 +1,10 @@
+{
+  "navigation": {
+    "global": {
+      "sections": {
+        "development": { "title": "Разработка" },
+        "projects": { "title": "Проекты" }
+      }
+    }
+  }
+}

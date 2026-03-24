@@ -11,7 +11,7 @@ import { SettingsModal } from '../../settings-modal'
 
 import { DesktopSidebarNavigation } from './navigation'
 import { MobileSidebarNavigation } from '../../mobile/sidebar/navigation'
-import { globalNavigation } from '@accumulator/navigation'
+import { globalNavigation } from '@accumulator/navigation/global'
 
 export const DesktopSidebar = () => {
   const [isNavigationVisible, setIsNavigationVisible] = useState(true)

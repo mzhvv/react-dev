@@ -1,4 +1,4 @@
-// src/apps/__accumulator__/navigation.tsx
+// src/apps/__accumulator__/navigation/global.ts
 
 import type { LinkObject } from '@mzhvv/libs/routers/react-router/navigation'
 import { navigationBuilders } from '@core/configs/framework/dataConfig/navigation'
