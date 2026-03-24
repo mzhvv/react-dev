@@ -20,7 +20,7 @@ export function createSectionObject<Id extends SectionId>(id: Id) {
 
 // #endregion
 
-// #region createLinkObject - Интеграция, адаптация не требуется
+// #region - Интеграция createLinkObject, адаптация не требуется
 // #endregion
 
 // API

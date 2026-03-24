@@ -18,5 +18,5 @@ describe('navigationBuilders - src/core/configs/framework/dataConfig/navigation/
     })
   })
 
-  // createLinkObject - Интеграция, адаптация не требуется
+  // Интеграция createLinkObject, адаптация не требуется
 })
