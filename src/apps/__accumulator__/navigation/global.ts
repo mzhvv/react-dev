@@ -5,6 +5,8 @@ import { navigationBuilders } from '@core/configs/framework/dataConfig/navigatio
 
 import { tamplateAppRoute } from '@apps/@mzhvv/template-app'
 import { examplesRoute } from '@apps/@mzhvv/examples'
+import { uiRoute } from '@apps/ui'
+import { documentationRoute } from '@apps/documentation'
 
 const rootNavigation = {
   relativePath: '/',
@@ -15,12 +17,12 @@ const rootNavigation = {
 const appsNavigationDomainOnly = [
   {
     section: navigationBuilders.createSectionObject('projects'),
-    links: [navigationBuilders.createLinkObject('ui')],
+    links: [navigationBuilders.createLinkObject(uiRoute.children![0].path!)],
   },
   {
     section: navigationBuilders.createSectionObject('development'),
     links: [
-      navigationBuilders.createLinkObject('documentation'),
+      navigationBuilders.createLinkObject(documentationRoute.children![0].path!),
       navigationBuilders.createLinkObject(examplesRoute.path),
       navigationBuilders.createLinkObject(tamplateAppRoute.path!),
     ],

@@ -1,11 +1,11 @@
-// src/apps/home/app/route.tsx
+// src/apps/ui/app/route.ts
 
 import { Outlet } from 'react-router'
 
-import type { HomeRouteConfig } from '@home/shared/types/route'
 import { routesBuilder } from '@mzhvv/libs/routers/react-router/route'
 
-import { HomePage } from '@home/pages'
+import type { UiRouteConfig } from '../shared/types/route'
+import { UiPage } from '../pages'
 
 const routeConfig = {
   homeLayout: {
@@ -13,11 +13,11 @@ const routeConfig = {
     element: <Outlet />,
     children: {
       homePage: {
-        path: '/',
-        element: <HomePage />,
+        path: 'ui',
+        element: <UiPage />,
       },
     },
   },
-} as const satisfies HomeRouteConfig
+} as const satisfies UiRouteConfig
 
 export const route = routesBuilder(routeConfig)
