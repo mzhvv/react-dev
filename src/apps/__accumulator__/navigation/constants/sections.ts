@@ -8,13 +8,19 @@ import type { SectionId } from '@core/configs/framework/dataConfig/navigation'
 type ConstantNavigationSectionObjects = { title: string }
 
 export function useGlobalNavigation() {
-  const { t } = useTranslation('mainNavigation')
+  const { t } = useTranslation('mainSidebarNavigation')
 
   const globalNavigation = {
+    shared: {
+      heading: {
+        title: t('mainSidebarNavigation.shared.heading.title'),
+      },
+    },
     section: {
-      development: { title: t('navigation.global.sections.development.title') },
-      projects: { title: t('navigation.global.sections.projects.title') },
+      development: { title: t('mainSidebarNavigation.sections.development.title') },
+      projects: { title: t('mainSidebarNavigation.sections.projects.title') },
     } as const satisfies Record<SectionId, ConstantNavigationSectionObjects>,
+    // links: {},
   } as const
 
   return globalNavigation

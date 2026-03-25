@@ -1,0 +1,16 @@
+{
+  "mainSidebarNavigation": {
+    "shared": {
+      "heading": {
+        "title": "Navigation"
+      }
+    },
+
+    "sections": {
+      "development": { "title": "Development" },
+      "projects": { "title": "Projects" }
+    },
+
+    "links": {}
+  }
+}

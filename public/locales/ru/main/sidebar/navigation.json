@@ -1,0 +1,16 @@
+{
+  "mainSidebarNavigation": {
+    "shared": {
+      "heading": {
+        "title": "Навигация"
+      }
+    },
+
+    "sections": {
+      "development": { "title": "Разработка" },
+      "projects": { "title": "Проекты" }
+    },
+
+    "links": {}
+  }
+}

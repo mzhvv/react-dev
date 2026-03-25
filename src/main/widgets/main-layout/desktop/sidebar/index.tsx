@@ -12,6 +12,7 @@ import { SettingsModal } from '../../settings-modal'
 import { DesktopSidebarNavigation } from './navigation'
 import { MobileSidebarNavigation } from '../../mobile/sidebar/navigation'
 import { globalNavigation } from '@accumulator/navigation/global'
+import { useGlobalNavigation } from '@accumulator/navigation'
 
 export const DesktopSidebar = () => {
   const [isNavigationVisible, setIsNavigationVisible] = useState(true)
@@ -94,7 +95,13 @@ const SecondColumn = () => {
     >
       <div className='grow p-2'>
         <div className='p-2'>
-          <h2 className='h-9'>Навигация</h2>
+          <h2 className='h-9'>
+            {(() => {
+              const { shared } = useGlobalNavigation()
+              const { title } = shared.heading
+              return title
+            })()}
+          </h2>
         </div>
 
         <nav>

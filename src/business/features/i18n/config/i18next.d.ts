@@ -2,8 +2,7 @@
 
 import commonRU from '@public/locales/ru/common.json'
 import settingsRU from '@public/locales/ru/settings.json'
-// import navigationRU from '@public/locales/ru/navigation.json'
-import mainNavigationRU from '@public/locales/ru/main/navigation.json'
+import mainSidebarNavigationRU from '@public/locales/ru/main/sidebar/navigation.json'
 
 declare module 'i18next' {
   interface CustomTypeOptions {
@@ -11,8 +10,7 @@ declare module 'i18next' {
     resources: {
       common: typeof commonRU
       settings: typeof settingsRU
-      // navigation: typeof navigationRU
-      mainNavigation: typeof mainNavigationRU
+      mainSidebarNavigation: typeof mainSidebarNavigationRU
     }
   }
 }
