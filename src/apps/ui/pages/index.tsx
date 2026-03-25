@@ -1,9 +1,16 @@
+import { Header, Main, Section, SectionContent } from '@ui/layout-system'
+
 export const UiPage = () => {
   return (
-    <div className='p-2'>
-      <header className='p-2'>
+    <div data-app='ui'>
+      <Header>
         <h1>ui</h1>
-      </header>
+      </Header>
+      <Main>
+        <Section>
+          <SectionContent>.</SectionContent>
+        </Section>
+      </Main>
     </div>
   )
 }

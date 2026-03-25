@@ -1,9 +1,16 @@
+import { Header, Main, Section, SectionContent } from '@ui/layout-system'
+
 export const HomePage = () => {
   return (
-    <div className='p-2'>
-      <header className='p-2'>
+    <div data-app='home'>
+      <Header>
         <h1>react-dev</h1>
-      </header>
+      </Header>
+      <Main>
+        <Section>
+          <SectionContent>.</SectionContent>
+        </Section>
+      </Main>
     </div>
   )
 }
