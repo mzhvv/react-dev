@@ -2,13 +2,13 @@
 
 import { describe, it, expect } from 'vitest'
 
-import type { SectionId } from './types'
+import type { NavigationSectionId } from './types'
 import { navigationBuilders } from './builders'
 
 describe('navigationBuilders - src/core/configs/framework/dataConfig/navigation/builders.test.ts', () => {
   describe('createSectionObject', () => {
     it('navigationBuilders.createSectionObjec([SectionId])', () => {
-      const sections = ['projects', 'development'] as const satisfies SectionId[]
+      const sections = ['projects', 'development'] as const satisfies NavigationSectionId[]
 
       sections.forEach(id => {
         const result = navigationBuilders.createSectionObject(id)

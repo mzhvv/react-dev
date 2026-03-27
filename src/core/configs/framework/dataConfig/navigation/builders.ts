@@ -2,7 +2,7 @@
 
 import { primitiveNavigationBuilders } from '@mzhvv/libs/routers/react-router/navigation'
 
-import type { SectionId } from './types'
+import type { NavigationSectionId } from './types'
 
 // #region - Адаптация createSectionObject
 
@@ -14,7 +14,7 @@ import type { SectionId } from './types'
 // }
 
 // constKey не нужен - используется id по умолчанию достаточно
-export function createSectionObject<Id extends SectionId>(id: Id) {
+export function createSectionObject<Id extends NavigationSectionId>(id: Id) {
   return primitiveNavigationBuilders.createSectionObject<Id>(id)
 }
 

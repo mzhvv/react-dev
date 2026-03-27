@@ -14,7 +14,7 @@ const rootNavigation = {
   constKey: 'root',
 } as const satisfies LinkObject<string> // Создавать отдельную функцию для root - избыточно, а проверять каждый объект `path === '/'` в createLinkObject - дорого
 
-const appsNavigationDomainOnly = [
+const appsDomainNavigation = [
   {
     section: navigationBuilders.createSectionObject('projects'),
     links: [navigationBuilders.createLinkObject(uiRoute.children![0].path!)],
@@ -32,6 +32,7 @@ const appsNavigationDomainOnly = [
 export const globalNavigation = {
   root: rootNavigation,
   apps: {
-    domainOnly: appsNavigationDomainOnly,
+    // all: [!idea]
+    domain: appsDomainNavigation,
   },
 } as const satisfies Record<'root' | 'apps', unknown>

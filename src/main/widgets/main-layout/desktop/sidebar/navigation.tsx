@@ -6,7 +6,7 @@ import { globalNavigation } from '@accumulator/navigation/global'
 import { useGlobalNavigation } from '@accumulator/navigation'
 
 const AppsDomainOnlyNavigation = () => {
-  return globalNavigation.apps.domainOnly.map(({ section, links }) => (
+  return globalNavigation.apps.domain.map(({ section, links }) => (
     <div key={section.id} className='mt-2'>
       {(() => {
         const { section: section2 } = useGlobalNavigation()

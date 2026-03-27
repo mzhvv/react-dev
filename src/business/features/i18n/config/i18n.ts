@@ -1,4 +1,4 @@
-// src/core/features/i18n/config/i18n.ts
+// src/business/features/i18n/config/i18n.ts
 
 import i18n from 'i18next'
 import Backend from 'i18next-http-backend'
@@ -26,6 +26,8 @@ i18n
         const lng = lngs[0]
         const nsName = ns[0]
 
+        // `mainSidebar` - загружается сразу, при первом входе
+        // Грубо говоря - `<_><apps /><mainSidebar />`
         if (nsName.includes('mainSidebar')) {
           return `/locales/${lng}/main/sidebar/${nsName.replace('mainSidebar', '').toLowerCase()}.json`
         }
