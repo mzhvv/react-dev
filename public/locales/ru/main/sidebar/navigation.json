@@ -11,6 +11,8 @@
       "projects": { "title": "Проекты" }
     },
 
-    "links": {}
+    "domain": {
+      "documentation": { "title": "Документация" }
+    }
   }
 }

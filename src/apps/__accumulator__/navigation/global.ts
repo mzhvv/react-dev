@@ -26,7 +26,6 @@ const appsDomainNavigation = [
 export const globalNavigation = {
   root: homeDataConfig.navigation.domain,
   apps: {
-    // all: [!idea]
     domain: appsDomainNavigation,
   },
 } as const satisfies Record<'root' | 'apps', unknown>

@@ -2,6 +2,7 @@
 
 import { useTranslation } from 'react-i18next'
 import type { ConstantSectionMap } from '@core/configs/framework/dataConfig/navigation'
+import { documentationDataConfig } from '@apps/documentation'
 
 export function useGlobalNavigation() {
   const { t } = useTranslation('mainSidebarNavigation')
@@ -11,14 +12,16 @@ export function useGlobalNavigation() {
       heading: {
         title: t('mainSidebarNavigation.shared.heading.title'),
       },
-    },
+    } as const,
 
     section: {
       development: { title: t('mainSidebarNavigation.sections.development.title') },
       projects: { title: t('mainSidebarNavigation.sections.projects.title') },
     } as const satisfies ConstantSectionMap,
 
-    // links: {},
+    domainLinksMAP: {
+      documentation: documentationDataConfig.CONSTATS.NAVIGATION.useGetDomainConstants(),
+    } as const,
   } as const
 
   return globalNavigation

@@ -2,7 +2,10 @@
 
 import { Link } from 'react-router'
 import { Button } from '@ui/components/button'
-import { globalNavigation } from '@accumulator/navigation/global'
+
+import { globalNavigation } from '@aggregator/navigation'
+
+// !todo - константы через агрегатор!
 import { useGlobalNavigation } from '@accumulator/navigation'
 
 const AppsDomainOnlyNavigation = () => {
@@ -16,13 +19,22 @@ const AppsDomainOnlyNavigation = () => {
         )
       })()}
       <div>
-        {links.map(link => (
-          <Button key={link.absolutePath} variant='ghost' size='sm' asChild>
-            <Link to={link.absolutePath} className='w-full justify-start px-2!'>
-              {link.constKey}
-            </Link>
-          </Button>
-        ))}
+        {(() => {
+          return links.map(link => {
+            const { domainLinksMAP } = useGlobalNavigation()
+            // const { title } = domainLinksMAP['documentation'] <- вот так все работает!!!
+            // const { title } = domainLinksMAP[link.constKey] // <- а так нет!
+            return (
+              <Button key={link.absolutePath} variant='ghost' size='sm' asChild>
+                <Link to={link.absolutePath} className='w-full justify-start px-2!'>
+                  {/* {title || link.constKey} */}
+                  {link.constKey}
+                </Link>
+              </Button>
+            )
+          })
+        })()}
+        {}
       </div>
     </div>
   ))

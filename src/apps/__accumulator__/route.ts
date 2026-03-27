@@ -10,9 +10,7 @@ import { templateAppDataConfig } from '@apps/@mzhvv/template-app'
 
 export const appsRoute = [
   homeDataConfig.route,
-
   uiDataConfig.route,
-
   documentationDataConfig.route,
   examplesDataConfig.route,
   templateAppDataConfig.route,
