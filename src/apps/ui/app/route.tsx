@@ -1,10 +1,10 @@
-// src/apps/ui/app/route.ts
+// src/apps/ui/app/route.tsx
 
 import { Outlet } from 'react-router'
 
 import { routesBuilder } from '@mzhvv/libs/routers/react-router/route'
 
-import type { UiRouteConfig } from '../shared/types/route'
+import type { RouteConfig } from '../shared/types/route'
 import { UiPage } from '../pages'
 
 const routeConfig = {
@@ -18,6 +18,6 @@ const routeConfig = {
       },
     },
   },
-} as const satisfies UiRouteConfig
+} as const satisfies RouteConfig
 
 export const route = routesBuilder(routeConfig)

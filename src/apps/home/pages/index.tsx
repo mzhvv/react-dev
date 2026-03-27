@@ -1,3 +1,5 @@
+// src/apps/home/pages/index.tsx
+
 import { Header, Main, Section, SectionContent } from '@ui/layout-system'
 
 export const HomePage = () => {

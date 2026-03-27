@@ -1,5 +1,12 @@
 // src/apps/@mzhvv/template-app/index.ts
 
-/** ⚠️ @private. Внутренний API. Используется исключительно в `src/apps/__accumulator__` */
+import { navigationBuilders } from '@core/configs/framework/dataConfig/navigation'
 
-export { route as tamplateAppRoute } from '@template-app/app/route'
+import { route } from './app/route'
+
+export const templateAppDataConfig = {
+  route,
+  navigation: {
+    domain: navigationBuilders.createLinkObject(route.path!),
+  },
+}

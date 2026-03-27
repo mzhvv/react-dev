@@ -1,36 +1,30 @@
 // src/apps/__accumulator__/navigation/global.ts
 
-import type { LinkObject } from '@mzhvv/libs/routers/react-router/navigation'
 import { navigationBuilders } from '@core/configs/framework/dataConfig/navigation'
 
-import { tamplateAppRoute } from '@apps/@mzhvv/template-app'
-import { examplesRoute } from '@apps/@mzhvv/examples'
-import { uiRoute } from '@apps/ui'
-import { documentationRoute } from '@apps/documentation'
-
-const rootNavigation = {
-  relativePath: '/',
-  absolutePath: '/',
-  constKey: 'root',
-} as const satisfies LinkObject<string> // Создавать отдельную функцию для root - избыточно, а проверять каждый объект `path === '/'` в createLinkObject - дорого
+import { homeDataConfig } from '@apps/home'
+import { uiDataConfig } from '@apps/ui'
+import { documentationDataConfig } from '@apps/documentation'
+import { examplesDataConfig } from '@apps/@mzhvv/examples'
+import { templateAppDataConfig } from '@apps/@mzhvv/template-app'
 
 const appsDomainNavigation = [
   {
     section: navigationBuilders.createSectionObject('projects'),
-    links: [navigationBuilders.createLinkObject(uiRoute.children![0].path!)],
+    links: [uiDataConfig.navigation.domain],
   },
   {
     section: navigationBuilders.createSectionObject('development'),
     links: [
-      navigationBuilders.createLinkObject(documentationRoute.children![0].path!),
-      navigationBuilders.createLinkObject(examplesRoute.path),
-      navigationBuilders.createLinkObject(tamplateAppRoute.path!),
+      documentationDataConfig.navigation.domain,
+      examplesDataConfig.navigation.domain,
+      templateAppDataConfig.navigation.domain,
     ],
   },
 ] as const
 
 export const globalNavigation = {
-  root: rootNavigation,
+  root: homeDataConfig.navigation.domain,
   apps: {
     // all: [!idea]
     domain: appsDomainNavigation,

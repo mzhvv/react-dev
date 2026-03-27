@@ -1,3 +1,12 @@
 // src/apps/@mzhvv/examples/index.ts
 
-export { examplesRoute } from './app/route'
+import { navigationBuilders } from '@core/configs/framework/dataConfig/navigation'
+
+import { route } from './app/route'
+
+export const examplesDataConfig = {
+  route,
+  navigation: {
+    domain: navigationBuilders.createLinkObject(route.path),
+  },
+}

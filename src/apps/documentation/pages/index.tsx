@@ -1,3 +1,5 @@
+// src/apps/documentation/pages/index.tsx
+
 import { Header, Main, Section, SectionContent } from '@ui/layout-system'
 
 export const DocumentationPage = () => {

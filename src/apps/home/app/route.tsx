@@ -2,10 +2,10 @@
 
 import { Outlet } from 'react-router'
 
-import type { HomeRouteConfig } from '@home/shared/types/route'
+import type { RouteConfig } from '@home/shared/types/route'
 import { routesBuilder } from '@mzhvv/libs/routers/react-router/route'
 
-import { HomePage } from '@home/pages'
+import { HomePage } from '../pages'
 
 const routeConfig = {
   homeLayout: {
@@ -18,6 +18,6 @@ const routeConfig = {
       },
     },
   },
-} as const satisfies HomeRouteConfig
+} as const satisfies RouteConfig
 
 export const route = routesBuilder(routeConfig)

@@ -1,10 +1,10 @@
-// src/apps/ui/app/route.ts
+// src/apps/documentation/app/route.tsx
 
 import { Outlet } from 'react-router'
 
 import { routesBuilder } from '@mzhvv/libs/routers/react-router/route'
 
-import type { DocumentationRouteConfig } from '../shared/types/route'
+import type { RouteConfig } from '../shared/types/route'
 import { DocumentationPage } from '../pages'
 
 const routeConfig = {
@@ -18,6 +18,6 @@ const routeConfig = {
       },
     },
   },
-} as const satisfies DocumentationRouteConfig
+} as const satisfies RouteConfig
 
 export const route = routesBuilder(routeConfig)

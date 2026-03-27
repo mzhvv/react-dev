@@ -1,5 +1,16 @@
 // src/apps/home/index.ts
 
-/** ⚠️ @private. Внутренний API. Используется исключительно в `src/apps/__accumulator__` */
+import type { LinkObject } from '@mzhvv/libs/routers/react-router/navigation'
 
-export { route as homeRoute } from '@home/app/route'
+import { route } from './app/route'
+
+export const homeDataConfig = {
+  route,
+  navigation: {
+    domain: {
+      relativePath: '/',
+      absolutePath: '/',
+      constKey: 'root',
+    } as const satisfies LinkObject<string>, // Создавать отдельную функцию для root - избыточно, а проверять каждый объект `path === '/'` в createLinkObject - дорого
+  },
+}
