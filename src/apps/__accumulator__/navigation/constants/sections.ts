@@ -20,8 +20,7 @@ export function useGlobalNavigation() {
     } as const satisfies ConstantSectionMap,
 
     domainLinksMAP: {
-      // documentation: documentationDataConfig.CONSTATS.NAVIGATION.CONSTANTS.DOMAIN,
-      ...documentationDataConfig.CONSTATS.NAVIGATION.CONSTANTS.DOMAIN,
+      ...documentationDataConfig.CONSTANTS.NAVIGATION.DOMAIN.useGetDomainConstants.documentation,
     } as const,
   } as const
 

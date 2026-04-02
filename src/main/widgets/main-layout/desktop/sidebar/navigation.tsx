@@ -21,8 +21,8 @@ const AppsDomainOnlyNavigation = () => {
       <div>
         {(() => {
           return links.map(link => {
-            const { domainLinksMAP } = useGlobalNavigation()
-            const { title } = domainLinksMAP[link.constKey]
+            // const { domainLinksMAP } = useGlobalNavigation()
+            // const { title } = domainLinksMAP[link.constKey]
             return (
               <Button key={link.absolutePath} variant='ghost' size='sm' asChild>
                 <Link to={link.absolutePath} className='w-full justify-start px-2!'>
