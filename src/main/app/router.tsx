@@ -2,9 +2,15 @@
 
 import { createBrowserRouter, RouterProvider } from 'react-router'
 
-import { globalRoute } from '@aggregator/route'
+import { appsRoute } from '@aggregator'
 
-/* ✅ Проверка `globalRoute` не требуется! */
+import { mainRoute } from './route'
 
-const router = createBrowserRouter(globalRoute)
-export const Router = () => <RouterProvider router={router} />
+export const route = [
+  {
+    ...mainRoute,
+    children: appsRoute,
+  },
+]
+
+export const Router = () => <RouterProvider router={createBrowserRouter(route)} />

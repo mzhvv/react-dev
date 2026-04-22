@@ -1,6 +1,6 @@
 // src/main/widgets/main-layout/mobile/sidebar/index.tsx
 
-import { Button } from '@ui/components/button'
+import { Button } from '@mzhvv/ui/components/button'
 import { User2Icon } from 'lucide-react'
 
 import { SettingsModal } from '../../settings-modal'

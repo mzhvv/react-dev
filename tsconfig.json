@@ -3,9 +3,5 @@
 {
   "extends": "./tsconfig.aliases.json",
   "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" },
-    { "path": "./__experience__/tsconfig.__experience__.json" }
-  ]
+  "references": [{ "path": "./tsconfig.app.json" }, { "path": "./tsconfig.node.json" }]
 }

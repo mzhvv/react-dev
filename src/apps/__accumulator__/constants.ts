@@ -1,13 +1,17 @@
-// src/apps/__accumulator__/navigation/constants/sections.ts
+// src/apps/__accumulator__/constants.ts
 
 import { useTranslation } from 'react-i18next'
-import type { ConstantSectionMap } from '@core/configs/framework/dataConfig/navigation'
-import { documentationDataConfig } from '@apps/documentation'
 
-export function useGlobalNavigation() {
+// #region navigation
+
+import type { ConstantSectionMap } from '@core/configs/framework/dataConfig/navigation'
+
+import { documentationDataConfig } from '@documentation'
+
+export function useAppsNavigationConstants() {
   const { t } = useTranslation('mainSidebarNavigation')
 
-  const globalNavigation = {
+  const appsNavigationConstants = {
     shared: {
       heading: {
         title: t('mainSidebarNavigation.shared.heading.title'),
@@ -24,5 +28,13 @@ export function useGlobalNavigation() {
     } as const,
   } as const
 
-  return globalNavigation
+  return appsNavigationConstants
 }
+
+// #endregion
+
+const APPS_CONSTANTS = {
+  useNavigation: useAppsNavigationConstants,
+} as const
+
+export { APPS_CONSTANTS }

@@ -1,6 +1,6 @@
 // src/ui/components/image/image.tsx
 
-import { cn } from '@ui/lib'
+import { cn } from '../../lib'
 
 export type ImageProps = {
   image: {

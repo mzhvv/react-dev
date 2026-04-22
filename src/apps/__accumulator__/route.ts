@@ -2,16 +2,17 @@
 
 import type { AccumulatorRoute } from '@core/configs/framework/dataConfig'
 
-import { homeDataConfig } from '@apps/home'
-import { uiDataConfig } from '@apps/ui'
-import { documentationDataConfig } from '@apps/documentation'
-import { examplesDataConfig } from '@apps/@mzhvv/examples'
-import { templateAppDataConfig } from '@apps/@mzhvv/template-app'
+import { templateAppDataConfig } from '@packages/@mzhvv/framework/template-app'
+import { examplesDataConfig } from '@examples'
+import { uiDataConfig } from '@ui'
+
+import { homeDataConfig } from '@home'
+import { documentationDataConfig } from '@documentation'
 
 export const appsRoute = [
-  homeDataConfig.route,
+  templateAppDataConfig.route,
   uiDataConfig.route,
+  homeDataConfig.route,
   documentationDataConfig.route,
   examplesDataConfig.route,
-  templateAppDataConfig.route,
 ] as const satisfies AccumulatorRoute

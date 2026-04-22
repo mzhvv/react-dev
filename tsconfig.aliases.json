@@ -4,26 +4,41 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@ui/*": ["./src/ui/*"],
+      // #region apps
 
+      "@examples/*": ["./src/apps/@mzhvv/examples/*"],
+      "@examples": ["./src/apps/@mzhvv/examples"],
+      "@ui/*": ["./src/apps/@mzhvv/ui/*"],
+      "@ui": ["./src/apps/@mzhvv/ui"],
+
+      "@home/*": ["./src/apps/home/*"],
+      "@home": ["./src/apps/home"],
+      "@documentation/*": ["./src/apps/documentation/*"],
+      "@documentation": ["./src/apps/documentation"],
+
+      // #endregion
+
+      // #region packages
+
+      "@template-app/*": ["./src/packages/@mzhvv/framework/template-app/*"],
+      "@template-app": ["./src/packages/@mzhvv/framework/template-app"],
       "@mzhvv/*": ["./src/packages/@mzhvv/*"],
       "@packages/*": ["./src/packages/*"],
 
+      // #endregion
+
+      // #region required @mzhvv/framework
+
       "@core/*": ["./src/core/*"],
       "@business/*": ["./src/business/*"],
-
-      "@home/*": ["./src/apps/home/*"],
-      "@template-app/*": ["./src/apps/@mzhvv/template-app/*"],
-      "@examples/*": ["./src/apps/@mzhvv/examples/*"],
-      "@accumulator/*": ["./src/apps/__accumulator__/*"],
+      "@accumulator": ["./src/apps/__accumulator__"],
       "@apps/*": ["./src/apps/*"],
-
-      "@aggregator/*": ["./src/main/__aggregator__/*"],
+      "@aggregator": ["./src/main/__aggregator__"],
       "@main/*": ["./src/main/*"],
-
       "@/*": ["./src/*"],
-
       "@public/*": ["./public/*"]
+
+      // #endregion
     }
   }
 }

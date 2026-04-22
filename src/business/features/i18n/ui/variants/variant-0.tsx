@@ -1,5 +1,5 @@
-import { RadioGroup, RadioGroupItem } from '@ui/components/radio-group'
-import { Label } from '@ui/components/label'
+import { RadioGroup, RadioGroupItem } from '@mzhvv/ui/components/radio-group'
+import { Label } from '@mzhvv/ui/components/label'
 
 import type { LocalizationRadioGroupProps } from '../../types'
 

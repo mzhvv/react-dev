@@ -4,15 +4,15 @@ import { useState } from 'react'
 import { Link } from 'react-router'
 import { GripIcon, User2Icon } from 'lucide-react'
 
-import { cn } from '@ui/lib'
-import { Button } from '@ui/components/button'
+import { cn } from '@mzhvv/ui/lib'
+import { Button } from '@mzhvv/ui/components/button'
 
 import { SettingsModal } from '../../settings-modal'
 
 import { DesktopSidebarNavigation } from './navigation'
 import { MobileSidebarNavigation } from '../../mobile/sidebar/navigation'
-import { globalNavigation } from '@accumulator/navigation/global'
-import { useGlobalNavigation } from '@accumulator/navigation'
+import { navigation } from '@aggregator'
+import { APPS_CONSTANTS } from '@aggregator'
 
 export const DesktopSidebar = () => {
   const [isNavigationVisible, setIsNavigationVisible] = useState(true)
@@ -45,7 +45,7 @@ const FirstColumn: React.FC<{ isNavigationVisible: boolean; toggleNavigation: ()
         <div className='flex flex-col gap-2'>
           <Button asChild size='icon' className='shadow'>
             <Link
-              to={globalNavigation.root.absolutePath}
+              to={navigation.root.absolutePath}
               className='text-base font-bold tracking-tighter'
             >
               RD
@@ -97,7 +97,7 @@ const SecondColumn = () => {
         <div className='p-2'>
           <h2 className='h-9'>
             {(() => {
-              const { shared } = useGlobalNavigation()
+              const { shared } = APPS_CONSTANTS.useNavigation()
               const { title } = shared.heading
               return title
             })()}

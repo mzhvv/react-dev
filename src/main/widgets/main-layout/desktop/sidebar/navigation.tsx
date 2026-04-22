@@ -1,18 +1,18 @@
 // src/main/widgets/main-layout/desktop/sidebar/navigation.tsx
 
 import { Link } from 'react-router'
-import { Button } from '@ui/components/button'
+import { Button } from '@mzhvv/ui/components/button'
 
-import { globalNavigation } from '@aggregator/navigation'
+import { navigation } from '@aggregator'
 
 // !todo - константы через агрегатор!
-import { useGlobalNavigation } from '@accumulator/navigation'
+import { APPS_CONSTANTS } from '@accumulator'
 
 const AppsDomainOnlyNavigation = () => {
-  return globalNavigation.apps.domain.map(({ section, links }) => (
+  return navigation.apps.domain.map(({ section, links }) => (
     <div key={section.id} className='mt-2'>
       {(() => {
-        const { section: section2 } = useGlobalNavigation()
+        const { section: section2 } = APPS_CONSTANTS.useNavigation()
         const { title } = section2[section.constKey || section.id]
         return (
           <div className='flex h-8 items-center justify-start px-2 text-xs opacity-75'>{title}</div>

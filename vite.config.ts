@@ -10,16 +10,4 @@ export default defineConfig({
   resolve: {
     alias: alias,
   },
-  build: {
-    rollupOptions: {
-      external: [
-        /\/__experience__\//,
-        /\/-experience__\//,
-        // /\/-experience\//,
-        /\/__example__\//,
-        /\/-example__\//,
-        // /\/-example\//,
-      ],
-    },
-  },
 })

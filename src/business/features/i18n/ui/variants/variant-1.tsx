@@ -1,5 +1,5 @@
-import { cn } from '@ui/lib'
-import { RadioGroup, RadioGroupItem } from '@ui/components/radio-group'
+import { cn } from '@mzhvv/ui/lib'
+import { RadioGroup, RadioGroupItem } from '@mzhvv/ui/components/radio-group'
 
 import type { LocalizationRadioGroupProps } from '../../types'
 

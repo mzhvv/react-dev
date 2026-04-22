@@ -1,12 +1,17 @@
-// src/apps/__accumulator__/navigation/global.ts
+// src/apps/__accumulator__/navigation.ts
 
 import { navigationBuilders } from '@core/configs/framework/dataConfig/navigation'
 
-import { homeDataConfig } from '@apps/home'
-import { uiDataConfig } from '@apps/ui'
-import { documentationDataConfig } from '@apps/documentation'
-import { examplesDataConfig } from '@apps/@mzhvv/examples'
-import { templateAppDataConfig } from '@apps/@mzhvv/template-app'
+import { templateAppDataConfig } from '@packages/@mzhvv/framework/template-app'
+import { examplesDataConfig } from '@examples'
+import { uiDataConfig } from '@ui'
+
+import { homeDataConfig } from '@home'
+import { documentationDataConfig } from '@documentation'
+
+type AccumulatorNavigation = Record<'root' | 'apps', unknown>
+
+const rootNavigation = homeDataConfig.navigation.domain
 
 const appsDomainNavigation = [
   {
@@ -23,9 +28,9 @@ const appsDomainNavigation = [
   },
 ] as const
 
-export const globalNavigation = {
-  root: homeDataConfig.navigation.domain,
+export const navigation = {
+  root: rootNavigation,
   apps: {
     domain: appsDomainNavigation,
   },
-} as const satisfies Record<'root' | 'apps', unknown>
+} as const satisfies AccumulatorNavigation
