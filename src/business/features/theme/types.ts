@@ -47,7 +47,7 @@ export type ThemeUi = {
 
 // constants
 
-import type { ImageProps } from '@mzhvv/ui/components/image'
+import type { ImageProps } from '@packages/ui/components/image'
 
 export type ThemeConstant = {
   themeSection: { id: string; heading: string }

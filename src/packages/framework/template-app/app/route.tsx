@@ -1,20 +1,23 @@
-// src/apps/documentation/app/route.tsx
+// src/packages/framework/template-app/app/route.tsx
 
 import { Outlet } from 'react-router'
 
 import { routesBuilder } from '@packages/libs/routers/react-router/route'
 
 import type { RouteConfig } from '../shared/types/route'
-import { DocumentationPage } from '../pages'
 
 const routeConfig = {
-  homeLayout: {
-    path: undefined,
+  templateApp: {
+    path: 'template-app',
     element: <Outlet />,
     children: {
-      homePage: {
-        path: 'documentation',
-        element: <DocumentationPage />,
+      index: {
+        index: true,
+        element: (
+          <div>
+            <span>template-app</span>
+          </div>
+        ),
       },
     },
   },

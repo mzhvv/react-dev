@@ -1,6 +1,6 @@
 // src/main/widgets/main-layout/settings-modal/localization/index.tsx
 
-import { Label2 } from '@mzhvv/ui/components/label-2'
+import { Label2 } from '@packages/ui/components/label-2'
 import {
   localizationLanguageRadioGroupVariants,
   useLocalizationConstants,

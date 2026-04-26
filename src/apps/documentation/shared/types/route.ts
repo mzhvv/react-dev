@@ -1,7 +1,7 @@
 // src/apps/documentation/shared/types/route.ts
 
 import type { RouteObject } from 'react-router'
-import type { RouteConfig as DefaultRouteObject } from '@mzhvv/libs/routers/react-router/route/types/foundation'
+import type { RouteConfig as DefaultRouteObject } from '@packages/libs/routers/react-router/route/types/foundation'
 
 export type RouteConfig = DefaultRouteObject
 export type RouteBuilt = RouteObject

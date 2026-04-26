@@ -4,8 +4,8 @@ import { useState } from 'react'
 import { Link } from 'react-router'
 import { GripIcon, User2Icon } from 'lucide-react'
 
-import { cn } from '@mzhvv/ui/lib'
-import { Button } from '@mzhvv/ui/components/button'
+import { cn } from '@packages/ui/lib'
+import { Button } from '@packages/ui/components/button'
 
 import { SettingsModal } from '../../settings-modal'
 

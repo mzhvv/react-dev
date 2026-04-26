@@ -2,7 +2,7 @@
 
 import { Settings2Icon, XIcon } from 'lucide-react'
 
-import { Button } from '@mzhvv/ui/components/button'
+import { Button } from '@packages/ui/components/button'
 import {
   Dialog,
   DialogTrigger,
@@ -10,7 +10,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogClose,
-} from '@mzhvv/ui/components/dialog'
+} from '@packages/ui/components/dialog'
 
 import { LocalizationSections } from './localization'
 import { ThemeSections } from './theme'

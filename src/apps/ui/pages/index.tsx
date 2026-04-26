@@ -1,12 +1,12 @@
-// src/apps/documentation/pages/index.tsx
+// src/apps/ui/pages/index.tsx
 
 import { Header, Main, Section, SectionContent } from '@packages/ui/layout-system'
 
-export const DocumentationPage = () => {
+export const UiPage = () => {
   return (
-    <div data-app='documentation'>
+    <div data-app='ui'>
       <Header>
-        <h1>documentation</h1>
+        <h1>ui</h1>
       </Header>
       <Main>
         <Section>

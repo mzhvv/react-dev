@@ -9,8 +9,8 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '@mzhvv/ui/components/dialog'
-import { Button } from '@mzhvv/ui/components/button'
+} from '@packages/ui/components/dialog'
+import { Button } from '@packages/ui/components/button'
 
 export const MobileSidebarNavigation = () => {
   return <Modal>''</Modal>

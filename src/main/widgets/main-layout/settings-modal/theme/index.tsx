@@ -7,9 +7,9 @@ import {
   ModalSubSection,
   ModalSubSectionContent,
   ModalSubSectionHeader,
-} from '@mzhvv/ui/layout-system'
+} from '@packages/ui/layout-system'
 
-import type { FactoryComponentVariantProps } from '@mzhvv/libs/_/factories/component-variants'
+import type { FactoryComponentVariantProps } from '@packages/libs/_/factories/component-variants'
 import { cssVariables, COLOR_MAP } from '@business/features/theme/lib/styles'
 
 import type {

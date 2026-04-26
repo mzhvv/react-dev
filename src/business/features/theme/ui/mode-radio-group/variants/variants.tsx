@@ -1,14 +1,14 @@
 // src/core/features/theme/ui/mode-radio-group/variants/variants.tsx
 
-import { Label2 } from '@mzhvv/ui/components/label-2'
+import { Label2 } from '@packages/ui/components/label-2'
 import {
   RadioGroup,
   RadioGroupItem_V0,
   RadioGroupItem_V1,
   RadioGroupItem_V4,
-} from '@mzhvv/ui/components/radio-group'
+} from '@packages/ui/components/radio-group'
 
-import type { VariantId } from '@mzhvv/libs/_/factories/types/shared'
+import type { VariantId } from '@packages/libs/_/factories/types/shared'
 
 import type { ThemeModeRadioGroupProps } from '../../../types'
 

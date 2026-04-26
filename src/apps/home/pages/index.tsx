@@ -1,6 +1,6 @@
 // src/apps/home/pages/index.tsx
 
-import { Header, Main, Section, SectionContent } from '@mzhvv/ui/layout-system'
+import { Header, Main, Section, SectionContent } from '@packages/ui/layout-system'
 
 export const HomePage = () => {
   return (

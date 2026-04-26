@@ -1,7 +1,7 @@
 // src/main/shared/types/prnc.ts
 /** @description prnc = Paths-Routes-Navigations-Constants */
 
-import type { SafeRelativePath } from '@mzhvv/utils/string'
+import type { SafeRelativePath } from '@packages/utils/string'
 
 // #region Paths
 

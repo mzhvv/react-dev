@@ -1,6 +1,6 @@
 // src/apps/home/index.ts
 
-import type { LinkObject } from '@mzhvv/libs/routers/react-router/navigation'
+import type { LinkObject } from '@packages/libs/routers/react-router/navigation'
 
 import { route } from './app/route'
 

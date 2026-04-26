@@ -1,6 +1,6 @@
 // src/core/configs/framework/dataConfig/navigation/builders.ts
 
-import { primitiveNavigationBuilders } from '@mzhvv/libs/routers/react-router/navigation'
+import { primitiveNavigationBuilders } from '@packages/libs/routers/react-router/navigation'
 
 import type { NavigationSectionId } from './types'
 

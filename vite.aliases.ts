@@ -6,24 +6,17 @@ import type { AliasOptions } from 'vite'
 export const alias = {
   // #region apps
 
-  '@examples': resolve(__dirname, './src/apps/@mzhvv/examples'),
-  '@ui': resolve(__dirname, './src/apps/@mzhvv/ui'),
-
   '@home': resolve(__dirname, './src/apps/home'),
   '@documentation': resolve(__dirname, './src/apps/documentation'),
+  '@examples': resolve(__dirname, './src/apps/examples'),
+  '@ui': resolve(__dirname, './src/apps/ui'),
 
   // #endregion
 
-  // #region packages
+  // #region required packages(@mzhvv)/framework
 
-  '@template-app': resolve(__dirname, './src/packages/@mzhvv/framework/template-app'),
-  '@mzhvv': resolve(__dirname, './src/packages/@mzhvv'),
+  '@template-app': resolve(__dirname, './src/packages/framework/template-app'),
   '@packages': resolve(__dirname, './src/packages'),
-
-  // #endregion
-
-  // #region required @mzhvv/framework
-
   '@core': resolve(__dirname, './src/core'),
   '@business': resolve(__dirname, './src/business'),
   '@accumulator': resolve(__dirname, './src/apps/__accumulator__'),

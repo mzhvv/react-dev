@@ -1,7 +1,7 @@
 // src/main/widgets/main-layout/desktop/sidebar/navigation.tsx
 
 import { Link } from 'react-router'
-import { Button } from '@mzhvv/ui/components/button'
+import { Button } from '@packages/ui/components/button'
 
 import { navigation } from '@aggregator'
 

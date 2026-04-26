@@ -1,6 +1,6 @@
 // src/main/pages/main-layout/index.tsx
 
-import { useIsMobile } from '@mzhvv/ui/hooks/use-mobile'
+import { useIsMobile } from '@packages/ui/hooks/use-mobile'
 
 import { DesktopSidebar } from '@main/widgets/main-layout/desktop/sidebar'
 import { MobileSidebar } from '@main/widgets/main-layout/mobile/sidebar'
@@ -36,7 +36,7 @@ const SidebarControl: React.FC<{ children: React.ReactNode }> = ({ children }) =
 
 import { useState, useEffect } from 'react'
 import { useNavigation, Outlet } from 'react-router'
-import { LoadingFallback } from '@mzhvv/ui/components/fallback'
+import { LoadingFallback } from '@packages/ui/components/fallback'
 
 const GlobalLoadingFallback = () => {
   const { state } = useNavigation()
