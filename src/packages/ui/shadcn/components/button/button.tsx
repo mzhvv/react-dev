@@ -23,6 +23,7 @@ const buttonCvaVariants = cva(buttonCvaClasses.base, {
 
 type ButtonClassesProps = VariantProps<typeof buttonCvaVariants>
 export type ButtonProps = Omit<ButtonPropsDefault, 'data-variant' | 'data-size'>
+type ButtonComponentProps = ButtonProps & ButtonClassesProps
 
 function Button({
   className,
@@ -30,7 +31,7 @@ function Button({
   size = 'default',
   asChild = false,
   ...props
-}: ButtonProps & ButtonClassesProps) {
+}: ButtonComponentProps) {
   return (
     <ButtonDefault
       data-slot='button'

@@ -88,6 +88,7 @@ type ButtonClassesProps = VariantProps<typeof buttonVariants>
 export type ButtonProps = React.ComponentProps<'button'> & {
   asChild?: boolean
 }
+type ButtonComponentProps = ButtonProps & ButtonClassesProps
 
 /**
  * ⚠️ Не является CLI-компонентом shadcn/ui! (`npx shadcn@latest add button`)
@@ -98,7 +99,7 @@ export function Button({
   size = 'default',
   asChild = false,
   ...props
-}: ButtonProps & ButtonClassesProps) {
+}: ButtonComponentProps) {
   const Comp = asChild ? Slot.Root : 'button'
 
   return (
