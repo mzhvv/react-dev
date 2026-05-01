@@ -1,6 +1,6 @@
 // src/ui/layout-system/index.tsx
 
-import { cn } from '@packages/ui/lib'
+import { cn } from '@packages/ui/shadcn/lib'
 
 const CONTAINER = 'max-w-screen-lg mx-auto px-4'
 

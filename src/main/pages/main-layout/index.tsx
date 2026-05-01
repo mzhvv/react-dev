@@ -1,6 +1,6 @@
 // src/main/pages/main-layout/index.tsx
 
-import { useIsMobile } from '@packages/ui/hooks/use-mobile'
+import { useIsMobile } from '@packages/ui/shadcn/hooks/use-mobile'
 
 import { DesktopSidebar } from '@main/widgets/main-layout/desktop/sidebar'
 import { MobileSidebar } from '@main/widgets/main-layout/mobile/sidebar'

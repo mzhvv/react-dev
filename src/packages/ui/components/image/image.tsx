@@ -1,6 +1,6 @@
 // src/ui/components/image/image.tsx
 
-import { cn } from '../../lib'
+import { cn } from '../../shadcn/lib'
 
 export type ImageProps = {
   image: {

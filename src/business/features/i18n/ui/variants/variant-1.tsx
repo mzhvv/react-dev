@@ -1,4 +1,4 @@
-import { cn } from '@packages/ui/lib'
+import { cn } from '@packages/ui/shadcn/lib'
 import { RadioGroup, RadioGroupItem } from '@packages/ui/components/radio-group'
 
 import type { LocalizationRadioGroupProps } from '../../types'

@@ -1,4 +1,4 @@
-import { cn } from '../lib/utils'
+import { cn } from '../shadcn/lib/utils'
 import { Slot } from '@radix-ui/react-slot'
 
 export const Label2: React.FC<
