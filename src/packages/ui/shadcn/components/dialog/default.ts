@@ -11,4 +11,4 @@ export {
   DialogPortal as DialogPortalDefault,
   DialogTitle as DialogTitleDefault,
   DialogTrigger as DialogTriggerDefault,
-} from '../__default__/dialog'
+} from '../__cli__/dialog'

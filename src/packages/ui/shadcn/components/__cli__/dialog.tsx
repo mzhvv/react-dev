@@ -1,9 +1,11 @@
+// src/packages/ui/shadcn/components/__cli__/dialog.tsx
+
 import * as React from 'react'
 import { XIcon } from 'lucide-react'
 import { Dialog as DialogPrimitive } from 'radix-ui'
 
 import { cn } from '@packages/ui/shadcn/lib/utils'
-import { Button } from '@packages/ui/shadcn/components/__default__/button'
+import { Button } from '@packages/ui/shadcn/components/__cli__/button'
 
 function Dialog({ ...props }: React.ComponentProps<typeof DialogPrimitive.Root>) {
   return <DialogPrimitive.Root data-slot='dialog' {...props} />

@@ -1,4 +1,4 @@
-// src/packages/libs/classes/cva.ts
+// src/packages/utils/classes/cva.ts
 
 import type { cva } from 'class-variance-authority'
 
