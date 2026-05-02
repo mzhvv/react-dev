@@ -1,4 +1,4 @@
-// src/packages/ui/shadcn/components/button/button-cli-modified.tsx
+// src/packages/ui/shadcn/components/button/default.ts
 
 import * as React from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
@@ -69,8 +69,8 @@ function Button({
 }
 
 export {
-  Button as ButtonDefaultModified,
-  buttonCvaClasses as buttonCvaClassesDefaultModified,
-  buttonVariants as buttonVariantsDefaultModified,
-  type ButtonProps as ButtonPropsDefaultModified,
+  Button as ButtonDefault,
+  buttonCvaClasses as buttonCvaClassesDefault,
+  buttonVariants as buttonVariantsDefault,
+  type ButtonProps as ButtonPropsDefault,
 }

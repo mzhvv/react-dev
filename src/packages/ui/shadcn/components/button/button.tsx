@@ -4,27 +4,23 @@ import { cva, type VariantProps } from 'class-variance-authority'
 
 import { cn } from '@packages/ui/shadcn/lib/utils'
 
-import {
-  buttonCvaClassesDefaultModified,
-  ButtonDefaultModified,
-  type ButtonPropsDefaultModified,
-} from './button-cli-modified'
+import { buttonCvaClassesDefault, ButtonDefault, type ButtonPropsDefault } from './default'
 
-const buttonCvaVariants = cva(buttonCvaClassesDefaultModified.base, {
+const buttonCvaVariants = cva(buttonCvaClassesDefault.base, {
   variants: {
     variant: {
-      ...buttonCvaClassesDefaultModified.variants.variants.variant,
+      ...buttonCvaClassesDefault.variants.variants.variant,
     },
     size: {
-      ...buttonCvaClassesDefaultModified.variants.variants.size,
+      ...buttonCvaClassesDefault.variants.variants.size,
     },
   },
   defaultVariants: {
-    ...buttonCvaClassesDefaultModified.variants.defaultVariants,
+    ...buttonCvaClassesDefault.variants.defaultVariants,
   },
 })
 
-type ButtonProps = Omit<ButtonPropsDefaultModified, 'data-variant' | 'data-size'>
+type ButtonProps = Omit<ButtonPropsDefault, 'data-variant' | 'data-size'>
 type ButtonClassesProps = VariantProps<typeof buttonCvaVariants>
 type ButtonComponentProps = ButtonProps & ButtonClassesProps
 
@@ -35,7 +31,7 @@ function Button({
   ...props
 }: ButtonComponentProps) {
   return (
-    <ButtonDefaultModified
+    <ButtonDefault
       data-slot='button'
       className={cn(buttonCvaVariants({ variant, size, className }))}
       {...props}
