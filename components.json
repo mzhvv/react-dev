@@ -17,6 +17,5 @@
     "ui": "@packages/ui/shadcn/components/__cli__",
     "lib": "@packages/ui/shadcn/lib",
     "hooks": "@packages/ui/shadcn/hooks"
-  },
-  "registries": {}
+  }
 }
