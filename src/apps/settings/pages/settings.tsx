@@ -1,6 +1,12 @@
 // src/apps/settings/pages/settings.tsx
 
-import { Main, Section, Header, SectionContent, SectionHeader } from '@packages/ui/layout-system'
+import {
+  Main,
+  Section,
+  Header,
+  SectionContent,
+  SectionHeader,
+} from '@packages/ui/mzhvv/layout-system'
 const Page: React.FC<React.PropsWithChildren<React.ComponentProps<'div'>>> = ({ children }) => {
   return children
 }
