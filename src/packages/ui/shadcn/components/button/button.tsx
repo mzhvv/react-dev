@@ -15,12 +15,10 @@ const buttonCvaVariants = cva(buttonCvaClassesDefault.base, {
       ...buttonCvaClassesDefault.variants.variants.size,
     },
   },
-  defaultVariants: {
-    ...buttonCvaClassesDefault.variants.defaultVariants,
-  },
+  defaultVariants: buttonCvaClassesDefault.variants.defaultVariants,
 })
 
-type ButtonProps = Omit<ButtonPropsDefault, 'data-variant' | 'data-size'>
+type ButtonProps = {} & ButtonPropsDefault
 type ButtonClassesProps = VariantProps<typeof buttonCvaVariants>
 type ButtonComponentProps = ButtonProps & ButtonClassesProps
 
@@ -31,11 +29,7 @@ function Button({
   ...props
 }: ButtonComponentProps) {
   return (
-    <ButtonDefault
-      data-slot='button'
-      className={cn(buttonCvaVariants({ variant, size, className }))}
-      {...props}
-    />
+    <ButtonDefault className={cn(buttonCvaVariants({ variant, size, className }))} {...props} />
   )
 }
 
