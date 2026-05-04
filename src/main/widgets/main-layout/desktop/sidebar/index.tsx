@@ -13,6 +13,7 @@ import { DesktopSidebarNavigation } from './navigation'
 import { MobileSidebarNavigation } from '../../mobile/sidebar/navigation'
 import { navigation } from '@aggregator'
 import { APPS_CONSTANTS } from '@aggregator'
+import { SettingsDialog } from '@apps/settings/macrowidgets/settings-dialog'
 
 export const DesktopSidebar = () => {
   const [isNavigationVisible, setIsNavigationVisible] = useState(true)
@@ -72,6 +73,7 @@ const FirstColumn: React.FC<{ isNavigationVisible: boolean; toggleNavigation: ()
 
       <div>
         <div className='px-2'>
+          <SettingsDialog />
           <SettingsModal />
         </div>
         <div className='p-2'>

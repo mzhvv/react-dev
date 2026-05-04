@@ -8,6 +8,7 @@ import { uiDataConfig } from '@apps/ui'
 
 import { homeDataConfig } from '@home'
 import { documentationDataConfig } from '@documentation'
+import { settingsMicrofrontendConfig } from '@apps/settings'
 
 export const appsRoute = [
   templateAppDataConfig.route,
@@ -15,4 +16,6 @@ export const appsRoute = [
   homeDataConfig.route,
   documentationDataConfig.route,
   examplesDataConfig.route,
+
+  settingsMicrofrontendConfig.route,
 ] as const satisfies AccumulatorRoute
