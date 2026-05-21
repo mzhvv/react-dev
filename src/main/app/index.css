@@ -1,7 +1,6 @@
 /* src/main/app/index.css */
 
 @import "tailwindcss";
-
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
@@ -48,6 +47,8 @@
   --color-chart-5: var(--chart-5);
   --color-sidebar: var(--sidebar);
 }
+
+/* #region theme mode */
 
 :root {
   --radius: 0.65rem;
@@ -129,6 +130,10 @@
   --chart-5: oklch(0.645 0.246 16.439);
 }
 
+/* #endregion */
+
+/* #region theme color */
+
 html[color="neutral"] {
   --primary-light: oklch(0.205 0 0); /* #171717 */
   --primary-foreground-light: oklch(100% 0.00011 271.152);
@@ -141,6 +146,7 @@ html[color="neutral"] {
   --ring-dark: oklch(0.556 0 0); /* #737373 *
   /* --sidebar-ring-dark: oklch(0.556 0 0); */
 }
+
 html[color="blue"] {
   --primary-light: oklch(0.623 0.214 259.815); /* #2b7fff */
   --primary-foreground-light: oklch(100% 0.00011 271.152);
@@ -154,12 +160,21 @@ html[color="blue"] {
   /* --sidebar-ring-dark: oklch(0.488 0.243 264.376); */
 }
 
+/* #endregion */
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  /**/
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
   }
 
   /* Typography */

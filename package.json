@@ -9,6 +9,7 @@
   "type": "module",
   "private": true,
   "scripts": {
+    "postinstall": "tsx scripts/npm/postinstall.ts",
     "automation:create-app": "tsx __automation__/create-app.ts",
     "automation:delete-app": "tsx __automation__/delete-app.ts",
     "aca": "tsx __automation__/create-app.ts",

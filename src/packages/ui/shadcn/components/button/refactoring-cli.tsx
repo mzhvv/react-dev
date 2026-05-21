@@ -1,12 +1,19 @@
-// src/packages/ui/shadcn/components/button/default.ts
+// src/packages/ui/shadcn/components/button/refactoring-cli.tsx
+
+/* ℹ️ refactoring __cli__/button
+
+ * composable CVA
+
+ */
 
 import * as React from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
+import { Slot } from 'radix-ui'
 
 import { type CvaClasses } from '@packages/utils/classes/cva'
 import { cn } from '@packages/ui/shadcn/lib/utils'
 
-import { Button as ButtonDefault } from '../__cli__/button'
+import { ButtonCli } from './cli'
 
 const buttonCvaClasses = {
   base: "inline-flex shrink-0 items-center justify-center gap-2 rounded-md text-sm font-medium whitespace-nowrap transition-all outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
@@ -40,10 +47,9 @@ const buttonCvaClasses = {
     },
   },
 } as const satisfies CvaClasses
-
 const buttonVariants = cva(buttonCvaClasses.base, buttonCvaClasses.variants)
 
-type ButtonProps = Omit<React.ComponentProps<typeof ButtonDefault>, 'variant' | 'size'>
+type ButtonProps = Omit<React.ComponentProps<typeof ButtonCli>, 'variant' | 'size'>
 type ButtonClassesProps = VariantProps<typeof buttonVariants>
 type ButtonComponentProps = ButtonProps & ButtonClassesProps
 
@@ -51,14 +57,20 @@ function Button({
   className,
   variant = 'default',
   size = 'default',
+  asChild = false,
   ...props
 }: ButtonComponentProps) {
-  return <ButtonDefault className={cn(buttonVariants({ variant, size, className }))} {...props} />
+  const Comp = asChild ? Slot.Root : 'button'
+
+  return (
+    <Comp
+      data-slot='button'
+      data-variant={variant}
+      data-size={size}
+      className={cn(buttonVariants({ variant, size, className }))}
+      {...props}
+    />
+  )
 }
 
-export {
-  Button as ButtonDefault,
-  buttonCvaClasses as buttonCvaClassesDefault,
-  buttonVariants as buttonVariantsDefault,
-  type ButtonProps as ButtonPropsDefault,
-}
+export { Button, buttonCvaClasses, buttonVariants, type ButtonProps }
