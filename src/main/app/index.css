@@ -163,6 +163,8 @@ html[color="blue"] {
 /* #endregion */
 
 @layer base {
+  /**/
+
   * {
     @apply border-border outline-ring/50;
   }
