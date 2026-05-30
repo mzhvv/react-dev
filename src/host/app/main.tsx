@@ -1,6 +1,7 @@
-// src/main/app/main.tsx
+// src/host/app/main.tsx
 
 import { createRoot } from 'react-dom/client'
+
 import './index.css'
 
 import { lazy, StrictMode, Suspense } from 'react'

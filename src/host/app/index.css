@@ -1,4 +1,4 @@
-/* src/main/app/index.css */
+/* src/host/app/index.css */
 
 @import "tailwindcss";
 @import "tw-animate-css";
@@ -163,7 +163,7 @@ html[color="blue"] {
 /* #endregion */
 
 @layer base {
-  /**/
+  /* */
 
   * {
     @apply border-border outline-ring/50;
@@ -172,7 +172,7 @@ html[color="blue"] {
     @apply bg-background text-foreground;
   }
 
-  /**/
+  /* */
 
   button:not(:disabled),
   [role="button"]:not(:disabled) {

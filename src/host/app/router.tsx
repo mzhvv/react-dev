@@ -1,4 +1,4 @@
-// src/main/app/router.tsx
+// src/host/app/router.tsx
 
 import { createBrowserRouter, RouterProvider } from 'react-router'
 

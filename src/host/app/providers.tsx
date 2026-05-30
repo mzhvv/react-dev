@@ -1,4 +1,4 @@
-// src/main/app/providers.tsx
+// src/host/app/providers.tsx
 
 import { ThemeProvider } from '@business/features/theme'
 import { I18nextProvider } from '@business/features/i18n'

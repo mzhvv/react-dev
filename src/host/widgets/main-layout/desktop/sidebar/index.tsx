@@ -11,8 +11,8 @@ import { SettingsModal } from '../../settings-modal'
 
 import { DesktopSidebarNavigation } from './navigation'
 import { MobileSidebarNavigation } from '../../mobile/sidebar/navigation'
-import { navigation } from '@aggregator'
-import { APPS_CONSTANTS } from '@aggregator'
+import { navigation } from '@/host/__aggregator__'
+import { APPS_CONSTANTS } from '@/host/__aggregator__'
 import { SettingsDialog } from '@apps/settings/macrowidgets/settings-dialog'
 
 export const DesktopSidebar = () => {

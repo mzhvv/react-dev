@@ -22,8 +22,8 @@ export const alias = {
 
   '@accumulator': resolve(__dirname, './src/apps/__accumulator__'),
   '@apps': resolve(__dirname, './src/apps'),
-  '@aggregator': resolve(__dirname, './src/main/__aggregator__'),
-  '@main': resolve(__dirname, './src/main'),
+  '@aggregator': resolve(__dirname, './src/host/__aggregator__'),
+  '@host': resolve(__dirname, './src/host'),
 
   '@': resolve(__dirname, './src'),
   '@public': resolve(__dirname, './public'),

@@ -3,7 +3,7 @@
 import { Link } from 'react-router'
 import { Button } from '@packages/ui/components/button'
 
-import { navigation } from '@aggregator'
+import { navigation } from '@/host/__aggregator__'
 
 // !todo - константы через агрегатор!
 import { APPS_CONSTANTS } from '@accumulator'

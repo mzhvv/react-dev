@@ -1,11 +1,11 @@
-// src/main/pages/main-layout/index.tsx
+// src/host/pages/host-layout/index.tsx
 
 import { useIsMobile } from '@packages/ui/shadcn/hooks/use-mobile'
 
-import { DesktopSidebar } from '@main/widgets/main-layout/desktop/sidebar'
-import { MobileSidebar } from '@main/widgets/main-layout/mobile/sidebar'
+import { DesktopSidebar } from '@host/widgets/main-layout/desktop/sidebar'
+import { MobileSidebar } from '@host/widgets/main-layout/mobile/sidebar'
 
-export const MainLayout = () => {
+export const HostLayout = () => {
   return (
     <SidebarControl>
       <GlobalLoadingFallback />

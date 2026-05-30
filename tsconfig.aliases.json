@@ -28,8 +28,8 @@
 
       "@accumulator": ["./src/apps/__accumulator__"],
       "@apps/*": ["./src/apps/*"],
-      "@aggregator": ["./src/main/__aggregator__"],
-      "@main/*": ["./src/main/*"],
+      "@aggregator": ["./src/host/__aggregator__"],
+      "@host/*": ["./src/host/*"],
 
       "@/*": ["./src/*"],
       "@public/*": ["./public/*"]
